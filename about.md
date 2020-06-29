@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Sobre
-image: teste1.jpg
+featured-img: teste1.jpg
 permalink: /sobre/
 ---
 
