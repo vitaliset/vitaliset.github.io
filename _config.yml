@@ -3,8 +3,8 @@
 #author: O conjunto de Vitali # You :P
 #description: > # Meta description of Homepage
 #  My thoughts and experiments on machine learning and related stuff
-baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://vitaliset.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+#baseurl: "/" # the subpath of your site, e.g. /blog
+#url: "https://vitaliset.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
 # SEO PLUGIN
 social:
@@ -19,10 +19,10 @@ navigation: # Navigation links
   - {name: 'About me', link: '/about'}
   - {name: 'Contact', link: '/contact'}
 
-tagline: >
-  My thoughts and experiments on machine learning and related stuff
+#tagline: >
+#  My thoughts and experiments on machine learning and related stuff
 
-hero_img: teste2.jpg # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
+hero_img: teste1.jpg # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
 
 email: vitaliset@gmail.com # email for form submission
 
