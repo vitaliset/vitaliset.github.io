@@ -25,8 +25,8 @@ hero_img: teste1.jpg # Main background image: use the path from /assets/img/ => 
 
 email: vitaliset@gmail.com # email for form submission
 
+linkedin_username: carlo-lemos-946592188
 github_username:  vitaliset # replace with your_github_username or comment to remove link from footer
-# linkedin_username: gdmarmerola
 
 disqus:
   shortname: vitaliset # to enable comments replace with your_disqus_shortname
