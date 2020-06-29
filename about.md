@@ -1,10 +1,8 @@
 ---
 layout: page
-# title: About me
+title: About me
 permalink: /about/
 ---
-
-<!--- (<img align="center" src="https://github.com/gdmarmerola/gdmarmerola.github.io/blob/master/assets/img/gdmarmerola-profile.jpg" width="150"> -->
 
 ![profile]({{ "assets/img/vitali.jpg" | absolute_url }})
 
