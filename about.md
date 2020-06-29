@@ -1,12 +1,10 @@
 ---
 layout: page
 title: Sobre
-image: teste1.jpg
-featured-img: teste1.jpg
 permalink: /sobre/
 ---
 
-![profile]({{ "assets/img/vitali.jpg" | absolute_url }})
+![profile]({{ "assets/img/teste2.jpg" | absolute_url }})
 
 
 Olá, meu nome é Vitali,
