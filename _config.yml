@@ -22,7 +22,7 @@ navigation: # Navigation links
 tagline: >
   My thoughts and experiments on machine learning and related stuff
 
-hero_img: teste1.jpg # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
+hero_img: teste2.jpg # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
 
 email: vitaliset@gmail.com # email for form submission
 
