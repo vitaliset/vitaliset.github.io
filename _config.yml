@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
-title: Vitali Set # your site title
-author: O conjunto de Vitali # You :P
+#title: Vitali Set # your site title
+#author: O conjunto de Vitali # You :P
 #description: > # Meta description of Homepage
 #  My thoughts and experiments on machine learning and related stuff
 baseurl: "/" # the subpath of your site, e.g. /blog
