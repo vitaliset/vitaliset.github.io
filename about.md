@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About me
-permalink: /about/
+title: Sobre
+permalink: /sobre/
 ---
 
 ![profile]({{ "assets/img/vitali.jpg" | absolute_url }})

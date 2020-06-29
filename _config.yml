@@ -15,9 +15,8 @@ social:
 
 # THEME SETTINGS
 navigation: # Navigation links
-  - {name: 'Home', link: '/'}
-  - {name: 'About me', link: '/about'}
-  - {name: 'Contact', link: '/contact'}
+  - {name: 'Início', link: '/'}
+  - {name: 'Sobre', link: '/sobre'}
 
 #tagline: >
 #  My thoughts and experiments on machine learning and related stuff
