@@ -1,10 +1,10 @@
 # SITE CONFIGURATION
-#title: Vitali Set # your site title
-#author: O conjunto de Vitali # You :P
-#description: > # Meta description of Homepage
-#  My thoughts and experiments on machine learning and related stuff
-#baseurl: "/" # the subpath of your site, e.g. /blog
-#url: "https://vitaliset.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+title: Vitali Set # your site title
+author: O conjunto de Vitali # You :P
+description: > # Meta description of Homepage
+  AAAAAAAAAAAAAAAA
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://vitaliset.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
 # SEO PLUGIN
 social:

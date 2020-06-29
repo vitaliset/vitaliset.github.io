@@ -6,7 +6,7 @@ permalink: /about/
 
 <!--- (<img align="center" src="https://github.com/gdmarmerola/gdmarmerola.github.io/blob/master/assets/img/gdmarmerola-profile.jpg" width="150"> -->
 
-![profile]({{ "assets/img/gdmarmerola-profile-50p.jpg" | absolute_url }})
+![profile]({{ "assets/img/vitali.jpg" | absolute_url }})
 
 
 Olá, meu nome é Vitali, sou matemático e cientista de dados. 
