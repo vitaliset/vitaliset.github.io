@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Sobre
 image: teste1.jpg
 permalink: /sobre/
@@ -8,7 +8,7 @@ permalink: /sobre/
 ![profile]({{ "assets/img/vitali.jpg" | absolute_url }})
 
 
-Olá, meu nome é Vitali,
+Olá, meu nome é Vitali,1
 
 Sou estudante de matemática e cientista de dados.
 
