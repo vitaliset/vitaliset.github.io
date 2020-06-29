@@ -1,3 +1,3 @@
-Este blog foi feito a partir do template _Minimal Mistakes_ disponível em https://github.com/mmistakes/minimal-mistakes 
+# gdmarmerola.github.io
 
-Fiz o setup inicial seguindo as intruções do vídeo https://www.youtube.com/watch?v=qWrcgHwSG8M&t=163s
+My webpage drawing inspiration from the Sleek theme: https://github.com/janczizikow/sleek
