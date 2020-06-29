@@ -8,7 +8,7 @@ permalink: /sobre/
 ![profile]({{ "assets/img/vitali.jpg" | absolute_url }})
 
 
-Olá, meu nome é Vitali,1
+Olá, meu nome é Vitali,12
 
 Sou estudante de matemática e cientista de dados.
 
