@@ -55,10 +55,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 1);
   width: 100%;
   max-width: 90%;
-  //z-index: 1;
+  z-index: 1;
 
   @include breakpoint($md) {
     max-width: 40em;
