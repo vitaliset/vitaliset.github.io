@@ -4,7 +4,7 @@ title: Sobre
 permalink: /sobre/
 ---
 
-![profile]({{ "assets/img/teste2.jpg" | absolute_url }})
+[comment]: <![profile]({{ "assets/img/teste2.jpg" | absolute_url }})> 
 
 Olá, meu nome é Vitali,
 
