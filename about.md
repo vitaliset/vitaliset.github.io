@@ -19,7 +19,3 @@ Sou estudante de matemática e cientista de dados.
 
 I hope I can bring useful insights about these topics and others. Feel free to [contact me](https://gdmarmerola.github.io/contact), and also add me on [LinkedIn](https://www.linkedin.com/in/gdmarmerola/)! 
 
-
-
-tittle
-disqus
