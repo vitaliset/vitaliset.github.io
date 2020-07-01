@@ -6,6 +6,7 @@ permalink: /sobre/
 
 ![profile]({{ "assets/img/teste2.jpg" | absolute_url }})
 
+nao comercial
 
 Olá, meu nome é Vitali,
 
