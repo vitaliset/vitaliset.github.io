@@ -22,3 +22,4 @@ I hope I can bring useful insights about these topics and others. Feel free to [
 
 
 tittle
+disqus
