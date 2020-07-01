@@ -6,7 +6,6 @@ permalink: /sobre/
 
 ![profile]({{ "assets/img/teste2.jpg" | absolute_url }})
 
-tirando icones___
 
 Olá, meu nome é Vitali,
 
