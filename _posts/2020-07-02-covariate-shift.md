@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Covariate Shift&#58; 0 Formulando o problema
+title: Covariate Shift
 mathjax: true
 summary: Neste post apresento um problema clássico de dataset shift com um exemplo visual
 ---
