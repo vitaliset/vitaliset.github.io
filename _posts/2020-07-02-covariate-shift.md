@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Covariate Shift 0: Formulando o problema
+title: Covariate Shift&#58; 0 Formulando o problema
 mathjax: true
-summary: Nest post apresento um problema clássico de dataset shift com um exemplo visual
+summary: Neste post apresento um problema clássico de dataset shift com um exemplo visual
 ---
 
 # Covariate Shift 0: Formulando o problema
