@@ -60,7 +60,8 @@ X_past, Y_past = sample(100)
 Apesar do ruído ser da ordem de grandeza $f$, é possível visualizar o padrão da função que guia a geração dos dados, como observamos na Figura 1. Estamos interessados em fazer previsões: dadas novas observações de $x$, queremos estimar os respectivos valores para $y$.
 
 <center><img src="{{ site.baseurl }}/assets/img/covariate_0_formulando/imagem1.png"></center>
-<center>Figura 1: Os pontos azuis são nossas observações e em preto temos a curva que gerou os dados.</center>
+<center>**Figura 1**: Os pontos azuis são nossas observações e em preto temos a curva que gerou os dados.</center>
+
 
 Usaremos um modelo simples para fazer a regressão, a Árvore de Decisão. Com um *GridSearch*, escolhemos o melhor valor para o mínimo de exemplos por folha (parâmetro de regularização, evitando *overfit*). Olhando, ainda, a validação cruzada para um *k-fold* com 5 pastas, estimamos o valor de $R^2$ se utilizássemos a árvore em dados nunca vistos.
 
@@ -79,7 +80,8 @@ dtr.fit(X_past,Y_past)
 ```
 
 <center><img src="{{ site.baseurl }}/assets/img/covariate_0_formulando/imagem2.png"></center>
-<center>Figura 2: Adicionamos, em vermelho, a função estimada pelo modelo que tenta se aproximar da geradora, em preto.</center>
+<center>**Figura 2**: Adicionamos, em vermelho, a função estimada pelo modelo que tenta se aproximar da geradora, em preto.</center>
+
 
 Graficamente, vemos que o modelo faz um trabalho razoável ao redor do $0$, e perde a qualidade nas bordas, onde há menos exemplos de treinamento.
 
@@ -92,12 +94,14 @@ X_new, Y_new = sample(100, mean = 2)
 Os dados agora estão distribuídos mais a direita, como podemos visualizar na Figura 3.
 
 <center><img src="{{ site.baseurl }}/assets/img/covariate_0_formulando/imagem3.png"></center>
-<center>Figura 3: Histograma comparando a distribuição das duas amostras que temos. Em azul a feita quando X tinha média 0 e em laranja a nova, com média 2.</center>
+<center>**Figura 3**: Histograma comparando a distribuição das duas amostras que temos. Em azul a feita quando X tinha média 0 e em laranja a nova, com média 2.</center>
+
 
 É razoável esperar que o desempenho do nosso modelo continue o mesmo? Podemos ver na Figura 4 que não.
 
 <center><img src="{{ site.baseurl }}/assets/img/covariate_0_formulando/imagem4.png"></center>
-<center>Figura 4: Agora, para os novos dados em laranja, extendemos o domínio do nosso modelo e vemos que ele não faz um bom trabalho tentando aproximar a curva geradora.</center>
+<center>**Figura 4**: Agora, para os novos dados em laranja, extendemos o domínio do nosso modelo e vemos que ele não faz um bom trabalho tentando aproximar a curva geradora.</center>
+
 
 Como esperado, a qualidade do modelo cai para um $R^2$ de $-0.283$ nos dados novos. Isto lembrando que a relação entre $X$ e $Y$ não mudou, apenas a distribuição de $X$.
 
@@ -107,10 +111,4 @@ Dada a motivação inicial o problema se resume ao seguinte enunciado:
 
 > Seja $X$ e $Z$ variáveis (ou vetores) aleatórias. Suponha que eu amostre $X$ de forma independente $N\in\mathbb{N}^\*$ vezes e repita $Z$ seja amostrada também de forma independente $M\in \mathbb{N}^\*$ vezes ficando com as amostras $\{x_1, x_2, \cdots, x_N \} $ e $\{z_1, z_2, \cdots, z_M \} $. Como saber se $X\sim Z$ olhando apenas para as duas amostras?
 
-Nesta série de postagens pretendo apresentar alguns métodos para identificar o *Covariate Shift*:
-
--  usando o _qq-plot_,
-- usando o teste-KS,
-- usando uma abordagem com machine learning.
-
-E, pelo menos, uma maneira de tratá-lo.
+Nesta série de postagens pretendo apresentar alguns métodos para identificar o *Covariate Shift* e, pelo menos, uma maneira de tratá-lo.
