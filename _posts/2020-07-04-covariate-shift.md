@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Covariate Shift&#58; Formulando o problema
+featured-img: covariate_0_formulando
+image: covariate_0_formulando
+category: [dataset shift]
 mathjax: true
 summary: Nesta postagem discutimos o problema dataset shift com um exemplo visual
 ---
