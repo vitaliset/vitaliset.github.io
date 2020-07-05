@@ -60,7 +60,7 @@ X_past, Y_past = sample(100)
 
 Apesar do ruído ser da ordem de grandeza $f$, é possível visualizar o padrão da função que guia a geração dos dados, como observamos na Figura 1. Estamos interessados em fazer previsões: dadas novas observações de $x$, queremos estimar os respectivos valores para $y$.
 
-<center><img src="{{ site.baseurl }}/assets/img/covariate_0_formulando/imagem1.png"></center>
+<center><img src="{{ site.baseurl }}/assets/img/covariate_0_formulando_post/imagem1.png"></center>
 <center><b>Figura 1</b>: Os pontos azuis são nossas observações e em preto temos a curva que gerou os dados.</center>
 <span style="white-space: pre-line">@Model.CommentText</span>
 
@@ -80,7 +80,7 @@ dtr = DecisionTreeRegressor(min_samples_leaf = grid_search.best_params_['min_sam
 dtr.fit(X_past,Y_past)
 ```
 
-<center><img src="{{ site.baseurl }}/assets/img/covariate_0_formulando/imagem2.png"></center>
+<center><img src="{{ site.baseurl }}/assets/img/covariate_0_formulando_post/imagem2.png"></center>
 <center><b>Figura 2</b>: Adicionamos, em vermelho, a função estimada pelo modelo que tenta se aproximar da geradora, em preto.</center>
 <span style="white-space: pre-line">@Model.CommentText</span>
 
@@ -94,13 +94,13 @@ X_new, Y_new = sample(100, mean = 2)
 
 Os dados agora estão distribuídos mais a direita, como podemos visualizar na Figura 3.
 
-<center><img src="{{ site.baseurl }}/assets/img/covariate_0_formulando/imagem3.png"></center>
+<center><img src="{{ site.baseurl }}/assets/img/covariate_0_formulando_post/imagem3.png"></center>
 <center><b>Figura 3</b>: Histograma comparando a distribuição das duas amostras que temos. Em azul a feita quando X tinha média 0 e em laranja a nova, com média 2.</center>
 <span style="white-space: pre-line">@Model.CommentText</span>
 
 É razoável esperar que o desempenho do nosso modelo continue o mesmo? Podemos ver na Figura 4 que não.
 
-<center><img src="{{ site.baseurl }}/assets/img/covariate_0_formulando/imagem4.png"></center>
+<center><img src="{{ site.baseurl }}/assets/img/covariate_0_formulando_post/imagem4.png"></center>
 <center><b>Figura 4</b>: Agora, para os novos dados em laranja, extendemos o domínio do nosso modelo e vemos que ele não faz um bom trabalho tentando aproximar a curva geradora.</center>
 <span style="white-space: pre-line">@Model.CommentText</span>
 
