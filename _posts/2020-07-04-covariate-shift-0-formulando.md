@@ -12,13 +12,11 @@ summary: Nesta postagem discutimos o problema dataset shift com um exemplo visua
 
 Um dos objetivos do aprendizado supervisionado é tentar reconhecer padrões entre variáveis explicativas e uma variável alvo. Matematicamente, temos um vetor aleatório $V = (X_1, X_2, \cdots, X_n, Y)$ e supomos que existe uma relação entre as variáveis explicativas $X_i$ e a variável alvo $Y$ do tipo
 
-
 $$
 \begin{equation*}
 Y \sim f(X_1, X_2,\cdots, X_n) + \varepsilon,
 \end{equation*}
 $$
-
 
 onde $f:\mathbb{R}^n\to \mathbb{R}$ é uma função qualquer e $\varepsilon$ é uma variável aleatória com média $0$ chamada de ruído (que possivelmente pode mudar dependendo dos valores de $X_i$ também). O objetivo do paradigma de aprendizado supervisionado é estimar a função $f$ com observações anteriores (uma amostra do vetor aleatório $V$).
 
@@ -64,7 +62,7 @@ Apesar do ruído ser da ordem de grandeza $f$, é possível visualizar o padrão
 
 <center><img src="{{ site.baseurl }}/assets/img/covariate_0_formulando/imagem1.png"></center>
 <center><b>Figura 1</b>: Os pontos azuis são nossas observações e em preto temos a curva que gerou os dados.</center>
-
+<span style="white-space: pre-line">@Model.CommentText</span>
 
 Usaremos um modelo simples para fazer a regressão, a Árvore de Decisão. Com um *GridSearch*, escolhemos o melhor valor para o mínimo de exemplos por folha (parâmetro de regularização, evitando *overfit*). Olhando, ainda, a validação cruzada para um *k-fold* com 5 pastas, estimamos o valor de $R^2$ se utilizássemos a árvore em dados nunca vistos.
 
@@ -84,7 +82,7 @@ dtr.fit(X_past,Y_past)
 
 <center><img src="{{ site.baseurl }}/assets/img/covariate_0_formulando/imagem2.png"></center>
 <center><b>Figura 2</b>: Adicionamos, em vermelho, a função estimada pelo modelo que tenta se aproximar da geradora, em preto.</center>
-
+<span style="white-space: pre-line">@Model.CommentText</span>
 
 Graficamente, vemos que o modelo faz um trabalho razoável ao redor do $0$, e perde a qualidade nas bordas, onde há menos exemplos de treinamento.
 
@@ -98,13 +96,13 @@ Os dados agora estão distribuídos mais a direita, como podemos visualizar na F
 
 <center><img src="{{ site.baseurl }}/assets/img/covariate_0_formulando/imagem3.png"></center>
 <center><b>Figura 3</b>: Histograma comparando a distribuição das duas amostras que temos. Em azul a feita quando X tinha média 0 e em laranja a nova, com média 2.</center>
-
+<span style="white-space: pre-line">@Model.CommentText</span>
 
 É razoável esperar que o desempenho do nosso modelo continue o mesmo? Podemos ver na Figura 4 que não.
 
 <center><img src="{{ site.baseurl }}/assets/img/covariate_0_formulando/imagem4.png"></center>
 <center><b>Figura 4</b>: Agora, para os novos dados em laranja, extendemos o domínio do nosso modelo e vemos que ele não faz um bom trabalho tentando aproximar a curva geradora.</center>
-
+<span style="white-space: pre-line">@Model.CommentText</span>
 
 Como esperado, a qualidade do modelo cai para um $R^2$ de $-0.283$ nos dados novos. Isto lembrando que a relação entre $X$ e $Y$ não mudou, apenas a distribuição de $X$.
 
