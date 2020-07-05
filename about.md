@@ -3,7 +3,7 @@ layout: page
 title: Sobre
 permalink: /sobre/
 ---
-q
+
 [comment]: <![profile]({{ "assets/img/teste2.jpg" | absolute_url }})> 
 
 Olá, meu nome é Vitali,
