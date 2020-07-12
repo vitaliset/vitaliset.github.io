@@ -16,6 +16,10 @@ Atualmente estou estudando Aprendizado de Máquina sobre uma perspectiva mais es
 
 Fique a vontade para me contatar também pelo [LinkedIn](https://www.linkedin.com/in/carlo-lemos-946592188). Lá tem um pouco das minhas experiências acadêmicas e profissionais. 
 
+## Visual do site
+
+A imagem de capa é um trabalho feito pelo talentoso [Lucas Álamo](https://www.instagram.com/alamo0o/). O layout é uma pequena adaptação do tema [Sleek](https://janczizikow.github.io/sleek/).
+
 [comment]: Eu andava de bicicleta Quando não pude desviar de um arame farpado. O pior foi que o dono do lote não quis me ajudar, riu bastante mim após agonizar por 2 horas enroscada no arame eu faleci, através dessa mensagem eu peço que façam com que eu possa descançar em paz. Envie isso para 20 comunidades e minha alma estara sendo salva por você e pelos outros 20 que receberão. Caso não repasse essa mensagem vou visitar-lhe hoje a noite assim vc poderá conhecer o tal arame bem de pertinho. Dia 15 de Julho Mariana resolveu rir dessa mensagem, uma noite depois ela sumiu sem deixar vestigios. O mesmo aconteceu com Kare dia 18 de Outubro. Não Quebre essa corrente por favor, a não ser que queira sentir a minha presença
 
 [comment]: Tenho o costume de definir os objetos com que estou trabalhando adaptando as regras que eu ache que façam sentido... (rsrsrs) Isto pode ser problemático! Eventualmente posso definir elementos de forma contraditória ou incorreta. Vou tentar colocar sempre as referências dos assuntos, minimizando esse efeito, mas se você perceber algo suspeito <a href="mailto:carlo_lemos@hotmail.com">entre em contato</a> POR FAVOR! Minha formação interdisciplinar me permitiu estar em contato com vários assuntos durante a graduação. Por isso falo com propriedade sobre temas que tenho conhecimento superficial (rs).  
