@@ -105,6 +105,6 @@ Como esperado, a qualidade do modelo cai para um $R^2$ de $-0.283$ nos dados nov
 
 Dada a motivação inicial o problema se resume ao seguinte enunciado:
 
-> Seja $X$ e $Z$ variáveis (ou vetores) aleatórias. Suponha que eu amostre $X$ de forma independente $N\in\mathbb{N}^\*$ vezes e repita $Z$ seja amostrada também de forma independente $M\in \mathbb{N}^\*$ vezes ficando com as amostras ${x_1, x_2, \cdots, x_N } $ e ${z_1, z_2, \cdots, z_M } $. Como saber se $X\sim Z$ olhando apenas para as duas amostras?
+> Seja $X$ e $Z$ variáveis (ou vetores) aleatórias. Suponha que eu amostre $X$ de forma independente $N\in\mathbb{N}^\*$ vezes e repita $Z$ seja amostrada também de forma independente $M\in \mathbb{N}^\*$ vezes ficando com as amostras $\\{x_1, x_2, \cdots, x_N \\} $ e $\\{z_1, z_2, \cdots, z_M \\} $. Como saber se $X\sim Z$ olhando apenas para as duas amostras?
 
 Nesta série de postagens pretendo apresentar alguns métodos para identificar o *Covariate Shift* e, pelo menos, uma maneira de tratá-lo.
