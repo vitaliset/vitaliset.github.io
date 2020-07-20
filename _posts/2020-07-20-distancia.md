@@ -71,8 +71,7 @@ Para ilustrar como essa diferentes formas de medir distância funcionam, vamos d
 
 Primeiro, teremos um parâmetro relacionado com o ponto central. Este será o elemento com o qual compararemos os outros, tentando responder se estão próximos ou não. Além disso, o significado de perto depende da nossa tolerância: duas pessoas sentadas a menos de 1 metro é perto (ainda mais em época de corona vírus), mas um meteoro a 1 quilometro da terra também é perto aos olhos de um astrônomo. A bola também terá um parâmetro que nos dará até quanto estamos considerando perto.
 
-**Definição:** Seja $d$ uma métrica em um conjunto $\mathcal{A}$. Uma **bola aberta** de raio $r$ centrada no ponto $x\in \mathcal{A}$ é o conjunto
-
+**Definição:** Seja $d$ uma métrica em um conjunto $\mathcal{A}$. Uma **bola aberta** de raio $r>0$ centrada no ponto $x\in \mathcal{A}$ é o conjunto
 $$
 \begin{equation*}
  B_r(x) = \{ y\in \mathcal{A} : d(x,y)<r\}.
@@ -81,7 +80,7 @@ $$
 
 Os elementos de $B_r(x)$ são justamente os elementos de $\mathcal{A}$ perto de $x$ (sob essa tolerância de raio $r$)
 
-Vamos brincar com o formato dessas bolas quando $\mathcal{A}=\mathbb{R}^2$ e $d=d_p$ quando variamos o valor do $p$.
+Vamos brincar com o formato dessas bolas quando $\mathcal{A}=\mathbb{R}^2$ e $d=d_p$ quando variamos o valor do $p$. Essas métricas já estão implementadas no [`sklearn.neighbors.DistanceMetric`](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html), vamos criar uma função que plota essas boas de métrica, raio e centro arbitrários.
 
 ```python
 def bola_aberta(dist_list, raio = 1, centro = [0,0]):
@@ -125,10 +124,10 @@ lista_distancias.append(neigh.DistanceMetric.get_metric('chebyshev'))
 bola_aberta(lista_distancias)
 ```
 
-<center><img src="{{ site.baseurl }}/assets/img/distancia/imagem1.jpg"></center>
-<center><b>Figura 1</b>: Formato de bolas do plano para diferentes valores de p da métrica de Minkowski.</center>
+<center><img src="imagem1.jpg"></center>
+<center><b>Figura 1</b>: Formato de bolas do plano para diferentes valores de p da métrica de Minkowski. A região cinza é o lado de fora da bola e a região vermelha é o lado de dentro.</center>
 
-Eu não gosto de Chaves, mas impossível não fazer um comentário infeliz sobre as bolas quadradas do Kiko estarem na verdade utilizando a métrica de Chebyshev. Kiko entendia bastante de topologia de espaços métricos.
+Eu nunca vou entender qual é a graça de Chaves, mas impossível não fazer um comentário infeliz sobre as bolas quadradas do Kiko estarem na verdade utilizando a métrica de Chebyshev. Kiko, como você agora, entende bastante de topologia de espaços métricos.
 
 ## Mais exemplos
 
@@ -146,9 +145,30 @@ d(x,y)=
 \end{cases}
 \end{equation*}
 $$
-Aqui, a noção de perto ou distante é um pouco contra-intuitiva. Se $\mathcal{A}=\mathbb{R}^2$, então o ponto $(0,0)$ está a mesma distância do ponto $(0,1)$ e do ponto $(42,-42)$.
-
 É um exercício legal se convencer que esta forma de distância satisfaz as propriedades que desejávamos na definição de métrica.
+
+Aqui, a noção de perto ou distante é um pouco contra-intuitiva. Se $\mathcal{A}=\mathbb{R}^2$, então o ponto $(0,0)$ está a mesma distância do ponto $(0,1)$ e do ponto $(42,-42)$. Podemos olhar isso analisando as bolas para diferentes valores do raio $r$. Para qualquer $r\in (0,1]$, a temos que $B\_r(x) = \{ x \}$ pois somente $x$ está a uma distância menor que 1 dele mesmo. Agora, para qualquer $r\in (1,\infty)$ temos que $B\_r(x) = \mathcal{A}$ uma vez que qualquer ponto está a uma distância menor ou igual a 1 de $x$. 
+
+No [`sklearn.neighbors.DistanceMetric`](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html), podemos passar uma métrica genérica que respeite a definição que fizemos. Usando o argumento `'pyfunc'` e estabelecendo a função métrica em `func`  que recebe dois vetores numpy unidimensionais e retorna a distância entre eles.
+
+```python
+def discrete(X, Y):
+    """
+    X, Y: vetores que queremos calcular a distância (np array of floats)
+    return distância entre o ponto X e Y
+    """
+    if np.all(X == Y):
+        return 0
+    else:
+        return 1
+            
+bola_aberta([neigh.DistanceMetric.get_metric('pyfunc', func = discrete)]*2,[0.5, 1.5])
+```
+
+Na Figura 2, passamos como raios das bolas os valores $0.5$ e $1.5$, para ver o efeito discutido anteriormente de que $B\_0.5((0,0))=\{(0,0)\}$ e $B\_2((0,0))=\mathbb{R}$.
+
+<center><img src="imagem2.jpg"></center>
+<center><b>Figura 2</b>: Bolas da métrica discreta. Lembrando que a região cinza é o lado de fora da bola e a região vermelha é o lado de dentro. Na primeira imagem, não podemos ver que o ponto (0,0) está dentro da bola pela resolução.</center>
 
 ### Distância de Hamming
 
@@ -232,5 +252,20 @@ $$
 d_{\max}(f,g) = \max_{x \,\in \,[a,b]} |f(x) - g(x)|.
 \end{equation*}
 $$
-Ou seja, a distância entre duas funções é dada pelo máximo do módulo da diferença em cada ponto. 
+Ou seja, a distância entre duas funções é dada pelo máximo do módulo da diferença em cada ponto.
 
+Por exemplo, se queremos calcular a distância entre as funções $f(x)=(x-0.4)^2$ e $g(x) = 2.5$, temos que achar o valor que maximiza a função $h(x) = \| (x-0.4)^2 - 2.5\|$, plotada na primeira imagem da Figura 3. Isso nem sempre é uma tarefa fácil, pois não temos nenhuma hipótese sobre a diferenciabilidade das nossas funções e o módulo atrapalha ainda mais criando novos picos. Na segunda imagem da Figura 2 temos uma interpretação visual do que queremos. O valor da distância será o local em que as curvas estão mais distantes.
+
+<center><img src="imagem3.jpg"></center>
+<center><b>Figura 3</b>: Na primeira imagem temos o módulo da diferença das funções avaliadas. Na segunda imagem temos $f$ em vermelho, $g$ em azul e alguns valores da distância pontual das funções em alguns valores de $x$ em cinza. Em preto temos o ponto que representa a distância entre essas duas funções, valendo $2.5$, nesse caso.</center>
+
+As bolas dessa métrica são coisas muito interessantes. Nessa métrica, a bola de raio $r>0$ ao redor da função $f:[a,b]\to\mathbb{R}$ são todas as funções (definidas no intervalo $[a,b]$) que ficam sempre dentro da faixa ao redor de $f$ de largura $2r$. Na Figura 4 temos um exemplo disso. A função $g(x) = (x-0.4)^2 + 0.4\sin(30x)$ está dentro da bola $B\_{0.5}((x-0.4)^2)$ pois a a distância entre elas é $\max \|0.4 \sin(x) \|<0.5$.
+
+<center><img src="imagem4.jpg"></center>
+<center><b>Figura 3</b>: A bola de raio $0.5$ centrada na função preta são todas as funções que estão limitadas pela faixa azul e vermelha. A função verde é um exemplo.</center>
+
+> No post Covariate Shift: Teste KS (até fim de agosto) falarei como usar uma variação dessa distância pra definir uma distância entre variáveis aleatórias.
+
+### Distância Ponderada
+
+Em muitos casos pode ser importante atribuir um peso maior para alguma das coordenadas. Por exemplo, se $\mathcal{A}=\mathbb{R}^2$ e estar perto na coordenada $x_1$ é $10$ vezes mais importante do que estar perto na coordenada $x_2$.
