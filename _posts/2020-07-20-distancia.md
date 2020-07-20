@@ -124,7 +124,7 @@ lista_distancias.append(neigh.DistanceMetric.get_metric('chebyshev'))
 bola_aberta(lista_distancias)
 ```
 
-<center><img src="imagem1.jpg"></center>
+<center><img src="{{ site.baseurl }}/assets/img/distancia/imagem1.jpg"></center>
 <center><b>Figura 1</b>: Formato de bolas do plano para diferentes valores de p da métrica de Minkowski. A região cinza é o lado de fora da bola e a região vermelha é o lado de dentro.</center>
 
 Eu nunca vou entender qual é a graça de Chaves, mas impossível não fazer um comentário infeliz sobre as bolas quadradas do Kiko estarem na verdade utilizando a métrica de Chebyshev. Kiko, como você agora, entende bastante de topologia de espaços métricos.
@@ -167,7 +167,7 @@ bola_aberta([neigh.DistanceMetric.get_metric('pyfunc', func = discrete)]*2,[0.5,
 
 Na Figura 2, passamos como raios das bolas os valores $0.5$ e $1.5$, para ver o efeito discutido anteriormente de que $B\_0.5((0,0))=\{(0,0)\}$ e $B\_2((0,0))=\mathbb{R}$.
 
-<center><img src="imagem2.jpg"></center>
+<center><img src="{{ site.baseurl }}/assets/img/distancia/imagem2.jpg"></center>
 <center><b>Figura 2</b>: Bolas da métrica discreta. Lembrando que a região cinza é o lado de fora da bola e a região vermelha é o lado de dentro. Na primeira imagem, não podemos ver que o ponto (0,0) está dentro da bola pela resolução.</center>
 
 ### Distância de Hamming
@@ -256,12 +256,12 @@ Ou seja, a distância entre duas funções é dada pelo máximo do módulo da di
 
 Por exemplo, se queremos calcular a distância entre as funções $f(x)=(x-0.4)^2$ e $g(x) = 2.5$, temos que achar o valor que maximiza a função $h(x) = \| (x-0.4)^2 - 2.5\|$, plotada na primeira imagem da Figura 3. Isso nem sempre é uma tarefa fácil, pois não temos nenhuma hipótese sobre a diferenciabilidade das nossas funções e o módulo atrapalha ainda mais criando novos picos. Na segunda imagem da Figura 2 temos uma interpretação visual do que queremos. O valor da distância será o local em que as curvas estão mais distantes.
 
-<center><img src="imagem3.jpg"></center>
+<center><img src="{{ site.baseurl }}/assets/img/distancia/imagem3.jpg"></center>
 <center><b>Figura 3</b>: Na primeira imagem temos o módulo da diferença das funções avaliadas. Na segunda imagem temos $f$ em vermelho, $g$ em azul e alguns valores da distância pontual das funções em alguns valores de $x$ em cinza. Em preto temos o ponto que representa a distância entre essas duas funções, valendo $2.5$, nesse caso.</center>
 
 As bolas dessa métrica são coisas muito interessantes. Nessa métrica, a bola de raio $r>0$ ao redor da função $f:[a,b]\to\mathbb{R}$ são todas as funções (definidas no intervalo $[a,b]$) que ficam sempre dentro da faixa ao redor de $f$ de largura $2r$. Na Figura 4 temos um exemplo disso. A função $g(x) = (x-0.4)^2 + 0.4\sin(30x)$ está dentro da bola $B\_{0.5}((x-0.4)^2)$ pois a a distância entre elas é $\max \|0.4 \sin(x) \|<0.5$.
 
-<center><img src="imagem4.jpg"></center>
+<center><img src="{{ site.baseurl }}/assets/img/distancia/imagem4.jpg"></center>
 <center><b>Figura 3</b>: A bola de raio $0.5$ centrada na função preta são todas as funções que estão limitadas pela faixa azul e vermelha. A função verde é um exemplo.</center>
 
 > No post Covariate Shift: Teste KS (até fim de agosto) falarei como usar uma variação dessa distância pra definir uma distância entre variáveis aleatórias.
