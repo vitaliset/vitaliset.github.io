@@ -275,7 +275,7 @@ Por exemplo, se queremos calcular a distância entre as funções $f(x)=(x-0.4)^
 <p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem3.jpg"></center>
 <center><b>Figura 3</b>: Na primeira imagem temos o módulo da diferença das funções avaliadas. Na segunda imagem temos $f$ em vermelho, $g$ em azul e alguns valores da distância pontual das funções em alguns valores de $x$ em cinza. Em preto temos o ponto que representa a distância entre essas duas funções, valendo $2.5$, nesse caso.</center></p>
 
-Nessa métrica, a bola de raio $r>0$ ao redor da função $f:[a,b]\to\mathbb{R}$ são todas as funções (definidas no intervalo $[a,b]$) que ficam sempre dentro da faixa ao redor de $f$ de largura $2r$. Na Figura 4 temos um exemplo disso. A função $g(x) = (x-0.4)^2 + 0.4\sin(30x)$ está dentro da bola $B\_{0.5}((x-0.4)^2)$ pois a a distância entre elas é $\max \|0.4 \sin(x) \|<0.5$.
+Nessa métrica, a bola de raio $r>0$ ao redor da função $f:[a,b]\to\mathbb{R}$ são todas as funções (definidas no intervalo $[a,b]$) que ficam sempre dentro da faixa ao redor de $f$ de largura $2r$. Na Figura 4 temos um exemplo disso. A função $g(x) = (x-0.4)^2 + 0.4\sin(30x)$ está dentro da bola $B\_{0.5}((x-0.4)^2)$ pois a a distância entre elas é $\max_{x\in[0,1]} \|0.4 \sin(30x) \|<0.5$.
 
 <p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem4.jpg"></center>
 <center><b>Figura 4</b>: A bola de raio $0.5$ centrada na função preta são todas as funções que estão limitadas pela faixa vermelha. A função verde é um exemplo que está na bola pois não sai desse limite.</center></p>
