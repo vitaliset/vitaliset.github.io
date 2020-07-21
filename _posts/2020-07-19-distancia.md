@@ -71,7 +71,7 @@ Primeiro, teremos um parâmetro relacionado com o ponto central. Este será o el
 
 $$
 \begin{equation*}
- B_r(x) = \\{ y\in \mathcal{A} : d(x,y)<r \\}.
+ B_r(x) = \\{ y\in \mathcal{A} : d(x,y) < r \\}.
  \end{equation*}
 $$
 
@@ -128,8 +128,8 @@ lista_distancias.append(neigh.DistanceMetric.get_metric('chebyshev'))
 bola_aberta(lista_distancias)
 ```
 
-<center><img src="{{ site.baseurl }}/assets/img/distancia/imagem1.jpg"></center>
-<center><b>Figura 1</b>: Formato de bolas do plano para diferentes valores de p da métrica de Minkowski. A região cinza é o lado de fora da bola e a região vermelha é o lado de dentro.</center>
+<p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem1.jpg"></center>
+<center><b>Figura 1</b>: Formato de bolas do plano para diferentes valores de p da métrica de Minkowski. A região cinza é o lado de fora da bola e a região vermelha é o lado de dentro.</center></p>
 
 Eu nunca vou entender qual é a graça de Chaves, mas impossível não fazer um comentário infeliz sobre as bolas quadradas do Kiko estarem na verdade utilizando a métrica de Chebyshev. O Kiko, como você agora, entende bastante de topologia de espaços métricos.
 
@@ -173,8 +173,8 @@ bola_aberta([neigh.DistanceMetric.get_metric('pyfunc', func = discrete)]*2,[0.5,
 
 Na Figura 2, passamos como raios das bolas os valores $0.5$ e $1.5$, para ver o efeito discutido anteriormente de que $B\_0.5((0,0))=\\{(0,0)\\}$ e $B\_2((0,0))=\mathbb{R}$.
 
-<center><img src="{{ site.baseurl }}/assets/img/distancia/imagem2.jpg"></center>
-<center><b>Figura 2</b>: Bolas da métrica discreta. Lembrando que a região cinza é o lado de fora da bola e a região vermelha é o lado de dentro. Na primeira imagem, não podemos ver que o ponto (0,0) está dentro da bola pela resolução.</center>
+<p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem2.jpg"></center>
+<center><b>Figura 2</b>: Bolas da métrica discreta. Lembrando que a região cinza é o lado de fora da bola e a região vermelha é o lado de dentro. Na primeira imagem, não podemos ver que o ponto (0,0) está dentro da bola pela resolução.</center></p>
 
 ### <center>Distância de Hamming</center>
 
@@ -222,7 +222,7 @@ em que o argumento do arco cosseno é justamente o produto interno entre os veto
 
 É importante reparar que fizemos a restrição de olhar apenas para vetores de tamanho $1$ pra satisfazer a definição de métrica que fizemos. Olhar o ângulo entre vetores de tamanho qualquer não nos dá uma métrica pois não temos a propriedade de identidade: o ângulo entre os vetores $(1,0)$ e $(2,0)$ é $0$ entretanto $(1,0)\neq (2,0)$. Além disso, não é possível definir o ângulo entre um vetor qualquer e o vetor nulo.
 
-Podemos generalizar essa distância para vetores em dimensões maiores na superfície de uma hiper-esfera unitária $\mathcal{A} = S^{\,n-1} = \\{ \textbf{x}\in\mathbb{R}^n : ||\textbf{x}||_2 = 1 \\}$. Calculamos a  distância entre $\textbf{x} = (x_1, x_2, \cdots, x_n)$ e $\textbf{y} = (y_1, y_2, \cdots, y_n)$, como
+Podemos generalizar essa distância para vetores em dimensões maiores na superfície de uma hiper-esfera unitária $\mathcal{A} = S^{\,n-1} = \\{ \textbf{x}\in\mathbb{R}^n : \|\|\textbf{x}\|\|_2 = 1 \\}$. Calculamos a  distância entre $\textbf{x} = (x_1, x_2, \cdots, x_n)$ e $\textbf{y} = (y_1, y_2, \cdots, y_n)$, como
 
 $$
 \begin{equation*}
@@ -251,14 +251,14 @@ Com esta representação numérica, a princípio, podemos usar qualquer métrica
 A ideia agora é normalizar os vetores e estamos prontos para calcular a distância. A distância, neste caso é dada por
 $$
 \begin{equation*}
-d_{\textrm{ang}}(\textrm{texto}\_1, \textrm{texto}\_2) = \arccos \left( \frac{1\cdot0 + 2\cdot1 + 2\cdot 1}{\sqrt{5} \,\cdot \sqrt{2} }  \right) = 0.369\pi.
+d_{\textrm{ang}}(\textrm{texto}_1, \textrm{texto}_2) = \arccos \left( \frac{1\cdot0 + 2\cdot1 + 2\cdot 1}{\sqrt{5} \,\cdot \sqrt{2} }  \right) = 0.369\pi.
 \end{equation*}
 $$
 Considerando que essa distância vale no mínimo 0 e no máximo $\pi$, temos textos razoavelmente parecidos.
 
 >  Essa abordagem apresenta inúmeras simplificações que fazem a gente perder a qualidade da resposta. Por exemplo, sabemos que palavras diferentes podem significar a mesma coisa (ou conjugações diferentes, plurais etc). Palavras iguais em contextos diferentes podem ter significados diferentes. Existem palavras comuns a vários textos ou que ocorrem muitas vezes no mesmo texto que podem não ser úteis. Em muitos casos a ordem das palavras é muito importante e mudam o sentido de uma frase (como usar a palavra "_não_"). Entre outros problemas.
 
- ### <center>Distância entre funções contínuas</center>
+### <center>Distância entre funções contínuas</center>
 
 Seja agora $\mathcal{A}=C^{\,0}[a,b] = \\{f \in \mathbb{R}^{[a,b]}: f \textrm{ contínua}\\}$, o conjunto das funções contínuas com domínio $[a,b]\subset\mathbb{R}$ e contradomínio $\mathbb{R}$.  Podemos definir a distância entre as funções $f,g\in\mathcal{A}$ como 
 
@@ -272,13 +272,13 @@ Ou seja, a distância entre duas funções é dada pelo máximo do módulo da di
 
 Por exemplo, se queremos calcular a distância entre as funções $f(x)=(x-0.4)^2$ e $g(x) = 2.5$, temos que achar o valor que maximiza a função $h(x) = \| (x-0.4)^2 - 2.5\|$, plotada na primeira imagem da Figura 3. Isso nem sempre é uma tarefa fácil, pois não temos nenhuma hipótese sobre a diferenciabilidade das nossas funções e o módulo atrapalha ainda mais criando novos picos. Na segunda imagem da Figura 2 temos uma interpretação visual do que queremos. O valor da distância será o local em que as curvas estão mais distantes.
 
-<center><img src="{{ site.baseurl }}/assets/img/distancia/imagem3.jpg"></center>
-<center><b>Figura 3</b>: Na primeira imagem temos o módulo da diferença das funções avaliadas. Na segunda imagem temos $f$ em vermelho, $g$ em azul e alguns valores da distância pontual das funções em alguns valores de $x$ em cinza. Em preto temos o ponto que representa a distância entre essas duas funções, valendo $2.5$, nesse caso.</center>
+<p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem3.jpg"></center>
+<center><b>Figura 3</b>: Na primeira imagem temos o módulo da diferença das funções avaliadas. Na segunda imagem temos $f$ em vermelho, $g$ em azul e alguns valores da distância pontual das funções em alguns valores de $x$ em cinza. Em preto temos o ponto que representa a distância entre essas duas funções, valendo $2.5$, nesse caso.</center></p>
 
 Nessa métrica, a bola de raio $r>0$ ao redor da função $f:[a,b]\to\mathbb{R}$ são todas as funções (definidas no intervalo $[a,b]$) que ficam sempre dentro da faixa ao redor de $f$ de largura $2r$. Na Figura 4 temos um exemplo disso. A função $g(x) = (x-0.4)^2 + 0.4\sin(30x)$ está dentro da bola $B\_{0.5}((x-0.4)^2)$ pois a a distância entre elas é $\max \|0.4 \sin(x) \|<0.5$.
 
-<center><img src="{{ site.baseurl }}/assets/img/distancia/imagem4.jpg"></center>
-<center><b>Figura 4</b>: A bola de raio $0.5$ centrada na função preta são todas as funções que estão limitadas pela faixa vermelha. A função verde é um exemplo que está na bola pois não sai desse limite.</center>
+<p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem4.jpg"></center>
+<center><b>Figura 4</b>: A bola de raio $0.5$ centrada na função preta são todas as funções que estão limitadas pela faixa vermelha. A função verde é um exemplo que está na bola pois não sai desse limite.</center></p>
 
 > No post Covariate Shift: Teste KS (até fim de agosto) falarei como usar uma variação dessa distância pra definir uma distância entre variáveis aleatórias.
 
@@ -337,6 +337,6 @@ A= \begin{bmatrix}
 \end{bmatrix}.
 $$
 
-<center><img src="{{ site.baseurl }}/assets/img/distancia/imagem5.jpg"></center>
-<center><b>Figura 5</b>: Bolas de raio 1 e centro na origem para diferentes matrizes.</center>
+<p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem5.jpg"></center>
+<center><b>Figura 5</b>: Bolas de raio 1 e centro na origem para diferentes matrizes.</center></p>
 
