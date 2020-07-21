@@ -188,7 +188,7 @@ Imagine que temos $\textrm{panela}\_1 = (\textrm{cinza},\textrm{tem cabo})$, $\t
 
 $$
 \begin{equation*}
-d_{\textrm{panelas}}(\textrm{panela}\_1, \textrm{panela}\_2 ) = d_1((1,1),(3,1)) = |1-3|+|1-1| = 2,
+d_{\textrm{panelas}}(\textrm{panela}_1, \textrm{panela}_2 ) = d_1((1,1),(3,1)) = |1-3|+|1-1| = 2,
 \end{equation*}
 $$
 
