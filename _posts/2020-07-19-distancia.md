@@ -7,7 +7,7 @@ mathjax: true
 summary: Abordo a definição matemática de distância com exemplos ilustrativos no contexto de ciência de dados
 ---
 
-**Em construção: ajustes de formatação de LaTeX e terminando de escrever a última seção**
+**Em construção: ajustes de formatação de LaTeX.**
 
 Vários algoritmos de aprendizado de máquina baseados em distância são genéricos o suficiente para mudarmos a forma como calculamos a distância entre dois pontos. Quando olhamos para dados em $\mathbb{R}^n$, para $n\in\mathbb{N}^*$, estamos acostumados com a **distância euclidiana**. Essa distância calcula o tamanho do comprimento de reta que liga os dois pontos, com uma espécie de generalização do teorema de Pitágoras.
 
@@ -71,8 +71,8 @@ Primeiro, teremos um parâmetro relacionado com o ponto central. Este será o el
 
 $$
 \begin{equation*}
- B_r(x) = \\{ y\in \mathcal{A} : d(x,y) < r \\}.
- \end{equation*}
+B_r(x) = \\{ y\in \mathcal{A} : d(x,y) < r \\}.
+\end{equation*}
 $$
 
 Os elementos de $B_r(x)$ são justamente os elementos de $\mathcal{A}$ perto de $x$ (sob essa tolerância de raio $r$)
