@@ -8,6 +8,19 @@ summary: Abordo a definição matemática de distância com exemplos ilustrativo
 ---
 
 **Em construção: ajustes de formatação de LaTeX e terminando de escrever a última seção**
+
+- [Definindo formalmente a distância entre dois pontos](#definindo-formalmente-a-dist-ncia-entre-dois-pontos)
+- [Exemplos clássicos para $\mathbb{R}^n$](#exemplos-cl-ssicos-para---mathbb-r--n-)
+  * [Diferentes bolas do $\mathbb{R}^n$](#diferentes-bolas-do---mathbb-r--n-)
+- [Mais exemplos](#mais-exemplos)
+  * [Métrica discreta](#m-trica-discreta)
+  * [Distância de Hamming](#dist-ncia-de-hamming)
+    + [Distância entre panelas](#dist-ncia-entre-panelas)
+  * [Distância do ângulo](#dist-ncia-do--ngulo)
+    + [Distância entre documentos](#dist-ncia-entre-documentos)
+  * [Distância entre funções contínuas](#dist-ncia-entre-fun--es-cont-nuas)
+  * [Distância Ponderada](#dist-ncia-ponderada)
+
 Vários algoritmos de aprendizado de máquina baseados em distância são genéricos o suficiente para mudarmos a forma como calculamos a distância entre dois pontos. Quando olhamos para dados em $\mathbb{R}^n$, para $n\in\mathbb{N}^*$, estamos acostumados com a **distância euclidiana**. Essa distância calcula o tamanho do comprimento de reta que liga os dois pontos, com uma espécie de generalização do teorema de Pitágoras.
 
 Explicitamente temos, para $\textbf{x} = (x_1, x_2, \cdots, x_n) \in \mathbb{R}^n$ e $\textbf{y} = (y_1, y_2, \cdots, y_n) \in \mathbb{R}^n$, a distância dada por
@@ -18,21 +31,21 @@ $$
 \end{equation*}
 $$
 
-Entretanto, dependendo da natureza do problema essa distância pode não ser a mais indicada. Neste post, vamos discutir as definições de distância aos olhos de conceitos básicos de topologia de espaços métricos e exemplificar algumas métricas clássicas entendendo a diferença entre elas. Essa discussão é importante para se aprofundar em algoritmos clássicos que utilizam um cálculo de distância como o kNN, o DBScan e o k-means e suas variações.
+Entretanto, dependendo da natureza do problema essa distância pode não ser a mais indicada. Neste post, vamos discutir as definições de distância aos olhos de conceitos básicos de topologia de espaços métricos e exemplificar algumas métricas clássicas entendendo a diferença entre elas. Essa discussão pode ser importante para se aprofundar em algoritmos clássicos que utilizam um cálculo de distância como o kNN, o DBScan e o k-means e suas variações. Além de entender outros momentos em que você pode utilizar o conceito de distância
 
-## Definindo formalmente a distância entre dois pontos
+##  <center>Definindo formalmente a distância entre dois pontos</center>
 
 **Definição**: Dado um conjunto $\mathcal{A}$, uma função $d:\mathcal{A}\times\mathcal{A}\to \mathbb{R}$ é chamada de uma **métrica** (ou **distância**) em $\mathcal{A}$ se, dados $x,y,z\in\mathcal{A}$ quaisquer, satisfaz:
 
 * $d(x,y) = 0 \Leftrightarrow x = y$ (identidade);
-* $d(x,y) = d(y,x)$ (simétrica);
+* $d(x,y) = d(y,x)$ (simetria);
 * $d(x,y) + d(y,z) \geq d(x,z)$ (desigualdade triangular).
 
 Repare que dessas propriedades, tiramos ainda que $d(x,y)\geq 0$ para quaisquer $x,y\in \mathcal{A}$. Como pela desigualdade triangular $d(x,y) + d(y,x) \geq d(x,x)$, pela simetria e usando que $d(x,x)=0$ temos que $2 \, d(x,y) \geq 0$, e segue a positividade da métrica.
 
-Com essa função métrica $d$ em mente, a **distância entre dois pontos** $x,y\in \mathcal{A}$ é dada por $d(x,y)$.
+Com uma função métrica $d$ definida como anteriormente, a **distância entre dois pontos** $x,y\in \mathcal{A}$ é dada por $d(x,y)$.
 
-## Exemplos clássicos para $\mathbb{R}^n$
+##  <center>Exemplos clássicos para $\mathbb{R}^n$</center>
 
 
 A natureza e escolha da métrica varia de acordo com o problema estudado. Em geral, quando $\mathcal{A}=\mathbb{R}^n$, estamos interessados em **distâncias induzidas pelas normas Lp's** (com $1\leq p \leq \infty$) dadas na forma
@@ -44,7 +57,7 @@ d_p(\textbf{x},\textbf{y}) = || \textbf{x} - \textbf{y} ||_p,
 \end{equation*}
 $$
 
-com soma de vetores e multiplicação coordenada a coordenada (ou seja, a usual do espaço vetorial $\mathbb{R}^n$ sobre o corpo $\mathbb{R}$) em que a norma Lp $||\cdot||_p : \mathbb{R}^n \to \mathbb{R} $ é dada por
+com soma de vetores coordenada a coordenada em que a norma Lp $\|\|\cdot\|\|_p : \mathbb{R}^n \to \mathbb{R} $ é dada por
 
 
 $$
@@ -58,15 +71,15 @@ As métricas dessa família de distâncias, no contexto de aprendizado de máqui
 
 $$
 \begin{equation*}
-||\textbf{x}||_p = \underset{{1\,\leq \,i \,\leq \,n}}{\max} |x_i|.
+||\textbf{x}||_p = \max_{1\,\leq \,i \,\leq \,n} |x_i|.
 \end{equation*}
 $$
 
 A métrica $d_\infty$ é também conhecida como **distância de Chebyshev**. Um outro nome clássico para a métrica $d_1$ é **distância de Manhattan**.
 
-### Diferentes bolas do $\mathbb{R}^n$
+###  <center>Diferentes bolas do $\mathbb{R}^n$</center>
 
-Para ilustrar como essa diferentes formas de medir distância funcionam, vamos definir um conceito primordial de topologia de espaços métricos. A noção de bola é introduzida tentando nos dar um significado para a pergunta: _"O que significa ter um elemento perto de outro?"_.
+Para ilustrar como essa diferentes formas de medir distância funcionam, vamos definir um conceito primordial de topologia de espaços métricos: a bola aberta. A noção de bola tenta dar um significado para a pergunta: _"O que significa ter um elemento perto de outro?"_.
 
 Primeiro, teremos um parâmetro relacionado com o ponto central. Este será o elemento com o qual compararemos os outros, tentando responder se estão próximos ou não. Além disso, o significado de perto depende da nossa tolerância: duas pessoas sentadas a menos de 1 metro é perto (ainda mais em época de corona vírus), mas um meteoro a 1 quilometro da terra também é perto aos olhos de um astrônomo. A bola também terá um parâmetro que nos dará até quanto estamos considerando perto.
 
@@ -265,10 +278,10 @@ Por exemplo, se queremos calcular a distância entre as funções $f(x)=(x-0.4)^
 <center><img src="{{ site.baseurl }}/assets/img/distancia/imagem3.jpg"></center>
 <center><b>Figura 3</b>: Na primeira imagem temos o módulo da diferença das funções avaliadas. Na segunda imagem temos $f$ em vermelho, $g$ em azul e alguns valores da distância pontual das funções em alguns valores de $x$ em cinza. Em preto temos o ponto que representa a distância entre essas duas funções, valendo $2.5$, nesse caso.</center>
 
-As bolas dessa métrica são coisas muito interessantes. Nessa métrica, a bola de raio $r>0$ ao redor da função $f:[a,b]\to\mathbb{R}$ são todas as funções (definidas no intervalo $[a,b]$) que ficam sempre dentro da faixa ao redor de $f$ de largura $2r$. Na Figura 4 temos um exemplo disso. A função $g(x) = (x-0.4)^2 + 0.4\sin(30x)$ está dentro da bola $B\_{0.5}((x-0.4)^2)$ pois a a distância entre elas é $\max \|0.4 \sin(x) \|<0.5$.
+Nessa métrica, a bola de raio $r>0$ ao redor da função $f:[a,b]\to\mathbb{R}$ são todas as funções (definidas no intervalo $[a,b]$) que ficam sempre dentro da faixa ao redor de $f$ de largura $2r$. Na Figura 4 temos um exemplo disso. A função $g(x) = (x-0.4)^2 + 0.4\sin(30x)$ está dentro da bola $B\_{0.5}((x-0.4)^2)$ pois a a distância entre elas é $\max \|0.4 \sin(x) \|<0.5$.
 
 <center><img src="{{ site.baseurl }}/assets/img/distancia/imagem4.jpg"></center>
-<center><b>Figura 4</b>: A bola de raio $0.5$ centrada na função preta são todas as funções que estão limitadas pela faixa azul e vermelha. A função verde é um exemplo.</center>
+<center><b>Figura 4</b>: A bola de raio $0.5$ centrada na função preta são todas as funções que estão limitadas pela faixa vermelha. A função verde é um exemplo que está na bola pois não sai desse limite.</center>
 
 > No post Covariate Shift: Teste KS (até fim de agosto) falarei como usar uma variação dessa distância pra definir uma distância entre variáveis aleatórias.
 
@@ -319,6 +332,10 @@ A= \begin{bmatrix}
 -1&4
 \end{bmatrix}.
 $$
+
+<center><img src="{{ site.baseurl }}/assets/img/distancia/imagem5.jpg"></center>
+<center><b>Figura 5</b>: Bolas de raio 1 e centro na origem para diferentes matrizes.</center>
+
 
 <center><img src="{{ site.baseurl }}/assets/img/distancia/imagem5.jpg"></center>
 <center><b>Figura 5</b>: Bolas de raio 1 e centro na origem para diferentes matrizes.</center>
