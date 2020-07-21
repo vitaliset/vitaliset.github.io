@@ -8,7 +8,6 @@ summary: Abordo a definição matemática de distância com exemplos ilustrativo
 ---
 
 **Em construção: ajustes de formatação de LaTeX e terminando de escrever a última seção**
-
 Vários algoritmos de aprendizado de máquina baseados em distância são genéricos o suficiente para mudarmos a forma como calculamos a distância entre dois pontos. Quando olhamos para dados em $\mathbb{R}^n$, para $n\in\mathbb{N}^*$, estamos acostumados com a **distância euclidiana**. Essa distância calcula o tamanho do comprimento de reta que liga os dois pontos, com uma espécie de generalização do teorema de Pitágoras.
 
 Explicitamente temos, para $\textbf{x} = (x_1, x_2, \cdots, x_n) \in \mathbb{R}^n$ e $\textbf{y} = (y_1, y_2, \cdots, y_n) \in \mathbb{R}^n$, a distância dada por
@@ -83,12 +82,21 @@ Os elementos de $B_r(x)$ são justamente os elementos de $\mathcal{A}$ perto de 
 Vamos brincar com o formato dessas bolas quando $\mathcal{A}=\mathbb{R}^2$ e $d=d_p$ quando variamos o valor do $p$. Essas métricas já estão implementadas no [`sklearn.neighbors.DistanceMetric`](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html), vamos criar uma função que plota essas boas de métrica, raio e centro arbitrários.
 
 ```python
+import sklearn.neighbors as neigh
+
 def bola_aberta(dist_list, raio = 1, centro = [0,0]):
+    
     """
-    dist: lista de distâncias (list of funções distancia do sklearn.neighbors.DistanceMetric)
-    raio: raio da bola (float in (0,\infty))
-    centro da bola: lista com posição do centro da bola (x_centro,y_centro) (lista com dois floats)
+    dist: lista de distâncias (list of sklearn.neighbors.DistanceMetric functions)
+    raio: raio das bolas (positive float), pode ser passado também como lista de raios (list of positives floats)
+    centro da bola: lista com posição do centro da bola (x_centro,y_centro) (list of floats, len = 2)
+    
+    return: plots das bolas de centro "centro" das métricas associadas aos respectivos raios (até três imagens por fileira).
+            eixos sempre entre -1.5 e 1.5.
     """
+    
+    if type(raio) in [int, float]:
+        raio = [raio]*len(dist_list)
     
     # criando os pontos da malha para fazer as curvas de nível da função
     # indicadora que nos da se está dentro ou não da bola
@@ -103,13 +111,11 @@ def bola_aberta(dist_list, raio = 1, centro = [0,0]):
     for j, dist in zip(range(1,  n + 1), dist_list):
         plt.subplot(m, 3, j)        
         
-        # função indicadora (estou dentro da bola ou não)
-        Z = np.asarray([[1 if dist.pairwise(np.array([[x,y]]),np.array([centro]))[0,0] < raio else 0 for x in x_vals] for y in y_vals])
+        # função indicadora (estou dentro da bola ou não? 1 se sim, 0 se não)
+        Z = np.asarray([[1 if dist.pairwise(np.array([[x,y]]),np.array([centro]))[0,0] < raio[j-1] else 0 for x in x_vals] for y in y_vals])
         cp = plt.contourf(X, Y, Z, levels = [-0.1,0.1,0.9, 1.1], cmap=cmap)
-        plt.xticks([])
-        plt.yticks([])
-    
-    plt.savefig('imagem1.jpg', bbox_inches = 'tight')
+        plt.xticks([-1,0,1])
+        plt.yticks([-1,0,1])
 #     plt.show()
 ```
 
@@ -138,7 +144,7 @@ Vou passar por mais alguns exemplos interessantes que podem ajudar a construir a
 Imagine um contexto exótico em que o valor explícito da distância entre dois pontos não é importante, mas é relevante saber se dois elementos são iguais ou não. Nesse cenário, a métrica discreta pode ser útil. Dado $\mathcal{A}$ qualquer, a distância $d$ entre $x,y\in\mathcal{A}$ é dada por
 $$
 \begin{equation*}
-d(x,y)=
+d\_{\textrm{disc}}(x,y)=
 \begin{cases}
 0 \textrm{, se }x=y,\\
 1 \textrm{, caso contrário.}
@@ -154,15 +160,15 @@ No [`sklearn.neighbors.DistanceMetric`](https://scikit-learn.org/stable/modules/
 ```python
 def discrete(X, Y):
     """
-    X, Y: vetores que queremos calcular a distância (np array of floats)
-    return distância entre o ponto X e Y
+    X, Y: vetores que queremos calcular a distância discreta(np array of floats)
+    return distância discreta entre o ponto X e Y
     """
     if np.all(X == Y):
         return 0
     else:
         return 1
-            
-bola_aberta([neigh.DistanceMetric.get_metric('pyfunc', func = discrete)]*2,[0.5, 1.5])
+
+bola_aberta([neigh.DistanceMetric.get_metric('pyfunc', func = discrete)]*2,[0.5, 2])
 ```
 
 Na Figura 2, passamos como raios das bolas os valores $0.5$ e $1.5$, para ver o efeito discutido anteriormente de que $B\_0.5((0,0))=\{(0,0)\}$ e $B\_2((0,0))=\mathbb{R}$.
@@ -262,10 +268,57 @@ Por exemplo, se queremos calcular a distância entre as funções $f(x)=(x-0.4)^
 As bolas dessa métrica são coisas muito interessantes. Nessa métrica, a bola de raio $r>0$ ao redor da função $f:[a,b]\to\mathbb{R}$ são todas as funções (definidas no intervalo $[a,b]$) que ficam sempre dentro da faixa ao redor de $f$ de largura $2r$. Na Figura 4 temos um exemplo disso. A função $g(x) = (x-0.4)^2 + 0.4\sin(30x)$ está dentro da bola $B\_{0.5}((x-0.4)^2)$ pois a a distância entre elas é $\max \|0.4 \sin(x) \|<0.5$.
 
 <center><img src="{{ site.baseurl }}/assets/img/distancia/imagem4.jpg"></center>
-<center><b>Figura 3</b>: A bola de raio $0.5$ centrada na função preta são todas as funções que estão limitadas pela faixa azul e vermelha. A função verde é um exemplo.</center>
+<center><b>Figura 4</b>: A bola de raio $0.5$ centrada na função preta são todas as funções que estão limitadas pela faixa azul e vermelha. A função verde é um exemplo.</center>
 
 > No post Covariate Shift: Teste KS (até fim de agosto) falarei como usar uma variação dessa distância pra definir uma distância entre variáveis aleatórias.
 
 ### Distância Ponderada
 
-Em muitos casos pode ser importante atribuir um peso maior para alguma das coordenadas. Por exemplo, se $\mathcal{A}=\mathbb{R}^2$ e estar perto na coordenada $x_1$ é $10$ vezes mais importante do que estar perto na coordenada $x_2$.
+Em muitos casos pode ser importante atribuir um peso maior para alguma das coordenadas. Por exemplo, se $\mathcal{A}=\mathbb{R}^2$ e estar perto na primeira coordenada é $10$ vezes mais importante do que estar perto na , segunda, podemos fazer uma variação da métrica Euclidiana para calcular a distância entre $\textbf{x} = (x_1,x_2)$ e $\textbf{y}=(y_1,y_2)$ como
+$$
+\begin{equation*}
+ d\_{\textrm{ponderada}}(\textbf{x},\textbf{y}) = \sqrt{10 (x\_1-y\_1)^2 +(x\_2-y\_2)^2 }\,.
+\end{equation*}
+$$
+Não vou entrar em detalhes, mas podemos fazer isso sempre que temos uma matriz $A$ [matriz positiva definida](https://pt.wikipedia.org/wiki/Matriz_positiva_definida) e fazemos
+$$
+\begin{equation*}
+ d\_{\textrm{ponderada}}(\textbf{x},\textbf{y}) = \sqrt{(\textbf{x}-\textbf{y})^T \, A \,(\textbf{x}-\textbf{y}) }\,,
+\end{equation*}
+$$
+fazendo as operações de vetores. Portanto, fixada $A$, podemos implementar essa função para usar como fizemos com a discreta.
+
+```python
+def ponderada(X, Y):
+    """
+    X, Y: vetores que queremos calcular a distância ponderada (np array of floats)
+    return distância ponderada entre o ponto X e Y
+    """
+    return np.dot(X-Y,np.matmul(A,X-Y))
+```
+
+Uma matriz com todos valores da diagonal positivos é sempre uma matriz positiva definida. Neste caso podemos interpretar os valores da diagonal como os pesos que queremos dar em cada uma das coordenadas. Por exemplo, a distância euclidiana usual ocorre quando $A$ é a matriz identidade. Já o caso estudado anteriormente ocorre quando
+$$
+A= \begin{bmatrix}
+10&0\\
+0&1
+\end{bmatrix}.
+$$
+Podemos brincar com essas diferentes matrizes colocando pesos nas coordenadas que consideramos mais importantes. Valores fora da diagonal principal podem ser interpretados como uma interação entre aquelas coordenas. Eles vão distorcer o formato da bola, como podemos ver na Figura 5 em que temos, respectivamente, as matrizes positivas definidas
+$$
+A= \begin{bmatrix}
+2&0\\
+0&1
+\end{bmatrix},
+\begin{bmatrix}
+2&-1\\
+-1&2
+\end{bmatrix}\textrm{e }
+\begin{bmatrix}
+1&-1\\
+-1&4
+\end{bmatrix}.
+$$
+
+<center><img src="{{ site.baseurl }}/assets/img/distancia/imagem5.jpg"></center>
+<center><b>Figura 5</b>: Bolas de raio 1 e centro na origem para diferentes matrizes.</center>
