@@ -70,7 +70,7 @@ Primeiro, teremos um parâmetro relacionado com o ponto central. Este será o el
 **Definição:** Seja $d$ uma métrica em um conjunto $\mathcal{A}$. Uma **bola aberta** de raio $r>0$ centrada no ponto $x\in \mathcal{A}$ é o conjunto
 
 $$
-B_r(x) = \\{ y\in \mathcal{A} : d(x,y) \textless r \\}.
+B_r(x) = \{ y\in \mathcal{A} : d(x,y) < r \}.
 $$
 
 Os elementos de $B_r(x)$ são justamente os elementos de $\mathcal{A}$ perto de $x$ (sob essa tolerância de raio $r$)
@@ -312,17 +312,20 @@ def ponderada(X, Y):
 Uma matriz com todos valores da diagonal positivos é sempre uma matriz positiva definida. Neste caso podemos interpretar os valores da diagonal como os pesos que queremos dar em cada uma das coordenadas. A distância euclidiana usual ocorre quando $A$ é a matriz identidade. Já o caso estudado anteriormente ocorre quando
 
 $$
+\begin{equation*}
 A = \left[
 \begin{array}{cc}
 10 & 0 \\
 0 & 1 
 \end{array}
 \right]
+\end{equation*}
 $$
 
 Podemos brincar com essas diferentes matrizes colocando pesos nas coordenadas que consideramos mais importantes. Valores fora da diagonal principal podem ser interpretados como uma interação entre aquelas coordenas. Eles vão distorcer o formato da bola, como podemos ver na Figura 5 em que temos, respectivamente, as matrizes positivas definidas
 
 $$
+\begin{equation*}
 A= \left[
 \begin{array}{cc}
 2 & 0 \\
@@ -341,6 +344,7 @@ A= \left[
 -1 & 4 
 \end{array}
 \right].
+\end{equation*}
 $$
 
 <p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem5.jpg"></center>
