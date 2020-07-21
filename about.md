@@ -10,7 +10,7 @@ Oi meu nome é Carlo, tenho 8 anos (Teria se estivesse viva), morri aos 7 em Cas
 
 Resolvi escrever esse blog para aprender a expor meus projetos e discussões de forma técnica e formal ao mesmo tempo que acessível para pessoas com um conhecimento de matemática do ensino superior e noções iniciais de Aprendizado de Máquina. Tento ser um pouco rigoroso matematicamente, mas sem perder a parte visual e intuitiva do que está acontecendo. Adoraria <a href="mailto:carlo_lemos@hotmail.com">receber um email</a> contando sobre sua experiência lendo minhas postagens. Estou sendo bem sucedido?
 
-Se tiver recomendação de temas legais para postagens, <a href="mailto:carlo_lemos@hotmail.com">fale comigo</a> também! O real objetivo desse blog é um pouco egoísta... Acredito que redigir sobre um conceito de forma clara é a melhor forma de formentá-lo. Podemos interpretar esse blog como um caderno em que colocarei notas sobre coisas que estudei ou estou estudando.
+Se tiver recomendação de temas legais para postagens, <a href="mailto:carlo_lemos@hotmail.com">fale comigo</a> também! O real objetivo aprendizado. Acredito que redigir sobre um conceito de forma clara é a melhor forma de formentá-lo. Podemos interpretar esse blog como um caderno em que colocarei notas sobre coisas que estudei ou estou estudando.
 
 Atualmente estou estudando Aprendizado de Máquina sobre uma perspectiva mais estatística! Espero que vários dos posts que farei nesse final do ano sejam sobre isto. :) Entre as postagens de Aprendizado de Máquina, pretendo comentar também sobre assuntos relacionados a noções básicas de Matemática, Análise Numérica, Teoria da Medida e Integração, Inferência Estatística, Teoria dos Jogos, Evolução (e Ecologia Comportamental), entre outros tópicos.
 
