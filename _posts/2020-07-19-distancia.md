@@ -21,7 +21,7 @@ $$
 
 Entretanto, dependendo da natureza do problema essa distância pode não ser a mais indicada. Neste post, vamos discutir as definições de distância aos olhos de conceitos básicos de topologia de espaços métricos e exemplificar algumas métricas clássicas entendendo a diferença entre elas. Essa discussão pode ser importante para se aprofundar em algoritmos clássicos que utilizam um cálculo de distância como o kNN, o DBScan e o k-means e suas variações. Além de entender outros momentos em que você pode utilizar o conceito de distância.
 
-##  <center>Definindo formalmente a distância entre dois pontos</center>
+#  <center>Definindo formalmente a distância entre dois pontos</center>
 
 **Definição**: Dado um conjunto $\mathcal{A}$, uma função $d:\mathcal{A}\times\mathcal{A}\to \mathbb{R}$ é chamada de uma **métrica** (ou **distância**) em $\mathcal{A}$ se, dados $x,y,z\in\mathcal{A}$ quaisquer, satisfaz:
 
@@ -33,7 +33,7 @@ Repare que dessas propriedades, tiramos ainda que $d(x,y)\geq 0$ para quaisquer 
 
 Com uma função métrica $d$ definida como anteriormente, a **distância entre dois pontos** $x,y\in \mathcal{A}$ é dada por $d(x,y)$.
 
-##  <center>Exemplos clássicos para $\mathbb{R}^n$</center>
+#  <center>Exemplos clássicos para $\mathbb{R}^n$</center>
 
 A natureza e escolha da métrica varia de acordo com o problema estudado. Em geral, quando $\mathcal{A}=\mathbb{R}^n$, estamos interessados em **distâncias induzidas pelas normas Lp's** (com $1\leq p \leq \infty$) dadas na forma
 
@@ -61,7 +61,7 @@ $$
 
 A métrica $d_\infty$ é também conhecida como **distância de Chebyshev**. Um outro nome clássico para a métrica $d_1$ é **distância de Manhattan**.
 
-###  <center>Diferentes bolas do $\mathbb{R}^n$</center>
+##  <center>Diferentes bolas do $\mathbb{R}^n$</center>
 
 Para ilustrar como essa diferentes formas de medir distância funcionam, vamos definir um conceito primordial de topologia de espaços métricos: a bola aberta. A noção de bola tenta dar um significado para a pergunta: _"O que significa ter um elemento perto de outro?"_.
 
@@ -133,11 +133,11 @@ bola_aberta(lista_distancias)
 
 Eu nunca vou entender qual é a graça de Chaves, mas impossível não fazer um comentário infeliz sobre as bolas quadradas do Kiko estarem na verdade utilizando a métrica de Chebyshev. O Kiko, como você agora, entende bastante de topologia de espaços métricos.
 
-## <center>Mais exemplos</center>
+# <center>Mais exemplos</center>
 
 Vamos passar por mais alguns exemplos interessantes que podem ajudar a construir a intuição ou que são relevantes no contexto de ciência de dados.
 
-### <center>Métrica discreta</center>
+## <center>Métrica discreta</center>
 
 Imagine um experimento exótico em que o valor explícito da distância entre dois pontos não é importante, mas é relevante saber se dois elementos são iguais ou não. Nesse cenário, a métrica discreta pode ser útil. Dado $\mathcal{A}$ qualquer, a distância $d$ entre $x,y\in\mathcal{A}$ é dada por
 
@@ -176,11 +176,11 @@ Na Figura 2, passamos como raios das bolas os valores $0.5$ e $1.5$, para ver o 
 <p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem2.jpg"></center>
 <center><b>Figura 2</b>: Bolas da métrica discreta. Lembrando que a região cinza é o lado de fora da bola e a região vermelha é o lado de dentro. Na primeira imagem, não podemos ver que o ponto (0,0) está dentro da bola pela resolução.</center></p>
 
-### <center>Distância de Hamming</center>
+## <center>Distância de Hamming</center>
 
 A distância de Hamming entre dois vetores de tamanho $n$ é o número de componentes diferentes entre eles. Ela claramente se demonstra muito útil quando o significado dos valores das componentes não são numéricos ou não tem um sentido de ordem. Vamos dar um cenário em que pode fazer sentido usar ela:
 
-#### <center>Distância entre panelas</center>
+### <center>Distância entre panelas</center>
 
 Imagine que eu queira descrever a distância entre duas panelas e os atributos que eu considero importante sobre esse objeto são a cor e a presença ou não de cabo. Neste caso, estamos representando nosso espaço como $\mathcal{A} = \\{ \textrm{cinza}, \textrm{vermelha}, \textrm{preta}  \\} \times \\{\textrm{tem cabo}, \textrm{não tem cabo} \\}$. Uma panela é representada por um vetor de duas componentes, por exemplo $(\textrm{cinza}, \textrm{tem cabo})$. 
 
@@ -208,7 +208,7 @@ Uma alternativa é justamente calcular a distância Hamming das panelas, somando
 
 >  A distância de Hamming é equivalente a fazer um One Hot Encoding de cada uma das componentes dos vetores e depois calcular a distância com qualquer Minkowski (dividindo por 2 o resultado final).
 
-### <center>Distância do ângulo</center>
+## <center>Distância do ângulo</center>
 
 Imagine que $\mathcal{A}= S^{\,1} =\\{ (a,b)\in\mathbb{R}^2 : a^2 + b^2 = 1 \\}$, ou seja, estamos olhando exatamente para os vetores do plano de norma L2 igual a 1, o círculo tradicional que conhecemos. Podemos definir uma distância dada pelo ângulo entre dois pontos. Por exemplo, a distância entre $(0,1)$ e $(1,0)$ seria $\pi/2$, uma vez que o ângulo entre estes dois vetores é $90^\circ$. Uma forma explícita de calcular esse ângulo é 
 
@@ -232,7 +232,7 @@ $$
 
 Esta forma de definir distância satisfaz as propriedades desejadas, mas não é fácil ver porque a desigualdade triangular é realizada _(não se preocupe com isso, mas caso conheça um pouco de geometria diferencial, a ideia é que esta definição é a métrica geodésica na hiper-esfera unitária)_.
 
-#### <center>Distância entre documentos</center>
+### <center>Distância entre documentos</center>
 
 Essa métrica é tradicionalmente usada em discussões iniciais sobre distância entre dois textos. Primeiro, temos que pensar em uma representação numérica para um texto. Uma maneira inicial é pensar no texto como uma _bag of words_, desprezando a ordem das palavras, letras maiúsculas e pontuações, mas levando em conta a frequência de cada palavra no texto. 
 
@@ -258,7 +258,7 @@ Considerando que essa distância vale no mínimo 0 e no máximo $\pi$, temos tex
 
 >  Essa abordagem apresenta inúmeras simplificações que fazem a gente perder a qualidade da resposta. Por exemplo, sabemos que palavras diferentes podem significar a mesma coisa (ou conjugações diferentes, plurais etc). Palavras iguais em contextos diferentes podem ter significados diferentes. Existem palavras comuns a vários textos ou que ocorrem muitas vezes no mesmo texto que podem não ser úteis. Em muitos casos a ordem das palavras é muito importante e mudam o sentido de uma frase (como usar a palavra "_não_"). Entre outros problemas.
 
-### <center>Distância entre funções contínuas</center>
+## <center>Distância entre funções contínuas</center>
 
 Seja agora $\mathcal{A}=C^{\,0}[a,b] = \\{f \in \mathbb{R}^{[a,b]}: f \textrm{ contínua}\\}$, o conjunto das funções contínuas com domínio $[a,b]\subset\mathbb{R}$ e contradomínio $\mathbb{R}$.  Podemos definir a distância entre as funções $f,g\in\mathcal{A}$ como 
 
@@ -282,7 +282,7 @@ Nessa métrica, a bola de raio $r>0$ ao redor da função $f:[a,b]\to\mathbb{R}$
 
 > No post Covariate Shift: Teste KS (até fim de agosto) falarei como usar uma variação dessa distância pra definir uma distância entre variáveis aleatórias.
 
-### <center>Distância Ponderada</center>
+## <center>Distância Ponderada</center>
 
 Em muitos casos pode ser importante atribuir um peso maior para alguma das coordenadas. Por exemplo, se $\mathcal{A}=\mathbb{R}^2$ e estar perto na primeira coordenada é $10$ vezes mais importante do que estar perto na , segunda, podemos fazer uma variação da métrica Euclidiana para calcular a distância entre $\textbf{x} = (x_1,x_2)$ e $\textbf{y}=(y_1,y_2)$ como
 
