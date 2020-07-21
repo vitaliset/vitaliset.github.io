@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Generalizando distância
-featured-img: coverkfold
+featured-img: coverdistancia
 category: [matemática]
 mathjax: true
 summary: Abordo a definição matemática de distância com exemplos ilustrativos no contexto de ciência de dados
@@ -31,9 +31,9 @@ $$
 \end{equation*}
 $$
 
-Entretanto, dependendo da natureza do problema essa distância pode não ser a mais indicada. Neste post, vamos discutir as definições de distância aos olhos de conceitos básicos de topologia de espaços métricos e exemplificar algumas métricas clássicas entendendo a diferença entre elas. Essa discussão pode ser importante para se aprofundar em algoritmos clássicos que utilizam um cálculo de distância como o kNN, o DBScan e o k-means e suas variações. Além de entender outros momentos em que você pode utilizar o conceito de distância
+Entretanto, dependendo da natureza do problema essa distância pode não ser a mais indicada. Neste post, vamos discutir as definições de distância aos olhos de conceitos básicos de topologia de espaços métricos e exemplificar algumas métricas clássicas entendendo a diferença entre elas. Essa discussão pode ser importante para se aprofundar em algoritmos clássicos que utilizam um cálculo de distância como o kNN, o DBScan e o k-means e suas variações. Além de entender outros momentos em que você pode utilizar o conceito de distância.
 
-##  <center>Definindo formalmente a distância entre dois pontos</center>
+##  Definindo formalmente a distância entre dois pontos
 
 **Definição**: Dado um conjunto $\mathcal{A}$, uma função $d:\mathcal{A}\times\mathcal{A}\to \mathbb{R}$ é chamada de uma **métrica** (ou **distância**) em $\mathcal{A}$ se, dados $x,y,z\in\mathcal{A}$ quaisquer, satisfaz:
 
@@ -45,7 +45,7 @@ Repare que dessas propriedades, tiramos ainda que $d(x,y)\geq 0$ para quaisquer 
 
 Com uma função métrica $d$ definida como anteriormente, a **distância entre dois pontos** $x,y\in \mathcal{A}$ é dada por $d(x,y)$.
 
-##  <center>Exemplos clássicos para $\mathbb{R}^n$</center>
+##  Exemplos clássicos para $\mathbb{R}^n$
 
 
 A natureza e escolha da métrica varia de acordo com o problema estudado. Em geral, quando $\mathcal{A}=\mathbb{R}^n$, estamos interessados em **distâncias induzidas pelas normas Lp's** (com $1\leq p \leq \infty$) dadas na forma
@@ -77,7 +77,7 @@ $$
 
 A métrica $d_\infty$ é também conhecida como **distância de Chebyshev**. Um outro nome clássico para a métrica $d_1$ é **distância de Manhattan**.
 
-###  <center>Diferentes bolas do $\mathbb{R}^n$</center>
+###  Diferentes bolas do $\mathbb{R}^n$
 
 Para ilustrar como essa diferentes formas de medir distância funcionam, vamos definir um conceito primordial de topologia de espaços métricos: a bola aberta. A noção de bola tenta dar um significado para a pergunta: _"O que significa ter um elemento perto de outro?"_.
 
