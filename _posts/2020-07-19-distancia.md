@@ -70,7 +70,7 @@ Primeiro, teremos um parâmetro relacionado com o ponto central. Este será o el
 **Definição:** Seja $d$ uma métrica em um conjunto $\mathcal{A}$. Uma **bola aberta** de raio $r>0$ centrada no ponto $x\in \mathcal{A}$ é o conjunto
 
 $$
-B_r(x) = \\{ y\in \mathcal{A} : d(x,y) < r \\}.
+B_r(x) = \\{ y\in \mathcal{A} : d(x,y) \textless r \\}.
 $$
 
 Os elementos de $B_r(x)$ são justamente os elementos de $\mathcal{A}$ perto de $x$ (sob essa tolerância de raio $r$)
