@@ -369,3 +369,7 @@ $\begin{bmatrix}a & b\\
 c & d\end{bmatrix}$
 
 hm
+
+$\\begin{array}{cc} a & b \\\\ c & d \\end{array}$
+
+testando matrizzes
