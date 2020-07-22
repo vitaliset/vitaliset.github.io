@@ -71,7 +71,7 @@ Primeiro, teremos um parâmetro relacionado com o ponto central. Este será o el
 
 $$
 \begin{equation*}
-B_r(x) = \{ y\in \mathcal{A} : d(x,y) < r \}.
+B_r(x) = \\{ y\in \mathcal{A} : d(x,y) \\}.
 \end{equation*}
 $$
 
