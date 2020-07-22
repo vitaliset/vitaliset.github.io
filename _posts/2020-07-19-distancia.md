@@ -315,12 +315,7 @@ Uma matriz com todos valores da diagonal positivos é sempre uma matriz positiva
 
 $$
 \begin{equation*}
-A = \left[
-\begin{array}{cc}
-10 & 0 \\
-0 & 1 
-\end{array}
-\right]
+A = \left[\\begin{array}{cc} 10 & 0 \\\\ 0 & 1 \\end{array}\right]
 \end{equation*}
 $$
 
@@ -328,58 +323,12 @@ Podemos brincar com essas diferentes matrizes colocando pesos nas coordenadas qu
 
 $$
 \begin{equation*}
-A= \left[
-\begin{array}{cc}
-2 & 0 \\
-0 & 1 
-\end{array}
-\right],
-\left[
-\begin{array}{cc}
-2 & -1 \\
--1 & 2 
-\end{array}
-\right]\textrm{e }
-\left[
-\begin{array}{cc}
-1 & -1 \\
--1 & 4 
-\end{array}
-\right].
+A= \left[\\begin{array}{cc} 2 & 0 \\\\ 0 & 1 \\end{array}\right],
+\left[\\begin{array}{cc} 2 & -1 \\\\ -1 & 2 \\end{array}\right]\textrm{e }
+\left[\\begin{array}{cc} 1 & -1 \\\\ -1 & 4 \\end{array}\right].
 \end{equation*}
 $$
 
 <p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem5.jpg"></center>
 <center><b>Figura 5</b>: Bolas de raio 1 e centro na origem para diferentes matrizes.</center></p>
 
-hm
-
-$$
-\begin{bmatrix}1 & -1 \\\
--1 & 4 \end{bmatrix}
-$$
-
-tt
-
-$$\begin{pmatrix}a & b\\\ c & d\end{pmatrix}$$
-
-hm
-
-$\begin{bmatrix}a & b\\ 
-c & d\end{bmatrix}$
-
-hm
-
-$\left[\\begin{array}{cc} a & b \\\\ c & d \\end{array}\right]$
-
-testando matrizzes
-
-$$
-    \begin{matrix}
-    1 & x & x^2 \\
-    1 & y & y^2 \\
-    1 & z & z^2 \\
-    \end{matrix}
-$$
-
-nice
