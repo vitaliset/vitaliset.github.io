@@ -242,7 +242,7 @@ Fica mais fácil ver isso com um exemplo: Suponha que nosso _corpus_ é dado pel
 
 $$
 \begin{equation*}
-\\{ \textrm{texto}\_1 = (1,2,2),  \textrm{texto}\_2 = (0,1,1)\\}
+\\{ \textrm{texto}_1 = (1,2,2),  \textrm{texto}_2 = (0,1,1)\\}
 \end{equation*}
 $$
 
@@ -352,8 +352,8 @@ $$
 <p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem5.jpg"></center>
 <center><b>Figura 5</b>: Bolas de raio 1 e centro na origem para diferentes matrizes.</center></p>
 
-$$\begin{bmatrix}1 & -1 \-1 & 4 \end{bmatrix}$$
+$$\begin{bmatrix}1 & -1 \\ -1 & 4 \end{bmatrix}$$
 
-$\begin{bmatrix}a & b\\c & d\end{bmatrix}$
+$\begin{bmatrix}a & b\\ c & d\end{bmatrix}$
 
 hm
