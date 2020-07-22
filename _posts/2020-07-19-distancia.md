@@ -352,8 +352,16 @@ $$
 <p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem5.jpg"></center>
 <center><b>Figura 5</b>: Bolas de raio 1 e centro na origem para diferentes matrizes.</center></p>
 
-$$\begin{bmatrix}1 & -1 \\ -1 & 4 \end{bmatrix}$$
+hm
 
-$\begin{bmatrix}a & b\\ c & d\end{bmatrix}$
+$$
+\begin{bmatrix}1 & -1 \\\
+-1 & 4 \end{bmatrix}
+$$
+
+hm
+
+$\begin{bmatrix}a & b\\ 
+c & d\end{bmatrix}$
 
 hm
