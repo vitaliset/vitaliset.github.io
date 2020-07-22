@@ -370,7 +370,7 @@ c & d\end{bmatrix}$
 
 hm
 
-$\\begin{array}{cc} a & b \\\\ c & d \\end{array}$
+$\left[\\begin{array}{cc} a & b \\\\ c & d \\end{array}\right]$
 
 testando matrizzes
 
