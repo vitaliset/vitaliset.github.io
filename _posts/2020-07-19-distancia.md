@@ -328,4 +328,4 @@ $$
 
 $$\left[\\begin{array}{cc} 1 & -1 \\ -1 & 4 \\end{array}\right]$$
 --
-$\\begin{array}{cc} a & b \\\\ c & d \\end{array}$
+$$\\begin{array}{cc} a & b \\\\ c & d \\end{array}$$
