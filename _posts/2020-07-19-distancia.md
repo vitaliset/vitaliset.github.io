@@ -327,3 +327,5 @@ $$
 <center><b>Figura 5</b>: Bolas de raio 1 e centro na origem para diferentes matrizes.</center></p>
 
 $$\left[\\begin{array}{cc} 1 & -1 \\ -1 & 4 \\end{array}\right]$$
+--
+$\\begin{array}{cc} a & b \\\\ c & d \\end{array}$
