@@ -99,7 +99,9 @@ X_new, Y_new = sample(100, mean = 2)
 
 <p><div align="justify">Como esperado, a qualidade do modelo cai para um $R^2$ de $-0.283$ nos dados novos. Isto lembrando que a relação entre $X$ e $Y$ não mudou, apenas a distribuição de $X$.</div></p>
 
+
 # O que procuramos identificar?
+
 
 <p><div align="justify">Dada a motivação inicial o problema se resume ao seguinte enunciado:</div></p>
 
