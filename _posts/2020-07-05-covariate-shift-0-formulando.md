@@ -87,7 +87,7 @@ dtr.fit(X_past,Y_past)
 X_new, Y_new = sample(100, mean = 2)
 ```
 
-<p><div align="justify">Os dados agora estão distribuídos mais a direita, como podemos visualizar na Figura 3.</div>
+<p><div align="justify">Os dados agora estão distribuídos mais a direita, como podemos visualizar na Figura 3.</div></p>
 
 <p><center><img src="{{ site.baseurl }}/assets/img/covariate_0_formulando_post/imagem3.png"></center>
 <center><b>Figura 3</b>: Histograma comparando a distribuição das duas amostras que temos. Em azul a feita quando X tinha média 0 e em laranja a nova, com média 2.</center></p>
@@ -105,6 +105,6 @@ X_new, Y_new = sample(100, mean = 2)
 
 <p><div align="justify">Dada a motivação inicial o problema se resume ao seguinte enunciado:</div></p>
 
-<p><div align="justify">Seja $X$ e $Z$ variáveis (ou vetores) aleatórias. Suponha que eu amostre $X$ de forma independente $N\in\mathbb{N}^*$ vezes e repita $Z$ seja amostrada também de forma independente $M\in \mathbb{N}^*$ vezes ficando com as amostras $\{x_1, x_2, \cdots, x_N \} $ e $\\{z_1, z_2, \cdots, z_M \\} $. Como saber se $X\sim Z$ olhando apenas para as duas amostras?</div></p>
+<p><div align="justify">Seja $X$ e $Z$ variáveis (ou vetores) aleatórias. Suponha que eu amostre $X$ de forma independente $N\in\mathbb{N}^*$ vezes e repita $Z$ seja amostrada também de forma independente $M\in \mathbb{N}^*$ vezes ficando com as amostras $\{x_1, x_2, \cdots, x_N \} $ e $\{z_1, z_2, \cdots, z_M \} $. Como saber se $X\sim Z$ olhando apenas para as duas amostras?</div></p>
 
 <p><div align="justify">Nesta série de postagens pretendo apresentar alguns métodos para identificar o <i>Covariate Shift</i> e, pelo menos, uma maneira de tratá-lo.</div></p>
