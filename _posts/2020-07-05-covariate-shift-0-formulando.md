@@ -105,8 +105,4 @@ X_new, Y_new = sample(100, mean = 2)
 
 <p><div align="justify">Seja $X$ e $Z$ variáveis (ou vetores) aleatórias. Suponha que eu amostre $X$ de forma independente $N\in\mathbb{N}^*$ vezes e repita $Z$ seja amostrada também de forma independente $M\in \mathbb{N}^*$ vezes ficando com as amostras $\{x_1, x_2, \cdots, x_N \} $ e $\{z_1, z_2, \cdots, z_M \} $. Como saber se $X\sim Z$ olhando apenas para as duas amostras?</div></p>
 
-<blockquote>
-  <p>testando uma caixa definição</p>
-</blockquote>
-
 <p><div align="justify">Nesta série de postagens pretendo apresentar alguns métodos para identificar o <i>Covariate Shift</i> e, pelo menos, uma maneira de tratá-lo.</div></p>
