@@ -99,19 +99,14 @@ X_new, Y_new = sample(100, mean = 2)
 
 <p><div align="justify">Como esperado, a qualidade do modelo cai para um $R^2$ de $-0.283$ nos dados novos. Isto lembrando que a relação entre $X$ e $Y$ não mudou, apenas a distribuição de $X$.</div></p>
 
-
 # O que procuramos identificar?
-
 
 <p><div align="justify">Dada a motivação inicial o problema se resume ao seguinte enunciado:</div></p>
 
 <p><div align="justify">Seja $X$ e $Z$ variáveis (ou vetores) aleatórias. Suponha que eu amostre $X$ de forma independente $N\in\mathbb{N}^*$ vezes e repita $Z$ seja amostrada também de forma independente $M\in \mathbb{N}^*$ vezes ficando com as amostras $\{x_1, x_2, \cdots, x_N \} $ e $\{z_1, z_2, \cdots, z_M \} $. Como saber se $X\sim Z$ olhando apenas para as duas amostras?</div></p>
 
-<div class="ac_box">
-      <div class="ac_box_top"><div>
-            <div class="ac_box_cont">
-			 testando caixa
-             <div>
-<div>
+<blockquote>
+  <p>testando uma caixa definição</p>
+</blockquote>
 
 <p><div align="justify">Nesta série de postagens pretendo apresentar alguns métodos para identificar o <i>Covariate Shift</i> e, pelo menos, uma maneira de tratá-lo.</div></p>
