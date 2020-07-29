@@ -9,7 +9,7 @@ summary: Nesta postagem discutimos o problema dataset shift com um exemplo visua
 
 ## Motivação
 
-Um dos objetivos do aprendizado supervisionado é tentar reconhecer padrões entre variáveis explicativas e uma variável alvo. Matematicamente, temos um vetor aleatório $V = (X_1, X_2, \cdots, X_n, Y)$ e supomos que existe uma relação entre as variáveis explicativas $X_i$ e a variável alvo $Y$ do tipo
+<div align="justify">Um dos objetivos do aprendizado supervisionado é tentar reconhecer padrões entre variáveis explicativas e uma variável alvo. Matematicamente, temos um vetor aleatório $V = (X_1, X_2, \cdots, X_n, Y)$ e supomos que existe uma relação entre as variáveis explicativas $X_i$ e a variável alvo $Y$ do tipo
 
 $$
 \begin{equation*}
@@ -107,4 +107,4 @@ Dada a motivação inicial o problema se resume ao seguinte enunciado:
 
 > Seja $X$ e $Z$ variáveis (ou vetores) aleatórias. Suponha que eu amostre $X$ de forma independente $N\in\mathbb{N}^\*$ vezes e repita $Z$ seja amostrada também de forma independente $M\in \mathbb{N}^\*$ vezes ficando com as amostras $\\{x_1, x_2, \cdots, x_N \\} $ e $\\{z_1, z_2, \cdots, z_M \\} $. Como saber se $X\sim Z$ olhando apenas para as duas amostras?
 
-Nesta série de postagens pretendo apresentar alguns métodos para identificar o *Covariate Shift* e, pelo menos, uma maneira de tratá-lo.
+Nesta série de postagens pretendo apresentar alguns métodos para identificar o *Covariate Shift* e, pelo menos, uma maneira de tratá-lo.</div>
