@@ -7,8 +7,6 @@ mathjax: true
 summary: Abordo a definição matemática de distância com exemplos ilustrativos no contexto de ciência de dados
 ---
 
-**Em construção: ajustes de formatação de LaTeX.**
-
 Vários algoritmos de aprendizado de máquina baseados em distância são genéricos o suficiente para mudarmos a forma como calculamos a distância entre dois pontos. Quando olhamos para dados em $\mathbb{R}^n$, para $n\in\mathbb{N}^*$, estamos acostumados com a **distância euclidiana**. Essa distância calcula o tamanho do comprimento de reta que liga os dois pontos, com uma espécie de generalização do teorema de Pitágoras.
 
 Explicitamente temos, para $\textbf{x} = (x_1, x_2, \cdots, x_n) \in \mathbb{R}^n$ e $\textbf{y} = (y_1, y_2, \cdots, y_n) \in \mathbb{R}^n$, a distância dada por
@@ -319,6 +317,3 @@ Podemos brincar com essas diferentes matrizes colocando pesos nas coordenadas qu
 
 <p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem5.jpg"></center>
 <center><b>Figura 5</b>: Bolas de raio 1 e centro na origem para diferentes matrizes.</center></p>
-
-1
-<p><center>$A=\left[\begin{array}{cc} a & b \\ c & d \end{array}\right]$</center></p>
