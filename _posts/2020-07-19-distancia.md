@@ -311,17 +311,15 @@ def ponderada(X, Y):
 
 Uma matriz com todos valores da diagonal positivos é sempre uma matriz positiva definida. Neste caso podemos interpretar os valores da diagonal como os pesos que queremos dar em cada uma das coordenadas. A distância euclidiana usual ocorre quando $A$ é a matriz identidade. Já o caso estudado anteriormente ocorre quando
 
-$$
-\begin{equation*}
+$
 A = \left[\\begin{array}{cc} 10 & 0 \\\\ 0 & 1 \\end{array}\right]
-\end{equation*}
-$$
+$
 
 Podemos brincar com essas diferentes matrizes colocando pesos nas coordenadas que consideramos mais importantes. Valores fora da diagonal principal podem ser interpretados como uma interação entre aquelas coordenas. Eles vão distorcer o formato da bola, como podemos ver na Figura 5 em que temos, respectivamente, as matrizes positivas definidas
 
-$$
-A= \\left[\\begin{array}{cc} 2 & 0 \\\\ 0 & 1 \\end{array}\\right], \\left[\\begin{array}{cc} 2 & -1 \\\\ -1 & 2 \\end{array}\\right]\\textrm{e }\\left[\\begin{array}{cc} 1 & -1 \\\\ -1 & 4 \\end{array}\\right].
-$$
+$
+A= \left[\\begin{array}{cc} 2 & 0 \\\\ 0 & 1 \\end{array}\right], \left[\\begin{array}{cc} 2 & -1 \\\\ -1 & 2 \\end{array}\right]\textrm{, e }\left[\\begin{array}{cc} 1 & -1 \\\\ -1 & 4 \\end{array}\right].
+$
 
 <p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem5.jpg"></center>
 <center><b>Figura 5</b>: Bolas de raio 1 e centro na origem para diferentes matrizes.</center></p>
