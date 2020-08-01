@@ -329,3 +329,7 @@ $$
 $$\left[\\begin{array}{cc} 1 & -1 \\ -1 & 4 \\end{array}\right]$$
 --
 <center>$\left[\\begin{array}{cc} a & b \\\\ c & d \\end{array}\right]$</center>
+
+teste
+$\require{marvosym}$
+$\Bat$
