@@ -326,8 +326,17 @@ $
 
 $$\left[\\begin{array}{cc} 1 & -1 \\ -1 & 4 \\end{array}\right]$$
 --
+1
 $\left[\\begin{array}{cc} a & b \\\\ c & d \\end{array}\right]$
 
-teste
-$\require{marvosym}$
-$\Bat$
+2
+$\left[\\begin{array}{cc} a & b \\\\ c & d \\end{array}\right]$
+
+3
+<p><center>$\left[\begin{array}{cc} a & b \\ c & d \end{array}\right]$</center></p>
+
+4
+<p><center>$\\left[\\begin{array}{cc} a & b \\\\ c & d \\end{array}\\right]$</center></p>
+
+5
+<p><center>$\left[\begin{array}{cc} a & b \\ c & d \end{array}\right]$</center></p>
