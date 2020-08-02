@@ -41,7 +41,7 @@ d_p(\textbf{x},\textbf{y}) = || \textbf{x} - \textbf{y} ||_p,
 \end{equation*}
 $$
 
-<p><div align="justify">com soma de vetores coordenada a coordenada em que a norma Lp $\|\|\cdot\|\|_p : \mathbb{R}^n \to \mathbb{R} $ é dada por</div></p>
+<p><div align="justify">com soma de vetores coordenada a coordenada em que a norma Lp $||\cdot||_p : \mathbb{R}^n \to \mathbb{R} $ é dada por</div></p>
 
 $$
 \begin{equation*}
@@ -73,7 +73,7 @@ $$
 
 <p><div align="justify">Os elementos de $B_r(x)$ são justamente os elementos de $\mathcal{A}$ perto de $x$ (sob essa tolerância de raio $r$)</div></p>
 
-<p><div align="justify">Vamos brincar com o formato dessas bolas quando $\mathcal{A}=\mathbb{R}^2$ e $d=d_p$ variando o valor do $p$. Essas métricas já estão implementadas no [`sklearn.neighbors.DistanceMetric`](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html), vamos apenas criar uma função que plota essas bolas de métricas, raios e centros arbitrários.</div></p>
+<p><div align="justify">Vamos brincar com o formato dessas bolas quando $\mathcal{A}=\mathbb{R}^2$ e $d=d_p$ variando o valor do $p$. Essas métricas já estão implementadas no <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html"><code>sklearn.neighbors.DistanceMetric</code></a>, vamos apenas criar uma função que plota essas bolas de métricas, raios e centros arbitrários.</div></p>
 
 ```python
 import sklearn.neighbors as neigh
@@ -151,7 +151,7 @@ $$
 
 <p><div align="justify">Aqui, a noção de perto ou distante se tornam um pouco contra-intuitiva. Se $\mathcal{A}=\mathbb{R}^2$, então o ponto $(0,0)$ está a mesma distância do ponto $(0,1)$ e do ponto $(42,-42)$. Podemos olhar isso analisando as bolas para diferentes valores do raio $r$. Para qualquer $r\in (0,1]$, a temos que $B_r(x) = \{ x \}$ pois somente $x$ está a uma distância menor que 1 dele mesmo. Agora, para qualquer $r\in (1,\infty)$ temos que $B_r(x) = \mathcal{A}$ uma vez que qualquer ponto está a uma distância menor ou igual a 1 de $x$. </div></p>
 
-<p><div align="justify">No [`sklearn.neighbors.DistanceMetric`](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html), podemos passar uma métrica genérica que respeite a definição que fizemos na definição formal. Usando o argumento `'pyfunc'` e estabelecendo a função métrica em `func`  que recebe dois vetores numpy unidimensionais e retorna a distância entre eles.</div></p>
+<p><div align="justify">No <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html"><code>sklearn.neighbors.DistanceMetric</code></a>, podemos passar uma métrica genérica que respeite a definição que fizemos na definição formal. Usando o argumento <code>pyfunc</code> e estabelecendo a função métrica em <code>func</code> que recebe dois vetores numpy unidimensionais e retorna a distância entre eles.</div></p>
 
 ```python
 def discrete(X, Y):
@@ -298,7 +298,7 @@ $$
 \end{equation*}
 $$
 
-<p><div align="justify">fazendo as operações usuais de multiplicação de vetores linha, coluna e matrizes. Portanto, fixada $A$, podemos implementar essa métrica para usar a função `bola_aberta` como fizemos com a métrica discreta.</div></p>
+<p><div align="justify">fazendo as operações usuais de multiplicação de vetores linha, coluna e matrizes. Portanto, fixada $A$, podemos implementar essa métrica para usar a função <code>bola_aberta</code> como fizemos com a métrica discreta.</div></p>
 
 ```python
 def ponderada(X, Y):
