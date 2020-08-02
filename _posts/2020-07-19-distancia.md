@@ -7,9 +7,9 @@ mathjax: true
 summary: Abordo a definição matemática de distância com exemplos ilustrativos no contexto de ciência de dados
 ---
 
-Vários algoritmos de aprendizado de máquina baseados em distância são genéricos o suficiente para mudarmos a forma como calculamos a distância entre dois pontos. Quando olhamos para dados em $\mathbb{R}^n$, para $n\in\mathbb{N}^*$, estamos acostumados com a **distância euclidiana**. Essa distância calcula o tamanho do comprimento de reta que liga os dois pontos, com uma espécie de generalização do teorema de Pitágoras.
+<p><div align="justify">Vários algoritmos de aprendizado de máquina baseados em distância são genéricos o suficiente para mudarmos a forma como calculamos a distância entre dois pontos. Quando olhamos para dados em $\mathbb{R}^n$, para $n\in\mathbb{N}^*$, estamos acostumados com a **distância euclidiana**. Essa distância calcula o tamanho do comprimento de reta que liga os dois pontos, com uma espécie de generalização do teorema de Pitágoras.</div></p>
 
-Explicitamente temos, para $\textbf{x} = (x_1, x_2, \cdots, x_n) \in \mathbb{R}^n$ e $\textbf{y} = (y_1, y_2, \cdots, y_n) \in \mathbb{R}^n$, a distância dada por
+<p><div align="justify">Explicitamente temos, para $\textbf{x} = (x_1, x_2, \cdots, x_n) \in \mathbb{R}^n$ e $\textbf{y} = (y_1, y_2, \cdots, y_n) \in \mathbb{R}^n$, a distância dada por</div></p>
 
 $$
 \begin{equation*}
@@ -17,23 +17,23 @@ $$
 \end{equation*}
 $$
 
-Entretanto, dependendo da natureza do problema essa distância pode não ser a mais indicada. Neste post, vamos discutir as definições de distância aos olhos de conceitos básicos de topologia de espaços métricos e exemplificar algumas métricas clássicas entendendo a diferença entre elas. Essa discussão pode ser importante para se aprofundar em algoritmos clássicos que utilizam um cálculo de distância como o kNN, o DBScan e o k-means e suas variações. Além de entender outros momentos em que você pode utilizar o conceito de distância.
+<p><div align="justify">Entretanto, dependendo da natureza do problema essa distância pode não ser a mais indicada. Neste post, vamos discutir as definições de distância aos olhos de conceitos básicos de topologia de espaços métricos e exemplificar algumas métricas clássicas entendendo a diferença entre elas. Essa discussão pode ser importante para se aprofundar em algoritmos clássicos que utilizam um cálculo de distância como o kNN, o DBScan e o k-means e suas variações. Além de entender outros momentos em que você pode utilizar o conceito de distância.</div></p>
 
-#  <center>Definindo formalmente a distância entre dois pontos</center>
+#  Definindo formalmente a distância entre dois pontos
 
-**Definição**: Dado um conjunto $\mathcal{A}$, uma função $d:\mathcal{A}\times\mathcal{A}\to \mathbb{R}$ é chamada de uma **métrica** (ou **distância**) em $\mathcal{A}$ se, dados $x,y,z\in\mathcal{A}$ quaisquer, satisfaz:
+<p><div align="justify">**Definição**: Dado um conjunto $\mathcal{A}$, uma função $d:\mathcal{A}\times\mathcal{A}\to \mathbb{R}$ é chamada de uma **métrica** (ou **distância**) em $\mathcal{A}$ se, dados $x,y,z\in\mathcal{A}$ quaisquer, satisfaz:</div></p>
 
 * $d(x,y) = 0 \Leftrightarrow x = y$ (identidade);
 * $d(x,y) = d(y,x)$ (simetria);
 * $d(x,y) + d(y,z) \geq d(x,z)$ (desigualdade triangular).
 
-Repare que dessas propriedades, tiramos ainda que $d(x,y)\geq 0$ para quaisquer $x,y\in \mathcal{A}$. Como pela desigualdade triangular $d(x,y) + d(y,x) \geq d(x,x)$, pela simetria e usando que $d(x,x)=0$ temos que $2 \, d(x,y) \geq 0$, e segue a positividade da métrica.
+<p><div align="justify">Repare que dessas propriedades, tiramos ainda que $d(x,y)\geq 0$ para quaisquer $x,y\in \mathcal{A}$. Como pela desigualdade triangular $d(x,y) + d(y,x) \geq d(x,x)$, pela simetria e usando que $d(x,x)=0$ temos que $2 \, d(x,y) \geq 0$, e segue a positividade da métrica.</div></p>
 
-Com uma função métrica $d$ definida como anteriormente, a **distância entre dois pontos** $x,y\in \mathcal{A}$ é dada por $d(x,y)$.
+<p><div align="justify">Com uma função métrica $d$ definida como anteriormente, a **distância entre dois pontos** $x,y\in \mathcal{A}$ é dada por $d(x,y)$.</div></p>
 
-#  <center>Exemplos clássicos para $\mathbb{R}^n$</center>
+#  Exemplos clássicos para $\mathbb{R}^n$
 
-A natureza e escolha da métrica varia de acordo com o problema estudado. Em geral, quando $\mathcal{A}=\mathbb{R}^n$, estamos interessados em **distâncias induzidas pelas normas Lp's** (com $1\leq p \leq \infty$) dadas na forma
+<p><div align="justify">A natureza e escolha da métrica varia de acordo com o problema estudado. Em geral, quando $\mathcal{A}=\mathbb{R}^n$, estamos interessados em **distâncias induzidas pelas normas Lp's** (com $1\leq p \leq \infty$) dadas na forma</div></p>
 
 $$
 \begin{equation*}
@@ -41,7 +41,7 @@ d_p(\textbf{x},\textbf{y}) = || \textbf{x} - \textbf{y} ||_p,
 \end{equation*}
 $$
 
-com soma de vetores coordenada a coordenada em que a norma Lp $\|\|\cdot\|\|_p : \mathbb{R}^n \to \mathbb{R} $ é dada por
+<p><div align="justify">com soma de vetores coordenada a coordenada em que a norma Lp $\|\|\cdot\|\|_p : \mathbb{R}^n \to \mathbb{R} $ é dada por</div></p>
 
 $$
 \begin{equation*}
@@ -49,7 +49,7 @@ $$
 \end{equation*}
 $$
 
-As métricas dessa família de distâncias, no contexto de aprendizado de máquina, são mais conhecidas como **distância Minkowski com parâmetro p**. Repare que a distância euclidiana usual é a simplesmente a distância de Minkowski com parâmetro 2[.](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html) O caso limite, quando $p=\infty$ é definido como o maior valor absoluto entre as coordenadas, ou seja, 
+<p><div align="justify">As métricas dessa família de distâncias, no contexto de aprendizado de máquina, são mais conhecidas como **distância Minkowski com parâmetro p**. Repare que a distância euclidiana usual é a simplesmente a distância de Minkowski com parâmetro 2[.](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html) O caso limite, quando $p=\infty$ é definido como o maior valor absoluto entre as coordenadas, ou seja,</div></p>
 
 $$
 \begin{equation*}
@@ -57,9 +57,9 @@ $$
 \end{equation*}
 $$
 
-A métrica $d_\infty$ é também conhecida como **distância de Chebyshev**. Um outro nome clássico para a métrica $d_1$ é **distância de Manhattan**.
+<p><div align="justify">A métrica $d_\infty$ é também conhecida como **distância de Chebyshev**. Um outro nome clássico para a métrica $d_1$ é **distância de Manhattan**.</div></p>
 
-##  <center>Diferentes bolas do $\mathbb{R}^n$</center>
+##  Diferentes bolas do $\mathbb{R}^n$
 
 Para ilustrar como essa diferentes formas de medir distância funcionam, vamos definir um conceito primordial de topologia de espaços métricos: a bola aberta. A noção de bola tenta dar um significado para a pergunta: _"O que significa ter um elemento perto de outro?"_.
 
@@ -129,11 +129,11 @@ bola_aberta(lista_distancias)
 
 Eu nunca vou entender qual é a graça de Chaves, mas impossível não fazer um comentário infeliz sobre as bolas quadradas do Kiko estarem na verdade utilizando a métrica de Chebyshev. O Kiko, como você agora, entende bastante de topologia de espaços métricos.
 
-# <center>Mais exemplos</center>
+# Mais exemplos
 
 Vamos passar por mais alguns exemplos interessantes que podem ajudar a construir a intuição ou que são relevantes no contexto de ciência de dados.
 
-## <center>Métrica discreta</center>
+## Métrica discreta
 
 Imagine um experimento exótico em que o valor explícito da distância entre dois pontos não é importante, mas é relevante saber se dois elementos são iguais ou não. Nesse cenário, a métrica discreta pode ser útil. Dado $\mathcal{A}$ qualquer, a distância $d$ entre $x,y\in\mathcal{A}$ é dada por
 
@@ -172,11 +172,11 @@ Na Figura 2, passamos como raios das bolas os valores $0.5$ e $1.5$, para ver o 
 <p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem2.jpg"></center>
 <center><b>Figura 2</b>: Bolas da métrica discreta. Lembrando que a região cinza é o lado de fora da bola e a região vermelha é o lado de dentro. Na primeira imagem, não podemos ver que o ponto (0,0) está dentro da bola pela resolução.</center></p>
 
-## <center>Distância de Hamming</center>
+## Distância de Hamming
 
 A distância de Hamming entre dois vetores de tamanho $n$ é o número de componentes diferentes entre eles. Ela claramente se demonstra muito útil quando o significado dos valores das componentes não são numéricos ou não tem um sentido de ordem. Vamos dar um cenário em que pode fazer sentido usar ela:
 
-### <center>Distância entre panelas</center>
+### Distância entre panelas
 
 Imagine que eu queira descrever a distância entre duas panelas e os atributos que eu considero importante sobre esse objeto são a cor e a presença ou não de cabo. Neste caso, estamos representando nosso espaço como $\mathcal{A} = \\{ \textrm{cinza}, \textrm{vermelha}, \textrm{preta}  \\} \times \\{\textrm{tem cabo}, \textrm{não tem cabo} \\}$. Uma panela é representada por um vetor de duas componentes, por exemplo $(\textrm{cinza}, \textrm{tem cabo})$. 
 
@@ -202,9 +202,9 @@ Esta forma de calcular distâncias, está nos falando que a $\textrm{panela}_1$ 
 
 Uma alternativa é justamente calcular a distância Hamming das panelas, somando $1$ na distância pra cada categoria (cor e presença de cabo) em que há diferença.
 
->  A distância de Hamming é equivalente a fazer um One Hot Encoding de cada uma das componentes dos vetores e depois calcular a distância com qualquer Minkowski (dividindo por 2 o resultado final).
+$\oint$ <i>A distância de Hamming é equivalente a fazer um One Hot Encoding de cada uma das componentes dos vetores e depois calcular a distância com qualquer Minkowski (dividindo por 2 o resultado final).</i>
 
-## <center>Distância do ângulo</center>
+## Distância do ângulo
 
 Imagine que $\mathcal{A}= S^{\,1} =\\{ (a,b)\in\mathbb{R}^2 : a^2 + b^2 = 1 \\}$, ou seja, estamos olhando exatamente para os vetores do plano de norma L2 igual a 1, o círculo tradicional que conhecemos. Podemos definir uma distância dada pelo ângulo entre dois pontos. Por exemplo, a distância entre $(0,1)$ e $(1,0)$ seria $\pi/2$, uma vez que o ângulo entre estes dois vetores é $90^\circ$. Uma forma explícita de calcular esse ângulo é 
 
@@ -228,7 +228,7 @@ $$
 
 Esta forma de definir distância satisfaz as propriedades desejadas, mas não é fácil ver porque a desigualdade triangular é realizada _(não se preocupe com isso, mas caso conheça um pouco de geometria diferencial, a ideia é que esta definição é a métrica geodésica na hiper-esfera unitária)_.
 
-### <center>Distância entre documentos</center>
+### Distância entre documentos
 
 Essa métrica é tradicionalmente usada em discussões iniciais sobre distância entre dois textos. Primeiro, temos que pensar em uma representação numérica para um texto. Uma maneira inicial é pensar no texto como uma _bag of words_, desprezando a ordem das palavras, letras maiúsculas e pontuações, mas levando em conta a frequência de cada palavra no texto. 
 
@@ -252,9 +252,9 @@ d_{\textrm{ang}}(\textrm{texto}_1, \textrm{texto}_2) = \arccos \left( \frac{1\cd
 $$
 Considerando que essa distância vale no mínimo 0 e no máximo $\pi$, temos textos razoavelmente parecidos.
 
->  Essa abordagem apresenta inúmeras simplificações que fazem a gente perder a qualidade da resposta. Por exemplo, sabemos que palavras diferentes podem significar a mesma coisa (ou conjugações diferentes, plurais etc). Palavras iguais em contextos diferentes podem ter significados diferentes. Existem palavras comuns a vários textos ou que ocorrem muitas vezes no mesmo texto que podem não ser úteis. Em muitos casos a ordem das palavras é muito importante e mudam o sentido de uma frase (como usar a palavra "_não_"). Entre outros problemas.
+$\oint$ <i>Essa abordagem apresenta inúmeras simplificações que fazem a gente perder a qualidade da resposta. Por exemplo, sabemos que palavras diferentes podem significar a mesma coisa (ou conjugações diferentes, plurais etc). Palavras iguais em contextos diferentes podem ter significados diferentes. Existem palavras comuns a vários textos ou que ocorrem muitas vezes no mesmo texto que podem não ser úteis. Em muitos casos a ordem das palavras é muito importante e mudam o sentido de uma frase (como usar a palavra "não"). Entre outros problemas.</i>
 
-## <center>Distância entre funções contínuas</center>
+## Distância entre funções contínuas
 
 Seja agora $\mathcal{A}=C^{\,0}[a,b] = \\{f \in \mathbb{R}^{[a,b]}: f \textrm{ contínua}\\}$, o conjunto das funções contínuas com domínio $[a,b]\subset\mathbb{R}$ e contradomínio $\mathbb{R}$.  Podemos definir a distância entre as funções $f,g\in\mathcal{A}$ como 
 
@@ -276,15 +276,15 @@ Nessa métrica, a bola de raio $r>0$ ao redor da função $f:[a,b]\to\mathbb{R}$
 <p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem4.jpg"></center>
 <center><b>Figura 4</b>: A bola de raio $0.5$ centrada na função preta são todas as funções que estão limitadas pela faixa vermelha. A função verde é um exemplo que está na bola pois não sai desse limite.</center></p>
 
-> No post Covariate Shift: Teste KS (até fim de agosto) falarei como usar uma variação dessa distância pra definir uma distância entre variáveis aleatórias.
+$\oint$ <i>No post Covariate Shift: Teste KS (até fim de agosto) falarei como usar uma variação dessa distância pra definir uma distância entre variáveis aleatórias.</i>
 
-## <center>Distância Ponderada</center>
+## Distância Ponderada
 
 Em muitos casos pode ser importante atribuir um peso maior para alguma das coordenadas. Por exemplo, se $\mathcal{A}=\mathbb{R}^2$ e estar perto na primeira coordenada é $10$ vezes mais importante do que estar perto na , segunda, podemos fazer uma variação da métrica Euclidiana para calcular a distância entre $\textbf{x} = (x_1,x_2)$ e $\textbf{y}=(y_1,y_2)$ como
 
 $$
 \begin{equation*}
- d_{\textrm{ponderada}}(\textbf{x},\textbf{y}) = \sqrt{10 (x\_1-y\_1)^2 +(x\_2-y\_2)^2 }\,.
+ d_{\textrm{ponderada}}(\textbf{x},\textbf{y}) = \sqrt{10 (x_1-y_1)^2 +(x_2-y_2)^2 }\,.
 \end{equation*}
 $$
 
