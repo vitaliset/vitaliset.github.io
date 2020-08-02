@@ -149,7 +149,7 @@ $$
 
 <p><div align="justify">É um exercício legal se convencer que esta forma de distância satisfaz as propriedades que desejávamos na definição de métrica.</div></p>
 
-<p><div align="justify">Aqui, a noção de perto ou distante se tornam um pouco contra-intuitiva. Se $\mathcal{A}=\mathbb{R}^2$, então o ponto $(0,0)$ está a mesma distância do ponto $(0,1)$ e do ponto $(42,-42)$. Podemos olhar isso analisando as bolas para diferentes valores do raio $r$. Para qualquer $r\in (0,1]$, a temos que $B\_r(x) = \\{ x \\}$ pois somente $x$ está a uma distância menor que 1 dele mesmo. Agora, para qualquer $r\in (1,\infty)$ temos que $B\_r(x) = \mathcal{A}$ uma vez que qualquer ponto está a uma distância menor ou igual a 1 de $x$. </div></p>
+<p><div align="justify">Aqui, a noção de perto ou distante se tornam um pouco contra-intuitiva. Se $\mathcal{A}=\mathbb{R}^2$, então o ponto $(0,0)$ está a mesma distância do ponto $(0,1)$ e do ponto $(42,-42)$. Podemos olhar isso analisando as bolas para diferentes valores do raio $r$. Para qualquer $r\in (0,1]$, a temos que $B_r(x) = \\{ x \\}$ pois somente $x$ está a uma distância menor que 1 dele mesmo. Agora, para qualquer $r\in (1,\infty)$ temos que $B_r(x) = \mathcal{A}$ uma vez que qualquer ponto está a uma distância menor ou igual a 1 de $x$. </div></p>
 
 <p><div align="justify">No [`sklearn.neighbors.DistanceMetric`](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html), podemos passar uma métrica genérica que respeite a definição que fizemos na definição formal. Usando o argumento `'pyfunc'` e estabelecendo a função métrica em `func`  que recebe dois vetores numpy unidimensionais e retorna a distância entre eles.</div></p>
 
@@ -167,7 +167,7 @@ def discrete(X, Y):
 bola_aberta([neigh.DistanceMetric.get_metric('pyfunc', func = discrete)]*2,[0.5, 1.5])
 ```
 
-<p><div align="justify">Na Figura 2, passamos como raios das bolas os valores $0.5$ e $1.5$, para ver o efeito discutido anteriormente de que $B\_0.5((0,0))=\\{(0,0)\\}$ e $B\_2((0,0))=\mathbb{R}$.</div></p>
+<p><div align="justify">Na Figura 2, passamos como raios das bolas os valores $0.5$ e $1.5$, para ver o efeito discutido anteriormente de que $B_0.5((0,0))=\\{(0,0)\\}$ e $B_2((0,0))=\mathbb{R}$.</div></p>
 
 <p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem2.jpg"></center>
 <center><b>Figura 2</b>: Bolas da métrica discreta. Lembrando que a região cinza é o lado de fora da bola e a região vermelha é o lado de dentro. Na primeira imagem, não podemos ver que o ponto (0,0) está dentro da bola pela resolução.</center></p>
@@ -182,7 +182,7 @@ bola_aberta([neigh.DistanceMetric.get_metric('pyfunc', func = discrete)]*2,[0.5,
 
 <p><div align="justify">A maneira como vimos distância até agora apenas falava sobre números. Podemos adaptar $\mathcal{A}$ para analisar o espaço $\mathcal{A}' =\\{1,2,3\\}\times\\{1,2\\}$ em que fazemos a bijeção entre os elementos pelo mapa ($\textrm{cinza}\to 1$, $\textrm{vermelha}\to 2$, $\textrm{preta}\to 3$) e ($\textrm{tem cabo}\to 1$, $\textrm{não tem cabo}\to 2$). Com essa transformação, podemos usar por exemplo a distância de Minkowski com parâmetro 1.</div></p>
 
-<p><div align="justify">Imagine que temos $\textrm{panela}\_1 = (\textrm{cinza},\textrm{tem cabo})$, $\textrm{panela}\_2 = (\textrm{preta},\textrm{tem cabo})$, e $\textrm{panela}\_3 = (\textrm{vermelha},$$\textrm{não tem cabo})$. Neste caso, ficaríamos com coisas do tipo:</div></p>
+<p><div align="justify">Imagine que temos $\textrm{panela}_1 = (\textrm{cinza},\textrm{tem cabo})$, $\textrm{panela}_2 = (\textrm{preta},\textrm{tem cabo})$, e $\textrm{panela}_3 = (\textrm{vermelha},$$\textrm{não tem cabo})$. Neste caso, ficaríamos com coisas do tipo:</div></p>
 
 $$
 \begin{equation*}
@@ -226,7 +226,7 @@ d_{\textrm{ang}}(\textbf{x},\textbf{y}) = \arccos \left( \sum_{i=1}^n x_i\,y_i\r
 \end{equation*}
 $$
 
-<p><div align="justify">Esta forma de definir distância satisfaz as propriedades desejadas, mas não é fácil ver porque a desigualdade triangular é realizada <i>($\oint$ caso conheça um pouco de geometria diferencial, a ideia é que esta definição é a métrica geodésica na hiper-esfera unitária)</i>.</div></p>
+<p><div align="justify">Esta forma de definir distância satisfaz as propriedades desejadas, mas não é fácil ver porque a desigualdade triangular é realizada fora de $S^1$ <i>($\oint$ caso conheça um pouco de geometria diferencial, a ideia é que esta definição é a métrica geodésica na hiper-esfera unitária)</i>.</div></p>
 
 ### Distância entre documentos
 
@@ -234,7 +234,7 @@ $$
 
 <p><div align="justify">Neste caso, $\mathcal{A} = \mathbb{N}^{t}$, em que $t$ é o número total de palavras diferentes que aparecem no _corpus_ (conjunto de todos os documentos) que desejamos calcular as distâncias. Cada componente está associada com uma dessas palavras. Um texto então é um vetor de $\mathcal{A}$ em que cada elemento nos dá quantas vezes aquela palavra ocorre no texto.</div></p>
 
-<p><div align="justify">Fica mais fácil ver isso com um exemplo: Suponha que nosso <i>corpus</i> é dado pelos textos $\\{$ $\textrm{texto}\_1 = $ <i>"Olá, bom dia, bom dia."</i>,  $\textrm{texto}\_2 = $ <i>"Bom dia!"</i>$\\}$. Neste caso, temos o mapa: $\\{1\to$ <i>ola</i>, $2\to$ <i>bom</i>, $3\to$ <i>dia</i>$\\}$ indicando cada componente do vetor de $\mathbb{N}^{\,3}$. Ficamos com</div></p>
+<p><div align="justify">Fica mais fácil ver isso com um exemplo: Suponha que nosso <i>corpus</i> é dado pelos textos $\\{$ $\textrm{texto}_1 = $ <i>"Olá, bom dia, bom dia."</i>,  $\textrm{texto}_2 = $ <i>"Bom dia!"</i>$\\}$. Neste caso, temos o mapa: $\\{1\to$ <i>ola</i>, $2\to$ <i>bom</i>, $3\to$ <i>dia</i>$\\}$ indicando cada componente do vetor de $\mathbb{N}^{\,3}$. Ficamos com</div></p>
 
 $$
 \begin{equation*}
@@ -273,7 +273,7 @@ $$
 <p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem3.jpg"></center>
 <center><b>Figura 3</b>: Na primeira imagem temos o módulo da diferença das funções avaliadas. Na segunda imagem temos $f$ em vermelho, $g$ em azul e alguns valores da distância pontual das funções em alguns valores de $x$ em cinza. Em preto temos o ponto que representa a distância entre essas duas funções, valendo $2.5$, nesse caso.</center></p>
 
-<p><div align="justify">Nessa métrica, a bola de raio $r>0$ ao redor da função $f:[a,b]\to\mathbb{R}$ são todas as funções (definidas no intervalo $[a,b]$) que ficam sempre dentro da faixa ao redor de $f$ de largura $2r$. Na Figura 4 temos um exemplo disso. A função $g(x) = (x-0.4)^2 + 0.4\sin(30x)$ está dentro da bola $B\_{0.5}((x-0.4)^2)$ pois a a distância entre elas é $\max_{x\in[0,1]} \|0.4 \sin(30x) \|<0.5$.</div></p>
+<p><div align="justify">Nessa métrica, a bola de raio $r>0$ ao redor da função $f:[a,b]\to\mathbb{R}$ são todas as funções (definidas no intervalo $[a,b]$) que ficam sempre dentro da faixa ao redor de $f$ de largura $2r$. Na Figura 4 temos um exemplo disso. A função $g(x) = (x-0.4)^2 + 0.4\sin(30x)$ está dentro da bola $B_{0.5}((x-0.4)^2)$ pois a a distância entre elas é $\max_{x\in[0,1]} \|0.4 \sin(30x) \|<0.5$.</div></p>
 
 <p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem4.jpg"></center>
 <center><b>Figura 4</b>: A bola de raio $0.5$ centrada na função preta são todas as funções que estão limitadas pela faixa vermelha. A função verde é um exemplo que está na bola pois não sai desse limite.</center></p>
@@ -332,4 +332,6 @@ Colocando em um exemplo, suponha que temos um problema de classificação binár
 
 ___
 
-Espero que este post muito divertido de escrever tenha sido útil para entender melhor o que significa distância e as diferenças entre elas. No mínimo, agora você pode usar algumas das distâncias que discutimos aqui como um dos hiper-parâmetro dos seus modelos baseados em distância!
+Espero que este post, muito divertido de escrever, tenha sido útil para entender melhor o que significa distância e as diferenças entre elas. No mínimo, agora você pode usar algumas das métricas que discutimos aqui como um dos hiper-parâmetro dos seus modelos baseados em distância! 
+
+<i>\oint Nem sempre a troca é imediata. No k-means, por exemplo, a atualização dos centroides é a média dos exemplos daquele cluster justamente porque a média minimiza a função custo dada pela soma das distâncias euclidianas dos exemplos até os seus respectivos centroides. Se escolhemos minimizar a soma das distâncias de Minkowski de parâmetro 1 (L1), então a atualização dos centroides é feita com a mediana coordenada a coordenada uma vez que estes são os valores que minizam a função de custo alterada.</i>
