@@ -149,7 +149,7 @@ $$
 
 <p><div align="justify">É um exercício legal se convencer que esta forma de distância satisfaz as propriedades que desejávamos na definição de métrica.</div></p>
 
-<p><div align="justify">Aqui, a noção de perto ou distante se tornam um pouco contra-intuitiva. Se $\mathcal{A}=\mathbb{R}^2$, então o ponto $(0,0)$ está a mesma distância do ponto $(0,1)$ e do ponto $(42,-42)$. Podemos olhar isso analisando as bolas para diferentes valores do raio $r$. Para qualquer $r\in (0,1]$, a temos que $B_r(x) = \\{ x \\}$ pois somente $x$ está a uma distância menor que 1 dele mesmo. Agora, para qualquer $r\in (1,\infty)$ temos que $B_r(x) = \mathcal{A}$ uma vez que qualquer ponto está a uma distância menor ou igual a 1 de $x$. </div></p>
+<p><div align="justify">Aqui, a noção de perto ou distante se tornam um pouco contra-intuitiva. Se $\mathcal{A}=\mathbb{R}^2$, então o ponto $(0,0)$ está a mesma distância do ponto $(0,1)$ e do ponto $(42,-42)$. Podemos olhar isso analisando as bolas para diferentes valores do raio $r$. Para qualquer $r\in (0,1]$, a temos que $B_r(x) = \{ x \}$ pois somente $x$ está a uma distância menor que 1 dele mesmo. Agora, para qualquer $r\in (1,\infty)$ temos que $B_r(x) = \mathcal{A}$ uma vez que qualquer ponto está a uma distância menor ou igual a 1 de $x$. </div></p>
 
 <p><div align="justify">No [`sklearn.neighbors.DistanceMetric`](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html), podemos passar uma métrica genérica que respeite a definição que fizemos na definição formal. Usando o argumento `'pyfunc'` e estabelecendo a função métrica em `func`  que recebe dois vetores numpy unidimensionais e retorna a distância entre eles.</div></p>
 
@@ -167,7 +167,7 @@ def discrete(X, Y):
 bola_aberta([neigh.DistanceMetric.get_metric('pyfunc', func = discrete)]*2,[0.5, 1.5])
 ```
 
-<p><div align="justify">Na Figura 2, passamos como raios das bolas os valores $0.5$ e $1.5$, para ver o efeito discutido anteriormente de que $B_0.5((0,0))=\\{(0,0)\\}$ e $B_2((0,0))=\mathbb{R}$.</div></p>
+<p><div align="justify">Na Figura 2, passamos como raios das bolas os valores $0.5$ e $1.5$, para ver o efeito discutido anteriormente de que $B_0.5((0,0))=\{(0,0)\}$ e $B_2((0,0))=\mathbb{R}$.</div></p>
 
 <p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem2.jpg"></center>
 <center><b>Figura 2</b>: Bolas da métrica discreta. Lembrando que a região cinza é o lado de fora da bola e a região vermelha é o lado de dentro. Na primeira imagem, não podemos ver que o ponto (0,0) está dentro da bola pela resolução.</center></p>
@@ -178,9 +178,9 @@ bola_aberta([neigh.DistanceMetric.get_metric('pyfunc', func = discrete)]*2,[0.5,
 
 ### Distância entre panelas
 
-<p><div align="justify">Imagine que eu queira descrever a distância entre duas panelas e os atributos que eu considero importante sobre esse objeto são a cor e a presença ou não de cabo. Neste caso, estamos representando nosso espaço como $\mathcal{A} = \\{ \textrm{cinza}, \textrm{vermelha}, \textrm{preta}  \\} \times \\{\textrm{tem cabo}, \textrm{não tem cabo} \\}$. Uma panela é representada por um vetor de duas componentes, por exemplo $(\textrm{cinza}, \textrm{tem cabo})$. </div></p>
+<p><div align="justify">Imagine que eu queira descrever a distância entre duas panelas e os atributos que eu considero importante sobre esse objeto são a cor e a presença ou não de cabo. Neste caso, estamos representando nosso espaço como $\mathcal{A} = \{ \textrm{cinza}, \textrm{vermelha}, \textrm{preta}  \} \times \{\textrm{tem cabo}, \textrm{não tem cabo} \}$. Uma panela é representada por um vetor de duas componentes, por exemplo $(\textrm{cinza}, \textrm{tem cabo})$. </div></p>
 
-<p><div align="justify">A maneira como vimos distância até agora apenas falava sobre números. Podemos adaptar $\mathcal{A}$ para analisar o espaço $\mathcal{A}' =\\{1,2,3\\}\times\\{1,2\\}$ em que fazemos a bijeção entre os elementos pelo mapa ($\textrm{cinza}\to 1$, $\textrm{vermelha}\to 2$, $\textrm{preta}\to 3$) e ($\textrm{tem cabo}\to 1$, $\textrm{não tem cabo}\to 2$). Com essa transformação, podemos usar por exemplo a distância de Minkowski com parâmetro 1.</div></p>
+<p><div align="justify">A maneira como vimos distância até agora apenas falava sobre números. Podemos adaptar $\mathcal{A}$ para analisar o espaço $\mathcal{A}' =\{1,2,3\}\times\{1,2\}$ em que fazemos a bijeção entre os elementos pelo mapa ($\textrm{cinza}\to 1$, $\textrm{vermelha}\to 2$, $\textrm{preta}\to 3$) e ($\textrm{tem cabo}\to 1$, $\textrm{não tem cabo}\to 2$). Com essa transformação, podemos usar por exemplo a distância de Minkowski com parâmetro 1.</div></p>
 
 <p><div align="justify">Imagine que temos $\textrm{panela}_1 = (\textrm{cinza},\textrm{tem cabo})$, $\textrm{panela}_2 = (\textrm{preta},\textrm{tem cabo})$, e $\textrm{panela}_3 = (\textrm{vermelha},$$\textrm{não tem cabo})$. Neste caso, ficaríamos com coisas do tipo:</div></p>
 
@@ -206,7 +206,7 @@ $$
 
 ## Distância do ângulo
 
-<p><div align="justify">Imagine que $\mathcal{A}= S^{\,1} =\\{ (a,b)\in\mathbb{R}^2 : a^2 + b^2 = 1 \\}$, ou seja, estamos olhando exatamente para os vetores do plano de norma L2 igual a 1, o círculo tradicional que conhecemos. Podemos definir uma <b>distância do ângulo</b> dada pelo ângulo entre dois pontos. Por exemplo, a distância entre $(0,1)$ e $(1,0)$ seria $\pi/2$, uma vez que o ângulo entre estes dois vetores é $90^\circ$. Uma forma explícita de calcular esse ângulo é</div></p>
+<p><div align="justify">Imagine que $\mathcal{A}= S^{\,1} =\{ (a,b)\in\mathbb{R}^2 : a^2 + b^2 = 1 \}$, ou seja, estamos olhando exatamente para os vetores do plano de norma L2 igual a 1, o círculo tradicional que conhecemos. Podemos definir uma <b>distância do ângulo</b> dada pelo ângulo entre dois pontos. Por exemplo, a distância entre $(0,1)$ e $(1,0)$ seria $\pi/2$, uma vez que o ângulo entre estes dois vetores é $90^\circ$. Uma forma explícita de calcular esse ângulo é</div></p>
 
 $$
 \begin{equation*}
@@ -218,7 +218,7 @@ $$
 
 <p><div align="justify">É importante reparar que fizemos a restrição de olhar apenas para vetores de tamanho $1$ pra satisfazer a definição de métrica que fizemos. Olhar o ângulo entre vetores de tamanho qualquer não nos dá uma métrica pois não temos a propriedade de identidade: o ângulo entre os vetores $(1,0)$ e $(2,0)$ é $0$ entretanto $(1,0)\neq (2,0)$. Além disso, não é possível definir o ângulo entre um vetor qualquer e o vetor nulo.</div></p>
 
-<p><div align="justify">Podemos generalizar essa distância para vetores em dimensões maiores na superfície de uma hiper-esfera unitária $\mathcal{A} = S^{\,n-1} = \\{ \textbf{x}\in\mathbb{R}^n : \|\|\textbf{x}\|\|_2 = 1 \\}$. Calculamos a  distância entre $\textbf{x} = (x_1, x_2, \cdots, x_n)$ e $\textbf{y} = (y_1, y_2, \cdots, y_n)$, como</div></p>
+<p><div align="justify">Podemos generalizar essa distância para vetores em dimensões maiores na superfície de uma hiper-esfera unitária $\mathcal{A} = S^{\,n-1} = \{ \textbf{x}\in\mathbb{R}^n : \|\|\textbf{x}\|\|_2 = 1 \}$. Calculamos a  distância entre $\textbf{x} = (x_1, x_2, \cdots, x_n)$ e $\textbf{y} = (y_1, y_2, \cdots, y_n)$, como</div></p>
 
 $$
 \begin{equation*}
@@ -234,11 +234,11 @@ $$
 
 <p><div align="justify">Neste caso, $\mathcal{A} = \mathbb{N}^{t}$, em que $t$ é o número total de palavras diferentes que aparecem no _corpus_ (conjunto de todos os documentos) que desejamos calcular as distâncias. Cada componente está associada com uma dessas palavras. Um texto então é um vetor de $\mathcal{A}$ em que cada elemento nos dá quantas vezes aquela palavra ocorre no texto.</div></p>
 
-<p><div align="justify">Fica mais fácil ver isso com um exemplo: Suponha que nosso <i>corpus</i> é dado pelos textos $\\{$ $\textrm{texto}_1 = $ <i>"Olá, bom dia, bom dia."</i>,  $\textrm{texto}_2 = $ <i>"Bom dia!"</i>$\\}$. Neste caso, temos o mapa: $\\{1\to$ <i>ola</i>, $2\to$ <i>bom</i>, $3\to$ <i>dia</i>$\\}$ indicando cada componente do vetor de $\mathbb{N}^{\,3}$. Ficamos com</div></p>
+<p><div align="justify">Fica mais fácil ver isso com um exemplo: Suponha que nosso <i>corpus</i> é dado pelos textos $\{$ $\textrm{texto}_1 = $ <i>"Olá, bom dia, bom dia."</i>,  $\textrm{texto}_2 = $ <i>"Bom dia!"</i>$\}$. Neste caso, temos o mapa: $\{1\to$ <i>ola</i>, $2\to$ <i>bom</i>, $3\to$ <i>dia</i>$\}$ indicando cada componente do vetor de $\mathbb{N}^{\,3}$. Ficamos com</div></p>
 
 $$
 \begin{equation*}
-\\{ \textrm{texto}_1 = (1,2,2),  \textrm{texto}_2 = (0,1,1)\\}
+\{ \textrm{texto}_1 = (1,2,2),  \textrm{texto}_2 = (0,1,1)\}
 \end{equation*}
 $$
 
@@ -258,7 +258,7 @@ $$
 
 ## Distância entre funções contínuas
 
-<p><div align="justify">Seja agora $\mathcal{A}=C^{\,0}[a,b] = \\{f \in \mathbb{R}^{[a,b]}: f \textrm{ contínua}\\}$, o conjunto das funções contínuas com domínio $[a,b]\subset\mathbb{R}$ e contradomínio $\mathbb{R}$.  Podemos definir a distância entre as funções $f,g\in\mathcal{A}$ como </div></p>
+<p><div align="justify">Seja agora $\mathcal{A}=C^{\,0}[a,b] = \{f \in \mathbb{R}^{[a,b]}: f \textrm{ contínua}\}$, o conjunto das funções contínuas com domínio $[a,b]\subset\mathbb{R}$ e contradomínio $\mathbb{R}$.  Podemos definir a distância entre as funções $f,g\in\mathcal{A}$ como </div></p>
 
 $$
 \begin{equation*}
@@ -334,4 +334,4 @@ ___
 
 Espero que este post, muito divertido de escrever, tenha sido útil para entender melhor o que significa distância e as diferenças entre elas. No mínimo, agora você pode usar algumas das métricas que discutimos aqui como um dos hiper-parâmetro dos seus modelos baseados em distância! 
 
-<i>\oint Nem sempre a troca é imediata. No k-means, por exemplo, a atualização dos centroides é a média dos exemplos daquele cluster justamente porque a média minimiza a função custo dada pela soma das distâncias euclidianas dos exemplos até os seus respectivos centroides. Se escolhemos minimizar a soma das distâncias de Minkowski de parâmetro 1 (L1), então a atualização dos centroides é feita com a mediana coordenada a coordenada uma vez que estes são os valores que minizam a função de custo alterada.</i>
+<i>$\oint$ Nem sempre a troca é imediata. No k-means, por exemplo, a atualização dos centroides é a média dos exemplos daquele cluster justamente porque a média minimiza a função custo dada pela soma das distâncias euclidianas dos exemplos até os seus respectivos centroides. Se escolhemos minimizar a soma das distâncias de Minkowski de parâmetro 1 (L1), então a atualização dos centroides é feita com a mediana coordenada a coordenada uma vez que estes são os valores que minizam a função de custo alterada.</i>
