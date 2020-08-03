@@ -25,7 +25,7 @@ $$
 
 # Exemplo de dataset shift entre dados de treino e dados de produção
 
-<p><div align="justify">Sejam $X$ uma variável aleatória tal que $X\sim \mathcal{N}(0,1)$, $f:\mathbb{R}\to\mathbb{R}$  uma função da forma $f(t) = \cos(2\pi t)$ e $\varepsilon$  o ruído modelado como $\varepsilon \sim \mathcal{N}(0,0.5)$. Construiremos um conjunto de dados gerados por esse experimento aleatório.</div></p>
+<p><div align="justify">Sejam $X$ uma variável aleatória tal que $X\sim \mathcal{N}(0,1)$, $f:\mathbb{R}\to\mathbb{R}$  uma função da forma $f(t) = \cos(2\pi t)$ e $\varepsilon$  o ruído modelado como $\varepsilon \sim \mathcal{N}(0,0.25)$. Construiremos um conjunto de dados gerados por esse experimento aleatório.</div></p>
 
 ```python
 def f(X):
