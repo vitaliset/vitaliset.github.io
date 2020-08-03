@@ -61,7 +61,7 @@ $$
 
 ##  Diferentes bolas do $\mathbb{R}^n$
 
-<p><div align="justify">Para ilustrar como essa diferentes formas de medir distância funcionam, vamos definir um conceito primordial de topologia de espaços métricos: a bola aberta. A noção de bola tenta dar um significado para a pergunta: </i>"O que significa ter um elemento perto de outro?"</i>.</div></p>
+<p><div align="justify">Para ilustrar como essa diferentes formas de medir distância funcionam, vamos definir um conceito primordial de topologia de espaços métricos: a bola aberta. A noção de bola tenta dar um significado para a pergunta: <i>"O que significa ter um elemento perto de outro?"</i>.</div></p>
 
 <p><div align="justify">Primeiro, teremos um parâmetro relacionado com o ponto central. Este será o elemento com o qual compararemos os outros, tentando responder se estão próximos ou não. Além disso, o significado de perto depende da nossa tolerância: duas pessoas sentadas a menos de 1 metro é perto (ainda mais em época de corona vírus), mas um meteoro a 1 quilometro da terra também é perto aos olhos de um astrônomo. A bola também terá um parâmetro que nos dará até quanto estamos considerando perto.</div></p>
 

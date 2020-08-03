@@ -19,9 +19,9 @@ summary: Trabalhamos com uma primeira abordagem para identificar variações de 
 
 <p><div align="justify">Existem algumas formas diferentes de se calcular $\alpha$-quantis. Elas são mais ou menos equivalentes para as análises que estamos interessados, então não vamos detalhar pequenas variações. Começaremos discutindo um $\alpha$-quantil muito clássico que você já conhece: a mediana.</div></p>
 
-<p><div align="justify">A mediana de um conjunto de dados é o valor real que divide nossos dados em dois subconjuntos de tamanhos iguais: os conjuntos maiores que a mediana e o conjunto menores ou iguais à mediana. Por exemplo, se temos o conjunto $S =\{ 1, 2, 4, 6, 6, 9\}$, então a mediana pode ser $4$ já que ficamos com $|\{x \in S : x\leq 4 \}| = 3 = |\{x \in S : x\gt 4 \}|$.</div></p>
+<p><div align="justify">A mediana de um conjunto de dados é o valor real que divide nossos dados em dois subconjuntos de tamanhos iguais: os conjuntos maiores que a mediana e o conjunto menores ou iguais à mediana. Por exemplo, se temos o conjunto $S =\{ 1, 2, 4, 6, 6, 9\}$, então a mediana pode ser $4$ já que ficamos com $|\{x \in S : x\leq 4 \}|$ $ = 3 =$ $ |\{x \in S : x\gt 4 \}|$.</div></p>
 
-<p><div align="justify">O conceito de mediana pode ser estendido para variáveis aleatórias. Nesse caso, estamos interessados em procurar um valor real $p$ tal que a probabilidade da variável aleatória ser menor ou igual a $p$ seja 0.5. Isso significa que o valor $p$ divide a reta em duas regiões $\{ x\in\mathbb{R}:x\leq p \}$ e $\{ x\in\mathbb{R}:x\gt p \}$ com a mesma probabilidade, ou seja, $\mathbb{P(X\leq p)}=0.5=\mathbb{P}(X\gt p)$.</div></p>
+<p><div align="justify">O conceito de mediana pode ser estendido para variáveis aleatórias. Nesse caso, estamos interessados em procurar um valor real $p$ tal que a probabilidade da variável aleatória ser menor ou igual a $p$ seja 0.5. Isso significa que o valor $p$ divide a reta em duas regiões $\{ x\in\mathbb{R}:x\leq p \}$ e $\{ x\in\mathbb{R}:x\gt p \}$ com a mesma probabilidade, ou seja, $\mathbb{P(X\leq p)}$ $=0.5=$ $\mathbb{P}(X\gt p)$.</div></p>
 
 <p><div align="justify">Dado $\alpha\in(0,1)$, a ideia de um $\alpha$-quantil de uma variável aleatória $X$ é uma generalização do que fizemos com a mediana. Queremos dividir a reta em duas regiões, uma com probabilidade $\alpha$ e a segunda com uma probabilidade $1-\alpha$. Na mediana, tínhamos $\alpha=0.5$, aqui é feito de forma análoga, mas mais geral. A ideia é que tenhamos que $q_X(\alpha)$, o $\alpha$-quantil de $X$, satisfaça a equação</div></p>
 
@@ -56,6 +56,7 @@ $$
 <p><div align="justify">Para variáveis aleatórias $X$ tais que $F_X$ são contínuas, essa forma de definir $q_X(\alpha)$ equivale com a primeira tentativa de definição. Essas são os exemplos que estaremos mais interessados quando analisarmos o QQ-plot.</div></p>
 
 <p><div align="justify">$\oint $ <i>A generalização da inversa que fizemos é particularmente útil quando temos funções monotômicas, mas descontínuas e não necessariamente injetoras como é o caso das funções distribuições acumuladas de variáveis aleatórias discretas. A única alteração que temos que fazer em casos mais gerais é usar $\inf$ ao invés de $\min$ (pelas propriedades da função distribuição acumulada, como temos a continuidade pela direita, essas duas formas são equivalentes). </i></div></p>
+
 
 ## Cálculo da função quantil de uma variável aleatória contínua
 
@@ -319,3 +320,5 @@ $$
 
 <p><div align="justify">Nos próximos posts dessa série, vamos ver uma outra técnica que pode ajudar nesses casos. No geral, as técnicas de monitoramento de <i>covariate shift</i> tem seus pontos fortes e fracos. O ideal é sempre ter várias formas diferentes para identificar possíveis problemas e tomar decisões de ações.</div></p>
 
+___
+Ajustar pequeno problema na equação com o align das metricas MAE MSE
