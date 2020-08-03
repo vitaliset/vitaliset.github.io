@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Covariate Shift: QQ-plot
+title: Covariate Shift&#58; QQ-plot
 featured-img: sleek
 category: [dataset shift]
 mathjax: true
