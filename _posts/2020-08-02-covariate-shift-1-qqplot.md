@@ -9,7 +9,7 @@ summary: Trabalhamos com uma primeira abordagem para identificar variações de 
 
 <b>Texto em construção: Pequenas alterações de formatação.</b>
 
-<p><div align="justify">Este post faz parte de uma série de postagens que discutem o problema de <i>Covariate Shift</i>. Assumo que você já conhece a motivação do problema e no que estamos interessados em identificar e corrigir. Se você ainda não leu o [primeiro post](https://vitaliset.github.io/covariate-shift-0-formulando/) dessa série, sugiro a leitura.</div></p>
+<p><div align="justify">Este post faz parte de uma série de postagens que discutem o problema de <i>Covariate Shift</i>. Assumo que você já conhece a motivação do problema e no que estamos interessados em identificar e corrigir. Se você ainda não leu o <a href="https://vitaliset.github.io/covariate-shift-0-formulando/">primeiro post</a> dessa série, sugiro a leitura.</div></p>
 
 <p><div align="justify">Relembrando a reformulação do enunciado do problema, temos $X$ e $Z$ variáveis (ou vetores) aleatórias e dois conjuntos de observações amostrados de forma independente $\{x_1, x_2, \cdots, x_N \} $ e $\{z_1, z_2, \cdots, z_M \} $. Queremos entender se a distribuição das variáveis é a mesma, isto é se $X\sim Z$, estudando apenas as amostras coletadas. No contexto do <i>dataset shift</i>, que estamos particularmente interessados, o vetor aleatório $X$ indica a distribuição das covariáveis no conjunto de treino e o vetor aleatório $Z$ nos revela a distribuição das variáveis explicativas dos dados em produção.</div></p>
 
