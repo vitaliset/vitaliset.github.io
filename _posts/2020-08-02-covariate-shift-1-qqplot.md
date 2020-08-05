@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Covariate Shift&#58; QQ-plot
-featured-img: sleek
+featured-img: coverqqplot
 category: [dataset shift]
 mathjax: true
 summary: Trabalhamos com uma primeira abordagem para identificar variações de distribuição sugerindo uma variação numérica para a versão visual
@@ -265,10 +265,10 @@ $$
 <p><div align="justify">Utilizando o $\textrm{MSE}$ ou $\textrm{MAE}$, por exemplo, ficando com as expressões:</div></p>
 
 $$
-\begin{align*}
+\begin{align}
     \textrm{MSE} = \frac{1}{k-1} \sum_{i=1}^{k-1} (f(\widehat{q}_Y(\alpha_i)) - \widehat{q}_Y(\alpha_i))^2 &= \frac{1}{k-1} \sum_{i=1}^{k-1} (\widehat{q}_X(\alpha_i) - \widehat{q}_Y(\alpha_i))^2 \textrm{,}\\
     \textrm{e }\textrm{MAE} &= \frac{1}{k-1}\sum_{i=1}^{k-1} \left|\widehat{q}_X(\alpha_i) - \widehat{q}_Y(\alpha_i)\right|.
-\end{align*}
+\end{align}
 $$
 
 <p><div align="justify">$\oint$ <i>Gosto da ideia de usar métricas como $\textrm{MSE}$ e $\textrm{MAE}$ pela simetria. Não importaria se trocássemos as amostras $X$ e $Y$ de lugar.</i> </div></p>
