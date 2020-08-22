@@ -4,7 +4,7 @@ title: Covariate Shift&#58; QQ-plot
 featured-img: coverqqplot
 category: [dataset shift]
 mathjax: true
-summary: Uma primeira abordagem para identificar mudanças de distribuição sugerindo uma variação numérica para a versão clássica visual
+summary: Uma primeira abordagem para identificar mudanças de distribuição sugerindo uma variação numérica para a versão visual
 ---
 
 <b>Texto em construção: Pequenas alterações de formatação.</b>

@@ -4,7 +4,7 @@ title: Covariate Shift&#58; Formulando o problema
 featured-img: covariate_0_formulando
 category: [dataset shift]
 mathjax: true
-summary: Formulamos o cenário do dataset shift com um exemplo visual
+summary: Apresentando o cenário do dataset shift com um exemplo visual
 ---
 
 <p><div align="justify">Um dos objetivos do aprendizado supervisionado é tentar reconhecer padrões entre variáveis explicativas e uma variável alvo. Matematicamente, temos um vetor aleatório $V = (X_1, X_2, \cdots, X_n, Y)$ e supomos que existe uma relação entre as variáveis explicativas $X_i$ e a variável alvo $Y$ do tipo</div></p>
