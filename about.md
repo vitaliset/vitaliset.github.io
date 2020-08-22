@@ -6,15 +6,17 @@ permalink: /sobre/
 
 [comment]: <![profile]({{ "assets/img/teste2.jpg" | absolute_url }})> 
 
+<p><div align="justify"><b>Este blog ainda está sendo atualizado! Até o final de setembro, as postagens aqui estarão devidamente revisadas, tanto em conteúdo quanto ortograficamente e com os códigos em $\LaTeX$ funcionando. Até lá, os posts podem e provavelmente contém alguns bugs ou detalhes que preciso arrumar ainda!</b></div></p>
+
 <p><div align="justify">Oi meu nome é Carlo, tenho 8 anos (Teria se estivesse viva), morri aos 7 em Cascavel-PR. Além de assombração, sou um (quase) matemático entusiasta por ciência de dados! </div></p>
 
 <p><div align="justify">Resolvi escrever esse blog para aprender a expor meus projetos e discussões de forma técnica e formal ao mesmo tempo que acessível para pessoas com um conhecimento de matemática do ensino superior e noções iniciais de Aprendizado de Máquina. Tento ser um pouco rigoroso matematicamente, mas sem perder a parte visual e intuitiva do que está acontecendo. Adoraria <a href="mailto:carlo_lemos@hotmail.com">receber um email</a> contando sobre sua experiência lendo minhas postagens. Estou sendo bem sucedido?</div></p>
 
-<p><div align="justify">Se tiver recomendação de temas legais para postagens, <a href="mailto:carlo_lemos@hotmail.com">fale comigo</a> também! O real objetivo aprendizado. Acredito que redigir sobre um conceito de forma clara é a melhor forma de formentá-lo. Podemos interpretar esse blog como um caderno em que colocarei notas sobre coisas que estudei ou estou estudando.</div></p>
+<p><div align="justify">Se tiver recomendação de temas legais para postagens, <a href="mailto:carlo_lemos@hotmail.com">fale comigo</a> também! Um dos objetivo do blog é verificar meu próprio aprendizado e me desafiar a conhecer coisas diferentes ou consolidar conceitos.</div></p>
 
 <p><div align="justify">Entre as postagens de Aprendizado de Máquina, pretendo comentar também sobre assuntos relacionados a noções básicas de Matemática, Análise Numérica, Teoria da Medida e Integração, Inferência Estatística, Teoria dos Jogos, Evolução (e Ecologia Comportamental), entre outros tópicos.</div></p>
 
-<p><div align="justify">Fique a vontade para me contatar também pelo <a href="https://www.linkedin.com/in/carlo-lemos-946592188">Linkedin</a>. Lá tem um pouco das minhas experiências acadêmicas e profissionais. </div></p>
+<p><div align="justify">Fique a vontade para me contatar também pelo <a href="https://www.linkedin.com/in/carlo-lemos">Linkedin</a>. Lá tem um pouco das minhas experiências acadêmicas e profissionais. </div></p>
 
 ## Visual do site
 
