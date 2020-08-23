@@ -4,7 +4,7 @@ title: Covariate Shift&#58; Formulando o problema
 featured-img: covariate_0_formulando
 category: [dataset shift]
 mathjax: true
-summary: Apresentando o cenário do dataset shift com um exemplo visual
+summary: Apresentando o cenário do dataset shift com um caso ilustrativo
 ---
 
 <p><div align="justify">Um dos objetivos do aprendizado supervisionado é tentar reconhecer padrões entre variáveis explicativas e uma variável alvo. Matematicamente, temos um vetor aleatório $V = (X_1, X_2, \cdots, X_n, Y)$ e supomos que existe uma relação entre as variáveis explicativas $X_i$ e a variável alvo $Y$ do tipo</div></p>
@@ -99,10 +99,23 @@ X_new, Y_new = sample(100, mean = 2)
 
 <p><div align="justify">Como esperado, a qualidade do modelo cai para um $R^2$ de $-0.283$ nos dados novos. Isto lembrando que a relação entre $X$ e $Y$ não mudou, apenas a distribuição de $X$.</div></p>
 
-# O que procuramos identificar?
+# Identificando <i>Covariate Shfit</i>
 
-<p><div align="justify">Dada a motivação inicial o problema se resume ao seguinte enunciado:</div></p>
+<p><div align="justify">Dada a motivação inicial, temos um desafio resumido no seguinte enunciado:</div></p>
 
-<p><div align="justify">Seja $X$ e $Z$ variáveis (ou vetores) aleatórias. Suponha que eu amostre $X$ de forma independente $N\in\mathbb{N}^*$ vezes e também $Z$ seja amostrada também de forma independente $M\in \mathbb{N}^*$ vezes ficando com as amostras $\{x_1, x_2, \cdots, x_N \} $ e $\{z_1, z_2, \cdots, z_M \} $. Como saber se $X\sim Z$ olhando apenas para as duas amostras?</div></p>
+<p><div align="justify">Seja $X$ e $Z$ variáveis (ou vetores) aleatórias. Suponha que amostre $X$ de forma independente $N\in\mathbb{N}^*$ vezes e também $Z$ seja amostrada também de forma independente $M\in \mathbb{N}^*$ vezes ficando com as amostras $\{x_1, x_2, \cdots, x_N \} $ e $\{z_1, z_2, \cdots, z_M \} $. Como saber se $X\sim Z$ olhando apenas para as duas amostras? No contexto específico do <i>Covariate Shift</i>, vamos estar comparando as amostras das covariáveis no treino e depois em produção.</div></p>
 
-<p><div align="justify">Nesta série de postagens pretendo apresentar alguns métodos para identificar o <i>Covariate Shift</i> e, pelo menos, uma maneira de tratá-lo.</div></p>
+<p><div align="justify">No geral, o monitoramento da distribuição das covariáveis precisa ser simples. Métodos básicos são escolhidos no lugar de técnicas complexas privilegiando eficiência computacional. Além disso, a análise costuma ser feita olhando covariável por covariável, identificando mudanças nessas distribuições marginais. Entre os métodos clássicos univariados, se destacam:</div></p>
+
+- <p><div align="justify">Comparação de estatísticas: médias amostrais, variância amostral, alguns quantis amostrais;</div></p>
+
+- <p><div align="justify">Comparação de frequências para distribuições discretas e dados categóricos.</div></p>
+
+- <p><div align="justify">Teste Kolmogorov-Smirnov;</div></p>
+
+- <p><div align="justify">Divergência de Kullback-leibler.</div></p>
+
+<p><div align="justify">Muitas vezes esse monitoramente é feito aliado à análise da distribuição da saída do modelo. Se antes o nosso modelo indicava que $10%$ dos dados eram de uma classe e agora ele diz que $20%$ são daquela classe, temos um bom indicativo de que a distribuição de entrada mudou.</div></p>
+
+<p><div align="justify">Nesta série de postagens pretendo apresentar alguns métodos um pouco mais alternativos para identificar o <i>Covariate Shift</i>. Em seguida, vamos entender porque ele ocorre sob a luz da minimização do risco empírico de Vapnik. Derivaremos uma maneira muito elegante de tratá-lo a partir de uma técnica que utilizamos para identificação do <i>dataset shift</i>.</div></p>
+

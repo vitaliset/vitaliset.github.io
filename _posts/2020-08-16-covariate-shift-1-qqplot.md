@@ -201,7 +201,7 @@ $$
 <center><img src="{{ site.baseurl }}/assets/img/covariate_1_qqplot/imagem3.jpg"></center>
 <center><b>Figura 3</b>: Uma coleção de dados colocado em ordem crescente e alguns $\alpha$-quantis ilustrativos.</center>
 
-<p><div align="justify">Quando $N\to \infty$ temos que $\widehat{q}_{X}(\alpha) \to q_{X}(\alpha)$ em probabilidade, [pelo menos para variáveis aleatórias contínuas](https://stats.stackexchange.com/questions/45124/central-limit-theorem-for-sample-medians). Isso nos permite acreditar que, para $N$ grande, o $\alpha$-quantil estimado é próximo do $\alpha$-quantil real, vamos usar esse fato para comparar nossas amostras.</div></p>
+<p><div align="justify">Quando $N\to \infty$ temos que $\widehat{q}_{X}(\alpha) \to q_{X}(\alpha)$ em probabilidade, <a href="https://stats.stackexchange.com/questions/45124/central-limit-theorem-for-sample-medians">pelo menos para variáveis aleatórias contínuas</a>. Isso nos permite acreditar que, para $N$ grande, o $\alpha$-quantil estimado é próximo do $\alpha$-quantil real, vamos usar esse fato para comparar nossas amostras.</div></p>
 
 ## QQ-plot para duas amostras
 
@@ -297,6 +297,8 @@ $$
 
 <p><div align="justify">Com isso, temos maior esperança de ter métricas com valores baixos para amostras de uma mesma distribuição, independentes da escala, como é o caso da última imagem da Figura 6.</div></p>
 
+<p><div align="justify">$\oint$ <i>Um pequeno detalhe é que agora nem sempre temos a métrica simétrica, pois a média e variância da amostra de $Y$ possivelmente é diferente da de $X$.</i> </div></p>
+
 <p><div align="justify">Fixados $N$, $M$ e $k$, o ideal seria definir um $\varepsilon\in \mathbb{R}^+$ universal para criar um critério do tipo: <i>se $ \textrm{MSE}$ (ou $\textrm{MAE}$) $< \varepsilon$, então desconfiamos que $X\sim Y$ e caso contrário, acreditamos que $X\nsim Y$</i>. Entretanto essa tarefa parece impossível e o valor de $\varepsilon$ depende da natureza dos nossos dados e do quanto somos tolerantes com o problema de <i>covariate shift</i>.</div></p>
 
 <p><div align="justify">Para avaliar se essa forma de monitoramento é útil, vale aplicar em alguns dados reais da área que você está analisando. Entender como se comportam as métricas sugeridas ($\textrm{MAE}$ e $\textrm{MSE}$) nos casos em que não há <i>dataset shift</i> e nos casos em que há.</div></p>
@@ -318,7 +320,7 @@ $$
 <center><img src="{{ site.baseurl }}/assets/img/covariate_1_qqplot/imagem7.jpg"></center>
 <center><b>Figura 7</b>: show me love</center>
 
-<p><div align="justify">Nos próximos posts dessa série, vamos ver uma outra técnica que pode ajudar nesses casos. No geral, as técnicas de monitoramento de <i>covariate shift</i> tem seus pontos fortes e fracos. O ideal é sempre ter várias formas diferentes para identificar possíveis problemas e tomar decisões de ações.</div></p>
+<p><div align="justify">Nos próximos posts dessa série, vamos ver uma outra técnica que pode ajudar nesses casos. No geral, as técnicas de monitoramento de <i>covariate shift</i> tem seus pontos fortes e fracos. O ideal é sempre ter várias formas diferentes para identificar possíveis problemas e fazer intervenções.</div></p>
 
 ___
 Ajustar pequeno problema na equação com o align das metricas MAE MSE
