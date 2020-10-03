@@ -6,7 +6,7 @@ permalink: /sobre/
 
 [comment]: <![profile]({{ "assets/img/teste2.jpg" | absolute_url }})> 
 
-<p><div align="justify"><b>Este blog ainda está sendo atualizado! Até o final de setembro, as postagens aqui estarão devidamente revisadas, tanto em conteúdo quanto ortograficamente e com os códigos em $\LaTeX$ funcionando. Até lá, os posts podem e provavelmente contém alguns bugs ou detalhes que preciso arrumar ainda!</b></div></p>
+<p><div align="justify"><b>Este blog ainda está sendo atualizado! Até o final de outubro, as postagens aqui estarão devidamente revisadas, tanto em conteúdo quanto ortograficamente e com os códigos em $\LaTeX$ funcionando. Até lá, os posts podem e provavelmente contém alguns bugs ou detalhes que preciso arrumar ainda!</b></div></p>
 
 <p><div align="justify">Oi meu nome é Carlo, tenho 8 anos (Teria se estivesse viva), morri aos 7 em Cascavel-PR. Além de assombração, sou um (quase) matemático entusiasta por ciência de dados! </div></p>
 
@@ -20,7 +20,7 @@ permalink: /sobre/
 
 ## Visual do site
 
-<p><div align="justify">A imagem de capa é um trabalho feito pelo talentoso <a href="https://www.instagram.com/alamo0o/">Lucas Álamo</a>. O layout é uma pequena adaptação do tema <a href="https://janczizikow.github.io/sleek/">Sleek</a>.</div></p>
+<p><div align="justify">A imagem de capa é um trabalho feito pelo talentoso <a href="https://www.instagram.com/lucasoalamo_art/">Lucas Álamo</a>. O layout é uma pequena adaptação do tema <a href="https://janczizikow.github.io/sleek/">Sleek</a>.</div></p>
 
 [comment]: Eu andava de bicicleta Quando não pude desviar de um arame farpado. O pior foi que o dono do lote não quis me ajudar, riu bastante mim após agonizar por 2 horas enroscada no arame eu faleci, através dessa mensagem eu peço que façam com que eu possa descançar em paz. Envie isso para 20 comunidades e minha alma estara sendo salva por você e pelos outros 20 que receberão. Caso não repasse essa mensagem vou visitar-lhe hoje a noite assim vc poderá conhecer o tal arame bem de pertinho. Dia 15 de Julho Mariana resolveu rir dessa mensagem, uma noite depois ela sumiu sem deixar vestigios. O mesmo aconteceu com Kare dia 18 de Outubro. Não Quebre essa corrente por favor, a não ser que queira sentir a minha presença
 
