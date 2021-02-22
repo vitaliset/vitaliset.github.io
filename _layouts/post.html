@@ -26,8 +26,12 @@ layout: compress
   {% endif %}
   </div>
 
-<div class="hero__wrap">
-  {% if post.categories or page.categories %}
+<!-- <div class="hero__wrap">
+  
+</div> -->
+
+
+{% if post.categories or page.categories %}
     <div class="hero__categories">
       {% if post %}
         {% assign categories = post.categories %}
@@ -46,7 +50,6 @@ layout: compress
       <time>{{ page.date | date_to_string }}</time>
     </span>
   </p>
-</div>
 
   <main class="site__content">
     <div class="container">
