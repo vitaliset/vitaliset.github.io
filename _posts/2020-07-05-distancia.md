@@ -2,7 +2,7 @@
 layout: post
 title: Generalizando distância
 featured-img: coverdistancia
-category: [matemática]
+category: [matemática,dataset shift]
 mathjax: true
 summary: Definição matemática de distância com aplicações no contexto de ciência de dados
 ---
