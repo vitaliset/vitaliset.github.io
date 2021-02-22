@@ -38,14 +38,16 @@ layout: compress
           {% endfor %}
         </div>
       {% endif %}
-      <h1 class="hero__title">{{ page.title }}</h1>
-      <p class="hero__meta">
-        <span>
-          <time>{{ page.date | date_to_string }}</time>
-        </span>
-      </p>
     </div>
   </div>
+
+  <h1 class="hero__title">{{ page.title }}</h1>
+  <p class="hero__meta">
+    <span>
+      <time>{{ page.date | date_to_string }}</time>
+    </span>
+  </p>
+
 
   <main class="site__content">
     <div class="container">
