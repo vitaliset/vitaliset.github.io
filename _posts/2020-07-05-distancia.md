@@ -17,9 +17,19 @@ $$
 \end{equation*}
 $$
 
-<p><div align="justify">Entretanto, dependendo da natureza do problema essa distância pode não ser a mais indicada. Neste post, vamos discutir as definições de distância aos olhos de conceitos básicos de topologia de espaços métricos e exemplificar algumas métricas clássicas entendendo a diferença entre elas. Essa discussão pode ser importante para se aprofundar em algoritmos clássicos que utilizam um cálculo de distância como o kNN, o DBScan e o k-means e suas variações. Além de entender outros momentos em que você pode utilizar o conceito de distância.</div></p>
+<p><div align="justify">Entretanto, dependendo da natureza do problema essa distância pode não ser a mais indicada. Neste post, vamos conversar sobre a definição de distância aos olhos de conceitos básicos de topologia de espaços métricos e exemplificar algumas métricas clássicas entendendo a diferença entre elas. Essa discussão pode ser importante para se aprofundar em algoritmos clássicos que utilizam um cálculo de distância como o kNN, o DBScan e o k-means e suas variações. Além de aprender a identificar outros momentos em que você pode utilizar o conceito de distância.</div></p>
 
 #  Definindo formalmente a distância entre dois pontos
+
+<p><div align="justify">Intuitivamente, uma distância precisa satisfazer algumas propriedades que surgem da forma como vemos distância intuitivamente. Iremos ver uma definição matemática para ela que tenta sintetizar essas noções em termos matematicamente claros.</div></p>
+
+<p><div align="justify">Primeiro, é razoável pedir </i>simetria</i>: a distância de $x$ até $y$ seja igual à distância de $y$ até $x$. Isso parece óbvio, mas a nossa definição formal de distância será uma função que aceita duas entradas e retorna um valor, que chamaremos de distância entre os argumentos de entrada. Essa primeria propriedade desejada nos dirá que não importa a ordem que damos as entradas.</div></p>
+
+<p><div align="justify">Uma outra propriedade desejável é a </i>identidade</i>: a distância de um ponto até ele mesmo é zero e se dois pontos estão a uma distância zero entrão eles são o mesmo elemento. Isso também é bem razoável e nos diz que apenas o próprio ponto tem distância zero dele mesmo.</div></p>
+
+<p><div align="justify">Por fim, no ensino fundamental nos dizem que, dado um triângulo, então a soma do comprimento de dois lados sempre é maior ou igual que o comprimento do lado restante para o triângulo ser válido. Vamos querer manter essa propriedade na nossa definição formal de distância, chamando essa propriedade de <i>desigualdade triangular</i>.</div></p>
+
+<p><div align="justify">Com essa noção intuitiva de distância, criamos a formalização dada pela definição matemática:</div></p>
 
 <p><div align="justify"><b>Definição</b>: Dado um conjunto $\mathcal{A}$, uma função $d:\mathcal{A}\times\mathcal{A}\to \mathbb{R}$ é chamada de uma <b>métrica</b> (ou <b>distância</b>) em $\mathcal{A}$ se, dados $x,y,z\in\mathcal{A}$ quaisquer, satisfaz:</div></p>
 
@@ -27,9 +37,9 @@ $$
 * $d(x,y) = d(y,x)$ (simetria);
 * $d(x,y) + d(y,z) \geq d(x,z)$ (desigualdade triangular).
 
-<p><div align="justify">Repare que dessas propriedades, tiramos ainda que $d(x,y)\geq 0$ para quaisquer $x,y\in \mathcal{A}$. Como pela desigualdade triangular $d(x,y) + d(y,x) \geq d(x,x)$, pela simetria e usando que $d(x,x)=0$ temos que $2 \, d(x,y) \geq 0$, e segue a positividade da métrica.</div></p>
+<p><div align="justify">Repare que dessas propriedades, tiramos ainda outras propriedades desejadas, como, por exemplo, a <i>não-negatividade</i>. Seria contraintuitivo medir a distância entre dois pontos e obter um número negativo. Para mostrar que isso vale no nosso caso, ou seja, que $d(x,y)\geq 0$ para quaisquer $x,y\in \mathcal{A}$. Pela desigualdade triangular, $d(x,y) + d(y,x) \geq d(x,x)$. Pela simetria e usando que $d(x,x)=0$ temos que $2 \, d(x,y) \geq 0$, e concluímos o desejado.</div></p>
 
-<p><div align="justify">Com uma função métrica $d$ definida como anteriormente, a <b>distância entre dois pontos</b> $x,y\in \mathcal{A}$ é dada por $d(x,y)$.</div></p>
+<p><div align="justify">Fazemos com que, uma função métrica $d$ definida como anteriormente, a <b>distância entre dois pontos</b> $x,y\in \mathcal{A}$ é dada por $d(x,y)$.</div></p>
 
 #  Exemplos clássicos para $\mathbb{R}^n$
 
@@ -49,31 +59,31 @@ $$
 \end{equation*}
 $$
 
-<p><div align="justify">As métricas dessa família de distâncias, no contexto de aprendizado de máquina, são mais conhecidas como <b>distância Minkowski com parâmetro p</b>. Repare que a distância euclidiana usual é a simplesmente a distância de Minkowski com parâmetro 2. O caso limite, quando $p=\infty$ é definido como o maior valor absoluto entre as coordenadas, ou seja,</div></p>
+<p><div align="justify">As métricas dessa família de distâncias, no contexto de aprendizado de máquina, são mais conhecidas como <b>distância Minkowski com parâmetro p</b>. Repare que a distância euclidiana usual é a distância de Minkowski com parâmetro 2. O caso limite, quando $p=\infty$ é definido como o maior valor absoluto entre as coordenadas, ou seja,</div></p>
 
 $$
 \begin{equation*}
-||\textbf{x}||_p = \max_{1\,\leq \,i \,\leq \,n} |x_i|.
+||\textbf{x}||_{\infty} = \max_{1\,\leq \,i \,\leq \,n} |x_i|.
 \end{equation*}
 $$
 
-<p><div align="justify">A métrica $d_\infty$ é também conhecida como <b>distância de Chebyshev</b>. Um outro nome clássico para a métrica $d_1$ é <b>distância de Manhattan</b>.</div></p>
+<p><div align="justify">A métrica $d_\infty$ é também conhecida como <b>distância de Chebyshev</b> ou <b>do máximo</b>. Um outro nome clássico para a métrica $d_1$ é <b>distância de Manhattan</b>.</div></p>
 
 ##  Diferentes bolas do $\mathbb{R}^n$
 
 <p><div align="justify">Para ilustrar como essa diferentes formas de medir distância funcionam, vamos definir um conceito primordial de topologia de espaços métricos: a bola aberta. A noção de bola tenta dar um significado para a pergunta: <i>"O que significa ter um elemento perto de outro?"</i>.</div></p>
 
-<p><div align="justify">Primeiro, teremos um parâmetro relacionado com o ponto central. Este será o elemento com o qual compararemos os outros, tentando responder se estão próximos ou não. Além disso, o significado de perto depende da nossa tolerância: duas pessoas sentadas a menos de 1 metro é perto (ainda mais em época de corona vírus), mas um meteoro a 1 quilometro da terra também é perto aos olhos de um astrônomo. A bola também terá um parâmetro que nos dará até quanto estamos considerando perto.</div></p>
+<p><div align="justify">Primeiro, teremos um parâmetro relacionado com o ponto central de comparação. Este será o elemento com o qual compararemos os outros, tentando responder se estão próximos ou não. Além disso, o significado de perto depende da nossa tolerância: duas pessoas sentadas a menos de 1 metro é perto (ainda mais em época de corona vírus), mas um meteoro a 1 quilômetro da terra também é perto aos olhos de um astrônomo. A nossa bola também terá um parâmetro, que chamaremos de <i>raio</i>, que nos dará até quanto estamos considerando perto.</div></p>
 
 <p><div align="justify"><b>Definição:</b> Seja $d$ uma métrica em um conjunto $\mathcal{A}$. Uma <b>bola aberta</b> de raio $r>0$ centrada no ponto $x\in \mathcal{A}$ é o conjunto</div></p>
 
 $$
-B_r(x) = \{ y\in \mathcal{A} : d(x,y) \lt r\}.
+B_d(x;r) = \{ y\in \mathcal{A} : d(x,y) \lt r\}.
 $$
 
-<p><div align="justify">Os elementos de $B_r(x)$ são justamente os elementos de $\mathcal{A}$ perto de $x$ (sob essa tolerância de raio $r$)</div></p>
+<p><div align="justify">Os elementos de $B_d(x;r)$ são os elementos de $\mathcal{A}$ perto de $x$ (sob essa tolerância de raio $r$). Essa noção de perto, formalizada pela bola, ajuda a definir o significado de convergência e continuidade em espaços abstratos, mas não entraremos nesses tópicos.</div></p>
 
-<p><div align="justify">Vamos brincar com o formato dessas bolas quando $\mathcal{A}=\mathbb{R}^2$ e $d=d_p$ variando o valor do $p$. Essas métricas já estão implementadas no <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html"><code>sklearn.neighbors.DistanceMetric</code></a>, vamos apenas criar uma função que plota essas bolas de métricas, raios e centros arbitrários.</div></p>
+<p><div align="justify">Vamos brincar com o formato dessas bolas quando $\mathcal{A}=\mathbb{R}^2$ e $d=d_p$, a distância de Minkwoski de parâmetro $p$, variando o valor do $p$. Essas métricas já estão implementadas no <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html"><code>sklearn.neighbors.DistanceMetric</code></a>, vamos apenas criar uma função que recebe uma métrica, um raio e um centro, e plota a bola associada.</div></p>
 
 ```python
 import sklearn.neighbors as neigh
@@ -113,7 +123,7 @@ def bola_aberta(dist_list, raio = 1, centro = [0,0]):
 #     plt.show()
 ```
 
-<p><div align="justify">Os plots da Figura 1 mostram como varia o formato da bola centrada na origem e de raio 1 para $p = 1$, $1.5$, $2$, $3$, $10$, $\infty$.</div></p>
+<p><div align="justify">Os plots da Figura 1 mostram como varia o formato da bola centrada na origem e de raio 1 para $p = 1$, $1.5$, $2$, $3$, $10$, $\infty$, em ordem.</div></p>
 
 ```python
 lista_distancias = []
@@ -127,7 +137,25 @@ bola_aberta(lista_distancias)
 <p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem1.jpg"></center>
 <center><b>Figura 1</b>: Formato de bolas do plano para diferentes valores de p da métrica de Minkowski. A região cinza é o lado de fora da bola e a região vermelha é o lado de dentro.</center></p>
 
-<p><div align="justify">Eu nunca vou entender qual é a graça de Chaves, mas impossível não fazer um comentário infeliz sobre as bolas quadradas do Kiko estarem na verdade utilizando a métrica de Chebyshev. O Kiko, como você agora, entende bastante de topologia de espaços métricos.</div></p>
+<p><div align="justify">A borda da nossa bola não está incluída nela, daí o nome aberta, análogo aos intervalos abertos da reta que não contém os elementos da fronteira (de fato, um intervalo aberto é uma bola aberta na reta). De toda forma é interessante analisar a borda para entender seus diferentes formatos. Como temos $r=0$ e o centro como sendo a origem, vale que a borda é dada pelos valores $(x_1,x_2)\in\mathbb{R}^2$ que satisfazem a equação</div></p>
+
+$$
+\begin{equation*}
+|x_1|^p + |x_2|^p = 1.
+\end{equation*}
+$$
+
+<p><div align="justify">Quando $p=2$, temos o círculo, da nossa noção euclidiana de bola. Mas repara que quando $p=1$, temos quatro reta, dependendo do sinal de $x_1$ e $x_2$ e por isso obtemos o losango. O caso $p=\infty$ é dado por</div></p>
+
+$$
+\begin{equation*}
+\max{|x_1|, |x_2|} = 1,
+\end{equation*}
+$$
+
+<p><div align="justify">e é por isso que temos a borda nos valores dos pontos que tem $|x_1|=1$ ou $|x_2|=1$.</div></p>
+
+<p><div align="justify">Eu nunca vou entender qual a graça do programa Chaves, mas impossível não fazer um comentário infeliz sobre as bolas quadradas do Kiko estarem na verdade utilizando a métrica de Chebyshev. O Kiko, como você agora, entende bastante de topologia de espaços métricos.</div></p>
 
 # Mais exemplos
 
@@ -135,7 +163,7 @@ bola_aberta(lista_distancias)
 
 ## Métrica discreta
 
-<p><div align="justify">Imagine um experimento exótico em que o valor explícito da distância entre dois pontos não é importante, mas é relevante saber se dois elementos são iguais ou não. Nesse cenário, a <b>métrica</b> discreta pode ser útil. Dado $\mathcal{A}$ qualquer, a distância $d$ entre $x,y\in\mathcal{A}$ é dada por</div></p>
+<p><div align="justify">Imagine um experimento exótico em que o valor explícito da distância entre dois pontos não é importante, mas é relevante saber se dois elementos são iguais ou não. Nesse cenário, a <b>métrica discreta</b> pode ser útil. Dado $\mathcal{A}$ qualquer, a distância $d_{\textrm{disc}}$ entre $x,y\in\mathcal{A}$ é dada por</div></p>
 
 $$
 \begin{equation*}
@@ -149,7 +177,7 @@ $$
 
 <p><div align="justify">É um exercício legal se convencer que esta forma de distância satisfaz as propriedades que desejávamos na definição de métrica.</div></p>
 
-<p><div align="justify">Aqui, a noção de perto ou distante se tornam um pouco contra-intuitiva. Se $\mathcal{A}=\mathbb{R}^2$, então o ponto $(0,0)$ está a mesma distância do ponto $(0,1)$ e do ponto $(42,-42)$. Podemos olhar isso analisando as bolas para diferentes valores do raio $r$. Para qualquer $r\in (0,1]$, a temos que $B_r(x) = \{ x \}$ pois somente $x$ está a uma distância menor que 1 dele mesmo. Agora, para qualquer $r\in (1,\infty)$ temos que $B_r(x) = \mathcal{A}$ uma vez que qualquer ponto está a uma distância menor ou igual a 1 de $x$. </div></p>
+<p><div align="justify">Aqui, a noção de perto ou distante se tornam um pouco contraintuitiva. Se $\mathcal{A}=\mathbb{R}^2$, então o ponto $(0,0)$ está a mesma distância do ponto $(0,1)$ e do ponto $(42,-42)$. Podemos olhar isso analisando as bolas para diferentes valores do raio $r$. Para qualquer $r\in (0,1]$, a temos que $B_{d_{\textrm{disc}}}(x;r) = \{ x \}$, pois somente $x$ está a uma distância menor que 1 dele mesmo. Agora, para qualquer $r\in (1,\infty)$ temos que $B_{d_{\textrm{disc}}}(x;r) = \mathcal{A}$ uma vez que qualquer ponto está a uma distância menor ou igual a 1 de $x$. </div></p>
 
 <p><div align="justify">No <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html"><code>sklearn.neighbors.DistanceMetric</code></a>, podemos passar uma métrica genérica que respeite a definição que fizemos na definição formal. Usando o argumento <code>pyfunc</code> e estabelecendo a função métrica em <code>func</code> que recebe dois vetores numpy unidimensionais e retorna a distância entre eles.</div></p>
 
@@ -167,22 +195,22 @@ def discrete(X, Y):
 bola_aberta([neigh.DistanceMetric.get_metric('pyfunc', func = discrete)]*2,[0.5, 1.5])
 ```
 
-<p><div align="justify">Na Figura 2, passamos como raios das bolas os valores $0.5$ e $1.5$, para ver o efeito discutido anteriormente de que $B_0.5((0,0))=\{(0,0)\}$ e $B_2((0,0))=\mathbb{R}$.</div></p>
+<p><div align="justify">Na Figura 2, passamos como raios das bolas os valores $0.5$ e $1.5$, para ver o efeito discutido anteriormente de que $B_{d_{\textrm{disc}}}((0,0);0.5)=\{(0,0)\}$ e $B_{d_{\textrm{disc}}}((0,0);2)=\mathbb{R}$.</div></p>
 
 <p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem2.jpg"></center>
 <center><b>Figura 2</b>: Bolas da métrica discreta. Lembrando que a região cinza é o lado de fora da bola e a região vermelha é o lado de dentro. Na primeira imagem, não podemos ver que o ponto (0,0) está dentro da bola pela resolução.</center></p>
 
 ## Distância de Hamming
 
-<p><div align="justify">A <b>distância de Hamming</b> entre dois vetores de tamanho $n$ é o número de componentes diferentes entre eles. Ela claramente se demonstra muito útil quando o significado dos valores das componentes não são numéricos ou não tem um sentido de ordem. Vamos dar um cenário em que pode fazer sentido usar ela:</div></p>
+<p><div align="justify">A <b>distância de Hamming</b> entre dois vetores de tamanho $n$ é o número de componentes diferentes entre eles. Ela se demonstra muito útil quando o significado dos valores das componentes não são numéricos ou não tem um sentido de ordem. Vamos dar um cenário em que pode fazer sentido usar ela:</div></p>
 
 ### Distância entre panelas
 
-<p><div align="justify">Imagine que eu queira descrever a distância entre duas panelas e os atributos que eu considero importante sobre esse objeto são a cor e a presença ou não de cabo. Neste caso, estamos representando nosso espaço como $\mathcal{A} = \{ \textrm{cinza}, \textrm{vermelha}, \textrm{preta}  \} \times \{\textrm{tem cabo}, \textrm{não tem cabo} \}$. Uma panela é representada por um vetor de duas componentes, por exemplo $(\textrm{cinza}, \textrm{tem cabo})$. </div></p>
+<p><div align="justify">Imagine que eu queira descrever a distância entre duas panelas e os atributos que eu considero importante sobre esse objeto são a cor e a presença ou não de cabo. Neste caso, estamos representando nosso espaço como $\mathcal{A} =$ $\{ \textrm{cinza}, \textrm{vermelha}, \textrm{preta}  \}$ $\times \{\textrm{tem cabo}, \textrm{não tem cabo} \}$. Uma panela é representada por um vetor de duas componentes, na primeira a sua cor e na segunda a presença de cabo, por exemplo $(\textrm{cinza}, \textrm{tem cabo})$. </div></p>
 
 <p><div align="justify">A maneira como vimos distância até agora apenas falava sobre números. Podemos adaptar $\mathcal{A}$ para analisar o espaço $\mathcal{A}' =\{1,2,3\}\times\{1,2\}$ em que fazemos a bijeção entre os elementos pelo mapa ($\textrm{cinza}\to 1$, $\textrm{vermelha}\to 2$, $\textrm{preta}\to 3$) e ($\textrm{tem cabo}\to 1$, $\textrm{não tem cabo}\to 2$). Com essa transformação, podemos usar por exemplo a distância de Minkowski com parâmetro 1.</div></p>
 
-<p><div align="justify">Imagine que temos $\textrm{panela}_1 = (\textrm{cinza},\textrm{tem cabo})$, $\textrm{panela}_2 = (\textrm{preta},\textrm{tem cabo})$, e $\textrm{panela}_3 = (\textrm{vermelha},$$\textrm{não tem cabo})$. Neste caso, ficaríamos com coisas do tipo:</div></p>
+<p><div align="justify">Imagine que temos $\textrm{panela}_1 = (\textrm{cinza},\textrm{tem cabo})$, $\textrm{panela}_2 = (\textrm{preta},\textrm{tem cabo})$, e $\textrm{panela}_3 = (\textrm{vermelha},\textrm{não tem cabo})$. Neste caso, ficaríamos com coisas do tipo:</div></p>
 
 $$
 \begin{equation*}
@@ -200,9 +228,11 @@ $$
 
 <p><div align="justify">Esta forma de calcular distâncias, está nos falando que a $\textrm{panela}_1$ está a mesma distância da $\textrm{panela}_2$ e da $\textrm{panela}_3$. A $\textrm{panela}_1$ difere da $\textrm{panela}_2$ apenas pela cor, enquanto difere em cor e na presença de cabo da $\textrm{panela}_3$. O problema surgiu aqui porque levamos as cores pra reta como se esses objetos tivessem uma ordem, o que não faz sentido aqui.</div></p>
 
-<p><div align="justify">Uma alternativa é justamente calcular a distância Hamming das panelas, somando $1$ na distância pra cada categoria (cor e presença de cabo) em que há diferença.</div></p>
+<p><div align="justify">Uma alternativa é justamente calcular a distância Hamming das panelas, somando $1$ na distância pra cada categoria (cor e presença de cabo) em que há diferença. Neste caso a distância de Hamming da $\textrm{panela}_1$ e a $\textrm{panela}_2$ seria 1 pois diferem apenas na primeira componente.</div></p>
 
-<p><div align="justify">$\oint$ <i>A distância de Hamming é equivalente a fazer um One Hot Encoding de cada uma das componentes dos vetores e depois calcular a distância com qualquer Minkowski (dividindo por 2 o resultado final).</i></div></p>
+<p><div align="justify">$\oint$ <i>A distância de Hamming é equivalente a fazer um <a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html"><code>sklearn.preprocessing.OneHotEncoder</code></a> de cada uma das componentes dos vetores e depois calcular a distância com qualquer Minkowski (dividindo por 2 o resultado final).</i></div></p>
+
+<p><div align="justify">Essa distância do ângulo é baseada na "distância do cosseno". Que diz que a distância entre dois vetores é o cosseno do produto interno. Ela, de fato, não é uma distância pois não satisfaz a definição matemática de métrica. Entretanto, isso não a torna descartável. Em muitos casos, uma medida de (dis)similaridade entre pontos - que define o quão parecido ou diferente eles são - já é suficiente para resolver o problema. Em outros casos, será importante satisfazer todas as definições vistas anteriormente.</div></p>
 
 ## Distância do ângulo
 
@@ -230,11 +260,11 @@ $$
 
 ### Distância entre documentos
 
-<p><div align="justify">Essa métrica é tradicionalmente usada em discussões iniciais sobre distância entre dois textos. Primeiro, temos que pensar em uma representação numérica para um texto. Uma maneira inicial é pensar no texto como uma _bag of words_, desprezando a ordem das palavras, letras maiúsculas e pontuações, mas levando em conta a frequência de cada palavra no texto. </div></p>
+<p><div align="justify">Essa métrica é tradicionalmente usada em discussões iniciais sobre distância entre dois textos. Primeiro, temos que pensar em uma representação numérica para um texto. Uma maneira inicial é pensar no texto como uma <i>bag of words</i>, desprezando a ordem das palavras, letras maiúsculas e pontuações, mas levando em conta a frequência de cada palavra no texto. </div></p>
 
-<p><div align="justify">Neste caso, $\mathcal{A} = \mathbb{N}^{t}$, em que $t$ é o número total de palavras diferentes que aparecem no _corpus_ (conjunto de todos os documentos) que desejamos calcular as distâncias. Cada componente está associada com uma dessas palavras. Um texto então é um vetor de $\mathcal{A}$ em que cada elemento nos dá quantas vezes aquela palavra ocorre no texto.</div></p>
+<p><div align="justify">Neste caso, $\mathcal{A} = \mathbb{N}^{t}$, em que $t$ é o número total de palavras diferentes que aparecem no <i>corpus</i> (conjunto de todos os documentos) que desejamos calcular as distâncias. Cada componente está associada com uma dessas palavras. Um texto é um vetor de $\mathcal{A}$ em que cada elemento nos dá quantas vezes aquela palavra ocorre no texto.</div></p>
 
-<p><div align="justify">Fica mais fácil ver isso com um exemplo: Suponha que nosso <i>corpus</i> é dado pelos textos $\{$ $\textrm{texto}_1 = $ <i>"Olá, bom dia, bom dia."</i>,  $\textrm{texto}_2 = $ <i>"Bom dia!"</i>$\}$. Neste caso, temos o mapa: $\{1\to$ <i>ola</i>, $2\to$ <i>bom</i>, $3\to$ <i>dia</i>$\}$ indicando cada componente do vetor de $\mathbb{N}^{\,3}$. Ficamos com</div></p>
+<p><div align="justify">Fica mais fácil ver isso com um exemplo: Suponha que nosso <i>corpus</i> é dado pelos textos $\{$ $\textrm{texto}_1 = $ <i>"Olá, bom dia, bom dia."</i>,  $\textrm{texto}_2 = $ <i>"Bom dia!"</i>$\}$. Neste caso, temos o mapa: $\{1\to$ <i>ola</i>, $2\to$ <i>bom</i>, $3\to$ <i>dia</i>$\}$ indicando cada componente do vetor de $\mathbb{N}^{\,3}$ (repare que aqui ignoramos pontuação, letras maiúsculas e acentos). Ficamos com</div></p>
 
 $$
 \begin{equation*}
@@ -268,17 +298,17 @@ $$
 
 <p><div align="justify">Ou seja, a distância entre duas funções é dada pelo máximo do módulo da diferença em cada ponto do intervalo $[a,b]$.</div></p>
 
-<p><div align="justify">Por exemplo, se queremos calcular a distância entre as funções $f(x)=(x-0.4)^2$ e $g(x) = 2.5$, temos que achar o valor que maximiza a função $h(x) = | (x-0.4)^2 - 2.5|$, plotada na primeira imagem da Figura 3. Isso nem sempre é uma tarefa fácil, pois não temos nenhuma hipótese sobre a diferenciabilidade das nossas funções e o módulo atrapalha ainda mais criando novos picos. Na segunda imagem da Figura 2 temos uma interpretação visual do que queremos. O valor da distância será o local em que as curvas estão mais distantes.</div></p>
+<p><div align="justify">Por exemplo, se queremos calcular a distância entre as funções $f$ e $g$ definidas no intervalo $[0,1]$ tais que $f(x)=(x-0.4)^2$ e $g(x) = 2.5$, temos que achar o valor que maximiza a função $h(x) = | (x-0.4)^2 - 2.5|$, plotada na primeira imagem da Figura 3. Isso nem sempre é uma tarefa fácil, pois não temos nenhuma hipótese sobre a diferenciabilidade das nossas funções e o módulo atrapalha ainda mais criando novos picos. Na segunda imagem da Figura 2 temos uma interpretação visual do que queremos. O valor da distância será o local em que as curvas estão mais distantes.</div></p>
 
 <p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem3.jpg"></center>
-<center><b>Figura 3</b>: Na primeira imagem temos o módulo da diferença das funções avaliadas. Na segunda imagem temos $f$ em vermelho, $g$ em azul e alguns valores da distância pontual das funções em alguns valores de $x$ em cinza. Em preto temos o ponto que representa a distância entre essas duas funções, valendo $2.5$, nesse caso.</center></p>
+<center><b>Figura 3</b>: Na primeira imagem temos o módulo da diferença das funções avaliadas que chamamos de $h$. Na segunda imagem temos $f$ em vermelho, $g$ em azul e alguns valores da distância pontual das funções em alguns valores de $x$ em cinza. Em preto temos o ponto que representa a distância entre essas duas funções, valendo $2.5$, nesse caso.</center></p>
 
-<p><div align="justify">Nessa métrica, a bola de raio $r>0$ ao redor da função $f:[a,b]\to\mathbb{R}$ são todas as funções (definidas no intervalo $[a,b]$) que ficam sempre dentro da faixa ao redor de $f$ de largura $2r$. Na Figura 4 temos um exemplo disso. A função $g(x) = (x-0.4)^2 + 0.4\sin(30x)$ está dentro da bola $B_{0.5}((x-0.4)^2)$ pois a a distância entre elas é $\max_{x\in[0,1]} |0.4 \sin(30x) |<0.5$.</div></p>
+<p><div align="justify">Nessa métrica, a bola de raio $r>0$ ao redor da função $f:[a,b]\to\mathbb{R}$ são todas as funções (definidas no intervalo $[a,b]$) que ficam sempre dentro da faixa ao redor de $f$ de largura $2r$. Na Figura 4 temos um exemplo disso. A função $g(x) = (x-0.4)^2 + 0.4\sin(30x)$ está dentro da bola $B_{d_{\max}}((x-0.4)^2;0.5)$ pois a a distância entre elas é $\max_{x\in[0,1]} |0.4 \sin(30x) |=0.4<0.5$.</div></p>
 
 <p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem4.jpg"></center>
 <center><b>Figura 4</b>: A bola de raio $0.5$ centrada na função preta são todas as funções que estão limitadas pela faixa vermelha. A função verde é um exemplo que está na bola pois não sai desse limite.</center></p>
 
-<p><div align="justify">$\oint$ <i>No post Covariate Shift: Teste KS (até fim de agosto) falarei como usar uma variação dessa distância pra definir uma distância entre variáveis aleatórias.</i></div></p>
+<p><div align="justify">$\oint$ <i>O teste KS usa uma variação dessa métrica pra definir uma distância entre variáveis aleatórias a partir da distância entre as funções densidade acumulada.</i></div></p>
 
 ## Distância Ponderada
 
@@ -290,7 +320,7 @@ $$
 \end{equation*}
 $$
 
-<p><div align="justify">Não entraremos em detalhes, mas podemos fazer isso sempre que temos uma matriz $A$ [matriz positiva definida](https://pt.wikipedia.org/wiki/Matriz_positiva_definida) definindo</div></p>
+<p><div align="justify">Não entraremos em detalhes, mas podemos fazer isso sempre que temos uma matriz $A$ <a href="https://pt.wikipedia.org/wiki/Matriz_positiva_definida">matriz positiva definida</a> definindo</div></p>
 
 $$
 \begin{equation*}
@@ -318,7 +348,7 @@ def ponderada(X, Y):
 <p><center>$A= \left[\begin{array}{cc} 2 & 0 \\ 0 & 1 \end{array}\right], \left[\begin{array}{cc} 2 & -1 \\ -1 & 2 \end{array}\right]\textrm{, e }\left[\begin{array}{cc} 1 & -1 \\ -1 & 4 \end{array}\right].$</center></p>
 
 <p><center><img src="{{ site.baseurl }}/assets/img/distancia/imagem5.jpg"></center>
-<center><b>Figura 5</b>: Bolas de raio 1 e centro na origem para diferentes matrizes.</center></p>
+<center><b>Figura 5</b>: Bolas de raio 1 e centro na origem para as matrizes apresentadas anteriormente, respectivamente.</center></p>
 
 ___
 
@@ -332,4 +362,4 @@ ___
 
 <p><div align="justify">Espero que este post, muito divertido de escrever, tenha sido útil para entender melhor o que significa distância e as diferenças entre elas. No mínimo, agora você pode usar algumas das métricas que discutimos aqui como um dos hiper-parâmetro dos seus modelos baseados em distância! </div></p>
 
-<p><div align="justify"><i>$\oint$ Nem sempre a troca é imediata. No k-means, por exemplo, a atualização dos centroides é a média dos exemplos daquele cluster justamente porque a média minimiza a função custo dada pela soma das distâncias euclidianas dos exemplos até os seus respectivos centroides. Se escolhemos minimizar a soma das distâncias de Minkowski de parâmetro 1 (L1), então a atualização dos centroides é feita com a mediana coordenada a coordenada uma vez que estes são os valores que minizam a função de custo alterada.</i></div></p>
+<p><div align="justify"><i>$\oint$ Nem sempre a troca é imediata. No k-means, por exemplo, a atualização dos centroides é a média dos exemplos daquele cluster justamente porque a média minimiza a função custo dada pela soma das distâncias euclidianas dos exemplos até os seus respectivos centroides. Se escolhemos minimizar a soma das distâncias de Minkowski de parâmetro 1 (L1), então a atualização dos centroides é feita com a mediana coordenada a coordenada uma vez que estes são os valores que minizam a função de custo alterada, este é o K-Medians.</i></div></p>
