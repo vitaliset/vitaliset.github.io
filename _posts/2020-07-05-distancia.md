@@ -149,7 +149,7 @@ $$
 
 $$
 \begin{equation*}
-\max{|x_1|, |x_2|} = 1,
+\max\{|x_1|, |x_2|\} = 1,
 \end{equation*}
 $$
 
