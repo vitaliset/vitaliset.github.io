@@ -28,4 +28,4 @@ permalink: /links/
 
 ## Cursos
 
-<p><div align="justify"> &bull; <a href="https://cs.nyu.edu/~mohri/mlbook/">Learning from Data</a>: O Yaser Abu-Mostafa te engana traduzindo assuntos complexos de forma simples e didática. É uma ótima introdução às mesmas noções apresentadas no livro do Mohri, mas de forma visual com muitos exemplos legais. É um aprofundamento muito legal pra quem já conhece o básico de Aprendizado de Máquina e quer ver a teoria que garante o aprendizado de forma um pouco mais rigorosa.</div></p>
+<p><div align="justify"> &bull; <a href="https://work.caltech.edu/index.html">Learning from Data</a>: O Yaser Abu-Mostafa te engana traduzindo assuntos complexos de forma simples e didática. É uma ótima introdução às mesmas noções apresentadas no livro do Mohri, mas de forma visual com muitos exemplos legais. É um aprofundamento muito legal pra quem já conhece o básico de Aprendizado de Máquina e quer ver a teoria que garante o aprendizado de forma um pouco mais rigorosa.</div></p>

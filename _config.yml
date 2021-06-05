@@ -16,6 +16,7 @@ social:
 # THEME SETTINGS
 navigation: # Navigation links
   - {name: 'Início', link: '/'}
+  - {name: 'Links', link: '/links'}
   - {name: 'Sobre', link: '/sobre'}
 
 #tagline: >

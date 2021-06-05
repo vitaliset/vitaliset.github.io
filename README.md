@@ -1,4 +1,3 @@
 # vitaliset.github.io
 
-My webpage drawing inspiration from the Sleek theme: https://github.com/janczizikow/sleek
-and from gdmarmerola work on it
+Blog pessoal para discussões técnicas de ciência de dados! O layout é uma pequena adaptação do tema <a href="https://janczizikow.github.io/sleek/">Sleek</a>.
