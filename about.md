@@ -14,7 +14,7 @@ permalink: /sobre/
 
 <p><div align="justify">Entre as postagens de Aprendizado de Máquina, pretendo eventualmente comentar também sobre assuntos relacionados a noções básicas de Matemática, Análise Numérica, Teoria da Medida e Integração, Inferência Estatística, Teoria dos Jogos, Evolução (e Ecologia Comportamental), entre outros tópicos.</div></p>
 
-<p><div align="justify">Fique a vontade para me contatar também pelo <a href="https://www.linkedin.com/in/carlo-lemos">Linkedin</a>. Lá tem um pouco das minhas experiências acadêmicas e profissionais. </div></p>
+<p><div align="justify">Fique a vontade para me contatar pelo <a href="https://www.linkedin.com/in/carlo-lemos">Linkedin</a>. Lá tem um pouco das minhas experiências acadêmicas e profissionais. </div></p>
 
 ## Visual do site
 
