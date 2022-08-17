@@ -4,11 +4,7 @@ title: Links
 permalink: /links/
 ---
 
-<p><div align="justify">Aqui estão algumas referências que eu acho que merecem ser conferidas com atenção pela qualidade!</div></p>
-
 ## Blogs
-
-<p><div align="justify">Estes são blogs de profissionais que admiro. Visito regularmente procurando novas discussões.</div></p>
 
 <p><div align="justify"> &bull; <a href="https://matheusfacure.github.io/">Blog do Matheus Facure</a>: Exemplos legais com técnicas não básicas que dispertam sua curiosidade para assuntos não abordados em cursos introdutórios tradicionais. Pelo seu viés economista, discute assuntos sob uma ótica diferente, mas de forma rigorosa matematicamente e muito clara. Tem uma série de posts bem legais sobre econometria e inferência causal. Seus tutoriais são muito bons e sempre recomendo pra quem está tendo os primeiros contatos com Aprendizado de Máquina.</div></p>
 
