@@ -3,6 +3,17 @@ layout: page
 permalink: /sobre/
 ---
 
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" href="/about">English</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="">Portuguese</a>
+  </li>
+</ul>
+
+nilvo
+
 <div class="row">
 <ul class="nav justify-content-end">
     <li><a href="/about">Eng</a></li>
