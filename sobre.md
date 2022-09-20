@@ -3,25 +3,10 @@ layout: page
 permalink: /sobre/
 ---
 
-<ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a class="nav-link active" href="/about">English</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="">Portuguese</a>
-  </li>
-</ul>
+| [English](https://vitaliset.github.io/about/) 	| [**Portuguese**](https://vitaliset.github.io/sobre/) 	|
+|---	|---	|
 
-nilvo
-
-<div class="row">
-<ul class="nav justify-content-end">
-    <li><a href="/about">Eng</a></li>
-    <li class="active"><a href="">PT</a></li>
-</ul>
-</div>
-
-portuguese 🇧🇷😋
+portuguese 🇧🇷😋 a
 
 <p><div align="justify">Oi meu nome é Carlo, tenho 8 anos (Teria se estivesse viva), morri aos 7 em Cascavel-PR. Além de assombração, sou um (quase) matemático entusiasta por ciência de dados! </div></p>
 
