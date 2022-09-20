@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 <div class="row">
-<ul class="nav nav-tabs">
+<ul class="nav justify-content-end">
     <li class="active"><a href="">Eng</a></li>
     <li><a href="/sobre">PT</a></li>
 </ul>
