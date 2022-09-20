@@ -4,7 +4,7 @@ permalink: /sobre/
 ---
 
 <div class="row">
-<ul class="nav nav-tabs navbar-left">
+<ul class="nav nav-tabs">
     <li><a href="/about">Eng</a></li>
     <li class="active"><a href="">PT</a></li>
 </ul>
