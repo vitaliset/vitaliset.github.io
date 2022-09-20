@@ -4,9 +4,9 @@ permalink: /sobre/
 ---
 
 | [English](https://vitaliset.github.io/about/) 	| [**Portuguese**](https://vitaliset.github.io/sobre/) 	|
-|---	|---	|
+|-----------------------------------------------	|-----------------------------------------------------	|
 
-portuguese 🇧🇷😋 a
+portuguese 🇧🇷😋 ?
 
 <p><div align="justify">Oi meu nome é Carlo, tenho 8 anos (Teria se estivesse viva), morri aos 7 em Cascavel-PR. Além de assombração, sou um (quase) matemático entusiasta por ciência de dados! </div></p>
 
