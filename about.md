@@ -1,15 +1,17 @@
 ---
 layout: page
-title: Sobre
-permalink: /sobre/
+title: About
+permalink: /about/
 ---
 
 <div class="row">
 <ul class="nav nav-tabs navbar-left">
-    <li class="active"><a href="#">Eng</a></li>
-    <li><a href="/about_PT">PT</a></li>
+    <li class="active"><a href="">Eng</a></li>
+    <li><a href="/sobre">PT</a></li>
 </ul>
 </div>
+
+Engrish
 
 <p><div align="justify">Oi meu nome é Carlo, tenho 8 anos (Teria se estivesse viva), morri aos 7 em Cascavel-PR. Além de assombração, sou um (quase) matemático entusiasta por ciência de dados! </div></p>
 
