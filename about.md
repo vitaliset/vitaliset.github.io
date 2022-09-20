@@ -4,27 +4,9 @@ title: Sobre
 permalink: /sobre/
 ---
 
-[comment]: <![profile]({{ "assets/img/teste2.jpg" | absolute_url }})> 
+# Results {.tabset}
 
-::::{tab-set}
-:::{tab-item} Linux/MacOS
-
-```bash
-conda env create -f conda-envs/environment-dev.yml
-```
-:::
-:::{tab-item} Windows
-```bash
-conda env create -f .\conda-envs\windows-environment-dev.yml
-```
-:::
-:::{tab-item} Windows (Git Bash)
-
-```bash
-conda env create -f conda-envs/windows-environment-dev.yml
-```
-:::
-::::
+## Portuguese
 
 <!-- <p><div align="justify"><b>Este blog ainda está sendo atualizado! Até o final de outubro, as postagens aqui estarão devidamente revisadas, tanto em conteúdo quanto ortograficamente e com os códigos em $\LaTeX$ funcionando. Até lá, os posts podem e provavelmente contém alguns bugs ou detalhes que preciso arrumar ainda!</b></div></p> -->
 
@@ -39,3 +21,7 @@ conda env create -f conda-envs/windows-environment-dev.yml
 ## Visual do site
 
 <p><div align="justify">Todas as ilustrações do blog são um trabalho feito pelo talentoso <a href="https://www.instagram.com/lucasalamoart/">Lucas Álamo</a>. O layout é uma pequena adaptação do tema <a href="https://janczizikow.github.io/sleek/">Sleek</a>.</div></p>
+
+## English
+
+TBD
