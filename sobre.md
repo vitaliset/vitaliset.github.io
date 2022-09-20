@@ -19,3 +19,9 @@ portuguese 🇧🇷😋 ?
 ## Visual do site
 
 <p><div align="justify">Todas as ilustrações do blog são um trabalho feito pelo talentoso <a href="https://www.instagram.com/lucasalamoart/">Lucas Álamo</a>. O layout é uma pequena adaptação do tema <a href="https://janczizikow.github.io/sleek/">Sleek</a>.</div></p>
+
+| Tables   |      Are      |  Cool |
+|----------|:-------------:|------:|
+| col 1 is |  left-aligned | $1600 |
+| col 2 is |    centered   |   $12 |
+| col 3 is | right-aligned |    $1 |
