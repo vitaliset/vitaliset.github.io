@@ -6,6 +6,26 @@ permalink: /sobre/
 
 [comment]: <![profile]({{ "assets/img/teste2.jpg" | absolute_url }})> 
 
+::::{tab-set}
+:::{tab-item} Linux/MacOS
+
+```bash
+conda env create -f conda-envs/environment-dev.yml
+```
+:::
+:::{tab-item} Windows
+```bash
+conda env create -f .\conda-envs\windows-environment-dev.yml
+```
+:::
+:::{tab-item} Windows (Git Bash)
+
+```bash
+conda env create -f conda-envs/windows-environment-dev.yml
+```
+:::
+::::
+
 <!-- <p><div align="justify"><b>Este blog ainda está sendo atualizado! Até o final de outubro, as postagens aqui estarão devidamente revisadas, tanto em conteúdo quanto ortograficamente e com os códigos em $\LaTeX$ funcionando. Até lá, os posts podem e provavelmente contém alguns bugs ou detalhes que preciso arrumar ainda!</b></div></p> -->
 
 <p><div align="justify">Oi meu nome é Carlo, tenho 8 anos (Teria se estivesse viva), morri aos 7 em Cascavel-PR. Além de assombração, sou um (quase) matemático entusiasta por ciência de dados! </div></p>
