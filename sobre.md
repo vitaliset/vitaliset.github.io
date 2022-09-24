@@ -3,8 +3,8 @@ layout: page
 permalink: /sobre/
 ---
 
-| [English](https://vitaliset.github.io/about/) 	| [Portuguese](https://vitaliset.github.io/sobre/) 	|
-|-----------------------------------------------	|-------------------------------------------------	|
+| [English](https://vitaliset.github.io/about/) | [Portuguese](https://vitaliset.github.io/sobre/) |
+|:---------------------------------------------:|:------------------------------------------------:|
 
 <p><div align="justify">Oi meu nome é Carlo, tenho 8 anos (Teria se estivesse viva), morri aos 7 em Cascavel-PR. Além de assombração, sou um (quase) matemático entusiasta por ciência de dados! </div></p>
 
@@ -17,3 +17,9 @@ permalink: /sobre/
 ## Visual do site
 
 <p><div align="justify">Todas as ilustrações do blog são um trabalho feito pelo talentoso <a href="https://www.instagram.com/lucasalamoart/">Lucas Álamo</a>. O layout é uma pequena adaptação do tema <a href="https://janczizikow.github.io/sleek/">Sleek</a>.</div></p>
+
+| Tables   |      Are      |  Cool |
+|----------|:-------------:|------:|
+| col 1 is |  left-aligned | $1600 |
+| col 2 is |    centered   |   $12 |
+| col 3 is | right-aligned |    $1 |
