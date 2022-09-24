@@ -4,23 +4,16 @@ title: About
 permalink: /about/
 ---
 
-<div class="row">
-<ul class="nav justify-content-end">
-    <li class="active"><a href="">Eng</a></li>
-    <li><a href="/sobre">PT</a></li>
-</ul>
-</div>
+<p><div align="justify"><i>Clique <a href="https://vitaliset.github.io/sobre/">aqui</a> para ver a versão em português dessa página.</i></div></p>
 
-Engrish
+<p><div align="justify">Hi my name is Carlo, I'm 14 years old (I would have if I were alive), I died at 13 in Cascavel-PR. In addition to haunting, I'm an (almost surely) mathematician enthusiastic about data science!</div></p>
 
-<p><div align="justify">Oi meu nome é Carlo, tenho 8 anos (Teria se estivesse viva), morri aos 7 em Cascavel-PR. Além de assombração, sou um (quase) matemático entusiasta por ciência de dados! </div></p>
+<p><div align="justify">$\oint$ <i>If you're not familiar with <a href="https://en.wikipedia.org/wiki/Orkut">brazilian Orkut culture</a>, you probably didn't understand the last reference. This used to be the beginning of a famous <a href="https://en.wikipedia.org/wiki/Copypasta">copypasta</a> in Orkut communities that "forced" you (boomers and kids) to share it in more places for fearing of being killed by the haunting that would have written the <a href="https://cdn.mensagenscomamor.com/content/images/m000505417.jpg?v=1">text</a>. It would be funnier if I didn't have to explain the joke... :P</i></div></p>
 
-<p><div align="justify">Resolvi escrever esse blog para aprender a expor meus projetos e discussões de forma técnica e formal ao mesmo tempo que acessível para pessoas com um conhecimento de matemática do ensino superior e noções iniciais de Aprendizado de Máquina. Tento ser um pouco rigoroso matematicamente, mas sem perder a parte visual e intuitiva do que está acontecendo.</div></p>
+<p><div align="justify">I decided to write this blog to learn how to expose my projects and discussions in a technical and formal way while being accessible to people with a knowledge of university mathematics and initial notions of Machine Learning. I try to be mathematically rigorous, but without losing the visual and intuitive part of what is happening.</div></p>
 
-<p><div align="justify">Entre as postagens de Aprendizado de Máquina, pretendo eventualmente comentar também sobre assuntos relacionados a noções básicas de Matemática, Análise Numérica, Teoria da Medida e Integração, Inferência Estatística, Teoria dos Jogos, Evolução (e Ecologia Comportamental), entre outros tópicos.</div></p>
+<p><div align="justify">To learn more about my professional and academic experiences, you can see my <a href="https://github.com/vitaliset/vitaliset.github.io/blob/master/carlo_bach_ufabc.pdf">undergraduation grades</a>, my <a href="https://github.com/vitaliset/vitaliset.github.io/blob/master/carlo_cv.pdf">curriculum vitae</a> and my <a href="https://www.linkedin.com/in/carlo-lemos">Linkedin</a>.</div></p>
 
-<p><div align="justify">Fique a vontade para me contatar pelo <a href="https://www.linkedin.com/in/carlo-lemos">Linkedin</a>. Lá tem um pouco das minhas experiências acadêmicas e profissionais. </div></p>
+<p><div align="justify"><b>About the website look</b>: all illustrations on the blog are a work done by the talented <a href="https://www.instagram.com/lucasalamoart/">Lucas Álamo</a>. The layout is a small adaptation of the theme <a href="https://janczizikow.github.io/sleek/">Sleek</a>.</div></p>
 
-## Visual do site
-
-<p><div align="justify">Todas as ilustrações do blog são um trabalho feito pelo talentoso <a href="https://www.instagram.com/lucasalamoart/">Lucas Álamo</a>. O layout é uma pequena adaptação do tema <a href="https://janczizikow.github.io/sleek/">Sleek</a>.</div></p>
+<!-- <p><div align="justify">Entre as postagens de Aprendizado de Máquina, pretendo eventualmente comentar também sobre assuntos relacionados a noções básicas de Matemática, Análise Numérica, Teoria da Medida e Integração, Inferência Estatística, Teoria dos Jogos, Evolução (e Ecologia Comportamental), entre outros tópicos.</div></p> -->
