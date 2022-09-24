@@ -6,17 +6,17 @@ permalink: /links/
 
 ## Blogs
 
-<p><div align="justify"> &bull; <a href="https://takeshimg92.github.io/">Alessandro Takeshi's blog</a>: Physicists love to solve difficult equations. Alessandro is a physicist. Jokes aside, although the posts are not trivial, they are much more digestible than the places where the ideas come from! Lots of cool ideas!</div></p>
+<p><div align="justify"> &bull; <a href="https://takeshimg92.github.io/">Alessandro Takeshi's blog</a>: Physicists love to solve difficult equations. Alessandro is a physicist. Jokes aside, although the posts are not trivial, they are much more digestible than the places where the ideas come from! Lots of cool stuff!</div></p>
 
 <p><div align="justify"> &bull; <a href="https://gdmarmerola.github.io/">Guilherme Marmerola's blog</a>: A great place to discover different and elegant approaches. Any visual resemblance to this blog is purely coincidental!</div></p>
 
-<p><div align="justify"> &bull; <a href="https://matheusfacure.github.io/">Matheus Facure's blog</a>: The causal inference post are really didatic. The basic tutorials are very useful.</div></p>
+<p><div align="justify"> &bull; <a href="https://matheusfacure.github.io/">Matheus Facure's blog</a>: The causal inference posts and the basic tutorials are really didatic and useful.</div></p>
 
-<p><div align="justify"> &bull; <a href="https://matheusjorge.github.io/">Matheus Jorge's blog</a>: Alexandr.IA is an didatic resource for those who are having their first contact with the topic.</div></p>
+<p><div align="justify"> &bull; <a href="https://maxhalford.github.io/">Max Halford's blog</a>: Very interesting posts about various aspects of data science, from database queries to using online models with streaming data.</div></p>
 
 <p><div align="justify"> &bull; <a href="https://sites.google.com/view/caioalmeida">Caio Almeida's blog</a>: Very high quality material with his academic works on Quantum Field Theory and interesting visualizations.</div></p>
 
-<p><div align="justify"> &bull; <a href="https://maxhalford.github.io/">Max Halford's blog</a>: Very interesting posts about various aspects of data science, from database queries to using online models with streaming data.</div></p>
+<p><div align="justify"> &bull; <a href="https://matheusjorge.github.io/">Matheus Jorge's blog</a>: Alexandr.IA is an didatic resource for those who are having their first contact with the topic.</div></p>
 
 ## Books
 
