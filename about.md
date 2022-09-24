@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+mathjax: true
 ---
 
 <p><div align="justify"><i>Clique <a href="https://vitaliset.github.io/sobre/">aqui</a> para ver a versão em português dessa página.</i></div></p>

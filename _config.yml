@@ -24,10 +24,10 @@ navigation: # Navigation links
 
 hero_img: teste1.jpg # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
 
-email: vitaliset@gmail.com # email for form submission
+# email: pass # email for form submission
 
-#linkedin_username: carlo-lemos-946592188
-#github_username:  vitaliset # replace with your_github_username or comment to remove link from footer
+linkedin_username: carlo-lemos
+github_username:  vitaliset # replace with your_github_username or comment to remove link from footer
 
 #disqus:
 #  shortname: vitaliset # to enable comments replace with your_disqus_shortname
