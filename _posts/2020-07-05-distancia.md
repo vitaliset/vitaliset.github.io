@@ -23,9 +23,9 @@ $$
 
 <p><div align="justify">Intuitivamente, uma distância precisa satisfazer algumas propriedades que surgem da forma como vemos distância intuitivamente. Iremos ver uma definição matemática para ela que tenta sintetizar essas noções em termos matematicamente claros.</div></p>
 
-<p><div align="justify">Primeiro, é razoável pedir </i>simetria</i>: a distância de $x$ até $y$ seja igual à distância de $y$ até $x$. Isso parece óbvio, mas a nossa definição formal de distância será uma função que aceita duas entradas e retorna um valor, que chamaremos de distância entre os argumentos de entrada. Essa primeria propriedade desejada nos dirá que não importa a ordem que damos as entradas.</div></p>
+<p><div align="justify">Primeiro, é razoável pedir <i>simetria</i>: a distância de $x$ até $y$ seja igual à distância de $y$ até $x$. Isso parece óbvio, mas a nossa definição formal de distância será uma função que aceita duas entradas e retorna um valor, que chamaremos de distância entre os argumentos de entrada. Essa primeria propriedade desejada nos dirá que não importa a ordem que damos as entradas.</div></p>
 
-<p><div align="justify">Uma outra propriedade desejável é a </i>identidade</i>: a distância de um ponto até ele mesmo é zero e se dois pontos estão a uma distância zero entrão eles são o mesmo elemento. Isso também é bem razoável e nos diz que apenas o próprio ponto tem distância zero dele mesmo.</div></p>
+<p><div align="justify">Uma outra propriedade desejável é a <i>identidade</i>: a distância de um ponto até ele mesmo é zero e se dois pontos estão a uma distância zero entrão eles são o mesmo elemento. Isso também é bem razoável e nos diz que apenas o próprio ponto tem distância zero dele mesmo.</div></p>
 
 <p><div align="justify">Por fim, no ensino fundamental nos dizem que, dado um triângulo, então a soma do comprimento de dois lados sempre é maior ou igual que o comprimento do lado restante para o triângulo ser válido. Vamos querer manter essa propriedade na nossa definição formal de distância, chamando essa propriedade de <i>desigualdade triangular</i>.</div></p>
 
