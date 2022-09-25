@@ -107,11 +107,11 @@ X_new, Y_new = sample(100, mean = 2)
 
 <p><div align="justify">No geral, o monitoramento da distribuição das covariáveis precisa ser simples. Métodos básicos são escolhidos no lugar de técnicas complexas privilegiando eficiência computacional. Além disso, a análise costuma ser feita olhando covariável por covariável, identificando mudanças nessas distribuições marginais. Entre os métodos clássicos univariados, se destacam:</div></p>
 
-- <p><div align="justify">Comparação de estatísticas: médias amostrais, variância amostral, alguns quantis amostrais;</div></p>
+- <p><div align="justify">Comparação de estatísticas: médias, variâncias e alguns quantis amostrais;</div></p>
 
-- <p><div align="justify">Comparação de frequências para distribuições discretas e dados categóricos.</div></p>
+- <p><div align="justify">Comparação de frequências para distribuições discretas e dados categóricos;</div></p>
 
-- <p><div align="justify">Teste Kolmogorov-Smirnov;</div></p>
+- <p><div align="justify">Teste de Kolmogorov-Smirnov;</div></p>
 
 - <p><div align="justify">Divergência de Kullback-leibler.</div></p>
 
