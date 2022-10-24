@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Meta K-Means&#58; um ensemble de K-Means
-featured-img: boruta
+featured-img: metakmeans
 category: [clustering]
 mathjax: true
 summary: Uma possível maneira de agregar resultado de diferentes K-Means para construir um comitê.
@@ -11,7 +11,7 @@ summary: Uma possível maneira de agregar resultado de diferentes K-Means para c
 
 <p><div align="justify">Por exemplo, dado um conjunto de oito exemplos, as segmentações <code>[0, 0, 1, 0, 2, 2, 2, 1]</code> e <code>[1, 1, 0, 1, 3, 3, 3, 0]</code> são idênticas a menos de uma permutação de nomes, isto é, basta chamar o cluster 0 de 1 e o 1 de 0 em alguma das listas e o 3 de 2 na segunda lista (ou o 2 de 3 na primeira lista). É importante ter clareza de que esses clusters de fato concordam, uma vez que a nomenclatura  não tem significado algum já que não estamos num problema de classificação.</div></p>
 
-<p><center><img src="{{ site.baseurl }}/assets/img/boruta/output_3_0.png"></center></p>
+<p><center><img src="{{ site.baseurl }}/assets/img/metakmeans/output_3_0.png"></center></p>
 
 <p><div align="justify">Isso motiva a criação de métricas de &quot;avaliação de clusterização&quot; como a <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.rand_score.html"><code>sklearn.metrics.rand_score</code></a> que responde a pergunta: o quão similar são duas clusterizações? Em que, obter o valor próximo de 1 significa que os agrupamentos concordam bastante (a menos de possíveis trocas de nomes).</div></p>
 
@@ -118,7 +118,7 @@ for i, j in product(range(3), range(3)):
 plt.tight_layout()
 ```
 
-<p><center><img src="{{ site.baseurl }}/assets/img/boruta/output_20_0.png"></center></p>
+<p><center><img src="{{ site.baseurl }}/assets/img/metakmeans/output_20_0.png"></center></p>
 
 <p><div align="justify">A inspeção visual nos permite dar nomes para os clusters seguindo o formato dos números, construindo o seguinte dicionário:</div></p>
 
@@ -175,7 +175,7 @@ for axs in ax:
 plt.tight_layout()
 ```
 
-<p><center><img src="{{ site.baseurl }}/assets/img/boruta/output_26_0.png"></center></p>
+<p><center><img src="{{ site.baseurl }}/assets/img/metakmeans/output_26_0.png"></center></p>
 
 <p><div align="justify">Observando o histograma do máximo do nosso &quot;<code>.predict_proba</code>&quot;, vemos que para um número razoável de exemplos, os clusters encontrados pelos agrupamentos individuais podem discordar ligeiramente gerando uma visão de incerteza e robustez associada à sua atribuição de agrupamento (ideia central dos algoritmos de <a href="https://en.wikipedia.org/wiki/Fuzzy_clustering">soft clustering</a>). Entretanto, para maioria dos exemplos os <a href="https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html"><code>sklearn.cluster.KMeans</code></a> individuais concordam totalmente.</div></p>
 
@@ -189,7 +189,7 @@ ax.set_title("Histogram of assigned cluster certainty")
 plt.tight_layout()
 ```
 
-<p><center><img src="{{ site.baseurl }}/assets/img/boruta/output_28_0.png"></center></p>
+<p><center><img src="{{ site.baseurl }}/assets/img/metakmeans/output_28_0.png"></center></p>
 
 <p><div align="justify">Essa visão nos permite ver os exemplos mais difíceis de agrupar, dando uma noção de <a href="https://deslib.readthedocs.io/en/latest/modules/util/instance_hardness.html">instance hardness</a> para o nosso problema de clusterização que, no nosso, exemplo parece estar associado a números parecidos com o 8.</div></p>
 
@@ -198,7 +198,7 @@ plt.tight_layout()
  .rename(columns=dict_cluster).T.sort_index().T)
 ```
 
-<p><center><img src="{{ site.baseurl }}/assets/img/boruta/output_30_0.png"></center></p>
+<p><center><img src="{{ site.baseurl }}/assets/img/metakmeans/output_30_0.png"></center></p>
 
 ```python
 fig, ax = plt.subplots(ncols=5, figsize=(5, 2.5))
@@ -211,7 +211,7 @@ for axs, i in zip(ax, pd.DataFrame(aggregated_predicts)[(aggregated_predicts<0.4
     axs.set_title(f"{i} - Target: {digits.target[i]}", fontsize=7)
 plt.tight_layout()
 ```
-<p><center><img src="{{ site.baseurl }}/assets/img/boruta/output_31_0.png"></center></p>
+<p><center><img src="{{ site.baseurl }}/assets/img/metakmeans/output_31_0.png"></center></p>
 
 ___
 
