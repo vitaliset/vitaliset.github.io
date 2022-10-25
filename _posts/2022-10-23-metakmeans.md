@@ -230,6 +230,8 @@ unique_km_labels = KMeans(random_state=42).fit(X).labels_
 
     (0.9799745280650514, 0.6951144094001237)
 
+<p><div align="justify">Por fim, é fácil generalizar as ideias aqui para qualquer outro algoritmo de clusterização baseado em centróides como o <a href="https://en.wikipedia.org/wiki/K-medians_clustering">K-Medians</a> ou o <a href="https://en.wikipedia.org/wiki/K-medians_clustering">K-Medoids</a>. Isso significa que não estamos necessariamente presos à <a href="https://vitaliset.github.io/distancia/">distância euclidiana</a>, que é a <a href="https://stats.stackexchange.com/questions/81481/why-does-k-means-clustering-algorithm-use-only-euclidean-distance-metric">distância utilizada pelo K-Means</a>.</div></p>
+
 ___
 
 ## Implementação grosseira da classe do estimador
