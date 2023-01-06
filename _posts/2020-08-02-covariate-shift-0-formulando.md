@@ -2,7 +2,7 @@
 layout: post
 title: Covariate Shift&#58; Formulando o problema
 featured-img: covariate_0_formulando
-category: [dataset shift]
+category: [🇧🇷, dataset shift]
 mathjax: true
 summary: Apresentando o cenário do dataset shift com um caso ilustrativo.
 ---

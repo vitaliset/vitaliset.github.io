@@ -2,7 +2,7 @@
 layout: post
 title: Meta K-Means&#58; um ensemble de K-Means
 featured-img: metakmeans
-category: [clustering]
+category: [🇧🇷, clustering]
 mathjax: true
 summary: Uma possível maneira de agregar resultado de diferentes K-Means para construir um comitê.
 ---

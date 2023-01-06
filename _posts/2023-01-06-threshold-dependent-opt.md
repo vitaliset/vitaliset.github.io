@@ -2,7 +2,7 @@
 layout: post
 title: Hyperparameter search with threshold-dependent metrics
 featured-img: sleek
-category: [basic, imbalanced learning]
+category: [🇺🇸, basic, imbalanced learning]
 mathjax: true
 summary: It can be dangerous to do hyperparameter tunning with threshold-dependent metrics directly. Here we discuss why and how to work around it.
 ---
