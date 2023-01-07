@@ -408,7 +408,7 @@ ___
 
 ## tl;dr
 
-<p><div align="justify">When optimizing hyperparameters, threshold-dependent metrics make <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html"><code>sklearn.model_selection.GridSearchCV</code></a> like search methods use the estimator&#39;s <code>.predict</code> method instead of <code>.predict_proba</code>. This can be harmful as <code>0.5</code> might not be the best threshold, especially in imbalanced learning scenarios.</div></p>
+<p><div align="justify">When optimizing hyperparameters, threshold-dependent metrics make <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html"><code>sklearn.model_selection.GridSearchCV</code></a>-like search methods use the estimator&#39;s <code>.predict</code> method instead of <code>.predict_proba</code>. This can be harmful as <code>0.5</code> might not be the best threshold, especially in imbalanced learning scenarios.</div></p>
 
 <p><div align="justify">Always prioritize the threshold-independent metrics, but if you need to use a threshold-dependent metric, you can try to make it threshold-independent by getting the optimal value for it (<code>max</code> or <code>min</code> depending on if <code>greater_is_better=True</code> or <code>False</code>) for a threshold grid of options. As this is the same as optimizing it for the validation set, it can slightly overestimate your results.</div></p>
 
