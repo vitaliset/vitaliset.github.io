@@ -2,7 +2,7 @@
 layout: post
 title: Hyperparameter search with threshold-dependent metrics
 featured-img: sleek
-category: [🇺🇸, basic, imbalanced learning]
+category: [🇺🇸, imbalanced learning]
 mathjax: true
 summary: It can be dangerous to do hyperparameter tunning with threshold-dependent metrics directly. Here we discuss why and how to work around it.
 ---
@@ -413,6 +413,8 @@ ___
 <p><div align="justify">Always prioritize the threshold-independent metrics, but if you need to use a threshold-dependent metric, you can try to make it threshold-independent by getting the optimal value for it (<code>max</code> or <code>min</code> depending on if <code>greater_is_better=True</code> or <code>False</code>) for a threshold grid of options. As this is the same as optimizing it for the validation set, it can slightly overestimate your results.</div></p>
 
 <p><div align="justify">A more honest way to do this is to explicitly optimize the threshold on a part of your training set for each cross-validation fold. This mimics reality better but is more time-consuming as this optimization takes time if you want it to be robust (for instance, using bootstrap to estimate better the performance value).</div></p>
+
+<p><div align="justify">$\oint$ <em>This is the current state of this topic, in version 1.2.0 of scikit-learn. In a future release, there will be a <code>sklearn.model_selection.CutoffClassifier</code> (from <a href="https://github.com/scikit-learn/scikit-learn/pull/16525">PR #16525</a>) that will behave very closely to my <code>ThresholdOptimizerRandomForestBinaryClassifier</code>. One significant change will be that it will receive the estimator during initialization instead of inheriting it.</em></div></p>
 
 ## <a name="bibliography">Bibliography</a>
 
