@@ -5,101 +5,127 @@ permalink: /tutoring-guideline/
 mathjax: true
 ---
 
-# Uma sugestão de estudos para mentoria em Data Science
-
 ## Pré-requisitos esperados do mentorado
 
+
 - **Probabilidade**: A linguagem de Aprendizado de Máquina é intrinsicamente probabilística. É necessário que o mentorado esteja confortável com os conceitos básicos de probabilidade (no mínimo em um [nível introdutório do assunto](https://gradmat.ufabc.edu.br/disciplinas/ipe/)). Isso significa, conhecer a definição (ingênua) de espaço de probabilidade, entender sobre probabilidade condiciona e independência, variáveis aleatórias discretas e contínuas, conhecer as principais distribuições de variáveis aleatórias e saber calcular esperanças, variâncias e correlações. Caso esse assunto seja intimidador ainda, é sugerido uma revisão detalhada dos tópicos seguindo, por exemplo, o curso [Introdução à Probabilidade e Estatístíca (IPE) do professor Rafael Grisi da UFABC](https://www.youtube.com/channel/UCKGYUbUHWSDr8pFaDd7JWCg/videos).
+
 - **Lógica de programação**: Não é esperado que o mentorado já tenha utilizado Python, mas aguarda-se que já tenha experiência prévia com programação em outra linguagem e esteja confortável com as estruturas de repetição, condições e operadores lógicos, além de algumas estruturas de dados básicas como listas, vetores e strings. Se esse não for o caso do mentorado, o curso de [introdução à programação do Kaggle](https://www.kaggle.com/learn/intro-to-programming) pode ser um bom começo. Se ainda assim, for necessário gastar mais tempo vendo esses tópicos, aulas selecionadas da [playlist de Python do Curso em Vídeo](https://youtube.com/playlist?list=PLvE-ZAFRgX8hnECDn1v9HNTI71veL3oW0) podem ser uma boa referência.
 
 ## Ensinamentos do HDFS: redundância é importante
+
 
 Durante esse guia de materiais de mentoria, por selecionar partes específicas de cursos diferentes, vários assuntos podem ser vistos em repetição com uma abordagem ligeiramente diferente. Isso é intencional. Acredito que para formentar essa base da forma mais robusta possível, é importante que os assuntos realmente estejam absorvidos e vê-los algumas vezes reforça isso.  
 
 ## 0) Como usar esse guia de atividades de tutoria?
 
+
 ### 0.1) Requisitos sugeridos
 
 Os pré-requisitos são para organização caso queira seguir outra ordem ou pular etapas.
 
+
 ### 0.2) Motivação
 
-A motivação é para o tutor saber porque aquela atividade faz sentido naquele momento (pode ser compartilhado com o mentorado se achar que faz sentido ou ele perguntar). 
+A motivação é para o tutor saber porque aquela atividade faz sentido naquele momento (pode ser compartilhado com o mentorado se achar que faz sentido ou ele perguntar).
+
 
 ### 0.3) Descrição
 
-A descrição é o texto sugerido para passar pro aluno na ferramenta utilizada para registrar as atividades. Eu sugiro usar o Trello: ele tem uma estrutura estilo Kanban que você pode organizar os cards, bem parecido com o como utilizamos o Jira.
+A descrição é o texto sugerido para passar pro aluno na ferramenta utilizada para registrar as atividades. Eu sugiro usar, como ferramenta, o Trello: ele tem uma estrutura estilo Kanban que você pode organizar os cards em colunas (algo como "to do", "in progress", "done"), bem parecido com o como utilizamos o Jira.
+
 
 # Atividades recorrentes
 
+
 ## A) HackerRank
+
 
 ### A.1) Requisitos sugeridos
 
 Atividade 2.
 
+
 ### A.2) Motivação
 
 O HackerRank tem várias playlists interessantes que te ensinam com exercícios sobre particularidades do Python. Você conhece estrutura de dados não triviais enquanto revisita as que você acha que já domina aprendendo formas novas de trabalhar com. Variações dessa ferramentas costumam ser utilizadas em processos seletivos.
+
 
 ### A.3) Descrição
 
 Fazer pelo menos 1 hora de atividades propostas nas playlists de Python do [HackerRank](https://www.hackerrank.com/domains/python) toda semana. Rapidinho você já vai ter visto a maioria dos tipos relevantes e eles vão te ajudar a deixar seu código mais Pythonic. 
 
+
 ## B) Stratascratch
+
 
 ### B.1) Requisitos sugeridos
 
 Atividade -.
 
+
 ### B.2) Motivação
 
 Pandas é uma biblioteca que você só vai dominar se utilizar muito. A ideia aqui é ter alguns exercícios mais ou menos clássicos para estar se familiarizando com as funções clássicas.
+
 
 ### B.3) Descrição
 
 Fazer pelo menos 0.5 horas de atividades propostas utilizando Pandas do [Stratascratch]([stratascratch.com](http://stratascratch.com/)) toda semana. Você consegue resolver em SQL também e é um lugar bacana para isso também.
 
+
 # Atividades "Sequenciais"
 
+
 ## 1) Instalar Python (pelo Anaconda)
+
 
 ### 1.1) Requisitos sugeridos
 
 Não há.
 
+
 ### 1.2) Motivação
 
 A ideia é deixar o ambiente pronto para utilizar Jupyter Notebooks. São ótimas ferramentas para exploração e, na prática, é o ambiente mais adotado no dia-a-dia do cientista de dados. Durante os encontros é sempre útil mostrar os atalhos mais comuns e boas práticas (deixar o notebook organizado), mas falar todos agora só vai confundir o mentorando. Eventualmente, no final, podemos mostrar mais coisas de IDE, como VSCode etc, mas não acho útil no início.
+
 
 ### 1.3) Descrição
 
 Seguir os passos descritos aqui:  [Instalando Python para Aprendizado de Máquina - LAMFO](https://lamfo-unb.github.io/2017/06/10/Instalando-Python/).
 Não precisa instalar TensorFlow/Git por enquanto.
 
+
 ## 2) Nivelamento Python (Kaggle Learn)
+
 
 ### 2.1) Requisitos sugeridos
 
 Atividade 1. Já assume conhecimento de programação básico em alguma linguagem.
 
+
 ### 2.2) Motivação
 
-Python é A LINGUAGEM para DS. Muitas bibliotecas boas prontas e a maioria das empresas adota como padrão. O curso do Kaggle Learn é ótimo porque foca nas partes mais importantes pra quem tá migrando de linguagem e em coisas que serão úteis em breve para sklearn, pandas etc.
+Python é **A LINGUAGEM** para DS: existem muitas bibliotecas de qualidade prontas e a maioria das empresas adota como padrão na esteira de produtização. O curso do Kaggle Learn é ótimo porque foca nas partes que serão mais úteis pensando nas bibliotecas clássicas. É um curso focado em quem está migrando de linguagem.
+
 
 ### 2.3) Descrição 
 
 [Learn Python Tutorials](https://www.kaggle.com/learn/python). Tempo estimado de 5 horas.
 
-## 3) Aula introdutória do curso (básico) do Andrew
+
+## 3) Aula introdutória do curso (básico) de ML do Andrew
+
 
 ### 3.1) Requisitos sugeridos
 
 Não há.
 
+
 ### 3.2) Motivação
 
 Aqui o didático Andrew apresenta os tipos de aprendizado e dá exemplos legais. É um bom ponto pra pedir pro mentorado dar exemplos de problemas que dá pra aplicar e também motivar algumas aplicações.
+
 
 ### 3.3) Descrição
 
@@ -108,26 +134,29 @@ Aqui o didático Andrew apresenta os tipos de aprendizado e dá exemplos legais.
 - Lecture 1.2 — Supervised Learning (13 min)
 - Lecture 1.3 — Unsupervised Learning (14 min)
 
-## 4) Aula de Regressão Linear do curso (básico) do Andrew
+## 4) Aula de Regressão Linear do curso (básico) de ML do Andrew
+
 
 ### 4.1) Requisitos sugeridos
 
 Atividade 3.
 
+
 ### 4.2) Motivação
 
 Regressão Linear é o algoritmo mais simples possível de aprendizado de máquina. É uma oportunidade legal de mostrar que as ideias gerais são bem parecidas com esse exemplo (pelo menos pra problemas supervisionados): criar uma função que aproxima bem os dados.
 
+
 ### 4.3) Descrição
 
 - [Machine Learning — Andrew Ng, Stanford University [FULL COURSE]](https://www.youtube.com/playlist?list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN)
-- Lecture 2.1 — Linear Regression With One Variable | Model Representation (8:11)
-- Lecture 2.2 — Linear Regression With One Variable | CostFunction (8:13)
-- Lecture 2.3 — Linear Regression With One Variable | Cost Function Intuition (11:10)
-- Lecture 2.4 — Linear Regression With One Variable | Cost Function Intuition #2 (8:49)
-- Lecture 2.5 — Linear Regression With One Variable | Gradient Descent (11:31)
-- Lecture 2.6 — Linear Regression With One Variable | Gradient Descent Intuition (11:52)
-- Lecture 2.7 — Linear Regression With One Variable | Gradient Descent For Linear Regression (10:21)
+- Lecture 2.1 — Linear Regression With One Variable : Model Representation (8:11)
+- Lecture 2.2 — Linear Regression With One Variable : CostFunction (8:13)
+- Lecture 2.3 — Linear Regression With One Variable : Cost Function Intuition (11:10)
+- Lecture 2.4 — Linear Regression With One Variable : Cost Function Intuition #2 (8:49)
+- Lecture 2.5 — Linear Regression With One Variable : Gradient Descent (11:31)
+- Lecture 2.6 — Linear Regression With One Variable : Gradient Descent Intuition (11:52)
+- Lecture 2.7 — Linear Regression With One Variable : Gradient Descent For Linear Regression (10:21)
 - Lecture 2.8 — What's Next (5:50)
 
 ## 5) Introdução ao Numpy
@@ -192,7 +221,7 @@ A orientação orientada à objetos é o paradigma de programação principal do
 - [Python OOP Tutorial 1: Classes and Instances](https://youtu.be/ZDa-Z5JzLYM) (15 min)
 - Extra: uma discussão sobre diferentes formas de se programar (paradigmas): [1.1 - Programação Funcional em Haskell: Paradigmas de Programação](https://youtu.be/CzGSaXbPFRA) (27 min) - O Python tem várias coisas bem úteis de programação funcional então é legal conhecer por cima as ideias também.
 
-## 9) Aula de revisão de matrizes do curso (básico) do Andrew
+## 9) Aula de revisão de matrizes do curso (básico) de ML do Andrew
 
 ### 9.1) Requisitos sugeridos
 
@@ -212,7 +241,7 @@ Operações com matrizes são muito importantes para otimizar a computação de 
 - Lecture 3.5 — Linear Algebra Review | Matrix Multiplication Properties - 9:03
 - Lecture 3.6 — Linear Algebra Review | Inverse And Transpose - 11:14
 
-## 10) Aula de Regressão Linear Multivariada (e polinomial) do curso (básico) do Andrew
+## 10) Aula de Regressão Linear Multivariada (e polinomial) do curso (básico) de ML do Andrew
 
 ### 10.1) Requisitos sugeridos
 
@@ -278,7 +307,7 @@ pass
 - [Regression Metrics Review I - How to Win a Data Science Competition Learn from Top Kagglers](https://www.bilibili.com/video/BV117411y7Fa?p=30)
 - [Regression Metrics Review II - How to Win a Data Science Competition Learn from Top Kagglers](https://www.bilibili.com/video/BV117411y7Fa?p=31)
 
-## 14) Aula de Regressão Logística do curso (básico) do Andrew
+## 14) Aula de Regressão Logística do curso (básico) de ML do Andrew
 
 ### 14.1) Requisitos sugeridos
 
