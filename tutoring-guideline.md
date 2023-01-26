@@ -7,125 +7,98 @@ mathjax: true
 
 ## Pré-requisitos esperados do mentorado
 
-
 - **Probabilidade**: A linguagem de Aprendizado de Máquina é intrinsicamente probabilística. É necessário que o mentorado esteja confortável com os conceitos básicos de probabilidade (no mínimo em um [nível introdutório do assunto](https://gradmat.ufabc.edu.br/disciplinas/ipe/)). Isso significa, conhecer a definição (ingênua) de espaço de probabilidade, entender sobre probabilidade condiciona e independência, variáveis aleatórias discretas e contínuas, conhecer as principais distribuições de variáveis aleatórias e saber calcular esperanças, variâncias e correlações. Caso esse assunto seja intimidador ainda, é sugerido uma revisão detalhada dos tópicos seguindo, por exemplo, o curso [Introdução à Probabilidade e Estatístíca (IPE) do professor Rafael Grisi da UFABC](https://www.youtube.com/channel/UCKGYUbUHWSDr8pFaDd7JWCg/videos).
 
 - **Lógica de programação**: Não é esperado que o mentorado já tenha utilizado Python, mas aguarda-se que já tenha experiência prévia com programação em outra linguagem e esteja confortável com as estruturas de repetição, condições e operadores lógicos, além de algumas estruturas de dados básicas como listas, vetores e strings. Se esse não for o caso do mentorado, o curso de [introdução à programação do Kaggle](https://www.kaggle.com/learn/intro-to-programming) pode ser um bom começo. Se ainda assim, for necessário gastar mais tempo vendo esses tópicos, aulas selecionadas da [playlist de Python do Curso em Vídeo](https://youtube.com/playlist?list=PLvE-ZAFRgX8hnECDn1v9HNTI71veL3oW0) podem ser uma boa referência.
 
 ## Ensinamentos do HDFS: redundância é importante
 
-
 Durante esse guia de materiais de mentoria, por selecionar partes específicas de cursos diferentes, vários assuntos podem ser vistos em repetição com uma abordagem ligeiramente diferente. Isso é intencional. Acredito que para formentar essa base da forma mais robusta possível, é importante que os assuntos realmente estejam absorvidos e vê-los algumas vezes reforça isso.  
 
 ## 0) Como usar esse guia de atividades de tutoria?
-
 
 ### 0.1) Requisitos sugeridos
 
 Os pré-requisitos são para organização caso queira seguir outra ordem ou pular etapas.
 
-
 ### 0.2) Motivação
 
 A motivação é para o tutor saber porque aquela atividade faz sentido naquele momento (pode ser compartilhado com o mentorado se achar que faz sentido ou ele perguntar).
-
 
 ### 0.3) Descrição
 
 A descrição é o texto sugerido para passar pro aluno na ferramenta utilizada para registrar as atividades. Eu sugiro usar, como ferramenta, o Trello: ele tem uma estrutura estilo Kanban que você pode organizar os cards em colunas (algo como "to do", "in progress", "done"), bem parecido com o como utilizamos o Jira.
 
-
 # Atividades recorrentes
 
-
 ## A) HackerRank
-
 
 ### A.1) Requisitos sugeridos
 
 Atividade 2.
 
-
 ### A.2) Motivação
 
 O HackerRank tem várias playlists interessantes que te ensinam com exercícios sobre particularidades do Python. Você conhece estrutura de dados não triviais enquanto revisita as que você acha que já domina aprendendo formas novas de trabalhar com. Variações dessa ferramentas costumam ser utilizadas em processos seletivos.
-
 
 ### A.3) Descrição
 
 Fazer pelo menos 1 hora de atividades propostas nas playlists de Python do [HackerRank](https://www.hackerrank.com/domains/python) toda semana. Rapidinho você já vai ter visto a maioria dos tipos relevantes e eles vão te ajudar a deixar seu código mais Pythonic. 
 
-
 ## B) Stratascratch
-
 
 ### B.1) Requisitos sugeridos
 
 Atividade -.
 
-
 ### B.2) Motivação
 
 Pandas é uma biblioteca que você só vai dominar se utilizar muito. A ideia aqui é ter alguns exercícios mais ou menos clássicos para estar se familiarizando com as funções clássicas.
-
 
 ### B.3) Descrição
 
 Fazer pelo menos 0.5 horas de atividades propostas utilizando Pandas do [Stratascratch]([stratascratch.com](http://stratascratch.com/)) toda semana. Você consegue resolver em SQL também e é um lugar bacana para isso também.
 
-
 # Atividades "Sequenciais"
 
-
 ## 1) Instalar Python (pelo Anaconda)
-
 
 ### 1.1) Requisitos sugeridos
 
 Não há.
 
-
 ### 1.2) Motivação
 
 A ideia é deixar o ambiente pronto para utilizar Jupyter Notebooks. São ótimas ferramentas para exploração e, na prática, é o ambiente mais adotado no dia-a-dia do cientista de dados. Durante os encontros é sempre útil mostrar os atalhos mais comuns e boas práticas (deixar o notebook organizado), mas falar todos agora só vai confundir o mentorando. Eventualmente, no final, podemos mostrar mais coisas de IDE, como VSCode etc, mas não acho útil no início.
-
 
 ### 1.3) Descrição
 
 Seguir os passos descritos aqui:  [Instalando Python para Aprendizado de Máquina - LAMFO](https://lamfo-unb.github.io/2017/06/10/Instalando-Python/).
 Não precisa instalar TensorFlow/Git por enquanto.
 
-
 ## 2) Nivelamento Python (Kaggle Learn)
-
 
 ### 2.1) Requisitos sugeridos
 
 Atividade 1. Já assume conhecimento de programação básico em alguma linguagem.
 
-
 ### 2.2) Motivação
 
 Python é **A LINGUAGEM** para DS: existem muitas bibliotecas de qualidade prontas e a maioria das empresas adota como padrão na esteira de produtização. O curso do Kaggle Learn é ótimo porque foca nas partes que serão mais úteis pensando nas bibliotecas clássicas. É um curso focado em quem está migrando de linguagem.
-
 
 ### 2.3) Descrição 
 
 [Learn Python Tutorials](https://www.kaggle.com/learn/python). Tempo estimado de 5 horas.
 
-
 ## 3) Aula introdutória do curso (básico) de ML do Andrew
-
 
 ### 3.1) Requisitos sugeridos
 
 Não há.
 
-
 ### 3.2) Motivação
 
 Aqui o didático Andrew apresenta os tipos de aprendizado e dá exemplos legais. É um bom ponto pra pedir pro mentorado dar exemplos de problemas que dá pra aplicar e também motivar algumas aplicações.
-
 
 ### 3.3) Descrição
 
@@ -136,16 +109,13 @@ Aqui o didático Andrew apresenta os tipos de aprendizado e dá exemplos legais.
 
 ## 4) Aula de Regressão Linear do curso (básico) de ML do Andrew
 
-
 ### 4.1) Requisitos sugeridos
 
 Atividade 3.
 
-
 ### 4.2) Motivação
 
 Regressão Linear é o algoritmo mais simples possível de aprendizado de máquina. É uma oportunidade legal de mostrar que as ideias gerais são bem parecidas com esse exemplo (pelo menos pra problemas supervisionados): criar uma função que aproxima bem os dados.
-
 
 ### 4.3) Descrição
 
@@ -234,12 +204,12 @@ Operações com matrizes são muito importantes para otimizar a computação de 
 ### 9.3) Descrição
 
 - [Machine Learning — Andrew Ng, Stanford University [FULL COURSE]](https://www.youtube.com/playlist?list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN)
-- Lecture 3.1 — Linear Algebra Review | Matrices And Vectors - 8:46
-- Lecture 3.2 — Linear Algebra Review | Addition And Scalar Multiplication - 6:54
-- Lecture 3.3 — Linear Algebra Review | Matrix Vector Multiplication - 13:40
-- Lecture 3.4 — Linear Algebra Review | Matrix-Matrix Multiplication - 11:10
-- Lecture 3.5 — Linear Algebra Review | Matrix Multiplication Properties - 9:03
-- Lecture 3.6 — Linear Algebra Review | Inverse And Transpose - 11:14
+- Lecture 3.1 — Linear Algebra Review : Matrices And Vectors - 8:46
+- Lecture 3.2 — Linear Algebra Review : Addition And Scalar Multiplication - 6:54
+- Lecture 3.3 — Linear Algebra Review : Matrix Vector Multiplication - 13:40
+- Lecture 3.4 — Linear Algebra Review : Matrix-Matrix Multiplication - 11:10
+- Lecture 3.5 — Linear Algebra Review : Matrix Multiplication Properties - 9:03
+- Lecture 3.6 — Linear Algebra Review : Inverse And Transpose - 11:14
 
 ## 10) Aula de Regressão Linear Multivariada (e polinomial) do curso (básico) de ML do Andrew
 
@@ -256,11 +226,11 @@ Na vida real vamos utilizar dezenas, centenas, milhares de variáveis para fazer
 - [Machine Learning — Andrew Ng, Stanford University [FULL COURSE]](https://www.youtube.com/playlist?list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN)
 - Lecture 4.1 — Linear Regression With Multiple Variables - (Multiple Features) - 8:23
 - Lecture 4.2 — Linear Regression With Multiple Variables -- (Gradient Descent For Multiple Variables) - 5:05
-- Lecture 4.3 — Linear Regression With Multiple Variables | Gradient In PracticeaI Feature Scaling - 8:53
-- Lecture 4.4 — Linear Regression With Multiple Variables | Gradient In PracticeaI | Learning Rate - 8:59
-- Lecture 4.5 — Linear Regression With Multiple Variables | Features And Polynomial Regression - 7:40
-- Lecture 4.6 — Linear Regression With Multiple Variables | Normal Equation - 16:18
-- Lecture 4.7 — Linear Regression With Multiple Variables | Normal Equation Non Invertibility - 5:59
+- Lecture 4.3 — Linear Regression With Multiple Variables : Gradient In PracticeaI Feature Scaling - 8:53
+- Lecture 4.4 — Linear Regression With Multiple Variables : Gradient In PracticeaI : Learning Rate - 8:59
+- Lecture 4.5 — Linear Regression With Multiple Variables : Features And Polynomial Regression - 7:40
+- Lecture 4.6 — Linear Regression With Multiple Variables : Normal Equation - 16:18
+- Lecture 4.7 — Linear Regression With Multiple Variables : Normal Equation Non Invertibility - 5:59
 
 ## 11) Implementing from ground up: Regressão Linear Multivariada + POO
 
@@ -288,7 +258,7 @@ Pandas é a biblioteca de manipulações mais utilizada para estruturar seus dad
 
 ### 12.3) Descrição
 
-- [Pandas for Data Science in 20 Minutes | Python Crash Course](https://www.youtube.com/watch?v=tRKeLrwfUgU) (23 min) 
+- [Pandas for Data Science in 20 Minutes : Python Crash Course](https://www.youtube.com/watch?v=tRKeLrwfUgU) (23 min) 
 - [Complete Python Pandas Data Science Tutorial! (Reading CSV/Excel files, Sorting, Filtering, Groupby)](https://youtu.be/vmEHCJofslg)  (~1 hora) 
 - [Python pandas — An Opinionated Guide](https://youtube.com/playlist?list=PLgJhDSE2ZLxaENZWWF_VOUa5886KiUd15) (~2 horas)
 
@@ -320,13 +290,13 @@ pass
 ### 14.3) Descrição
 
 - [Machine Learning — Andrew Ng, Stanford University [FULL COURSE]](https://www.youtube.com/playlist?list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN)
-- Lecture 6.1 — Logistic Regression | Classification - 8:09
-- Lecture 6.2 — Logistic Regression | Hypothesis Representation - 7:25
-- Lecture 6.3 — Logistic Regression | Decision Boundary - 14:50
-- Lecture 6.4 — Logistic Regression | Cost Function - 11:26
-- Lecture 6.5 — Logistic Regression | Simplified Cost Function And Gradient Descent - 10:15
-- Lecture 6.6 — Logistic Regression | Advanced Optimization - 14:07
-- Lecture 6.7 — Logistic Regression | MultiClass Classification OneVsAll - 6:16
+- Lecture 6.1 — Logistic Regression : Classification - 8:09
+- Lecture 6.2 — Logistic Regression : Hypothesis Representation - 7:25
+- Lecture 6.3 — Logistic Regression : Decision Boundary - 14:50
+- Lecture 6.4 — Logistic Regression : Cost Function - 11:26
+- Lecture 6.5 — Logistic Regression : Simplified Cost Function And Gradient Descent - 10:15
+- Lecture 6.6 — Logistic Regression : Advanced Optimization - 14:07
+- Lecture 6.7 — Logistic Regression : MultiClass Classification OneVsAll - 6:16
 
 ## 15) Algumas métricas de classificação
 
