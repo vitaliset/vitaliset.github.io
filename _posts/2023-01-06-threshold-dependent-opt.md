@@ -19,13 +19,13 @@ def predict(self, X):
 
 <p><div align="justify">In the case where we only have two classes (0 or 1), the <code>.predict</code>, when picking the class with the highest &quot;probability&quot;, is equivalent to the rule &quot; if <code>.predict_proba &gt; 0.5</code>, then predict <code>1</code>; otherwise, predict <code>0</code>&quot;. That is, under the hood, we are using a threshold of <code>0.5</code> without having visibility.</div></p>
 
-<p><div align="justify">Up to now, nothing new. However, I will show in an example how this can be harmful to superficial analyzes that don&#39;t take this into account.</div></p>
+<p><div align="justify">Up to now, nothing new. However, we will show in an example how this can be harmful to superficial analyzes that don&#39;t take this into account.</div></p>
 
 ___
 
 ## Optimizing f1 in a naive way
 
-<p><div align="justify">To exemplify this issue, I will use a dataset from <a href="https://imbalanced-learn.org/stable/">imbalanced-learn</a>, a library with several implementations of techniques that deal with imbalanced problems, from the <a href="https://github.com/scikit-learn-contrib">scikit-learn-contrib</a> environment. And let&#39;s build a model that ideally has the best possible <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html"><code>sklearn.metrics.f1_score</code></a>.</div></p>
+<p><div align="justify">To exemplify this issue, we will use a dataset from <a href="https://imbalanced-learn.org/stable/">imbalanced-learn</a>, a library with several implementations of techniques that deal with imbalanced problems, from the <a href="https://github.com/scikit-learn-contrib">scikit-learn-contrib</a> environment. So, let&#39;s build a model that ideally has the best possible <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html"><code>sklearn.metrics.f1_score</code></a>.</div></p>
 
 ```python
 from imblearn.datasets import fetch_datasets
@@ -40,7 +40,7 @@ print(f"Number of rows is {X.shape[0]}.")
     Percentage of y=1 is 5.966%.
     Number of rows is 9822.
 
-<p><div align="justify">I&#39;m going to divide the dataset (taking care of the stratification because we are in an imbalanced problem) into a part for training the model, a second for choosing the threshold, and a last one for validation. We will not be dealing with the second part for now, but I will show some ways of optimizing the threshold that will need this extra set.</div></p>
+<p><div align="justify">I&#39;m going to divide the dataset (taking care of the stratification because we are in an imbalanced problem) into a set for training the model, a second set for choosing the threshold, and a last one for validation. We will not be dealing with the second set for now, but we will show some ways of optimizing the threshold that will need this extra set.</div></p>
 
 ```python
 from sklearn.model_selection import train_test_split
@@ -257,9 +257,9 @@ df_best_f1
 
 ### 3. Tuning the threshold during gridsearch on a chunk of the training set
 
-<p><div align="justify">A better way to do this (in terms of correctly evaluating the performance during cross-validation) is to modify our estimator&#39;s training function so that it also calculates the best threshold.  To clarify what we are doing without having to look at the class details I will implement, it is worth comparing the difference between the method 2 and method 3.</div></p>
+<p><div align="justify">A better way to do this (in terms of correctly evaluating the performance during cross-validation) is to modify our estimator&#39;s training function so that it also calculates the best threshold.  To clarify what we are doing without having to look at the class details we will implement, it is worth comparing the difference between methods 2 and 3.</div></p>
 
-<p><div align="justify">In each step of our cross-validation, we will have a training set and a set validation that we will use to evaluate the performance of the classifier trained in that training set. That is what we were doing during method 1, for instance.</div></p>
+<p><div align="justify">In each step of our cross-validation, we will have a training set and a validation set that we will use to evaluate the performance of the classifier trained in that training set. That is what we were doing in method 1, for instance.</div></p>
 
 <p><center><img src="{{ site.baseurl }}/assets/img/threshold_dependent_opt/output_30_0.png"></center></p>
 
@@ -331,7 +331,7 @@ class ThresholdOptimizerRandomForestBinaryClassifier(RandomForestClassifier):
 
 <p><div align="justify">$\oint$ <em>Note that although I&#39;m inheriting from <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html"><code>sklearn.ensemble.RandomForestClassifier</code></a>, I don&#39;t use any <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html"><code>sklearn.ensemble.RandomForestClassifier</code></a>-specific logic here, and actually, you can do the same with any scikit-learn estimator.</em></div></p>
 
-<p><div align="justify">We are basically using the same optimization function we had discussed earlier on the part of the set that is given in <code>.fit</code> by doing a <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html"><code>sklearn.model_selection.train_test_split</code></a>. This implementation is computationally expensive, mainly because of bootstrap. So I lowered the number of bootstrap samples to make it faster.</div></p>
+<p><div align="justify">We are basically using the same optimization function we had discussed earlier on the part of the set that is given in <code>.fit</code> by doing a <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html"><code>sklearn.model_selection.train_test_split</code></a>. This implementation is computationally expensive, mainly because of bootstrap. So we can lower the number of bootstrap samples to make it faster.</div></p>
 
 ```python
 %%time
