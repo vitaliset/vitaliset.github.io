@@ -9,6 +9,7 @@ Essa página sugere um roteiro de estudos em Ciência de Dados com foco em Apren
 
 Dependendo do nível técnico do mentorado no início da mentoria, várias etapas podem ser puladas. De forma geral, as atividades roterizadas nesse guia supõe um conhecimento, a nível de ciclo básico de graduação em curso de exatas, que detalho com mais cuidado a seguir, dando ainda alternativas de cursos para quando esse pré-requisito não se aplica.
 
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
 ## Pré-requisitos esperados do mentorado
 
@@ -99,7 +100,7 @@ Atividade 1. Já assume conhecimento de programação básico em alguma linguage
 
 ### 2.2) Motivação
 
-Python é **A LINGUAGEM** para DS: existem muitas bibliotecas de qualidade prontas e a maioria das empresas adota como padrão na esteira de produtização. O curso do Kaggle Learn é ótimo porque foca nas partes que serão mais úteis pensando nas bibliotecas principais de Aprendizado de Máquina. É um curso focado em quem está migrando de linguagem.
+Python é **A LINGUAGEM** para Ciência de Dados: existem muitas bibliotecas de qualidade prontas e a maioria das empresas adota como padrão na esteira de produtização. O curso do Kaggle Learn é ótimo porque foca nas partes que serão mais úteis pensando nas bibliotecas principais de Aprendizado de Máquina. É um curso focado em quem está migrando de linguagem, ou seja, já assume conhecimento básico de lógica de programação.
 
 ### 2.3) Descrição 
 
