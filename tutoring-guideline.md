@@ -5,15 +5,24 @@ permalink: /tutoring-guideline/
 mathjax: true
 ---
 
-## Pré-requisitos esperados do mentorado
+Essa página sugere um roteiro de estudos em Ciência de Dados com foco em Aprendizado de Máquina. Ela abrange vários assuntos básicos e sugere continuações de estudo ou focos que o mentorado pode começar a se especializar no final.
 
-- **Probabilidade**: A linguagem de Aprendizado de Máquina é intrinsicamente probabilística. É necessário que o mentorado esteja confortável com os conceitos básicos de probabilidade (no mínimo em um [nível introdutório do assunto](https://gradmat.ufabc.edu.br/disciplinas/ipe/)). Isso significa, conhecer a definição (ingênua) de espaço de probabilidade, entender sobre probabilidade condiciona e independência, variáveis aleatórias discretas e contínuas, conhecer as principais distribuições de variáveis aleatórias e saber calcular esperanças, variâncias e correlações. Caso esse assunto seja intimidador ainda, é sugerido uma revisão detalhada dos tópicos seguindo, por exemplo, o curso [Introdução à Probabilidade e Estatístíca (IPE) do professor Rafael Grisi da UFABC](https://www.youtube.com/channel/UCKGYUbUHWSDr8pFaDd7JWCg/videos).
+Dependendo do nível técnico do mentorado no início da mentoria, várias etapas podem ser puladas. De forma geral, as atividades roterizadas nesse guia supõe um conhecimento, a nível de ciclo básico de graduação em curso de exatas, que detalho com mais cuidado a seguir, dando ainda alternativas de cursos para quando esse pré-requisito não se aplica.
+
+
+## Pré-requisitos esperados do mentorado
 
 - **Lógica de programação**: Não é esperado que o mentorado já tenha utilizado Python, mas aguarda-se que já tenha experiência prévia com programação em outra linguagem e esteja confortável com as estruturas de repetição, condições e operadores lógicos, além de algumas estruturas de dados básicas como listas, vetores e strings. Se esse não for o caso do mentorado, o curso de [introdução à programação do Kaggle](https://www.kaggle.com/learn/intro-to-programming) pode ser um bom começo. Se ainda assim, for necessário gastar mais tempo vendo esses tópicos, aulas selecionadas da [playlist de Python do Curso em Vídeo](https://youtube.com/playlist?list=PLvE-ZAFRgX8hnECDn1v9HNTI71veL3oW0) podem ser uma boa referência.
 
+- **Probabilidade**: A linguagem de Aprendizado de Máquina é intrinsicamente probabilística. É necessário que o mentorado esteja confortável com os conceitos básicos de probabilidade (no mínimo em um [nível introdutório do assunto](https://gradmat.ufabc.edu.br/disciplinas/ipe/)). Isso significa, conhecer a definição (ingênua) de espaço de probabilidade, entender sobre probabilidade condicional e independência, variáveis aleatórias discretas e contínuas, conhecer as principais distribuições de variáveis aleatórias e saber calcular esperanças, variâncias, correlações etc. Caso esse assunto seja intimidador ainda, é sugerido uma revisão detalhada dos tópicos seguindo, por exemplo, o curso [Introdução à Probabilidade e Estatístíca (IPE) do professor Rafael Grisi da UFABC](https://www.youtube.com/channel/UCKGYUbUHWSDr8pFaDd7JWCg/videos).
+
+- **Matemática de forma geral**: Além de probabilidade, outros tópicos de matemática, como noções de otimização, cálculo diferencial, operações matriciais e estatística são importantes para um entendimento menos superficial dos algoritmos de Aprendizado de Máquina. Se o mentorado tem uma base matemática fraca, em algum desses assuntos (ou em todos), a especialização [Mathematics for Machine Learning and Data Science Specialization](https://www.coursera.org/specializations/mathematics-for-machine-learning-and-data-science#courses) pode ser uma grande amiga para visitar aulas específicas ou se debruçar por algumas semanas com as bases principais antes da Ciência de Dados.
+
+
 ## Ensinamentos do HDFS: redundância é importante
 
-Durante esse guia de materiais de mentoria, por selecionar partes específicas de cursos diferentes, vários assuntos podem ser vistos em repetição com uma abordagem ligeiramente diferente. Isso é intencional. Acredito que para formentar essa base da forma mais robusta possível, é importante que os assuntos realmente estejam absorvidos e vê-los algumas vezes reforça isso.  
+Durante esse guia de materiais de mentoria, por selecionar partes específicas de cursos diferentes, vários assuntos podem ser vistos em repetição com uma abordagem ligeiramente diferente. Isso é intencional. Acredito que para formentar essa base da forma mais robusta possível, é importante que os assuntos realmente estejam absorvidos e vê-los algumas vezes reforça isso.
+
 
 ## 0) Como usar esse guia de atividades de tutoria?
 
@@ -27,9 +36,14 @@ A motivação é para o tutor saber porque aquela atividade faz sentido naquele 
 
 ### 0.3) Descrição
 
-A descrição é o texto sugerido para passar pro aluno na ferramenta utilizada para registrar as atividades. Eu sugiro usar, como ferramenta, o Trello: ele tem uma estrutura estilo Kanban que você pode organizar os cards em colunas (algo como "to do", "in progress", "done"), bem parecido com o como utilizamos o Jira.
+A descrição é o texto sugerido para passar pro aluno na ferramenta utilizada para registrar as atividades. Eu sugiro usar, como ferramenta, o [Trello](https://trello.com/): ele tem uma estrutura estilo Kanban que você pode organizar os cards em colunas (algo como "to do", "in progress", "done"). Essa arquitetura de organização é bem parecida com a forma que utilizamos ferramentas de organização de tarefas em várias equipes que usam o Scrum (ou alguma variação dele).
+
+Aqui é onde o link para o material de estudo deve ser disponibilizado. De forma geral, as recomendações disponibilizam o conteúdo de forma gratuíta. Se eventualmente algum link esteja quebrado, por favor, entre em contato comigo para verificação e correção.
+
 
 # Atividades recorrentes
+
+As atividades recorrentes são aquelas que não são feitas pontualmente e em sequência são finalizadas. São atividades que, a partir do momento que você tem os requisitos para realizá-las, você deve fazê-la de forma recorrente durante as semanas da tutoria. 
 
 ## A) HackerRank
 
@@ -39,11 +53,12 @@ Atividade 2.
 
 ### A.2) Motivação
 
-O HackerRank tem várias playlists interessantes que te ensinam com exercícios sobre particularidades do Python. Você conhece estrutura de dados não triviais enquanto revisita as que você acha que já domina aprendendo formas novas de trabalhar com. Variações dessa ferramentas costumam ser utilizadas em processos seletivos.
+O HackerRank tem várias playlists interessantes que te ensinam com exercícios sobre particularidades do Python. Você conhece estrutura de dados não triviais enquanto revisita as que você acha que já domina aprendendo formas novas de trabalhar com elas. Variações dessa ferramentas podem ser utilizadas em processos seletivos (principalmente para posições mais próximas de Engenharia de Software, como é o caso de um Machine Learning Engineer).
 
 ### A.3) Descrição
 
-Fazer pelo menos 1 hora de atividades propostas nas playlists de Python do [HackerRank](https://www.hackerrank.com/domains/python) toda semana. Rapidinho você já vai ter visto a maioria dos tipos relevantes e eles vão te ajudar a deixar seu código mais Pythonic. 
+Fazer pelo menos 1 hora de atividades propostas nas playlists de Python do [HackerRank](https://www.hackerrank.com/domains/python) toda semana. Rapidinho você já vai ter visto a maioria dos tipos relevantes e eles vão te ajudar a deixar seu código mais _pythonic_.
+
 
 ## B) Stratascratch
 
@@ -53,11 +68,11 @@ Atividade -.
 
 ### B.2) Motivação
 
-Pandas é uma biblioteca que você só vai dominar se utilizar muito. A ideia aqui é ter alguns exercícios mais ou menos clássicos para estar se familiarizando com as funções clássicas.
+Pandas é a principal biblioteca de manipulação de dados do Python. Aliado com o SQL, vai ser a principal maneira de tratar dados no dia a dia de ciência de dados. Você só vai dominar a sintaxe do pandas se utilizá-lo de forma recorrente. A ideia aqui é ter alguns exercícios mais ou menos clássicos para estar se familiarizando com as manipulações principais.
 
 ### B.3) Descrição
 
-Fazer pelo menos 0.5 horas de atividades propostas utilizando Pandas do [Stratascratch]([stratascratch.com](http://stratascratch.com/)) toda semana. Você consegue resolver em SQL também e é um lugar bacana para isso também.
+Fazer pelo menos 0.5 horas de atividades propostas utilizando Pandas do [Stratascratch]([stratascratch.com](http://stratascratch.com/)) toda semana. Você consegue resolver em SQL também e pode ser útil para treinar essa ferramenta eventualmente.
 
 # Atividades "Sequenciais"
 
@@ -69,7 +84,7 @@ Não há.
 
 ### 1.2) Motivação
 
-A ideia é deixar o ambiente pronto para utilizar Jupyter Notebooks. São ótimas ferramentas para exploração e, na prática, é o ambiente mais adotado no dia-a-dia do cientista de dados. Durante os encontros é sempre útil mostrar os atalhos mais comuns e boas práticas (deixar o notebook organizado), mas falar todos agora só vai confundir o mentorando. Eventualmente, no final, podemos mostrar mais coisas de IDE, como VSCode etc, mas não acho útil no início.
+A ideia é deixar o ambiente pronto para utilizar Jupyter Notebooks. São ótimas ferramentas para exploração e, na prática, é o ambiente mais adotado no dia-a-dia do cientista de dados para prototipação de código. Durante os encontros é sempre útil mostrar os atalhos mais comuns e boas práticas (deixar o notebook preparado para um "restart and run all" obtendo resultados reproduzíveis com `random_state`s fixados), mas falar todos agora só vai confundir o mentorando. Eventualmente, no final, podemos mostrar mais coisas de IDE, como VSCode etc, mas não acho útil no início.
 
 ### 1.3) Descrição
 
@@ -84,7 +99,7 @@ Atividade 1. Já assume conhecimento de programação básico em alguma linguage
 
 ### 2.2) Motivação
 
-Python é **A LINGUAGEM** para DS: existem muitas bibliotecas de qualidade prontas e a maioria das empresas adota como padrão na esteira de produtização. O curso do Kaggle Learn é ótimo porque foca nas partes que serão mais úteis pensando nas bibliotecas clássicas. É um curso focado em quem está migrando de linguagem.
+Python é **A LINGUAGEM** para DS: existem muitas bibliotecas de qualidade prontas e a maioria das empresas adota como padrão na esteira de produtização. O curso do Kaggle Learn é ótimo porque foca nas partes que serão mais úteis pensando nas bibliotecas principais de Aprendizado de Máquina. É um curso focado em quem está migrando de linguagem.
 
 ### 2.3) Descrição 
 
@@ -98,7 +113,7 @@ Não há.
 
 ### 3.2) Motivação
 
-Aqui o didático Andrew apresenta os tipos de aprendizado e dá exemplos legais. É um bom ponto pra pedir pro mentorado dar exemplos de problemas que dá pra aplicar e também motivar algumas aplicações.
+Aqui, o didático Andrew apresenta os tipos de aprendizado e dá exemplos legais. É um bom ponto pra pedir pro mentorado dar exemplos de problemas que dá pra aplicar e também motivar algumas aplicações não triviais.
 
 ### 3.3) Descrição
 
