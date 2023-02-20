@@ -25,35 +25,31 @@ Durante esse guia de materiais de mentoria, por selecionar partes específicas d
 
 ## 0) Como usar esse guia de atividades de tutoria?
 
+Logo abaixo do título da atividade, temos uma breve motivação. Ela serve para o tutor saber porque aquela atividade faz sentido naquele momento (pode ser compartilhado com o mentorado se achar que é importante explicar a tarefa).
+
 ### 0.1) Requisitos sugeridos
 
-Os pré-requisitos são para organização caso queira seguir outra ordem ou pular etapas.
+Os pré-requisitos são para saber as dependências sugerida entre as atividades caso queira seguir outra ordem ou pular etapas.
 
-### 0.2) Motivação
+### 0.2) Descrição
 
-A motivação é para o tutor saber porque aquela atividade faz sentido naquele momento (pode ser compartilhado com o mentorado se achar que faz sentido ou ele perguntar).
+A descrição é o texto sugerido para passar para o aluno na ferramenta utilizada para registrar as atividades. Eu sugiro usar, como ferramenta, o [Trello](https://trello.com/): ele tem uma estrutura estilo Kanban que você pode organizar os cards em colunas (algo como: "to do", "in progress" e "done"). Essa arquitetura é bem parecida com a forma que as ferramentas de organização de tarefas são utilizadas em várias equipes de dados que usam o Scrum (ou alguma variação dele).
 
-### 0.3) Descrição
-
-A descrição é o texto sugerido para passar pro aluno na ferramenta utilizada para registrar as atividades. Eu sugiro usar, como ferramenta, o [Trello](https://trello.com/): ele tem uma estrutura estilo Kanban que você pode organizar os cards em colunas (algo como "to do", "in progress", "done"). Essa arquitetura de organização é bem parecida com a forma que utilizamos ferramentas de organização de tarefas em várias equipes que usam o Scrum (ou alguma variação dele).
-
-Aqui é onde o link para o material de estudo deve ser disponibilizado. De forma geral, as recomendações disponibilizam o conteúdo de forma gratuíta. Se eventualmente algum link esteja quebrado, por favor, entre em contato comigo para verificação e correção.
+Aqui é onde o link para o material de estudo deve ser disponibilizado. De forma geral, as recomendações disponibilizam o conteúdo de forma gratuíta e os materiais estão em inglês majoritariamente, com alguns poucos tópicos em português. Se eventualmente algum link esteja quebrado, por favor, entre em contato comigo para verificação e correção.
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line2.png"></center></p>
 
 # Atividades recorrentes
 
-As atividades recorrentes são aquelas que não são feitas pontualmente e em sequência são finalizadas. São atividades que, a partir do momento que você tem os requisitos para realizá-las, você deve fazê-la de forma recorrente durante as semanas da tutoria. 
+As atividades recorrentes são aquelas que não são feitas pontualmente e em sequência são finalizadas. São atividades que, a partir do momento que você tem os requisitos para realizá-las, você deveria fazê-la de forma recorrente durante as semanas da tutoria. 
 
 ## A) HackerRank
+
+O HackerRank tem várias playlists interessantes que te ensinam com exercícios sobre particularidades do Python. Você conhece estrutura de dados não triviais enquanto revisita as que você acha que já domina aprendendo formas novas de trabalhar com elas. Variações dessa ferramentas podem ser utilizadas em processos seletivos (principalmente para posições mais próximas de Engenharia de Software, como é o caso de um Machine Learning Engineer).
 
 ### A.1) Requisitos sugeridos
 
 Atividade 2.
-
-### A.2) Motivação
-
-O HackerRank tem várias playlists interessantes que te ensinam com exercícios sobre particularidades do Python. Você conhece estrutura de dados não triviais enquanto revisita as que você acha que já domina aprendendo formas novas de trabalhar com elas. Variações dessa ferramentas podem ser utilizadas em processos seletivos (principalmente para posições mais próximas de Engenharia de Software, como é o caso de um Machine Learning Engineer).
 
 ### A.3) Descrição
 
