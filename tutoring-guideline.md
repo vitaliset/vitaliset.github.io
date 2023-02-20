@@ -9,9 +9,7 @@ Essa página sugere um roteiro de estudos em Ciência de Dados com foco em Apren
 
 Dependendo do nível técnico do mentorado no início da mentoria, várias etapas podem ser puladas. De forma geral, as atividades roterizadas nesse guia supõe um conhecimento, a nível de ciclo básico de graduação em curso de exatas, que detalho com mais cuidado a seguir, dando ainda alternativas de cursos para quando esse pré-requisito não se aplica.
 
-<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line2.png"></center></p>
-
-# Pré-requisitos esperados do mentorado
+## Pré-requisitos esperados do mentorado
 
 - **Lógica de programação**: Não é esperado que o mentorado já tenha utilizado Python, mas aguarda-se que já tenha experiência prévia com programação em outra linguagem e esteja confortável com as estruturas de repetição, condições e operadores lógicos, além de algumas estruturas de dados básicas como listas, vetores e strings. Se esse não for o caso do mentorado, o curso de [introdução à programação do Kaggle](https://www.kaggle.com/learn/intro-to-programming) pode ser um bom começo. Se ainda assim, for necessário gastar mais tempo vendo esses tópicos, aulas selecionadas da [playlist de Python do Curso em Vídeo](https://youtube.com/playlist?list=PLvE-ZAFRgX8hnECDn1v9HNTI71veL3oW0) podem ser uma boa referência.
 
@@ -19,9 +17,7 @@ Dependendo do nível técnico do mentorado no início da mentoria, várias etapa
 
 - **Matemática de forma geral**: Além de probabilidade, outros tópicos de matemática, como noções de otimização, cálculo diferencial, operações matriciais e estatística são importantes para um entendimento menos superficial dos algoritmos de Aprendizado de Máquina. Se o mentorado tem uma base matemática fraca, em algum desses assuntos (ou em todos), a especialização [Mathematics for Machine Learning and Data Science Specialization](https://www.coursera.org/specializations/mathematics-for-machine-learning-and-data-science#courses) pode ser uma grande amiga para visitar aulas específicas ou se debruçar por algumas semanas com as bases principais antes da Ciência de Dados.
 
-<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line2.png"></center></p>
-
-# Ensinamentos do HDFS: redundância é importante
+## Ensinamentos do HDFS: redundância é importante
 
 Durante esse guia de materiais de mentoria, por selecionar partes específicas de cursos diferentes, vários assuntos podem ser vistos em repetição com uma abordagem ligeiramente diferente. Isso é intencional. Acredito que para formentar essa base da forma mais robusta possível, é importante que os assuntos realmente estejam absorvidos e vê-los algumas vezes reforça isso.
 
