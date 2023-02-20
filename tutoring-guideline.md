@@ -98,6 +98,8 @@ A ideia é deixar o ambiente pronto para utilizar Jupyter Notebooks. São ótima
 Seguir os passos descritos aqui:  [Instalando Python para Aprendizado de Máquina - LAMFO](https://lamfo-unb.github.io/2017/06/10/Instalando-Python/).
 Não precisa instalar TensorFlow/Git por enquanto.
 
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
+
 ## 2) Nivelamento Python (Kaggle Learn)
 
 ### 2.1) Requisitos sugeridos
@@ -112,6 +114,8 @@ Python é **A LINGUAGEM** para Ciência de Dados: existem muitas bibliotecas de 
 
 [Learn Python Tutorials](https://www.kaggle.com/learn/python). Tempo estimado de 5 horas.
 
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
+
 ## 3) Aula introdutória do curso (básico) de ML do Andrew
 
 ### 3.1) Requisitos sugeridos
@@ -124,10 +128,14 @@ Aqui, o didático Andrew apresenta os tipos de aprendizado e dá exemplos legais
 
 ### 3.3) Descrição
 
-- [Machine Learning — Andrew Ng, Stanford University [FULL COURSE]](https://www.youtube.com/playlist?list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN)
-- Lecture 1.1 What Is Machine Learning (7 min)
-- Lecture 1.2 — Supervised Learning (13 min)
-- Lecture 1.3 — Unsupervised Learning (14 min)
+- [Supervised Machine Learning: Regression and Classification by Andrew Ng](https://www.youtube.com/playlist?list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI)
+- #3 - What is machine learning? (5min)
+- #4 - Supervised learning part 1 (6min)
+- #5 - Supervised learning part 2 (7min)
+- #6 - Unsupervised learning part 1 (8min)
+- #7 - Unsupervised learning part 2 (3min)
+
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
 ## 4) Aula de Regressão Linear do curso (básico) de ML do Andrew
 
@@ -137,19 +145,27 @@ Atividade 3.
 
 ### 4.2) Motivação
 
-Regressão Linear é o algoritmo mais simples possível de aprendizado de máquina. É uma oportunidade legal de mostrar que as ideias gerais são bem parecidas com esse exemplo (pelo menos pra problemas supervisionados): criar uma função que aproxima bem os dados.
+Regressão Linear é um dos algoritmos mais simples de Aprendizado de Máquina. É o terreno perfeito para apresentar as principais ideias do processo de aprendizado supervisionado, enquanto introduz nomeclatura e intuição. É fundamental que essa atividade seja feita com muita atenção e cuidado.
+
+O curso do Andrew tem alguns notebooks auxiliares, que podem ser legais de explorar, mas eu, particularmente, não acho essencial. De qualquer forma, você consegue baixar o zip nesse [repositório](https://github.com/greyhatguy007/Machine-Learning-Specialization-Coursera) (se eventualmente esse repositório estiver indisponível, não deve ser díficil achar outro repositório com esses arquivos [procurando no google](https://www.google.com/search?q=supervised+machine+learning%3A+regression+and+classification+notebooks+github&sxsrf=AJOqlzUQ11tr1y9XmW0QVpXNVUjS_8bIMg%3A1676862919336&ei=x-XyY6aQFOy81sQP1tGg4Ak&oq=Supervised+Machine+Learning%3A+Regression+and+Classification+notebooks&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAxgAMgcIIxCwAxAnMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADSgQIQRgAUABYAGDdC2gBcAF4AIABAIgBAJIBAJgBAMgBCcABAQ&sclient=gws-wiz-serp)).
 
 ### 4.3) Descrição
 
-- [Machine Learning — Andrew Ng, Stanford University [FULL COURSE]](https://www.youtube.com/playlist?list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN)
-- Lecture 2.1 — Linear Regression With One Variable : Model Representation (8:11)
-- Lecture 2.2 — Linear Regression With One Variable : CostFunction (8:13)
-- Lecture 2.3 — Linear Regression With One Variable : Cost Function Intuition (11:10)
-- Lecture 2.4 — Linear Regression With One Variable : Cost Function Intuition #2 (8:49)
-- Lecture 2.5 — Linear Regression With One Variable : Gradient Descent (11:31)
-- Lecture 2.6 — Linear Regression With One Variable : Gradient Descent Intuition (11:52)
-- Lecture 2.7 — Linear Regression With One Variable : Gradient Descent For Linear Regression (10:21)
-- Lecture 2.8 — What's Next (5:50)
+- [Supervised Machine Learning: Regression and Classification by Andrew Ng](https://www.youtube.com/playlist?list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI)
+- #9 - Linear regression model part 1 (10min)
+- #10 - Linear regression model part 2 (6min)
+- #11 - Cost function formula (9min)
+- #12 - Cost function intuition (15min)
+- #13 - Visualizing the cost function (8min)
+- #14 - Visualization examples (6min)
+- #15 - Gradient descent (8min)
+- #16 - Implementing gradient descent (9min)
+- #17 - Gradient descent intuition (7min)
+- #18 - Learning rate (9min)
+- #19 - Gradient descent for linear regression (6min)
+- #20 - Running gradient descent (5min)
+
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
 ## 5) Introdução ao Numpy
 
@@ -159,13 +175,15 @@ Atividade 2.
 
 ### 5.2) Motivação
 
-Numpy é a principal ferramenta para mexer em matrizes no Python. Todas as outras bibliotecas são construídas em cima dela. É primordial entender o básico e eventualmente masterizar.
+Numpy é a principal ferramenta para mexer em vetores e matrizes no Python. Todas as outras principais bibliotecas de Aprendizado de Máquina são construídas em cima dela. É primordial entender o básico, em um primeiro momento, e, eventualmente, masterizar.
 
 ### 5.3) Descrição
 
-- Numpy in 5 min: [Learn NUMPY in 5 minutes - BEST Python Library!](https://youtu.be/xECXZ3tyONo)(20 min)
+- Numpy in 5 min: [Learn NUMPY in 5 minutes - BEST Python Library!](https://youtu.be/xECXZ3tyONo) (20 min)
 
 - Se precisar ver mais, esse vídeo aqui também é interessante: [Complete Python NumPy Tutorial (Creating Arrays, Indexing, Math, Statistics, Reshaping)](https://youtu.be/GB9ByFAIAH4) (1 hora)
+
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
 ## 6) Implementing from ground up: Regressão Linear Simples
 
@@ -179,10 +197,12 @@ Essa atividade é uma forma de colocar em prática tudo que vimos até agora.
 
 ### 6.3) Descrição
 
-- Utilizando Python (principalmente o numpy), você deve construir uma função que recebe seu conjunto de dados X_train, y_train e retorna os pesos de uma regressão linear simples (ou seja, X_train é unidimensional), utilizando gradiente descendente para fazer esse cálculo, como visto no curso do Andrew. Pode criar o seu conjunto X_train, y_train como quiser, mas seu código deve ser robusto o suficiente para poder trocar os valores e continuar rodando da forma correta.
+- Utilizando Python (principalmente o `numpy`), você deve construir uma função que recebe seu conjunto de dados `X_train`, `y_train` e retorna os pesos de uma regressão linear simples (ou seja, `X_train` é unidimensional), utilizando gradiente descendente para fazer esse cálculo, como visto no curso do Andrew Ng. Pode criar o seu conjunto `X_train`, `y_train` como quiser, mas seu código deve ser robusto o suficiente para poder trocar os valores e continuar rodando da forma correta.
 - Defina critérios de parada que você achar apropriado para o gradiente descendente.
-- Em seguida, com os pesos calculados, você deverá fazer uma função que prevê os y para um conjunto X qualquer.
+- Em seguida, com os pesos calculados, você deverá fazer uma função que prevê os `y` para um conjunto `X` qualquer.
 - Pode ser interessante utilizar algumas bibliotecas gráficas para visualizar o que você está fazendo. A mais famosa, e que eu mais gosto é o matplotlib. Nessa [playlist do Corey Schafer](https://youtube.com/playlist?list=PL-osiE80TeTvipOqomVEeZ1HRrcEvtZB_) temos demonstrações de vários gráficos úteis.
+
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
 ## 7) Curso de básico de ML do Kaggle Learn
 
@@ -198,6 +218,8 @@ Tirando problemas específicos, o dia a dia do cientista de dados não é criand
 
 [Learn Intro to Machine Learning Tutorials](https://www.kaggle.com/learn/intro-to-machine-learning). Tempo estimado de 3 horas.
 
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
+
 ## 8) Introdução à Programação Orientada à Objetos (POO)
 
 ### 8.1) Requisitos sugeridos
@@ -212,6 +234,8 @@ A orientação orientada à objetos é o paradigma de programação principal do
 
 - [Python OOP Tutorial 1: Classes and Instances](https://youtu.be/ZDa-Z5JzLYM) (15 min)
 - Extra: uma discussão sobre diferentes formas de se programar (paradigmas): [1.1 - Programação Funcional em Haskell: Paradigmas de Programação](https://youtu.be/CzGSaXbPFRA) (27 min) - O Python tem várias coisas bem úteis de programação funcional então é legal conhecer por cima as ideias também.
+
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
 ## 9) Aula de revisão de matrizes do curso (básico) de ML do Andrew
 
