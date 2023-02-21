@@ -75,6 +75,8 @@ Fazer pelo menos 0.5 horas de atividades propostas utilizando Pandas do [Stratas
 
 Atividades sequenciais idealizadas nesse roteiro.
 
+<p><center><img src="{{ site.baseurl }}/assets/img/ordem_atividades.png"></center></p>
+
 ## 1) Instalar Python (pelo Anaconda)
 
 A ideia é deixar o ambiente pronto para utilizar Jupyter Notebooks. São ótimas ferramentas para exploração e, na prática, é o ambiente mais adotado no dia-a-dia do cientista de dados para prototipação de código. Durante os encontros é sempre útil mostrar os atalhos mais comuns e boas práticas (deixar o notebook preparado para um "restart and run all" obtendo resultados reproduzíveis com `random_state`s fixados), mas falar todos agora só vai confundir o mentorando. Eventualmente, no final, podemos mostrar mais coisas de IDE, como VSCode etc, mas não acho útil no início.
@@ -85,34 +87,19 @@ Não há.
 
 ### 1.2) Descrição
 
-Seguir os passos descritos aqui:  [Instalando Python para Aprendizado de Máquina - LAMFO](https://lamfo-unb.github.io/2017/06/10/Instalando-Python/).
-Não precisa instalar TensorFlow/Git por enquanto.
+- [Instalando Python para Aprendizado de Máquina - LAMFO](https://lamfo-unb.github.io/2017/06/10/Instalando-Python/). Não precisa instalar o TensorFlow, nem o Git por enquanto.
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
-## 2) Nivelamento Python (Kaggle Learn)
-
-Python é **A LINGUAGEM** para Ciência de Dados: existem muitas bibliotecas de qualidade prontas e a maioria das empresas adota como padrão na esteira de produtização. O curso do Kaggle Learn é ótimo porque foca nas partes que serão mais úteis pensando nas bibliotecas principais de Aprendizado de Máquina. É um curso focado em quem está migrando de linguagem, ou seja, já assume conhecimento básico de lógica de programação.
-
-### 2.1) Requisitos sugeridos
-
-Atividade 1. Já assume conhecimento de programação básico em alguma linguagem.
-
-### 2.2) Descrição 
-
-[Learn Python Tutorials](https://www.kaggle.com/learn/python). Tempo estimado de 5 horas.
-
-<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
-
-## 3) Aula introdutória do curso (básico) de ML do Andrew
+## 2) Aula introdutória da especialização (básica) de ML do Andrew
 
 Aqui, o didático Andrew apresenta os tipos de aprendizado e dá exemplos legais. É um bom ponto pra pedir pro mentorado dar exemplos de problemas que dá pra aplicar e também motivar algumas aplicações não triviais.
 
-### 3.1) Requisitos sugeridos
+### 2.1) Requisitos sugeridos
 
 Não há.
 
-### 3.2) Descrição
+### 2.2) Descrição
 
 - [Supervised Machine Learning: Regression and Classification by Andrew Ng](https://www.youtube.com/playlist?list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI)
 - #3 - What is machine learning? (5min)
@@ -123,7 +110,21 @@ Não há.
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
-## 4) Aula de Regressão Linear do curso (básico) de ML do Andrew
+## 3) Nivelamento Python (Kaggle Learn)
+
+Python é **A LINGUAGEM** para Ciência de Dados: existem muitas bibliotecas de qualidade prontas e a maioria das empresas adota como padrão na esteira de produtização. O curso do Kaggle Learn é ótimo porque foca nas partes que serão mais úteis pensando nas bibliotecas principais de Aprendizado de Máquina. É um curso focado em quem está migrando de linguagem, ou seja, já assume conhecimento básico de lógica de programação.
+
+### 3.1) Requisitos sugeridos
+
+Atividade 1. Já assume conhecimento de programação básico em alguma linguagem.
+
+### 3.2) Descrição 
+
+[Kaggle Learn - Python Tutorials](https://www.kaggle.com/learn/python). Tempo estimado de 5 horas.
+
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
+
+## 4) Aula de Regressão Linear da especialização (básica) de ML do Andrew
 
 Regressão Linear é um dos algoritmos mais simples de Aprendizado de Máquina. É o terreno perfeito para apresentar as principais ideias do processo de aprendizado supervisionado, enquanto introduz nomeclatura e intuição. É fundamental que essa atividade seja feita com muita atenção e cuidado.
 
@@ -131,7 +132,7 @@ O curso do Andrew tem alguns notebooks auxiliares que podem ser legais de explor
 
 ### 4.1) Requisitos sugeridos
 
-Atividade 3.
+Atividade 2.
 
 ### 4.2) Descrição
 
@@ -157,7 +158,7 @@ Numpy é a principal ferramenta para mexer em vetores e matrizes no Python. Toda
 
 ### 5.1) Requisitos sugeridos
 
-Atividade 2.
+Atividade 3.
 
 ### 5.2) Descrição
 
@@ -173,7 +174,7 @@ Essa atividade é uma forma de colocar em prática tudo que vimos até agora.
 
 ### 6.1) Requisitos sugeridos
 
-Atividades 2, 3, 4 e 5.
+Atividades 4 e 5.
 
 ### 6.3) Descrição
 
@@ -190,7 +191,7 @@ Tirando problemas específicos, o dia a dia do cientista de dados não é criand
 
 ### 7.1) Requisitos sugeridos
 
-Atividades 2, 3 e 4.
+Atividades 4 e 5.
 
 ### 7.2) Descrição
 
@@ -198,7 +199,7 @@ Atividades 2, 3 e 4.
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
-## 8) Introdução à Programação Orientada à Objetos (POO)
+## 8) Introdução à Programação Orientada a Objetos (POO)
 
 A orientação orientada à objetos é o paradigma de programação principal do Python. A forma de abstração  que ele nos oferece é muito poderosa e permite construir códigos complexos de uma forma estruturada e reaproveitável, com manutenção facilitada. A ideia dessa atividade não é ficar um mestre em POO, mas conhecer por cima a ideia para saber que existe e entender que o scikit-learn e outras bibliotecas do Python utilizam ela. No futuro, esse tópico pode ser revisto, entendendo agora a utilização de heranças e boas práticas (como os princípios SOLID).  
 
@@ -209,11 +210,13 @@ Atividade 7.
 ### 8.2) Descrição
 
 - [Python OOP Tutorial 1: Classes and Instances](https://youtu.be/ZDa-Z5JzLYM) (15 min)
+- Tente criar algum cenário simples em Python em que você usa classes. Por exemplo, crie uma classe abstrata que representa a entidade "cachorro" e tem dois atributos: "nome" e "raça". O cachorro precisa ainda ter um método chamado "pedido_para_sentar" que recebe uma string e se essa string é o nome do cachorro então ele printa que o nome do cachorro sentou.
+
 - Extra: uma discussão sobre diferentes formas de se programar (paradigmas): [1.1 - Programação Funcional em Haskell: Paradigmas de Programação](https://youtu.be/CzGSaXbPFRA) (27 min) - O Python tem várias coisas bem úteis de programação funcional então é legal conhecer por cima as ideias também.
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
-## 9) Aula de Regressão Linear Multivariada (e polinomial) do curso (básico) de ML do Andrew
+## 9) Aula de Regressão Linear Multivariada (e polinomial) da especialização (básica) de ML do Andrew
 
 Na vida real vamos utilizar dezenas, centenas, milhares de variáveis para fazer nossas previsões. Mesmo ainda sendo um algoritmo pouco complexo, generalizar o caso da regressão linear simples dá algumas pitadas de onde queremos chegar eventualmente. Além disso, nessa aula o Andrew explica a ideia de vetorização de código (stop using for loops!).
 
@@ -259,7 +262,7 @@ A ideia aqui é ficar um pouco mais familiar com a forma como o scikit-learn fun
 
 ### 10.1) Requisitos sugeridos
 
-Atividades 8 e 9.
+Atividades 4, 8 e 9.
 
 ### 10.2) Descrição
 
@@ -284,15 +287,17 @@ Atividade 10.
 ### 11.2) Descrição
 
 Métricas de Regressão
-- [Regression Metrics Review I - How to Win a Data Science Competition Learn from Top Kagglers](https://www.bilibili.com/video/BV117411y7Fa?p=30)
-- [Regression Metrics Review II - How to Win a Data Science Competition Learn from Top Kagglers](https://www.bilibili.com/video/BV117411y7Fa?p=31)
+- [Regression Metrics Review I - How to Win a Data Science Competition Learn from Top Kagglers](https://www.bilibili.com/video/BV117411y7Fa?p=30) (15min)
+- [Regression Metrics Review II - How to Win a Data Science Competition Learn from Top Kagglers](https://www.bilibili.com/video/BV117411y7Fa?p=31) (9min)
 Obs: Os vídeos dessa seção são de uma plataforma de compartilhamento de vídeos asiática pois os originais, que estavam no Coursera, estão indisponíveis em decorrência das sansões aplicadas a Rússia pela guerra na Ucrância. Em particular, no Coursera os cursos originados de universidades russas foram indiponibilizados.
 
 No curso introdutório de Aprendizado de Máquina do Kaggle Learn que você fez, ideias iniciais de validação de modelo com um conjunto hold out foram apresentadas. Um exercício interessante é aplicar essas mesma ideia na atividade anterior separando seu conjunto em uma parte para treino e outra para teste.
-- [Training and testing - Machine Learning for Trading](https://youtu.be/P2NqrFp8usY)
+- [Training and testing - Machine Learning for Trading](https://youtu.be/P2NqrFp8usY) (3min)
 - Escolha algumas das [métricas discutidas aqui que estejam disponíveis no scikit-learn](https://scikit-learn.org/stable/modules/classes.html#regression-metrics) e veja como ela muda (tanto no conjunto de treino quanto no conjunto de teste) variando o valor de `degree` da sua implementação anterior.
-- [Fundamentos de Aprendizagem de Máquina: Viés e Variância - StatQuest](https://youtu.be/EuBBz3bI-aA)
+- [Fundamentos de Aprendizagem de Máquina: Viés e Variância - StatQuest](https://youtu.be/EuBBz3bI-aA) (7min)
 - Veremos depois com mais detalhe discussões sobre viés/variância e underfitting/overfitting, mas tente pensar o que acontece com o modelo polinomial quando mudamos o valor de `degree`. Para quais valores de `degree` temos underfitting e para quais valores temos `overfitting`?
+
+- Sugestão: na mesma linha do exercício proposto, pode ser interessante dar uma lida no texto sobre [motivação de k-fold para otimização de hiperparâmetros](https://vitaliset.github.io/k-fold/).
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
@@ -314,7 +319,7 @@ Algumas referências. Se estiver muito redundante, pode pular alguma(s) das suge
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
-## 13) Aula de Regressão Logística do curso (básico) de ML do Andrew
+## 13) Aula de Regressão Logística da especialização (básica) de ML do Andrew
 
 A regressão logística é uma generalização natural da regressão linear para o caso de classificação binária em que, por construção, é esperado que o output do seu modelo seja um valor entre 0 e 1 com interpretação de probabilidade de uma das classes. Nessa aula do Andrew, alguns assuntos a mais são abordados como underfitting/overfitting e regularização.
 
@@ -339,7 +344,7 @@ Atividade 11.
 
 Vale dar uma olhada rápida na ideia de generalização para o caso multiclasse:
 - [Machine Learning — Andrew Ng, Stanford University [FULL COURSE]](https://www.youtube.com/playlist?list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN)
-- Lecture 6.7 — Logistic Regression : MultiClass Classification OneVsAll - 6:16
+- Lecture 6.7 — Logistic Regression : MultiClass Classification OneVsAll (6min)
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
@@ -356,6 +361,8 @@ Atividade 13.
 - [The 5 Classification Evaluation metrics every Data Scientist must know](https://towardsdatascience.com/the-5-classification-evaluation-metrics-you-must-know-aa97784ff226)
 - [Classification Metrics Review - How to Win a Data Science Competition Learn from Top Kagglers](https://www.bilibili.com/video/BV117411y7Fa?p=32)
 Obs: Os vídeos dessa seção são de uma plataforma de compartilhamento de vídeos asiática pois os originais, que estavam no Coursera, estão indisponíveis em decorrência das sansões aplicadas a Rússia pela guerra na Ucrância. Em particular, no Coursera os cursos originados de universidades russas foram indiponibilizados.
+
+- Uma sugestão um pouco mais rigorosa é o [capítulo sobre métricas de classificação do livro do DataLab](https://pibieta.github.io/imbalanced_learning/notebooks/Metrics%201%20-%20Intro%20%26%20ROC%20AUC.html#)
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
@@ -395,7 +402,7 @@ Atividade 15.
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
-## 17) Brincando com o Kaggle
+## 17) Kaggle Challenge
 
 pass
 
@@ -407,27 +414,214 @@ Atividades 12 e 16.
 
 Escolher um dataset do Kaggle e limpar os dados + aplicar um modelo de ML, avaliando os resultados (qual métrica utilizar pensando no problema que estou preocupado em resolver?)
 
-- [Find Open Datasets and Machine Learning Projects | Kaggle](https://www.kaggle.com/datasets)
+- [Find Open Datasets and Machine Learning Projects - Kaggle](https://www.kaggle.com/datasets)
 - Sugestão: [Heart Attack Analysis & Prediction Dataset](https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset)
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line2.png"></center></p>
 
-## T0 D0:
+## 18) Aula sobre dicas práticas da especialização (básica) de ML do Andrew
 
-KNN + post de distâncias
+pass: Discussão em alto nível sobre validação, um pouco do ciclo de vida do desenvolvimento de um modelo de Aprendizado de Máquina Supervisionado, MLOps e Ética.
 
-- Semana 3 e Semana 4 do curso do Andrew
+### 18.1) Requisitos sugeridos
 
-- Intermediate Machine Learning - Kaggle Learn: https://www.kaggle.com/learn/intermediate-machine-learning + https://www.kaggle.com/code/alexisbcook/parsing-dates
-- Feature Engineering - Kaggle Learn: https://www.kaggle.com/learn/feature-engineering
-- Otimização de hiperparâmetros: https://youtu.be/ttE0F7fghfk
+Atividade 17.
 
-- GitHub: https://learn.microsoft.com/pt-BR/training/modules/introduction-to-github/
+### 18.2) Descrição
 
-- Intro to AI Ethics - Kaggle Learn: https://www.kaggle.com/learn/intro-to-ai-ethics
-- Machine Learning Explainability - Kaggle Learn: https://www.kaggle.com/learn/machine-learning-explainability
+Infelizmente, a partir do segundo curso do Andrew, é necessário se inscrever pelo Coursera porque os vídeos não estão disponíveis no YouTube. Não se preocupe, o conteúdo continua gratuíto se você se inscrever como **ouvinte**.
 
-- Semana 1 Unsupervised learning: https://www.coursera.org/learn/unsupervised-learning-recommenders-reinforcement-learning?specialization=machine-learning-introduction#syllabus
+- [Advanced Learning Algorithms by Andrew Ng](https://www.coursera.org/learn/advanced-learning-algorithms?specialization=machine-learning-introduction)
+- Semana 3: Advice for applying machine learning
+- Deciding what to try next (3min)
+- Evaluating a model (10min)
+- Model selection and training/cross validation/test sets (13min) - Obs1*
+- Diagnosing bias and variance (11min)
+- Regularization and bias/variance (10min)
+- Establishing a baseline level of performance (9min) - Obs2*
+- Learning curves (11min)
+- Deciding what to try next revisited (8min)
+- Bias/variance and neural networks (10min) - Pode pular ou assistir apenas "por cima" por ser específico de Redes Neurais
+- Iterative loop of ML development (7min)
+- Error analysis (8min)
+- Adding data (14min)
+- Transfer learning: using data from a different task (11min) - Pode pular ou assistir apenas "por cima" por ser específico de Redes Neurais
+- Full cycle of a machine learning project (8min)
+- Fairness, bias, and ethics (9min)
+- Error metrics for skewed datasets (11min)
+- Trading off precision and recall (11min)
+
+- Obs*: O Andrew usa o termo "cross validation" de uma forma diferente do tradicional, que costuma ser usada quando estamos falando do k-fold ou alguma variação dele (como o [`sklearn.model_selection.StratifiedKFold`](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html) ou o [`sklearn.model_selection.TimeSeriesSplit`](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html#sklearn.model_selection.TimeSeriesSplit)). O conjunto que ele se refere é comumente chamado de conjunto de validação enquanto o último conjunto é chamado de conjunto de teste.
+- [Fundamentos de aprendizado de máquina: Validação Cruzada - StatQuest](https://youtu.be/fSytzGwwBVw)
+-Obs2*: O seu baseline normalmente é um algoritmos mais simples (ou o algoritmo que já existe), numa aplicação real.
+
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line2.png"></center></p>
+
+## 19) Aula de árvores de decisão da especialização (básica) de ML do Andrew
+
+pass
+
+### 19.1) Requisitos sugeridos
+
+Atividade 18.
+
+### 19.2) Descrição
+
+Infelizmente, a partir do segundo curso do Andrew, é necessário se inscrever pelo Coursera porque os vídeos não estão disponíveis no YouTube. Não se preocupe, o conteúdo continua gratuíto se você se inscrever como **ouvinte**.
+
+- [Advanced Learning Algorithms by Andrew Ng](https://www.coursera.org/learn/advanced-learning-algorithms?specialization=machine-learning-introduction)
+- Semana 4: Decision trees
+- Decision tree model (7min)
+- Learning Process (11min)
+- Measuring purity (7min)
+- Choosing a split: Information Gain (11min)
+- Putting it together (9min)
+- Using one-hot encoding of categorical features (5min)
+- Continuous valued features (6min)
+- Regression Trees (optional) (9min)
+- Using multiple decision trees (3min)
+- Sampling with replacement (3min)
+- Random forest algorithm (6min)
+- XGBoost (6min)
+- When to use decision trees (6min)
+
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line2.png"></center></p>
+
+## 20) Curso de intermediário de ML do Kaggle Learn
+
+pass
+
+### 20.1) Requisitos sugeridos
+
+Atividade 19.
+
+### 20.2) Descrição
+
+- [Kaggle Learn - Intermediate Machine Learning](https://www.kaggle.com/learn/intro-to-machine-learning). Tempo estimado de 4 horas.
+-
+
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
+
+## 21) Otimização de hiperparâmetros
+
+pass
+
+### 21.1) Requisitos sugeridos
+
+Atividade 20.
+
+### 21.2) Descrição
+
+- [Hyperparameter optimization - Wikipedia](https://en.wikipedia.org/wiki/Hyperparameter_optimization)
+- [Hyperparameter Optimization - The Math of Intelligence #7 - Siraj Raval](https://youtu.be/ttE0F7fghfk) (10min) - Ele é meio impreciso em alguns poucos momentos não muito relevantes e entra em alguns tópicos que não são essenciais, mas é interessante para ver a ideia geral.
+- [Nunca Mais Use Grid Search Para Ajustar Hiperparâmetros - Mario Filho](https://youtu.be/WhnkeasZNHI) (32min)
+
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
+
+## 22) Curso de feature engineering do Kaggle Learn
+
+pass
+
+### 22.1) Requisitos sugeridos
+
+Atividade 20.
+
+### 22.2) Descrição
+
+- [Kaggle Learn - Feature Engineering](https://www.kaggle.com/learn/feature-engineering). Tempo estimado de 5 horas.
+- [Aula avulsa do curso de Data Cleaning sobre dataframes com colunas do tipo data](https://www.kaggle.com/code/alexisbcook/parsing-dates). Tempo estimado de 1 hora.
+
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
+
+## 23) Curso de Explicabilidade do Kaggle Learn
+
+pass
+
+### 23.1) Requisitos sugeridos
+
+Atividade 20.
+
+### 23.2) Descrição
+
+- [Kaggle Learn - Machine Learning Explainability](https://www.kaggle.com/learn/machine-learning-explainability). Tempo estimado de 4 horas.
+
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
+
+## 24) Curso de ética do Kaggle Learn
+
+pass
+
+### 24.1) Requisitos sugeridos
+
+Atividade 20.
+
+### 24.2) Descrição
+
+- [Kaggle Learn - Intro to AI Ethics](https://www.kaggle.com/learn/intro-to-ai-ethics). Tempo estimado de 4 horas.
+
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
+
+## 25) Aula aprendizado não supervisionado da especialização (básica) de ML do Andrew
+
+pass
+
+### 25.1) Requisitos sugeridos
+
+Atividade 20.
+
+### 25.2) Descrição
+
+Infelizmente, a partir do segundo curso do Andrew, é necessário se inscrever pelo Coursera porque os vídeos não estão disponíveis no YouTube. Não se preocupe, o conteúdo continua gratuíto se você se inscrever como **ouvinte**.
+
+- [Unsupervised Learning, Recommenders, Reinforcement Learning](https://www.coursera.org/learn/unsupervised-learning-recommenders-reinforcement-learning)
+- Semana 1: Unsupervised learning
+- What is clustering? (4min)
+- K-means intuition (6min)
+- K-means algorithm (9min)
+- Optimization objective (11min)
+- Initializing K-means (8min)
+- Choosing the number of clusters (7min)
+- Finding unusual events (11min)
+- Gaussian (normal) distribution (10min)
+- Anomaly detection algorithm (11min)
+- Developing and evaluating an anomaly detection system (11min)
+- Anomaly detection vs. supervised learning (8min)
+- Choosing what features to use (14min)
+
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
+
+## 26) Algoritmos baseados em distância
+
+pass
+
+### 26.1) Requisitos sugeridos
+
+Atividade 25.
+
+### 26.2) Descrição
+
+- [K-nearest neighbors, Clearly Explained - StatQuest](https://youtu.be/HVXime0nQeI) (5min)
+- [K-means clustering = StatQuest](https://youtu.be/4b5d3muPQmA) (9min)
+- [Chapter 3 - GEOMETRY AND NEAREST NEIGHBORS - A Course in Machine Learning by Hal Daumé III](http://ciml.info/)
+- [Generalizando distância - Carlo Lemos](https://vitaliset.github.io/distancia/)
+
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
+
+## 27) Introdução ao GitHub
+
+pass
+
+### 27.1) Requisitos sugeridos
+
+Não há.
+
+### 27.2) Descrição
+
+- [GitHub - Guia Completo do Iniciante - Felipe - Dev Samurai](https://youtu.be/UbJLOn1PAKw) (22min)
+- [Introdução ao GitHub - Treinamento Microsoft](https://learn.microsoft.com/pt-BR/training/modules/introduction-to-github/)
+- [Learn Git Branching](https://learngitbranching.js.org/?locale=pt_BR)
+
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line2.png"></center></p>
 
 ## Caminhos possíveis e/ou estudo individual
 
@@ -441,6 +635,11 @@ KNN + post de distâncias
 
 - Sistemas de recomendação
 - Semana 2 https://www.coursera.org/learn/unsupervised-learning-recommenders-reinforcement-learning?specialization=machine-learning-introduction#syllabus
+
+- Intro to time series with Machine Learning
+Mario Filho - https://youtu.be/RRd2wzMRpOc
+
+- Curso de Learning from Data
 
 - Online Learning
 
@@ -469,6 +668,8 @@ KNN + post de distâncias
 - Livro Facure: https://matheusfacure.github.io/python-causality-handbook/landing-page.html
 
 - Feature Selection
+- Mario Filho Live 1 - https://www.youtube.com/live/Bcn5e7LYMhg?feature=share
+- Mario Filho Live 2 - https://www.youtube.com/live/6-mKATDSQmk?feature=share
 - https://vitaliset.github.io/boruta/
 
 - SQL - Kaggle Learn: https://www.kaggle.com/learn/intro-to-sql
@@ -492,3 +693,12 @@ KNN + post de distâncias
 - MeetUp Jessica: https://youtu.be/CJeMJfUYwkM
 
 Colocar o texto: https://vitaliset.github.io/k-fold/
+
+hugging face
+
+NLP: embedding
+tfidf
+
+nao é exxaustiva
+
+Feat Eng
