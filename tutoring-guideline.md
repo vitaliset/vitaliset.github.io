@@ -743,7 +743,7 @@ Essa é uma lista (não exaustiva) de temas interessantes que podem ser usados p
 - [Seleção de variáveis: uma utilização crítica do Boruta - Carlo Lemos](https://vitaliset.github.io/boruta/)
 
 ## Python
-- [Intermediate Python in 6 hours](https://youtu.be/HGOBQPFzWKo)
+- [Intermediate Python in 6 hours - freeCodeCamp.org](https://youtu.be/HGOBQPFzWKo)
 - [Python Programming Beginner Tutorials - Corey Schafer](https://youtube.com/playlist?list=PL-osiE80TeTskrapNbzXhwoFUiLCjGgY7)
 - [Python Tutorial: Iterators and Iterables - What Are They and How Do They Work? - Corey Schafer](https://youtu.be/jTYiNjvnHZY)
 - [Python Tutorial: Itertools Module - Iterator Functions for Efficient Looping - Corey Schafer](https://youtu.be/Qu3dThVy6KQ)
@@ -769,6 +769,8 @@ Essa é uma lista (não exaustiva) de temas interessantes que podem ser usados p
     - [Flask Tutorials - Corey Schafer](https://youtube.com/playlist?list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH)
 - Streamlit
     - [Streamlit: Criando aplicações web - Eduardo Mendes](https://www.youtube.com/live/Ie5ef_R_k6I?feature=share)
+- PySpark
+    - [PySpark Tutorial - freeCodeCamp.org](https://youtu.be/_C8kWso4ne4)
 
 ## Conformal Prediction
 - [Distribution-Free Uncertainty Quantification](https://youtube.com/playlist?list=PLBa0oe-LYIHa68NOJbMxDTMMjT8Is4WkI)
