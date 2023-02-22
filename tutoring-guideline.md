@@ -414,7 +414,7 @@ Atividade 15.
 - [Out-of-Bag Error (OOB Error) - No Learning](https://youtu.be/FUsCBp_4UwE)
 - [Random Forest - Feature Importance - I2ML](https://youtu.be/cw4qG9ePZ9Y) (8min)
 - [Permutation feature importance](https://scikit-learn.org/stable/modules/permutation_importance.html) (Obs: Não só aplicável às Random Forests)
-- [Random Forest | Machine Learning Interview Q&A for Data Scientists | Data Science Interviews - Emma Ding](https://youtu.be/vc88wyUz5jw)
+- [Random Forest - Machine Learning Interview Q&A for Data Scientists - Data Science Interviews - Emma Ding](https://youtu.be/vc88wyUz5jw)
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
@@ -679,8 +679,8 @@ Essa é uma lista (não exaustiva) de temas interessantes que podem ser usados p
 - [Gradient Boost playlist - StatQuest](https://youtube.com/playlist?list=PLblh5JKOoLUJjeXUvUE0maghNuY2_5fY6)
 - [XGBoost playlist - StatQuest](https://youtube.com/playlist?list=PLblh5JKOoLULU0irPgs1SnKO6wqVjKUsQ)
 - [XGBoost vs LightGBM: How Are They Different - neptune.ai/blog](https://neptune.ai/blog/xgboost-vs-lightgbm)
-- [Ensemble: Boosting, Bagging, and Stacking | Machine Learning Interview Q&A for Data Scientists - Emma Ding](https://youtu.be/sN5ZcJLDMaE)
-- [Gradient Boosting (GBM) and XGBoost | Machine Learning Interview Q&A for Data Scientists - Emma Ding](https://youtu.be/yw-E__nDkKU)
+- [Ensemble: Boosting, Bagging, and Stacking - Machine Learning Interview Q&A for Data Scientists - Emma Ding](https://youtu.be/sN5ZcJLDMaE)
+- [Gradient Boosting (GBM) and XGBoost - Machine Learning Interview Q&A for Data Scientists - Emma Ding](https://youtu.be/yw-E__nDkKU)
 
 ## MLOps
 - [Curso Machine Learning Engineering for Production (MLOps) by Andrew Ng](https://youtube.com/playlist?list=PLkDaE6sCZn6GMoA0wbpJLi3t34Gd8l0aK)
@@ -737,7 +737,7 @@ Essa é uma lista (não exaustiva) de temas interessantes que podem ser usados p
 - [Causal Inference for The Brave and True - Matheus Facure](https://matheusfacure.github.io/python-causality-handbook/landing-page.html)
 
 ## Feature Selection
-- [Feature Selection | Machine Learning Interview Q&A for Data Scientists | Data Science Interviews - Emma Ding](https://youtu.be/7tW29jBceRw)
+- [Feature Selection - Machine Learning Interview Q&A for Data Scientists - Data Science Interviews - Emma Ding](https://youtu.be/7tW29jBceRw)
 - [Feature Selection Usando Scikit-Learn - Mario Filho](https://www.youtube.com/live/Bcn5e7LYMhg?feature=share)
 - [Como Remover Variáveis Irrelevantes de um Modelo de Machine Learning - Mario Filho](https://www.youtube.com/live/6-mKATDSQmk?feature=share)
 - [Seleção de variáveis: uma utilização crítica do Boruta - Carlo Lemos](https://vitaliset.github.io/boruta/)
