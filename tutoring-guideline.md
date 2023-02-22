@@ -11,7 +11,7 @@ Dependendo do nível técnico do mentorado no início da mentoria, várias etapa
 
 ## Pré-requisitos esperados do mentorado
 
-- **Lógica de programação**: Não é esperado que o mentorado já tenha utilizado Python, mas aguarda-se que já tenha experiência prévia com programação em outra linguagem e esteja confortável com as estruturas de repetição, condições e operadores lógicos, além de algumas estruturas de dados básicas como listas, vetores e strings. Se esse não for o caso do mentorado, o curso de [introdução à programação do Kaggle](https://www.kaggle.com/learn/intro-to-programming) pode ser um bom começo. Se ainda assim, for necessário gastar mais tempo vendo esses tópicos, aulas selecionadas da [playlist de Python do Curso em Vídeo](https://youtube.com/playlist?list=PLvE-ZAFRgX8hnECDn1v9HNTI71veL3oW0) podem ser uma boa referência.
+- **Lógica de programação**: Não é esperado que o mentorado já tenha utilizado Python, mas aguarda-se que já tenha experiência prévia com programação em outra linguagem e esteja confortável com laços de repetição, condições e operadores lógicos, além de algumas estruturas de dados básicas como listas, vetores e strings. Se esse não for o caso do mentorado, o curso de [introdução à programação do Kaggle](https://www.kaggle.com/learn/intro-to-programming) pode ser um bom começo. Se ainda assim, for necessário gastar mais tempo vendo esses tópicos, aulas selecionadas da [playlist de Python do Curso em Vídeo](https://youtube.com/playlist?list=PLvE-ZAFRgX8hnECDn1v9HNTI71veL3oW0) podem ser uma boa referência.
 
 - **Probabilidade**: A linguagem de Aprendizado de Máquina é intrinsicamente probabilística. É necessário que o mentorado esteja confortável com os conceitos básicos de probabilidade (no mínimo em um [nível introdutório do assunto](https://gradmat.ufabc.edu.br/disciplinas/ipe/)). Isso significa, conhecer a definição (ingênua) de espaço de probabilidade, entender sobre probabilidade condicional e independência, variáveis aleatórias discretas e contínuas, conhecer as principais distribuições de variáveis aleatórias e saber calcular esperanças, variâncias, correlações etc. Caso esse assunto seja intimidador ainda, é sugerido uma revisão detalhada dos tópicos seguindo, por exemplo, o curso [Introdução à Probabilidade e Estatístíca (IPE) do professor Rafael Grisi da UFABC](https://www.youtube.com/channel/UCKGYUbUHWSDr8pFaDd7JWCg/videos).
 
@@ -411,6 +411,10 @@ Atividade 15.
 - [Bootstrapping Main Ideas!!! - StatQuest](https://youtu.be/Xz0x-8-cgaQ) (9min)
 - [StatQuest: Random Forests Parte 1 - Construindo, Usando e Avaliando - StatQuest](https://youtu.be/J4Wdy0Wc_xQ) (10min)
 - [Random Forest na Prática (Scikit-learn / Python) - Mario Filho](https://youtu.be/RtA1rjhuavs) (25min)
+- [Out-of-Bag Error (OOB Error) - No Learning](https://youtu.be/FUsCBp_4UwE)
+- [Random Forest - Feature Importance - I2ML](https://youtu.be/cw4qG9ePZ9Y) (8min)
+- [Permutation feature importance](https://scikit-learn.org/stable/modules/permutation_importance.html) (Obs: Não só aplicável às Random Forests)
+- [Random Forest | Machine Learning Interview Q&A for Data Scientists | Data Science Interviews - Emma Ding](https://youtu.be/vc88wyUz5jw)
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
@@ -555,6 +559,7 @@ Atividade 20.
 ### 23.2) Descrição
 
 - [Kaggle Learn - Machine Learning Explainability](https://www.kaggle.com/learn/machine-learning-explainability) (4h).
+- [SHAP Values Explained Exactly How You Wished Someone Explained to You - Samuele Mazzanti](https://towardsdatascience.com/shap-explained-the-way-i-wish-someone-explained-it-to-me-ab81cc69ef30)
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
@@ -642,7 +647,7 @@ Essa é uma lista (não exaustiva) de temas interessantes que podem ser usados p
 - [Kaggle Learn - Intro to SQL](https://www.kaggle.com/learn/intro-to-sql)
 - [Kaggle Learn - Advanced SQL](https://www.kaggle.com/learn/advanced-sql)
 
-## Algoritmos Clássicos de ML
+## Algoritmos Clássicos de ML que não foram vistos anteriormente, mas são importantes
 - Supervisionado
     - [StatQuest: Linear Discriminant Analysis (LDA) clearly explained](https://youtu.be/azXCzI57Yfc)
     - [Naive Bayes, Clearly Explained!!!](https://youtu.be/O2L2Uv9pdDA)
@@ -660,9 +665,12 @@ Essa é uma lista (não exaustiva) de temas interessantes que podem ser usados p
     - [Clustering with DBSCAN, Clearly Explained!!!](https://youtu.be/RDZUdRSDOok)
 
 ## eXplainable AI
+- [You are underutilizing SHAP values: understanding populations and events - Estevão Uyrá](https://towardsdatascience.com/you-are-underutilizing-shap-values-understanding-populations-and-events-7f4a45202d5)
 - [xAI - Fabrício Olivetti - UFABC](https://www.youtube.com/@ufabchal/playlists?view=1&sort=dd&shelf_id=0)
+- [The Science Behind InterpretML: Explainable Boosting Machine](https://youtu.be/MREiHgHgl0k)
 
-## Machine Learning com um pouco mais de rigor
+## Cursos de Aprendizado de Máquina com um pouco mais de rigor
+- [Introduction to Statistical Learning](https://youtube.com/playlist?list=PLOg0ngHtcqbPTlZzRHA2ocQZqB1D_qZ5V)
 - [Learning from Data - Yaser Abu Mostafa - Caltech](https://youtube.com/playlist?list=PLnIDYuXHkit4LcWjDe0EwlE57WiGlBs08)
 
 ## Boosting Trees
@@ -670,7 +678,9 @@ Essa é uma lista (não exaustiva) de temas interessantes que podem ser usados p
 - [AdaBoost, Clearly Explained](https://youtu.be/LsK-xG1cLYA)
 - [Gradient Boost playlist - StatQuest](https://youtube.com/playlist?list=PLblh5JKOoLUJjeXUvUE0maghNuY2_5fY6)
 - [XGBoost playlist - StatQuest](https://youtube.com/playlist?list=PLblh5JKOoLULU0irPgs1SnKO6wqVjKUsQ)
-- [What is Light GBM and how does it compare against XGBoost? - DigitalSreeni](https://youtu.be/n_ZMQj09S6w)
+- [XGBoost vs LightGBM: How Are They Different - neptune.ai/blog](https://neptune.ai/blog/xgboost-vs-lightgbm)
+- [Ensemble: Boosting, Bagging, and Stacking | Machine Learning Interview Q&A for Data Scientists - Emma Ding](https://youtu.be/sN5ZcJLDMaE)
+- [Gradient Boosting (GBM) and XGBoost | Machine Learning Interview Q&A for Data Scientists - Emma Ding](https://youtu.be/yw-E__nDkKU)
 
 ## MLOps
 - [Curso Machine Learning Engineering for Production (MLOps) by Andrew Ng](https://youtube.com/playlist?list=PLkDaE6sCZn6GMoA0wbpJLi3t34Gd8l0aK)
@@ -697,6 +707,7 @@ Essa é uma lista (não exaustiva) de temas interessantes que podem ser usados p
 - [Tranformers doc - Hugging Face](https://huggingface.co/docs/transformers/index)
 
 ## Shallow NLP
+- [Python Tutorial: re Module - How to Write and Match Regular Expressions (Regex) - Corey Schafer](https://youtu.be/K8L6KVGG-7o)
 - [Modelo Bag of Words - IA Expert Academy](https://youtu.be/13R_-qLXvzA)
 - [TF-IDF (Term Frequency - Inverse Document Frequency) - IA Expert Academy](https://youtu.be/RVx_QYZPGaU)
 - [Remoção de stop words com Python e NLTK - IA Expert Academy](https://youtu.be/og-t1HLey7I)
@@ -726,13 +737,42 @@ Essa é uma lista (não exaustiva) de temas interessantes que podem ser usados p
 - [Causal Inference for The Brave and True - Matheus Facure](https://matheusfacure.github.io/python-causality-handbook/landing-page.html)
 
 ## Feature Selection
+- [Feature Selection | Machine Learning Interview Q&A for Data Scientists | Data Science Interviews - Emma Ding](https://youtu.be/7tW29jBceRw)
 - [Feature Selection Usando Scikit-Learn - Mario Filho](https://www.youtube.com/live/Bcn5e7LYMhg?feature=share)
 - [Como Remover Variáveis Irrelevantes de um Modelo de Machine Learning - Mario Filho](https://www.youtube.com/live/6-mKATDSQmk?feature=share)
 - [Seleção de variáveis: uma utilização crítica do Boruta - Carlo Lemos](https://vitaliset.github.io/boruta/)
 
-## Write better code
+## Python
+- [Intermediate Python in 6 hours](https://youtu.be/HGOBQPFzWKo)
 - [Python Programming Beginner Tutorials - Corey Schafer](https://youtube.com/playlist?list=PL-osiE80TeTskrapNbzXhwoFUiLCjGgY7)
+- [Python Tutorial: Iterators and Iterables - What Are They and How Do They Work? - Corey Schafer](https://youtu.be/jTYiNjvnHZY)
+- [Python Tutorial: Itertools Module - Iterator Functions for Efficient Looping - Corey Schafer](https://youtu.be/Qu3dThVy6KQ)
+- [8 Design Patterns EVERY Developer Should Know](https://youtu.be/tAuRQs_d9F8)
 - [Software Design in Python - ArjanCodes](https://youtube.com/playlist?list=PLC0nd42SBTaNuP4iB4L6SJlMaHE71FG6N)
+- Write better Python code - ArjanCodes
+    - [Part 1: Cohesion and coupling](https://youtu.be/eiDyK_ofPPM)
+    - [Part 2: Dependency inversion](https://youtu.be/Kv5jhbSkqLE)
+    - [Part 3: The strategy pattern](https://youtu.be/WQ8bNdxREHU)
+    - [Part 4: The observer pattern](https://youtu.be/oNalXg67XEE)
+    - [Part 5: Unit testing and code coverage](https://youtu.be/jmP3fp_BhmE)
+    - [Part 6: Template method and bridge](https://youtu.be/t0mCrXHsLbI)
+    - [Part 7a: Exception handling](https://youtu.be/ZsvftkbbrR0)
+    - [Part 7b: Monadic error handling](https://youtu.be/J-HWmoTKhC8)
+    - [Part 8: Software architecture](https://youtu.be/ihtIcGkTFBU)
+    - [Part 9: SOLID principles](https://youtu.be/pTB30aXS77U)
+    - [Part 10: Object creation patterns](https://youtu.be/Rm4JP7JfsKY)
+- Libs legais de programação funcional
+    - [returns](https://returns.readthedocs.io/en/latest/index.html)
+    - [functools](https://docs.python.org/3/library/functools.htmll)
+    - [toolz](https://toolz.readthedocs.io/en/latest/)
+- Flask
+    - [Flask Tutorials - Corey Schafer](https://youtube.com/playlist?list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH)
+- Streamlit
+    - [Streamlit: Criando aplicações web - Eduardo Mendes](https://www.youtube.com/live/Ie5ef_R_k6I?feature=share)
+
+## Conformal Prediction
+- [Distribution-Free Uncertainty Quantification](https://youtube.com/playlist?list=PLBa0oe-LYIHa68NOJbMxDTMMjT8Is4WkI)
+- [“MAPIE” Explained Exactly How You Wished Someone Explained to You - Samuele Mazzanti](https://towardsdatascience.com/mapie-explained-exactly-how-you-wished-someone-explained-to-you-78fb8ce81ff3)
 
 ## Análise de Sobrevivência
 - [Análise de sobrevivência - Nubank ML Meetup - Jessica De Sousa](https://youtu.be/WZNmlT-arF0)
@@ -753,7 +793,12 @@ Essa é uma lista (não exaustiva) de temas interessantes que podem ser usados p
 - [Awesome Online Machine Learning Repo - Max Halford](https://github.com/online-ml/awesome-online-machine-learning)
 - [Read the docs of RiverML](https://riverml.xyz/)
 
+## Análise de Algoritmos
+- [Análise de algoritmos - Carla Quem Disse - UFABC](https://youtube.com/playlist?list=PLncEdvQ20-mgGanwuFczm-4IwIdIcIiha)
+
 ## Algumas discussões sobre gestão em DS
 - [Data Science Leadership - Luis Moneda](https://datascienceleadership.com/)
-- [Gestão de Cientistas de Dados - Uma Abordagem Heurística não Holística - Nubank ML Meetup - Eduardo Hruschka](https://youtu.be/0ELffU6j_Tk)]
+- [Gestão de Cientistas de Dados - Uma Abordagem Heurística não Holística - Nubank ML Meetup - Eduardo Hruschka](https://youtu.be/0ELffU6j_Tk)
 - [Painel sobre Liderança em times de Ciência de Dados - Nubank ML Meetup](https://youtu.be/FyUWiIh4yLE)
+
+As linhas horizontais desse site foram feitos no site [Silk](http://weavesilk.com/).
