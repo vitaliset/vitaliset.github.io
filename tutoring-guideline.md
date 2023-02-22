@@ -39,6 +39,16 @@ Aqui é onde o link para o material de estudo deve ser disponibilizado. De forma
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line2.png"></center></p>
 
+# Cronograma 
+
+<p><center><img src="{{ site.baseurl }}/assets/img/ordem_atividades.png"></center></p>
+
+Terminada essa etapa de atividades, a sugestão é que seja feito algum desafio do Kaggle com cuidado no tempo restante da tutoria (pensando numa tutoria de aproximadamente 6 meses). Nesse momento, é importante entender o problema de forma detalhada e pode ser útil trabalhar em "releases", em que a cada x semanas se tenha uma versão do modelo um pouco mais estruturada e com testes novos.
+
+Obviamente essas atividades não tão escritas em pedra e podem ser modificadas dependendo do viés do tutorado. Por exemplo, um tutorado mais próximo da área de saúde pode ter interesse em redes neurais e portanto faz sentido algumas atividades serem substituídas, principalmente das semanas finais.
+
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line2.png"></center></p>
+
 # Atividades recorrentes
 
 As atividades recorrentes são aquelas que não são feitas pontualmente e em sequência são finalizadas. São atividades que, a partir do momento que você tem os requisitos para realizá-las, você deveria fazê-la de forma recorrente durante as semanas da tutoria. 
@@ -67,15 +77,13 @@ Atividade 12.
 
 ### B.2) Descrição
 
-Fazer pelo menos 0.5 horas de atividades propostas utilizando Pandas do [Stratascratch]([stratascratch.com](http://stratascratch.com/)) toda semana. Você consegue resolver em SQL também e pode ser útil para treinar essa ferramenta eventualmente.
+Fazer pelo menos 30 minutos de atividades propostas utilizando Pandas do [Stratascratch]([stratascratch.com](http://stratascratch.com/)) toda semana. Você consegue resolver em SQL também e pode ser útil para treinar essa ferramenta eventualmente.
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line2.png"></center></p>
 
-# Atividades "Sequenciais"
+# Atividades Sequenciais
 
-Atividades sequenciais idealizadas nesse roteiro.
-
-<p><center><img src="{{ site.baseurl }}/assets/img/ordem_atividades.png"></center></p>
+Sequência idealizada de atividades para o ciclo de estudos da mentoria.
 
 ## 1) Instalar Python (pelo Anaconda)
 
@@ -102,11 +110,11 @@ Não há.
 ### 2.2) Descrição
 
 - [Supervised Machine Learning: Regression and Classification by Andrew Ng](https://www.youtube.com/playlist?list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI)
-- #3 - What is machine learning? (5min)
-- #4 - Supervised learning part 1 (6min)
-- #5 - Supervised learning part 2 (7min)
-- #6 - Unsupervised learning part 1 (8min)
-- #7 - Unsupervised learning part 2 (3min)
+    - #3 - What is machine learning? (5min)
+    - #4 - Supervised learning part 1 (6min)
+    - #5 - Supervised learning part 2 (7min)
+    - #6 - Unsupervised learning part 1 (8min)
+    - #7 - Unsupervised learning part 2 (3min)
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
@@ -120,7 +128,7 @@ Atividade 1. Já assume conhecimento de programação básico em alguma linguage
 
 ### 3.2) Descrição 
 
-[Kaggle Learn - Python Tutorials](https://www.kaggle.com/learn/python). Tempo estimado de 5 horas.
+- [Kaggle Learn - Python Tutorials](https://www.kaggle.com/learn/python). Tempo estimado de 5 horas.
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
@@ -137,18 +145,18 @@ Atividade 2.
 ### 4.2) Descrição
 
 - [Supervised Machine Learning: Regression and Classification by Andrew Ng](https://www.youtube.com/playlist?list=PLkDaE6sCZn6FNC6YRfRQc_FbeQrF8BwGI)
-- #9 - Linear regression model part 1 (10min)
-- #10 - Linear regression model part 2 (6min)
-- #11 - Cost function formula (9min)
-- #12 - Cost function intuition (15min)
-- #13 - Visualizing the cost function (8min)
-- #14 - Visualization examples (6min)
-- #15 - Gradient descent (8min)
-- #16 - Implementing gradient descent (9min)
-- #17 - Gradient descent intuition (7min)
-- #18 - Learning rate (9min)
-- #19 - Gradient descent for linear regression (6min)
-- #20 - Running gradient descent (5min)
+    - #9 - Linear regression model part 1 (10min)
+    - #10 - Linear regression model part 2 (6min)
+    - #11 - Cost function formula (9min)
+    - #12 - Cost function intuition (15min)
+    - #13 - Visualizing the cost function (8min)
+    - #14 - Visualization examples (6min)
+    - #15 - Gradient descent (8min)
+    - #16 - Implementing gradient descent (9min)
+    - #17 - Gradient descent intuition (7min)
+    - #18 - Learning rate (9min)
+    - #19 - Gradient descent for linear regression (6min)
+    - #20 - Running gradient descent (5min)
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
@@ -702,3 +710,5 @@ tfidf
 nao é exxaustiva
 
 Feat Eng
+
+Write better code
