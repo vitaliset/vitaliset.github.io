@@ -811,7 +811,7 @@ Essa é uma lista (não exaustiva) de temas interessantes que podem ser usados p
 - [Análise de algoritmos - Carla Quem Disse - UFABC](https://youtube.com/playlist?list=PLncEdvQ20-mgGanwuFczm-4IwIdIcIiha)
 
 ## Open Source
-- Contribuindo como scikit-learn
+- Contribuindo com o scikit-learn
     - [Scikit-learn sprint instructions - Andreas Mueller](https://youtu.be/5OL8XoMMOfA)
     - [Sprint Instructions for scikit-learn Vol 2 - Andreas Mueller](https://youtu.be/p_2Uw2BxdhA)
     - [Contributing to scikit-learn: An Example Pull Request - Reshama Shaikh](https://youtu.be/PU1WyDPGePI)
