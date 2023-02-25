@@ -11,11 +11,15 @@ Dependendo do nível técnico do mentorado no início da mentoria, várias etapa
 
 ## Pré-requisitos esperados do mentorado
 
+Numa conversa com o mentorado, é importante sentir se ele tem os pré requisitos para seguir essa sugestão de tópicos ou não. Caso não seja o caso, várias coisas precisam ser adaptadas, principalmente no início e já dou algumas sugestões nessa seção.
+
 - **Lógica de programação**: Não é esperado que o mentorado já tenha utilizado Python, mas aguarda-se que já tenha experiência prévia com programação em outra linguagem e esteja confortável com laços de repetição, condições e operadores lógicos, além de algumas estruturas de dados básicas como listas, vetores e strings. Se esse não for o caso do mentorado, o curso de [introdução à programação do Kaggle](https://www.kaggle.com/learn/intro-to-programming) pode ser um bom começo. Se ainda assim, for necessário gastar mais tempo vendo esses tópicos, aulas selecionadas da [playlist de Python do Curso em Vídeo](https://youtube.com/playlist?list=PLvE-ZAFRgX8hnECDn1v9HNTI71veL3oW0) podem ser uma boa referência.
 
-- **Probabilidade**: A linguagem de Aprendizado de Máquina é intrinsicamente probabilística. É necessário que o mentorado esteja confortável com os conceitos básicos de probabilidade (no mínimo em um [nível introdutório do assunto](https://gradmat.ufabc.edu.br/disciplinas/ipe/)). Isso significa, conhecer a definição (ingênua) de espaço de probabilidade, entender sobre probabilidade condicional e independência, variáveis aleatórias discretas e contínuas, conhecer as principais distribuições de variáveis aleatórias e saber calcular esperanças, variâncias, correlações etc. Caso esse assunto seja intimidador ainda, é sugerido uma revisão detalhada dos tópicos seguindo, por exemplo, o curso [Introdução à Probabilidade e Estatístíca (IPE) do professor Rafael Grisi da UFABC](https://www.youtube.com/channel/UCKGYUbUHWSDr8pFaDd7JWCg/videos).
+- **Estatística descritiva**: Visualizações clássicas como gráficos de dispersão, gráficos de barra/coluna, histogramas, box plots, gráficos de pizza, além de medidas resumo de posição e dispersão, como média, mediana, percentis, desvio padrão etc, precisam ser assuntos que o mentorado já tenha alguma familiaridade. Dependendo do nível do mentorado, uma simples revisão superficial do assunto ([como essa aula de análise descritiva da Univesp](https://youtu.be/42ArF0YCWm8)) provavelmente já é suficiente. Em outros casos, será necessário um pouco mais de atenção e daí o foco das primeiras semanas pode mudar totalmente para ensinar Python a partir de exemplos de visualização de dados (por exemplo com o [Kaggle Learn de Data Visualization com seaborn](https://www.kaggle.com/learn/data-visualization)), ao invés de já começar com Aprendizado de Máquina.
 
-- **Matemática de forma geral**: Além de probabilidade, outros tópicos de matemática, como noções de otimização, cálculo diferencial, operações matriciais e estatística são importantes para um entendimento menos superficial dos algoritmos de Aprendizado de Máquina. Se o mentorado tem uma base matemática fraca, em algum desses assuntos (ou em todos), a especialização [Mathematics for Machine Learning and Data Science Specialization](https://www.coursera.org/specializations/mathematics-for-machine-learning-and-data-science#courses) pode ser uma grande amiga para visitar aulas específicas ou se debruçar por algumas semanas com as bases principais antes da Ciência de Dados.
+- **Probabilidade**: A linguagem de Aprendizado de Máquina é intrinsicamente probabilística. É recomendado que o mentorado esteja confortável com os conceitos básicos de probabilidade (no mínimo em um [nível introdutório do assunto](https://gradmat.ufabc.edu.br/disciplinas/ipe/)). Isso significa, conhecer a definição (ingênua) de espaço de probabilidade, entender sobre probabilidade condicional e independência, variáveis aleatórias discretas e contínuas, conhecer as principais distribuições de variáveis aleatórias e saber calcular esperanças, variâncias, correlações etc. Obviamente não precisa conhecer tudo nos mínimos detalhes, mas se o assunto é intimidador ainda, é sugerido uma revisão dos tópicos seguindo, por exemplo, o curso [Introdução à Probabilidade e Estatístíca (IPE) do professor Rafael Grisi da UFABC](https://www.youtube.com/channel/UCKGYUbUHWSDr8pFaDd7JWCg/videos).
+
+- **Matemática de forma geral**: Além de estatística descritiva e probabilidade básica, outros tópicos de matemática, como noções de otimização, cálculo diferencial, operações matriciais e estatística inferencial são importantes para um entendimento menos superficial dos algoritmos de Aprendizado de Máquina. Se o mentorado tem uma base matemática fraca, em algum desses assuntos (ou em todos), a especialização [Mathematics for Machine Learning and Data Science Specialization](https://www.coursera.org/specializations/mathematics-for-machine-learning-and-data-science#courses) pode ser uma grande amiga para visitar aulas específicas ou se debruçar por algumas semanas com as bases principais da Ciência de Dados.
 
 ## Ensinamentos do HDFS: redundância é importante
 
@@ -721,6 +725,7 @@ Essa é uma lista (não exaustiva) de temas interessantes que podem ser usados p
 ## Aprendizado por Reforço
 - [Multi-Armed Bandit - Matheus Facure](https://matheusfacure.github.io/2017/03/04/bernoulli-bandits-thompson/)
 - [Multi-Armed Bandit - Guilherme Marmerola](https://gdmarmerola.github.io/ts-for-bernoulli-bandit/)
+- [Introdução ao Aprendizado por Reforço - Itau Data Science Meetup - Caique R. Almeida](https://youtu.be/zerTbKzNq1o)
 - [Unsupervised Learning, Recommenders, Reinforcement Learning by Andrew Ng](https://www.coursera.org/learn/unsupervised-learning-recommenders-reinforcement-learning?specialization=machine-learning-introduction#syllabus)
     - Semana 3: Reinforcement learning
 - [Deep Reinforcement Learning Course - Hugging Face](https://huggingface.co/deep-rl-course/unit0/introduction)
@@ -761,7 +766,8 @@ Essa é uma lista (não exaustiva) de temas interessantes que podem ser usados p
     - [Part 8: Software architecture](https://youtu.be/ihtIcGkTFBU)
     - [Part 9: SOLID principles](https://youtu.be/pTB30aXS77U)
     - [Part 10: Object creation patterns](https://youtu.be/Rm4JP7JfsKY)
-- Libs legais de programação funcional
+- Programação Funcional
+    - [Introdução aos paradigmas da Programação - Itaú Data Science Meetup - Clarissa David](https://youtu.be/XDJ28JZws_I)
     - [returns](https://returns.readthedocs.io/en/latest/index.html)
     - [functools](https://docs.python.org/3/library/functools.htmll)
     - [toolz](https://toolz.readthedocs.io/en/latest/)
@@ -789,18 +795,34 @@ Essa é uma lista (não exaustiva) de temas interessantes que podem ser usados p
 ## Inferência de Rejeitados
 - [Counterfactual evaluation and Reject Inference - Nubank ML Meetup - Jessica De Sousa](https://youtu.be/CJeMJfUYwkM)
 
+## Problem Solving
+- [Resolução de Problemas - Nubank ML Meetup - Victor Goraieb](https://youtu.be/BB_w4e-NBek)
+
 ## Online Learning
 - [Machine Learning Types - Batch Learning VS Online Learning - Rocketing Data Science](https://youtu.be/HTGCgErym1E)
 - [Online Learning - Andrew Ng](https://youtu.be/dnCzy_XKGbA)
 - [Awesome Online Machine Learning Repo - Max Halford](https://github.com/online-ml/awesome-online-machine-learning)
 - [Read the docs of RiverML](https://riverml.xyz/)
 
+## Quantum Machine Learning
+- [Quantum Machine Learning e o classificador variacional quântico - Itau Data Science Meetup - André Juan](https://youtu.be/2XOfnq4niwQ)
+
 ## Análise de Algoritmos
 - [Análise de algoritmos - Carla Quem Disse - UFABC](https://youtube.com/playlist?list=PLncEdvQ20-mgGanwuFczm-4IwIdIcIiha)
 
-## Algumas discussões sobre gestão em DS
+## Open Source
+- Contribuindo como scikit-learn
+    - [Scikit-learn sprint instructions - Andreas Mueller](https://youtu.be/5OL8XoMMOfA)
+    - [Sprint Instructions for scikit-learn Vol 2 - Andreas Mueller](https://youtu.be/p_2Uw2BxdhA)
+    - [Contributing to scikit-learn: An Example Pull Request - Reshama Shaikh](https://youtu.be/PU1WyDPGePI)
+    - [3 Components of Reviewing a Pull Request (scikit-learn) - Thomas Fan](https://youtu.be/dyxS9KKCNzA)
+- [How to Contribute to Open Source for Data Scientists - Data Umbrella](https://youtube.com/playlist?list=PLBKcU7Ik-ir9Ol1MOQ5LVAseoH4IwqsFE)
+
+## Discussões sobre gestão em DS
 - [Data Science Leadership - Luis Moneda](https://datascienceleadership.com/)
 - [Gestão de Cientistas de Dados - Uma Abordagem Heurística não Holística - Nubank ML Meetup - Eduardo Hruschka](https://youtu.be/0ELffU6j_Tk)
 - [Painel sobre Liderança em times de Ciência de Dados - Nubank ML Meetup](https://youtu.be/FyUWiIh4yLE)
 
-As linhas horizontais desse site foram feitos no site [Silk](http://weavesilk.com/).
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line2.png"></center></p>
+
+As linhas horizontais desse site foram feitos no [Silk](http://weavesilk.com/).
