@@ -437,7 +437,7 @@ Na prática, antes da modelagem, é muito importante entender quais variáveis o
 
 - Além disso, esse entendimento te guia a escolher modelos que são mais apropriados para o tipo de dados que você têm.
     - Por exemplo, escolhendo modelos que nativamente lidem bem com variáveis categóricas (como o CatBoost).
-    - Pensando em valores faltantes de dados, dependendo do caso que você está ([MCAR, MAR ou MNAR](https://youtu.be/YpqUbirqFxQ)), você vai definir possíveis estratégias de imputação nesse momento (que podem ser testadas, depois, na sua otimização de hiperparâmetros) ou, mesmo, se quer utilizar um modelo que lida nativamente com esse tipo de dados faltante (como o lightGBM).
+    - Pensando em valores faltantes de dados, dependendo do caso que você está ([MCAR, MAR ou MNAR](https://youtu.be/YpqUbirqFxQ)), você vai definir possíveis estratégias de imputação nesse momento (que podem ser testadas, depois, na sua otimização de hiperparâmetros) ou, mesmo, se quer utilizar um modelo que lida nativamente com esse tipo de dados faltante (como o lightGBM) (ou colocar valores fora do range utilizando modelos baseados em árvores).
 
 - Por fim, você pode explorar tendências temporais nos dados. Aprendizado de Máquina trabalha com o pressuposto de que os dados são estáveis ao longo do tempo, o que não necessariamente é uma realidade. Em muitas aplicações é importante quebrar seus dados respeitando a lógica temporal e essa parte da análise exploratória pode te contar se isso é importante no problema em questão ou não. 
 
