@@ -465,7 +465,7 @@ Extras:
 - Iremos discutir aspectos de validação out-of-time no futuro, mas esse notebook discuti uma análise exploratória para estudo de estabilidade temporal com uma [técnica interessante](https://vitaliset.github.io/covariate-shift-2-classificador-binario/):
     - [Exemplo de notebook que faz uma análise exploratória focada em problemas de drift temporal dos dados](https://github.com/vitaliset/projetos-de-estudo/blob/main/New%20York%20City%20Taxi%20Fare%20Prediction/2_dinamica_temporal.ipynb).
 
-<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line2.png"></center></p>
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
 ## 18) Kaggle Challenge
 
@@ -482,7 +482,7 @@ Escolher um dataset do Kaggle e limpar os dados + aplicar um modelo de ML, avali
 - [Find Open Datasets and Machine Learning Projects - Kaggle](https://www.kaggle.com/datasets)
 - Sugestão: [Heart Attack Analysis & Prediction Dataset](https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset)
 
-<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line2.png"></center></p>
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
 ## 19) Aula sobre dicas práticas da especialização (básica) de ML do Andrew
 
@@ -520,7 +520,7 @@ Infelizmente, a partir do segundo curso do Andrew, é necessário se inscrever p
     - [Fundamentos de aprendizado de máquina: Validação Cruzada - StatQuest](https://youtu.be/fSytzGwwBVw)
 - Obs2*: O seu baseline normalmente é um algoritmo mais simples (ou o modelo que já existe) numa aplicação real.
 
-<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line2.png"></center></p>
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
 ## 20) Aula de árvores de decisão da especialização (básica) de ML do Andrew
 
@@ -550,7 +550,7 @@ Infelizmente, a partir do segundo curso do Andrew, é necessário se inscrever p
     - XGBoost (6min)
     - When to use decision trees (6min)
 
-<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line2.png"></center></p>
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
 ## 21) Curso de intermediário de ML do Kaggle Learn
 
