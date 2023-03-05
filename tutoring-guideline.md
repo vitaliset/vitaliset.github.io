@@ -422,15 +422,60 @@ Atividade 15.
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
-## 17) Kaggle Challenge
+## 17) Análise Exploratória de Dados
 
-TODO
+Na prática, antes da modelagem, é muito importante entender quais variáveis o cientista tem disponíveis para criação do modelo. Nem sempre o problema está bem empacotado e a definição do que você quer modelar (e quais métricas otimizar) pode vir de um bom entendimento dos dados disponíveis conjuntamente com alinhamentos com a área de negócios interessada.
+
+- Pensar em **hipóteses de negócio que você gostaria de validar**, são uma ótima maneira de fazer uma análise exploratória. Será que você já tem alguma intuição sobre o problema que pode, inclusive, te ajudar depois a modelar o problema de uma forma diferente?
+    - Num problema de inadimplência de crédito (previsão se uma pessoa vai pagar ou não uma dívida), podemos, por exemplo, ter a intuição de que, para pessoas de baixa renda, a presença ou não de uma dívida não quitada anterior pode ser crucial para a pessoa pagar o próximo empréstimo de interesse. Enquanto para pessoas de alta renda, isso é menos importante. Esse é um tipo de pergunta que você pode diretamente testar e essa hipótese pode se tornar uma regra de negócio que vira um benchmark que você gostaria de bater depois com seu modelo. Será que essa regra sozinha já tem uma performance boa o suficiente que nem justifica a criação de um modelo?
+    - Ou ainda, a sua hipótese pode te ajudar a entender onde está o maior foco de interesse da sua modelagem. Por exemplo, se você tem o valor da dívida, pode agrupar seus dados para identificar quais os grupos que "se mal identificados pelo modelo" podem trazer maior prejuízo. Imagine que, apesar de pessoas de alta renda serem minoria da sua base de desenvolvimento (10%, por exemplo), estão associadas com 90% do valor total em empréstimo. O seu modelo identificar bem os maus pagadores nesse grupo pode ser muito mais importante que identificar maus pagadores de forma geral na população. Isso poderia te guiar na etapa de modelagem e avalição a segmentar suas métricas, usar `sample_weights` para valorizar grupos de interesse e até quebrar seu modelo por renda, por exemplo.
+
+- Estudar, com alguns gráficos e estatísticas, sua amostra de desenvolvimento te dá insights sobre **quais são as variáveis que estão relacionadas com o problema e alguns possíveis feature engineering** que você pode criar, além de **identificar problemas que você precisará resolver** para ter uma modelagem adequada.
+    - É muito comum tentar filtrar algumas variáveis nessa etapa baseado em alguma medida de correlação. Apesar de eu achar que isso é feito melhor mais para frente no pipeline de desenvolvimento, pode ser necessário fazer isso durante a exploração se o problema tiver dezenas de colunas e o tempo for curto, nor obrigando a focar apenas nas de maior interesse. Rodar correlações simples ou algoritimos que metrificam a importância das variáveis (como um algoritmo baseado em árvores) podem ser super úteis aqui, mas devem ser usados com cuidado.
+    - Saber quais variáveis você tem, alinhado com entendimento de negócios pode te fazer pensar em variáveis (muitas vezes feitas apenas com operações matemáticas triviais como a soma) que simplificam a vida do modelo (principalmente árvores que só conseguem fazer cortes paralelos aos eixos). Por exemplo, uma variável super importante em crédito é o "comprometimento de renda", ou seja, qual a porcentagem do salário que precisaria ficar "reservado" para pagar a parcela de um financiamento ativo (`valor_parcela/valor_salario`). Criar ela nessa etapa e fazer alguns gráficos para avaliá-la pode ser considerada uma atividade exploratória útil.
+    - É muito comum ter bases com problemas de valores vazios ou, pior, mal preenchidos. Se você sabe que determinada variável só pode estar em um certo range e você encontra valores fora desse range, você precisa entender porque isso aconteceu. Analisar criticamente os valores presentes pode te ajudar a traçar uma estratégia para tratá-los ou possivelmente dropá-los (com o cuidado que dropar linhas no teste só deve ser feita se de fato aquilo não for visto na vida real, sem trapaças). (_Num problema de Kaggle/portifólio raramente você tem essa resposta, mas em uma empresa, esse pode ser o momento em que você conversa com a engenharia e entende se, na utilização do modelo, o dado vai estar de qual forma etc._)
+
+- Além disso, esse entendimento te guia a escolher modelos que são mais apropriados para o tipo de dados que você têm.
+    - Por exemplo, escolhendo modelos que nativamente lidem bem com variáveis categóricas (como o CatBoost).
+    - Pensando em valores faltantes de dados, dependendo do caso que você está ([MCAR, MAR ou MNAR](https://youtu.be/YpqUbirqFxQ)), você vai definir possíveis estratégias de imputação nesse momento (que podem ser testadas, depois, na sua otimização de hiperparâmetros) ou, mesmo, se quer utilizar um modelo que lida nativamente com esse tipo de dados faltante (como o lightGBM).
+
+- Por fim, você pode explorar tendências temporais nos dados. Aprendizado de Máquina trabalha com o pressuposto de que os dados são estáveis ao longo do tempo, o que não necessariamente é uma realidade. Em muitas aplicações é importante quebrar seus dados respeitando a lógica temporal e essa parte da análise exploratória pode te contar se isso é importante no problema em questão ou não. 
+
+Opinião pessoal:
+
+- Pensando principalmente em aprendizado supervisionado, os pontos anteriores (validação de hipóteses de negócio, estudos sobre variáveis relevantes, criação de variáveis novas, identificação de problemas e questões relacionadas) são os principais resultados de um EDA e devem ser o foco da sua exploração. Fazer gráficos "por fazer", que não trazem informação relevante, devem ser evitados a todo custo uma vez que deixam sua análise prolixa e sem o foco de interesse, que é o modelo final.
+
+- Facilmente você pode se pegar saindo de algum desses objetivos anteriores, mas vale sempre se questionar: "porque estou fazendo esse gráfico ou calculando essa estatística?" Se o motivo está claro para você, então provavelmente fazer tal gráfico/cálculo faz sentido.
+
+- Posso estar sendo um pouco duro com as análises exploratórias de forma geral, mas é muito comum, principalmente em DSs no início de carreira (leia-se cases de entrevistas e projetos de portifólio), notebooks enormes com inúmeros gráficos e `.head()` de tabelas que deixam o código díficil de navegar e que nada acrescentam no processo de modelagem ou na história contada. Em 99% das vezes parecem completamente desconectados do problema de interesse e se, excluídos do notebook, nada mudariam no outcome.
+
+- Em outros casos, em que não há necessariamente um modelo envolvido, se extender na análise exploratória pode fazer sentido, mas raramente eu fugiria de alguma das motivações anteriores.
 
 ### 17.1) Requisitos sugeridos
 
-Atividades 12 e 16.
+Atividades 12.
 
 ### 17.2) Descrição
+
+TODO: Achar kerneis legais.
+
+- [Exemplo de notebook que faz uma análise exploratória focada procurar erros nos dados](https://github.com/vitaliset/projetos-de-estudo/blob/main/New%20York%20City%20Taxi%20Fare%20Prediction/1_procurando_erros.ipynb).
+
+Extras:
+- Iremos discutir aspectos de validação out-of-time no futuro, mas esse notebook discuti uma análise exploratória para estudo de estabilidade temporal com uma [técnica interessante](https://vitaliset.github.io/covariate-shift-2-classificador-binario/):
+    - [Exemplo de notebook que faz uma análise exploratória focada em problemas de drift temporal dos dados](https://github.com/vitaliset/projetos-de-estudo/blob/main/New%20York%20City%20Taxi%20Fare%20Prediction/2_dinamica_temporal.ipynb).
+
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line2.png"></center></p>
+
+## 18) Kaggle Challenge
+
+TODO
+
+### 18.1) Requisitos sugeridos
+
+Atividades 16 e 17.
+
+### 18.2) Descrição
 
 Escolher um dataset do Kaggle e limpar os dados + aplicar um modelo de ML, avaliando os resultados (qual métrica utilizar pensando no problema que estou preocupado em resolver?)
 
@@ -439,15 +484,15 @@ Escolher um dataset do Kaggle e limpar os dados + aplicar um modelo de ML, avali
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line2.png"></center></p>
 
-## 18) Aula sobre dicas práticas da especialização (básica) de ML do Andrew
+## 19) Aula sobre dicas práticas da especialização (básica) de ML do Andrew
 
 TODO: Discussão em alto nível sobre validação, um pouco do ciclo de vida do desenvolvimento de um modelo de Aprendizado de Máquina Supervisionado, MLOps e Ética.
 
-### 18.1) Requisitos sugeridos
+### 19.1) Requisitos sugeridos
 
-Atividade 17.
+Atividade 18.
 
-### 18.2) Descrição
+### 19.2) Descrição
 
 Infelizmente, a partir do segundo curso do Andrew, é necessário se inscrever pelo Coursera porque os vídeos não estão disponíveis no YouTube. Não se preocupe, o conteúdo continua gratuíto se você se inscrever como **ouvinte**.
 
@@ -477,15 +522,15 @@ Infelizmente, a partir do segundo curso do Andrew, é necessário se inscrever p
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line2.png"></center></p>
 
-## 19) Aula de árvores de decisão da especialização (básica) de ML do Andrew
+## 20) Aula de árvores de decisão da especialização (básica) de ML do Andrew
 
 TODO
 
-### 19.1) Requisitos sugeridos
+### 20.1) Requisitos sugeridos
 
-Atividade 18.
+Atividade 19.
 
-### 19.2) Descrição
+### 20.2) Descrição
 
 Infelizmente, a partir do segundo curso do Andrew, é necessário se inscrever pelo Coursera porque os vídeos não estão disponíveis no YouTube. Não se preocupe, o conteúdo continua gratuíto se você se inscrever como **ouvinte**.
 
@@ -507,21 +552,7 @@ Infelizmente, a partir do segundo curso do Andrew, é necessário se inscrever p
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line2.png"></center></p>
 
-## 20) Curso de intermediário de ML do Kaggle Learn
-
-TODO
-
-### 20.1) Requisitos sugeridos
-
-Atividade 19.
-
-### 20.2) Descrição
-
-- [Kaggle Learn - Intermediate Machine Learning](https://www.kaggle.com/learn/intro-to-machine-learning) (4h).
-
-<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
-
-## 21) Otimização de hiperparâmetros
+## 21) Curso de intermediário de ML do Kaggle Learn
 
 TODO
 
@@ -531,65 +562,81 @@ Atividade 20.
 
 ### 21.2) Descrição
 
+- [Kaggle Learn - Intermediate Machine Learning](https://www.kaggle.com/learn/intro-to-machine-learning) (4h).
+- [Validação out of time - Experian (Serasa)](https://www.experian.com/blogs/insights/2018/06/understanding-validation-samples-within-model-development/).
+- [Diagrama de validação out-of-space e out-of-time - Documentação do fklearn - Nubank](https://fklearn.readthedocs.io/en/latest/examples/fklearn_overview.html?highlight=out-of-ID#Spliting-the-dataset-into-train-and-holdout).
+
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
+
+## 22) Otimização de hiperparâmetros
+
+TODO
+
+### 22.1) Requisitos sugeridos
+
+Atividade 21.
+
+### 22.2) Descrição
+
 - [Hyperparameter optimization - Wikipedia](https://en.wikipedia.org/wiki/Hyperparameter_optimization)
 - [Hyperparameter Optimization - The Math of Intelligence #7 - Siraj Raval](https://youtu.be/ttE0F7fghfk) (10min). Ele é meio impreciso em alguns poucos momentos não muito relevantes e entra em alguns tópicos que não são essenciais, mas é interessante para ver a ideia geral.
 - [Nunca Mais Use Grid Search Para Ajustar Hiperparâmetros - Mario Filho](https://youtu.be/WhnkeasZNHI) (32min)
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
-## 22) Curso de feature engineering do Kaggle Learn
+## 23) Curso de feature engineering do Kaggle Learn
 
 TODO
 
-### 22.1) Requisitos sugeridos
+### 23.1) Requisitos sugeridos
 
-Atividade 20.
+Atividade 21.
 
-### 22.2) Descrição
+### 23.2) Descrição
 
 - [Kaggle Learn - Feature Engineering](https://www.kaggle.com/learn/feature-engineering) (5h).
 - [Aula avulsa do curso de Data Cleaning sobre dataframes com colunas do tipo data](https://www.kaggle.com/code/alexisbcook/parsing-dates) (1h).
 - [One-Hot, Label, Target e K-Fold Target Encoding, claramente explicados!!! - StatQuest](https://youtu.be/589nCGeWG1w)
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
-## 23) Curso de explicabilidade do Kaggle Learn
+## 24) Curso de explicabilidade do Kaggle Learn
 
 TODO
 
-### 23.1) Requisitos sugeridos
+### 24.1) Requisitos sugeridos
 
-Atividade 20.
+Atividade 21.
 
-### 23.2) Descrição
+### 24.2) Descrição
 
 - [Kaggle Learn - Machine Learning Explainability](https://www.kaggle.com/learn/machine-learning-explainability) (4h).
 - [SHAP Values Explained Exactly How You Wished Someone Explained to You - Samuele Mazzanti](https://towardsdatascience.com/shap-explained-the-way-i-wish-someone-explained-it-to-me-ab81cc69ef30)
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
-## 24) Curso de ética do Kaggle Learn
-
-TODO
-
-### 24.1) Requisitos sugeridos
-
-Atividade 20.
-
-### 24.2) Descrição
-
-- [Kaggle Learn - Intro to AI Ethics](https://www.kaggle.com/learn/intro-to-ai-ethics) (4h).
-
-<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
-
-## 25) Aula aprendizado não supervisionado da especialização (básica) de ML do Andrew
+## 25) Curso de ética do Kaggle Learn
 
 TODO
 
 ### 25.1) Requisitos sugeridos
 
-Atividade 20.
+Atividade 21.
 
 ### 25.2) Descrição
+
+- [Kaggle Learn - Intro to AI Ethics](https://www.kaggle.com/learn/intro-to-ai-ethics) (4h).
+
+<p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
+
+## 26) Aula aprendizado não supervisionado da especialização (básica) de ML do Andrew
+
+TODO
+
+### 26.1) Requisitos sugeridos
+
+Atividade 21.
+
+### 26.2) Descrição
 
 Infelizmente, a partir do segundo curso do Andrew, é necessário se inscrever pelo Coursera porque os vídeos não estão disponíveis no YouTube. Não se preocupe, o conteúdo continua gratuíto se você se inscrever como **ouvinte**.
 
@@ -610,15 +657,15 @@ Infelizmente, a partir do segundo curso do Andrew, é necessário se inscrever p
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
-## 26) Algoritmos baseados em distância
+## 27) Algoritmos baseados em distância
 
 TODO
 
-### 26.1) Requisitos sugeridos
+### 27.1) Requisitos sugeridos
 
-Atividade 25.
+Atividade 26.
 
-### 26.2) Descrição
+### 27.2) Descrição
 
 - [K-nearest neighbors, Clearly Explained - StatQuest](https://youtu.be/HVXime0nQeI) (5min)
 - [K-means clustering = StatQuest](https://youtu.be/4b5d3muPQmA) (9min)
@@ -627,15 +674,15 @@ Atividade 25.
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
-## 27) Introdução ao GitHub
+## 28) Introdução ao GitHub
 
 TODO
 
-### 27.1) Requisitos sugeridos
+### 28.1) Requisitos sugeridos
 
 Não há.
 
-### 27.2) Descrição
+### 28.2) Descrição
 
 - [GitHub - Guia Completo do Iniciante - Felipe - Dev Samurai](https://youtu.be/UbJLOn1PAKw) (22min)
 - [Introdução ao GitHub - Treinamento Microsoft](https://learn.microsoft.com/pt-BR/training/modules/introduction-to-github/)
@@ -695,6 +742,7 @@ Essa é uma lista (não exaustiva) de temas interessantes que podem ser usados p
 ## Fairness
 - [A Justiça da Sociedade Algorítmica - Ramon Vilarino](https://youtu.be/iBfpL0aA7w4)
 - [Fairness em Machine Learning - Nubank ML Meetup - Tatyana Zabanova](https://youtu.be/LWt4LZmpasc)
+- [Dealing with bias and fairness in AI systems - Pedro Saleiro](https://youtu.be/yqLzzoBYDRM)
 
 ## Redes Neurais (Deep Learning)
 - [Kaggle Learn - Intro to Deep Learning](https://www.kaggle.com/learn/intro-to-deep-learning)
