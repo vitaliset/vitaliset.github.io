@@ -765,6 +765,7 @@ Essa é uma lista (não exaustiva) de temas interessantes que podem ser usados p
 - [Remoção de stop words com Python e NLTK - IA Expert Academy](https://youtu.be/og-t1HLey7I)
 - [Stemming com NLTK e Python - IA Expert Academy](https://youtu.be/kTlYIuveYJE)
 - [Word2Vec - Skipgram and CBOW - The Semicolon](https://youtu.be/UqRCEmrv1gQ)
+- [Processamento Neural de Linguagem Natural em Português - Coursera USP](https://www.coursera.org/learn/processamento-neural-linguagem-natural-em-portugues-i)
 
 ## Sistemas de Recomendação (RecSys)
 - [Unsupervised Learning, Recommenders, Reinforcement Learning by Andrew Ng](https://www.coursera.org/learn/unsupervised-learning-recommenders-reinforcement-learning?specialization=machine-learning-introduction#syllabus)
@@ -797,6 +798,11 @@ Essa é uma lista (não exaustiva) de temas interessantes que podem ser usados p
 - [Seleção de variáveis: uma utilização crítica do Boruta - Carlo Lemos](https://vitaliset.github.io/boruta/)
 
 ## Python
+- Cursos de Python da USP no Coursera - Fábio Kon
+    - [Introdução à Ciência da Computação com Python Parte 1](https://www.coursera.org/learn/ciencia-computacao-python-conceitos) 
+    - [Introdução à Ciência da Computação com Python Parte 2](https://www.coursera.org/learn/ciencia-computacao-python-conceitos-2) 
+    - [Laboratório de Programação Orientada a Objetos - Parte 1](https://www.coursera.org/learn/lab-poo-parte-1)
+    - [Laboratório de Programação Orientada a Objetos - Parte 2](https://www.coursera.org/learn/lab-poo-parte-2)
 - [Intermediate Python in 6 hours - freeCodeCamp.org](https://youtu.be/HGOBQPFzWKo)
 - [Python Programming Beginner Tutorials - Corey Schafer](https://youtube.com/playlist?list=PL-osiE80TeTskrapNbzXhwoFUiLCjGgY7)
 - [Python Tutorial: Iterators and Iterables - What Are They and How Do They Work? - Corey Schafer](https://youtu.be/jTYiNjvnHZY)
