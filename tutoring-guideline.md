@@ -729,6 +729,7 @@ Essa é uma lista (não exaustiva) de temas interessantes que podem ser usados p
 - [AdaBoost, Clearly Explained](https://youtu.be/LsK-xG1cLYA)
 - [Gradient Boost playlist - StatQuest](https://youtube.com/playlist?list=PLblh5JKOoLUJjeXUvUE0maghNuY2_5fY6)
 - [XGBoost playlist - StatQuest](https://youtube.com/playlist?list=PLblh5JKOoLULU0irPgs1SnKO6wqVjKUsQ)
+- [Why XGBoost is better than GBM? - Damien Benveniste](https://newsletter.theaiedge.io/p/why-xgboost-is-better-than-gbm)
 - [XGBoost vs LightGBM: How Are They Different - neptune.ai/blog](https://neptune.ai/blog/xgboost-vs-lightgbm)
 - [Ensemble: Boosting, Bagging, and Stacking - Machine Learning Interview Q&A for Data Scientists - Emma Ding](https://youtu.be/sN5ZcJLDMaE)
 - [Gradient Boosting (GBM) and XGBoost - Machine Learning Interview Q&A for Data Scientists - Emma Ding](https://youtu.be/yw-E__nDkKU)
