@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Conditional Density Estimation
-featured-img: threshold_dependent_opt
+featured-img: cde
 category: [🇺🇸, uncertainty quantification]
 mathjax: true
 summary: CDE is the process of estimating the probability density function of a random variable given the values other variables.
@@ -307,7 +307,7 @@ ___
 
 $$ L(f, \hat{f}) = \mathbb{E}_X\left( \int \left( \hat{f}(y \,|\, X) - f(y \,|\, X) \right)^2 dy \right) = \int \int \left( \hat{f}(y \,|\, X=x) - f(y \,|\, X=x) \right)^2  dy \, f(x) \, dx.$$
 
-<p><div align="justify">$\oint$ <em>This metric differs somewhat from the mean square error as empirical risk for our point estimates $h(x)$. When we calculate $\frac{1}{n} \sum</em>{i=1}^n \left( h(x_i) - y<em>i \right)$, we're effectively estimating.</em></div></p>
+<p><div align="justify">$\oint$ <em>This metric differs somewhat from the mean square error as empirical risk for our point estimates $h(x)$. When we calculate $\frac{1}{n} \sum_{i=1}^n \left( h(x_i) - y_i \right)$, we're effectively estimating.</em></div></p>
 
 $$\mathbb{E}_{(X, Y)}\left( h(X) - Y \right) = \int \int \left( h(x) - y \right)^2 f(x,y) \, dx \, dy.$$
 
@@ -323,7 +323,7 @@ $$ L(f, \hat{f}) = \int \int \left( \hat{f}(y \,|\, X=x) \right)^2 f(x) \, dy \,
 
 $$ \int \left( \int \left( \hat{f}(y \,|\, X=x) \right)^2\, dy \right) f(x)  \, dx, $$
 
-<p><div align="justify">and the interior integral can be calculated using a numerical integration method while the x-integral can be estimated using an empirical average in a validation sample $S=(x_i, y<em>i)</em>{i=1}^n$. Specifically, we have</div></p>
+<p><div align="justify">and the interior integral can be calculated using a numerical integration method while the x-integral can be estimated using an empirical average in a validation sample $S=(x_i, y_i)_{i=1}^n$. Specifically, we have</div></p>
 
 $$ \frac{1}{n} \sum_{i=1}^n \left( \int  \left( \hat{f}(y \,|\, X=x_i) \right)^2 \, dy \right). $$
 
@@ -554,15 +554,15 @@ ___
 
 <p><div align="justify">FlexCode takes a fundamentally different approach to the CDE problem by employing arguments from linear algebra to estimate the conditional probability density function using a function basis.</div></p>
 
-<p><div align="justify">The space of <a href="https://mathworld.wolfram.com/L2-Space.html">square integrable functions</a> ($L^2(\mathbb{R})$) is a vector space equipped with an inner product defined as $\left\langle g, h\right\rangle = \int_{\mathbb{R}} g(t)\, h(t) \, dt$. Similar to finite-dimensional vector spaces, it possesses a (in this case, infinite) basis $\left{ \phi<em>i \in L^2(\mathbb{R}) : i \in \mathbb{N}\right}$, where any function $g \in L^2(\mathbb{R})$ can be expressed as a linear combination of the basis elements: $g(t) = \sum</em>{i=1}^\infty \beta_i \phi_i(t)$, for all $t \in \mathbb{R}$. Furthermore, it is possible to impose an orthonormal condition on the basis, such that $\left\langle \phi_i, \phi<em>j\right\rangle = \delta</em>{i,j}$, where $\delta_{i,j}$ equals $1$ if $i = j$ and $0$ otherwise [<a href="#bibliography">3</a>]. To help illustrate this concept, if you are unfamiliar with it, consider the analogy to the application of <a href="https://en.wikipedia.org/wiki/Fourier_series">Fourier series</a>.</div></p>
+<p><div align="justify">The space of <a href="https://mathworld.wolfram.com/L2-Space.html">square integrable functions</a> ($L^2(\mathbb{R})$) is a vector space equipped with an inner product defined as $\left\langle g, h\right\rangle = \int_{\mathbb{R}} g(t)\, h(t) \, dt$. Similar to finite-dimensional vector spaces, it possesses a (in this case, infinite) basis $\{ \phi_i \in L^2(\mathbb{R}) : i \in \mathbb{N}\}$, where any function $g \in L^2(\mathbb{R})$ can be expressed as a linear combination of the basis elements: $g(t) = \sum_{i=1}^\infty \beta_i \phi_i(t)$, for all $t \in \mathbb{R}$. Furthermore, it is possible to impose an orthonormal condition on the basis, such that $\left\langle \phi_i, \phi_j\right\rangle = \delta_{i,j}$, where $\delta_{i,j}$ equals $1$ if $i = j$ and $0$ otherwise [<a href="#bibliography">3</a>]. To help illustrate this concept, if you are unfamiliar with it, consider the analogy to the application of <a href="https://en.wikipedia.org/wiki/Fourier_series">Fourier series</a>.</div></p>
 
-<p><div align="justify">With any fixed orthonormal basis $\left{ \phi_i \right}$, it is possible to express the conditional probability density function as follows [<a href="#bibliography">3</a>]:</div></p>
+<p><div align="justify">With any fixed orthonormal basis $\{ \phi_i \}$, it is possible to express the conditional probability density function as follows [<a href="#bibliography">3</a>]:</div></p>
 
 $$f(y \,|\, X=x) = \sum_{i=1}^\infty \beta_i(x)\, \phi_i(y),$$
 
 <p><div align="justify">In this formulation, we explicitly incorporate the dependence of $X=x$ within the coefficients of the linear combination.</div></p>
 
-<p><div align="justify">It is worth noting that due to the orthonormality of the basis $\left{ \phi_i \right}$, we have the following property:</div></p>
+<p><div align="justify">It is worth noting that due to the orthonormality of the basis $\{ \phi_i \}$, we have the following property:</div></p>
 
 $$
 \begin{align*}
