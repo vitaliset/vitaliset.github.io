@@ -422,4 +422,4 @@ ___
 
 ___
 
-<p><div align="justify">You can find all files and environments for reproducing the experiments in the <a href="https://github.com/vitaliset/blog-notebooks/tree/main/Blog_Threshold_Dependent_Opt_2023_01_06">repository of this post</a>.</div></p>
+<p><div align="justify">You can find all files and environments for reproducing the experiments in the <a href="https://github.com/vitaliset/blog-notebooks/tree/main/Blog_Threshold_Dependent_Opt_2023_01_06">repository of this post</a>. In addition, I recorded a <a href="https://youtu.be/I6WDGNC_YJQ">video version</a> of this post in Portuguese.</div></p>
