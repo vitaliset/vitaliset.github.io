@@ -13,11 +13,11 @@ summary: CDE is the process of estimating the probability density function of a 
 
 <p><div align="justify">The holistic nature of CDE affords a deeper understanding of data characteristics and proves beneficial in addressing two fundamental aspects: evaluating model trustworthiness outcomes and accommodating multi-modal.</div></p>
 
-1. <p><div align="justify"><strong>Model Trustworthiness:</strong> Unlike point estimation predictions, which offer no insight into their own reliability or uncertainty, CDE provides a full distribution of potential outcomes, thereby inherently conveying information about prediction confidence. The varaince of the predicted distribution can act as a measure of uncertainty or confidence, affording users a more comprehensive understanding of the predictions. Such an understanding proves critical when making decisions based on these predictions. For instance, in the healthcare sector, a prediction about patient outcomes accompanied by an understanding of its confidence or uncertainty could lead to more informed and suitable medical decisions.</div></p>
+1. <p><div align="justify"><strong>Model trustworthiness:</strong> Unlike point estimation predictions, which offer no insight into their own reliability or uncertainty, CDE provides a full distribution of potential outcomes, thereby inherently conveying information about prediction confidence. The varaince of the predicted distribution can act as a measure of uncertainty or confidence, affording users a more comprehensive understanding of the predictions. Such an understanding proves critical when making decisions based on these predictions. For instance, in the healthcare sector, a prediction about patient outcomes accompanied by an understanding of its confidence or uncertainty could lead to more informed and suitable medical decisions.</div></p>
 
 2. <p><div align="justify"><strong>Multi-modal outcomes:</strong> Traditional regression or classification problems, generally focused on single point predictions, often fall short in capturing the full complexity of real-world phenomena. This shortfall becomes particularly apparent when a single input could feasibly yield multiple valid outputs, a situation termed as multi-modality. Consider a task of predicting salary based on certain features, but we're unsure if the individual resides in a state with a high or low average salary. In such a context, a more nuanced salary estimate shouldn't merely be an average drawn from both regions. Rather, it would be more fitting to present a bi-modal distribution with two distinct peaks. Each peak would denote a plausible salary range for the individual, depending on whether they live in one state or another.</div></p>
 
-<p><div align="justify">$\oint$ <em>The field of conformal predictions aims to address this uncertainty by estimating confidence intervals $IC(X=x)$ around the model's predictions, such that $Y\,|\,X=x \in IC(X=x)$ with a certain desired confidence level [<a href="#bibliography">1</a>]. Interpreting the confidence interval begins to address some of the queries we raised earlier. However, having only the interval extremes (which are naturally attempts to estimate conditional quantiles) doesn't fully portray the uncertainty associated with your prediction. This limitation is particularly evident when dealing with multi-modal densities or if you have a utility metric associated with your predictions and aim to examine the average utility for an individual, the logical approach would be to perform an integral on the individual's probability density.</em></div></p>
+<p><div align="justify">$\oint$ <em>The field of conformal predictions aims to address this uncertainty by estimating prediction sets $\tau(X=x)$, such that $\mathbb{P}\left(Y,|,X=x \in \tau(X=x)\right) \geq 1 - \alpha$ with a certain desired coverage $\alpha$ [<a href="#bibliography">1</a>]. Interpreting the prediction sets, for instance by inspecting their size, begins to address some of the queries we raised earlier. However, in regression tasks, the prediction set is usually framed as an interval. Having only the interval extremes, which naturally attempt to estimate conditional quantiles, does not fully portray the uncertainty associated with the prediction. This limitation is particularly evident when dealing with multi-modal densities. Or, if you have a utility metric associated with your predictions and aim to examine the average utility for an individual, the logical approach would be to perform an integral on the individual's probability density.</em></div></p>
 
 ___
 
@@ -229,16 +229,16 @@ class ConditionalNearestNeighborsKDE(BaseEstimator):
     Parameters
     ----------
     nn_estimator : NearestNeighbors instance, default=None
-    A pre-configured instance of a `~sklearn.neighbors.NearestNeighbors` class
-    to use for finding nearest neighbors. If not specified, a
-    `~sklearn.neighbors.NearestNeighbors` instance with `n_neighbors=100`
-    will be used.
+        A pre-configured instance of a `~sklearn.neighbors.NearestNeighbors` class
+        to use for finding nearest neighbors. If not specified, a
+        `~sklearn.neighbors.NearestNeighbors` instance with `n_neighbors=100`
+        will be used.
 
     kde_estimator : KernelDensity instance, default=None
-    A pre-configured instance of a `~sklearn.neighbors.KernelDensity` class
-    to use for estimating the kernel density. If not specified, a
-    `~sklearn.neighbors.KernelDensity` instance with `bandwidth="scott"`
-    will be used.
+        A pre-configured instance of a `~sklearn.neighbors.KernelDensity` class
+        to use for estimating the kernel density. If not specified, a
+        `~sklearn.neighbors.KernelDensity` instance with `bandwidth="scott"`
+        will be used.
     """
 
     def __init__(self, nn_estimator=None, kde_estimator=None):
@@ -365,7 +365,7 @@ def squared_loss(y_true, cde_preds, y_grid, n_jobs=-1):
 
     y_grid : array-like of shape (n_samples,)
         The grid of y values used for computing the area under the curve (AUC)
-        for the squared PDF.
+        for the squared probability density function.
 
     n_jobs : int, optional
         The number of jobs to run in parallel. '-1' means using all processors.
