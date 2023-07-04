@@ -213,12 +213,11 @@ ___
 
 ## <a name="bibliography">Bibliography</a>
 
-[1] [Dataset Shift in Machine Learning. The MIT Press. Joaquin Quiñonero-Candela, Masashi Sugiyama, Anton Schwaighofer and Neil D. Lawrence](https://mitpress.mit.edu/9780262545877/dataset-shift-in-machine-learning/)
+<p><div align="justify">[1] <a href="https://mitpress.mit.edu/9780262545877/dataset-shift-in-machine-learning/">Dataset Shift in Machine Learning. The MIT Press. Joaquin Quiñonero-Candela, Masashi Sugiyama, Anton Schwaighofer and Neil D. Lawrence.</a></div></p>
 
-[2] [Monitoring Machine Learning Models in Production. Towards Data Science. Emeli Dral.](https://towardsdatascience.com/monitoring-machine-learning-models-in-production-how-to-track-data-quality-and-integrity-391435c8a299)
+<p><div align="justify">[2] <a href="https://towardsdatascience.com/monitoring-machine-learning-models-in-production-how-to-track-data-quality-and-integrity-391435c8a299">Monitoring Machine Learning Models in Production. Towards Data Science. Emeli Dral.</a></div></p>
 
-[3] [A Guide to Monitoring Machine Learning Models in Production. NVIDIA Developer Blog. Kurtis Pykes.](https://developer.nvidia.com/blog/a-guide-to-monitoring-machine-learning-models-in-production/)
-
+<p><div align="justify">[3] <a href="https://developer.nvidia.com/blog/a-guide-to-monitoring-machine-learning-models-in-production/">A Guide to Monitoring Machine Learning Models in Production. NVIDIA Developer Blog. Kurtis Pykes.</a></div></p>
 ___
 
 <p><div align="justify">You can find all files and environments for reproducing the experiments in the <a href="https://github.com/vitaliset/blog-notebooks/tree/main/Blog_Covariate_Shift_Introduction_2020_08_02">repository of this post</a>.</div></p>
