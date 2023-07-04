@@ -753,4 +753,4 @@ ___
 
 ___
 
-<p><div align="justify"><div align="justify">You can find all files and environments for reproducing the experiments in the <a href="https://github.com/vitaliset/blog-notebooks/tree/main/Blog_Conditional_Density_Estimation_with_FlexCode_2023_06_25">repository of this post</a>.</div></div></p>
+<p><div align="justify">You can find all files and environments for reproducing the experiments in the <a href="https://github.com/vitaliset/blog-notebooks/tree/main/Blog_Conditional_Density_Estimation_with_FlexCode_2023_06_25">repository of this post</a>.</div></p>
