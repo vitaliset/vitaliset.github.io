@@ -23,7 +23,7 @@ $$\left(Y \,|\, X_1=x_1, X_2=x_2,\cdots, X_n=x_n\right)\sim \textrm{Bernoulli}(p
 
 <p><div align="justify">Generally, during cross-validation, we expect that the performance of our estimated function will remain consistent on the validation set when faced with new data. Machine learning in non-stationary environments, however, presents a challenge: What happens if there's a dataset shift, meaning the distribution of the random vector $V$ differs in new data? Can we realistically expect the model to uphold its validated performance?</div></p>
 
-<p><div align="justify">In this context, we encounter two common scenarios <a href=#bibliography>[1]</a>. The first, concept shift, takes place when the function $f$ connecting the variables $X_i$ and $Y$ changes. A seemingly less noticeable but equally alarming issue arises when the relationship between the explanatory and target variables remains constant, but the distribution of variables $X_i$ in new examples deviates from the distribution in the training data. This is known as covariate shift, a situation that we'll learn to identify and offer a potential solution for in this series of posts.</div></p>
+<p><div align="justify">In this context, we encounter two common scenarios [<a href="#bibliography">1</a>]. The first, concept shift, takes place when the function $f$ connecting the variables $X_i$ and $Y$ changes. A seemingly less noticeable but equally alarming issue arises when the relationship between the explanatory and target variables remains constant, but the distribution of variables $X_i$ in new examples deviates from the distribution in the training data. This is known as covariate shift, a situation that we'll learn to identify and offer a potential solution for in this series of posts.</div></p>
 
 <p><div align="justify">But first, let's create an artificial scenario that exhibits covariate shift. This will help illuminate the concepts through a practical situation and explore the problems that may emerge if this shift isn't properly identified and addressed.</div></p>
 
@@ -209,7 +209,7 @@ ___
 
 <p><div align="justify">In this series of posts, I plan to introduce some slightly more unconventional methods for identifying covariate shift. Subsequently, we'll explore the problem through Vapnik's empirical risk minimization framework. From there, we'll derive an elegant method to address it, using a technique that will serve as a diagnostic tool for identifying dataset shift.</div></p>
 
-<p><div align="justify">$\oint$ <em>Keep in mind that this is just one of the crucial elements when it comes to monitoring machine learning models. For a comprehensive guide that addresses the main potential issues, I recommend the references <a href=#bibliography>[2, 3]</a>.</em></div></p>
+<p><div align="justify">$\oint$ <em>Keep in mind that this is just one of the crucial elements when it comes to monitoring machine learning models. For a comprehensive guide that addresses the main potential issues, I recommend the references [<a href="#bibliography">2, 3</a>].</em></div></p>
 
 ## <a name="bibliography">Bibliography</a>
 
