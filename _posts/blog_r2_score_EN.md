@@ -1,0 +1,190 @@
+---
+layout: post
+title: The R&#178; score does not vary between 0 and 1
+featured-img: covariate_0_formulando
+category: [🇺🇸, 🇧🇷, basic]
+mathjax: true
+summary: R&#178; as a comparison of the MSE with simple baseline model and its potential for generalization.
+---
+
+<p><div align="justify">Este texto tem uma versão em português que pode ser encontrada no <a href="https://github.com/vitaliset/blog-notebooks/tree/main/Blog_R2_Score_2023_10_12">repositório de experimentos</a>.</div></p>
+
+___
+
+<p><div align="justify">The coefficient of determination, known as $R^2$, is a fundamental metric in regression analyses. However, its definition and interpretation are not always straightforward. Indeed, there are several ways to define the $R^2$ and, although all are equivalent, each offers a different interpretative nuance. Some of these interpretations are more intuitive, facilitating an immediate understanding of the possible values, while others can lead to misunderstandings.</div></p>
+
+<p><div align="justify">The current version of scikit-learn, in its docstring for <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html"><code>sklearn.metrics.r2_score</code></a>, mentions that the $R^2$ can range from negative infinity to 1. However, it&#39;s not uncommon to find data scientists claiming that the range of possible values for $R^2$ is strictly between 0 and 1. One of the reasons for this discrepancy lies in the classical interpretation of $R^2$, which is traditionally understood as the proportion of variance explained by the model relative to the total variance of the target variable [<a href="#bibliography">1</a>].</div></p>
+
+<p><div align="justify">Throughout this text, I will address the interpretation that I consider most enlightening and relevant. With it, I hope to clarify some peculiarities of the $R^2$ and highlight its importance as a robust metric, frequently referred to in regression problems.</div></p>
+
+___
+
+## Mean Squared Error and the choice of a constant model
+
+<p><div align="justify">The $R^2$ is a common metric in regression. However, often the first metric introduced for regression problems is the Mean Squared Error (MSE). The MSE of a model $h$ on a dataset $S = { (x_i, y_i) }_{i=1}^n$ is defined by</div></p>
+
+$$ \textrm{MSE}(h) = \frac{1}{n} \sum_{i=1}^n \left(y_i - h(x_i)\right)^2, $$
+
+<p><div align="justify">where we chose not to denote the dependence on $S$ in order to keep the notation more streamlined.</div></p>
+
+<p><div align="justify">Given this definition, an intriguing question arises: if you had to create a model that was merely a constant, which value would you choose? Many might answer that they would choose the mean, which is indeed one of the correct answers. However, why not consider the median, mode, or some other descriptive statistic?</div></p>
+
+<p><div align="justify">The answer to this question is intrinsically linked to the cost function we wish to optimize. This choice is, in fact, a problem of decision theory [<a href="#bibliography">2</a>]. For instance, if the goal is to optimize the MSE, then we would need to choose an $\alpha \in \mathbb{R}$ such that $h_\alpha(x) = \alpha$ minimizes the $\textrm{MSE}(h_\alpha)$. Mathematically, this is expressed as</div></p>
+
+$$ \alpha^* = \arg\min_{\alpha \in \mathbb{R}} \textrm{MSE}(h_\alpha) = \arg\min_{\alpha \in \mathbb{R}} \left( \frac{1}{n} \sum_{i=1}^n \left(y_i - \alpha\right)^2 \right). $$
+
+<p><div align="justify">This function may seem complex at first glance, but it becomes simpler when considering only $\alpha$ as the free variable, which is how we approach this optimization problem. By expanding the square and performing the summation, we have a polynomial function of degree 2 in $\alpha$ in the form</div></p>
+
+$$\frac{1}{n} \sum_{i=1}^n \left(y_i - \alpha\right)^2 = \frac{1}{n} \sum_{i=1}^n \left(y_i^2 -2\alpha y_i + \alpha^2 \right) = \alpha^2  + \left(\frac{-2}{n} \sum_{i=1}^n y_i\right) \alpha+ \left(\frac{1}{n} \sum_{i=1}^n y_i^2\right).$$
+
+<p><div align="justify">In a quadratic function of the form $(a\,\alpha^2 + b\,\alpha + c)$, where $a&gt;0$, the minimum occurs at the vertex of the parabola, located at $\frac{-b}{2a}$. Thus, in our context, the minimum is</div></p>
+
+$$ \alpha^* = \frac{\left(\frac{-2}{n} \sum_{i=1}^n y_i\right)}{-2} = \frac{1}{n} \sum_{i=1}^n y_i = \bar{y}.$$
+
+<p><div align="justify">This means that, when minimizing the MSE, the optimal constant value is the average of the target $\bar{y}$ for this set. I encourage validating this result using other unrestricted optimization techniques such as: identifying critical points followed by analyzing the concavity of the function.</div></p>
+
+<p><div align="justify">This behavior changes when considering other metrics [<a href="#bibliography">3</a>]. For example, to minimize the Mean Absolute Error (MAE), the constant value that minimizes it is the median, while the value that minimizes accuracy is the mode, and for pinball loss, it&#39;s the associated quantile. It&#39;s important to emphasize that if we consider <code>sample_weight</code>, all these statistics should be computed in a weighted manner.</div></p>
+
+<p><div align="justify">$\oint$ <em>This is used in defining prediction values for the nodes of decision trees. Looking at the scikit-learn code for trees, we notice that, depending on the criterion, the <a href="https://github.com/scikit-learn/scikit-learn/blob/d7a114413d1f11bf5f7029cd519c9a29a66b1890/sklearn/tree/_criterion.pyx#L1036"><code>node_value</code></a> can vary. It&#39;s adjusted to reflect the value that minimizes the loss when the node makes a constant prediction. For example, for the MSE criterion, the leaf&#39;s prediction is the average of the target of the training samples that fall in that leaf, while for the MAE criterion, it&#39;s the median.</em></div></p>
+
+<p><div align="justify">$\oint$ <em>In practice, a model that predicts the target&#39;s average isn&#39;t feasible because to calculate the average of the test set, you would need to know the $y_i$ values of that sample. However, this perspective is useful for comparing a basic model with your model, as we will discuss next.</em></div></p>
+
+___
+
+## R&#178; as a comparison between your model and a constant model
+
+<p><div align="justify">Suppose I develop a model to predict a person&#39;s age based on their online behavior and obtain an MSE of 25 years squared. This number on its own might not be very informative. One way to interpret it is to calculate the Root Mean Squared Error, that is, $RMSE = \sqrt{MSE}$, resulting in an error of about 5 years. This value is more intuitive (I admit that, internally, I tend to think in terms of MAE), but it still doesn&#39;t provide a relative comparison like &quot;is it possible to get a value significantly lower than this?&quot;. The $R^2$ might not answer this question directly, but it aids in this evaluation.</div></p>
+
+<p><div align="justify">We&#39;ve already discussed a simple model that can serve as a benchmark. Imagine that the mean-based model already produces an MSE of 30. Suddenly, our previous model, which might have seemed excellent, doesn&#39;t stand out as much. If a simple model already achieves an MSE just slightly higher than the current model, is it worth implementing the more complex model in a production environment?</div></p>
+
+<p><div align="justify">The interpretation I have of $R^2$ is precisely this comparison. Its formula is:</div></p>
+
+$$ R^2(h) = 1 - \frac{MSE(h)}{MSE(\bar{y})},$$
+
+<p><div align="justify">where $\bar{y}$ represents the average of the target in the set $S$ in which we are evaluating the model.</div></p>
+
+<p><div align="justify">With this, we can understand the possible values of $R^2$:</div></p>
+
+- <p><div align="justify">If $R^2 = 1$, it means that $MSE(h) = 0$; that is, the model is perfect.</div></p>
+
+- <p><div align="justify">If $R^2 = 0$, we have $MSE(h) = MSE(\bar{y})$, indicating that our model is as effective as a model that simply provides the target&#39;s average.</div></p>
+
+- <p><div align="justify">For an $R^2$ between 0 and 1, we have $0 &lt; MSE(h) &lt; MSE(\bar{y})$. This indicates that the model has an error greater than zero, but less than that of a constant model based on the average.</div></p>
+
+- <p><div align="justify">A negative $R^2$ suggests that $MSE(h) &gt; MSE(\bar{y})$, meaning our model is less accurate than one that always provides the average.</div></p>
+
+<p><div align="justify">This interpretation helps in understanding the values obtained when using the function <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html"><code>sklearn.metrics.r2_score</code></a>. In the previous example, we would have an $R^2$ of $(1 - 25/30) \approx 0.17$, indicating a model that surpasses the simple model, but not very significantly.</div></p>
+
+```python
+import numpy as np
+from sklearn.datasets import fetch_california_housing
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(
+    *fetch_california_housing(return_X_y=True),
+    test_size=0.33,
+    random_state=42,
+)
+
+lr = LinearRegression().fit(X_train, y_train)
+
+def evaluate_model(y_true, y_pred):
+    print(f"MSE: {mean_squared_error(y_true, y_pred)}")
+    print(f"R^2: {r2_score(y_true, y_pred)}")
+    
+y_pred_lr =  lr.predict(X_test)
+evaluate_model(y_test, y_pred_lr)
+```
+
+    MSE: 0.5369686543372444
+    R^2: 0.5970494128783965
+
+```python
+y_mean_test = y_test.mean() * np.ones_like(y_test)
+evaluate_model(y_test, y_mean_test)
+```
+
+    MSE: 1.3325918152222385
+    R^2: 0.0
+
+```python
+y_pred_horrible_model = np.zeros_like(y_test)
+evaluate_model(y_test, y_pred_horrible_model)
+```
+
+    MSE: 5.6276808369101445
+    R^2: -3.2231092616846126
+
+<p><div align="justify">Although a model with an $R^2$ of zero might seem like the lowest achievable threshold, in reality, this metric uses a baseline model with data leakage. In practice, we build our models using training data, and in scenarios subject to &quot;dataset shift,&quot; there can be significant changes in fundamental statistics, such as the average.</div></p>
+
+```python
+y_mean_train = y_train.mean() * np.ones_like(y_test)
+evaluate_model(y_test, y_mean_train)
+```
+
+    MSE: 1.3326257277946882
+    R^2: -2.5448582275933163e-05
+
+<p><div align="justify">Regardless of these nuances, interpreting the $R^2$ in this way offers a valuable comparative mindset. It&#39;s always essential to compare your model with simple baselines, whether with established business rules or with more basic models, like a constant.</div></p>
+
+___
+
+## Generalization of R&#178; Beyond MSE
+
+<p><div align="justify">The notion of comparison with a basic or simple model can easily be generalized to other metrics, as long as we know which statistics to use as a baseline. Considering this, I propose extending this idea to the MAE using the median $\tilde{y}$ as the baseline model:</div></p>
+
+$$ R^2_{\textrm{MAE}}(h) = 1 - \frac{MAE(h)}{MAE(\tilde{y})}, $$
+
+<p><div align="justify">where</div></p>
+
+$$ \textrm{MAE}(h) = \frac{1}{n} \sum_{i=1}^n \left| y_i - h(x_i) \right|. $$
+
+<p><div align="justify">Thus, the $R^2_{\textrm{MAE}}$ provides a way to evaluate the model&#39;s performance relative to a simple baseline, using the MAE as the error metric.</div></p>
+
+```python
+from sklearn.metrics import mean_absolute_error
+
+def r2_score_mae(y_true, y_pred, *args, **kwargs):
+    mae_model = mean_absolute_error(y_true=y_true, y_pred=y_pred, *args, **kwargs)
+    y_median_true =  np.median(y_true) * np.ones_like(y_true)
+    mae_median = mean_absolute_error(y_true=y_true, y_pred=y_median_true, *args, **kwargs)
+    return 1 - mae_model/mae_median
+
+def evaluate_model_mae(y_true, y_pred):
+    print(f"MAE: {mean_absolute_error(y_true, y_pred)}")
+    print(f"R^2_MAE: {r2_score_mae(y_true, y_pred)}")
+
+evaluate_model_mae(y_test, y_pred_lr)
+```
+
+    MAE: 0.5295710106684688
+    R^2_MAE: 0.40256278728026484
+
+```python
+y_median_test = np.median(y_test) * np.ones_like(y_test)
+evaluate_model_mae(y_test, y_median_test)
+```
+
+    MAE: 0.8864044612448619
+    R^2_MAE: 0.0
+
+___
+
+## Final Considerations
+
+<p><div align="justify">The misconception that $R^2$ varies only between 0 and 1 originates from a simplified interpretation of its most common meaning: the proportion of the target&#39;s variance that is explained by the independent variables, which suggests that the value lies between 0% and 100%. In practice, in many cases, $R^2$ indeed falls within this range. However, in situations where the model is inferior to a simple horizontal model (i.e., a straight line representing the average), $R^2$ can have negative values. This negative scenario is often underestimated by the statistical community, as it is usually associated with overfitting situations. Rarely will a linear regression that tends to suffer underfitting be inferior to the horizontal model included in the hypothesis space of linear regression.</div></p>
+
+<p><div align="justify">Throughout this post, we analyzed some of the reasons why $R^2$ is such an interesting metric and widely used in regression problems. By understanding the implicit comparison with a baseline model, we gain a valuable perspective on the relative performance of our model, normalizing the less informative values of MSE when viewed in isolation. Moreover, the interpretation proposed here truly allows us to understand the resulting values in a clear and objective manner.</div></p>
+
+## <a name="bibliography">Bibliography</a>
+
+[1] [Coefficient of determination. Wikipedia.](https://en.wikipedia.org/wiki/Coefficient_of_determination)
+
+[2] [Introdução à Teoria da Decisão. Fundamentos de Inferência Bayesiana. Victor Fossaluza e Luís Gustavo Esteves.](https://vfossaluza.github.io/InfBayes/TeoDec.html)
+
+[3] [Estimação Pontual. Fundamentos de Inferência Bayesiana. Victor Fossaluza e Luís Gustavo Esteves.](https://vfossaluza.github.io/InfBayes/Estimacao.html#estima%C3%A7%C3%A3o-pontual)
+___
+
+<p><div align="justify">You can find all files and environments for reproducing the experiments in the <a href="https://github.com/vitaliset/blog-notebooks/tree/main/Blog_R2_Score_2023_10_12">repository of this post</a>.</div></p>
