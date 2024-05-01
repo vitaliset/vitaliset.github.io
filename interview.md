@@ -5,7 +5,7 @@ permalink: /interview/
 mathjax: true
 ---
 
-Depois de receber algumas perguntas sobre entrevistas no Google, resolvi consolidar um material com dicas de alguém que recentemente passou por esse processo. Espero que seja útil! :)
+Depois de receber algumas perguntas sobre entrevistas no Google, resolvi consolidar um material com dicas de alguém que recentemente passou por esse processo. Espero que seja útil! Essas dicas não são oficiais da Google ou de outras empresas, apenas um compilado de aprendizados que tive. :)
 
 ## Entrevista técnica (Leetcode-like)
 
