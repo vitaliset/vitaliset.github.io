@@ -17,6 +17,7 @@ social:
 navigation: # Navigation links
   - {name: 'Home', link: '/'}
   - {name: 'Links', link: '/links'}
+  - {name: 'Interview tips', link: '/interview'}
   - {name: 'About', link: '/about'}
 
 #tagline: >

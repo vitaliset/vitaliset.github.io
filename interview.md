@@ -13,16 +13,16 @@ Depois de receber algumas perguntas sobre entrevistas no Google, resolvi consoli
 
 - Priorize a comunicação durante todo o processo de entrevista. **Pense em voz alta!**
 - Encare a entrevista como uma dança com o seu entrevistador, com etapas e ritmo a seguir.
-- Prepare uma introdução de no máximo 30 segundos sobre sua educação e experiência de trabalho. Talvez você nem precise se apresentar.
-- Parafraseie o problema apresentado pelo entrevistador e faça perguntas sobre ele. Garanta que você entendeu o que precisa resolver.
-- Utilize casos de teste para confirmar o entendimento do problema. Clarifique também os edge cases, por exemplo, entendendo o que você deve retornar se o input for vazio, por exemplo.
-- Se não é óbvio como proceder, lembre-se de que "código que resolve o problema" é mais importante do que "código otimizado". Pense em soluções de força bruta antes de tentar algo mais elegante.
-- Seja receptivo a dicas do seu entrevistador. Ele conhece detalhadamente aquele problema e já viu várias pessoas tentando resolvê-lo com abordagens diferentes. Ele quer te ajudar.
-- Nunca comece a codificar sem perguntar se pode antes. É a oportunidade do entrevistador te dizer se já está confortável com a abordagem que você está seguindo. Se ele ainda não estiver, ele pode te ajudar com dicas nesse momento.
-- Faça proativamente um [teste de mesa](https://pt.stackoverflow.com/questions/220474/o-que-%C3%A9-um-teste-de-mesa-como-aplic%C3%A1-lo) no final, com algum exemplo que você validou o input/output no início para garantir a lógica da sua solução.
-- Esteja preparado para responder perguntas sobre complexidade de tempo e espaço, escolha de estruturas de dados e algoritmos, e possíveis melhorias ou variações.
+    - Prepare uma introdução de no máximo 30 segundos sobre sua educação e experiência de trabalho. Talvez você nem precise se apresentar.
+    - Parafraseie o problema apresentado pelo entrevistador e faça perguntas sobre ele. Garanta que você entendeu o que precisa resolver.
+    - Utilize casos de teste para confirmar o entendimento do problema. Clarifique também os edge cases, por exemplo, entendendo o que você deve retornar se o input for vazio, por exemplo.
+    - Se não é óbvio como proceder, lembre-se de que "código que resolve o problema" é mais importante do que "código otimizado". Pense em soluções de força bruta antes de tentar algo mais elegante.
+    - Seja receptivo a dicas do seu entrevistador. Ele conhece detalhadamente aquele problema e já viu várias pessoas tentando resolvê-lo com abordagens diferentes. Ele quer te ajudar.
+    - Nunca comece a codificar sem perguntar se pode antes. É a oportunidade do entrevistador te dizer se já está confortável com a abordagem que você está seguindo. Se ele ainda não estiver, ele pode te ajudar com dicas nesse momento.
+    - Faça proativamente um [teste de mesa](https://pt.stackoverflow.com/questions/220474/o-que-%C3%A9-um-teste-de-mesa-como-aplic%C3%A1-lo) no final, com algum exemplo que você validou o input/output no início para garantir a lógica da sua solução.
+    - Esteja preparado para responder perguntas sobre complexidade de tempo e espaço, escolha de estruturas de dados e algoritmos, e possíveis melhorias ou variações.
+    - Mostre interesse pela empresa e separe algumas perguntas relevantes ao entrevistador para fazer nos minutos finais de entrevista. Preste atenção na introdução do entrevistador, se você conseguir conectar perguntas ao que ele falou, melhor ainda.
 - A [entrevista de exemplo](https://youtu.be/XKu_SEDAykw?si=zp6YhHC8HhBiPU8x) que o Google disponibiliza demonstra muito be essa dança.
-- Mostre interesse pela empresa e separe algumas perguntas relevantes ao entrevistador para fazer nos minutos finais de entrevista. Preste atenção na introdução do entrevistador, se você conseguir conectar perguntas ao que ele falou, melhor ainda.
 - Seja positivo e demonstre que está gostando. A entrevista não é para ser algo torturante, deve ser prazerosa (apesar de altamente estressante).
 
 ### Como estudar
