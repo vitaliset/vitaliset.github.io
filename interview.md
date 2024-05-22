@@ -5,7 +5,7 @@ permalink: /interview/
 mathjax: true
 ---
 
-Depois de receber algumas perguntas sobre entrevistas no Google, resolvi consolidar um material com dicas de alguém que recentemente passou por esse processo. Espero que seja útil! Essas dicas não são oficiais da Google ou de outras empresas, apenas um compilado de aprendizados que tive. :)
+Depois de receber algumas perguntas sobre entrevistas no Google, resolvi consolidar um material com dicas de alguém que recentemente passou por esse processo. Espero que seja útil! Essas dicas não são oficiais do Google ou de outras empresas, apenas um compilado de aprendizados que tive. :)
 
 ## Entrevista técnica (Leetcode-like)
 
@@ -48,6 +48,5 @@ Depois de receber algumas perguntas sobre entrevistas no Google, resolvi consoli
 - Durante a entrevista comportamental, demonstre maturidade ao lidar com conflitos e mostre que é orientado por dados na resolução de problemas.
 - Tenha exemplos da sua trajetória profissional para respaldar suas respostas.
 - O [Jeff H Sipe](https://www.youtube.com/watch?v=tuL-WmYKBgo) tem ótimas dicas para esse tipo de entrevista. O canal dele também é útil para entender sobre o [hiring committee](https://www.youtube.com/watch?v=SqnrXBVaCo8), [levels](https://www.youtube.com/watch?v=cC9V5IH4B6k), [team match](https://www.youtube.com/watch?v=fG3noON-IWo) e eventuais dúvidas sobre o Google.
-
 
 Boa sorte! Vai dar tudo certo! :D
