@@ -9,8 +9,7 @@ summary: MSE and MAE can be misleading if your regression goal is to rank.
 
 <p><div align="justify">In supervised learning regression problems, the focus is generally on metrics that ensure the predicted value is close to the true value of the sample. Classic regression metrics are variations that involve the measure $| \hat{y_i} - y_i |$.</div></p>
 
-<p><div align="justify">However, it is not always essential to predict the exact value of the target variable precisely, as in some applications, exactness is not critical to the final objective. In many cases, achieving a good ranking of the predictions is sufficient to meet the demands of the business problem. Of course, this depends on the context, but with proper ranking, we can approach the problem similarly to setting a <p><a href="https://vitaliset.github.io/threshold-dependent-opt/">threshold in binary classification</a></p>
- or, more generally, as a policy problem. In this case, the most appropriate cutoff point is identified through additional analysis to implement a desired treatment or action, such as targeting individuals with an expected credit card expense greater than $\delta$ for a new product marketing campaign. In most companies, the policy is structured around buckets of relevant percentiles, which are inherently based on ranking.</div></p>
+<p><div align="justify">However, it is not always essential to predict the exact value of the target variable precisely, as in some applications, exactness is not critical to the final objective. In many cases, achieving a good ranking of the predictions is sufficient to meet the demands of the business problem. Of course, this depends on the context, but with proper ranking, we can approach the problem similarly to setting a <a href="https://vitaliset.github.io/threshold-dependent-opt/">threshold in binary classification</a> or, more generally, as a policy problem. In this case, the most appropriate cutoff point is identified through additional analysis to implement a desired treatment or action, such as targeting individuals with an expected credit card expense greater than $\delta$ for a new product marketing campaign. In most companies, the policy is structured around buckets of relevant percentiles, which are inherently based on ranking.</div></p>
 
 <p><div align="justify">In other scenarios, such as income estimation, the regression model is often used as an auxiliary variable in subsequent models. These models, frequently ensemble of decision trees, inherently disregard the exact value of variables, considering only their rankings. If the final model is, for instance, a logistic regression or even a neural network, simple transformations are typically applied, altering the distribution of the values but maintaining monotonicity. Again, the exact values matter much less than the ranking.</div></p>
 
@@ -127,9 +126,9 @@ ___
 
 ## ROCAUC for Classification
 
-<p><div align="justify">ROCAUC for classification is a very good binary classification metric for measuring ranking [<a href="#bibliography">3</a>]. It is a [class imbalance-invariant metric](https://pibieta.github.io/imbalanced_learning/notebooks/Metrics%201%20-%20Intro%20%26%20ROC%20AUC.html#proof-of-probabilistic-interpretation-of-the-roc-auc) and has a perfect interpretation for the ranking problem, being, in my experience, the primary metric used in the industry for binary classification problems when ranking is the primary goal.</div></p>
+<p><div align="justify">ROCAUC for classification is a very good binary classification metric for measuring ranking [<a href="#bibliography">3</a>]. It is a <a href="https://pibieta.github.io/imbalanced_learning/notebooks/Metrics%201%20-%20Intro%20%26%20ROC%20AUC.html#proof-of-probabilistic-interpretation-of-the-roc-auc">class imbalance-invariant metric</a> and has a perfect interpretation for the ranking problem, being, in my experience, the primary metric used in the industry for binary classification problems when ranking is the primary goal.</div></p>
 
-<p><div align="justify">It is possible to [prove](https://pibieta.github.io/imbalanced_learning/notebooks/Metrics%201%20-%20Intro%20%26%20ROC%20AUC.html#proof-of-probabilistic-interpretation-of-the-roc-auc) that in a binary classification problem with explanatory variables $X \in \mathcal{X}$ and $Y \in \{0, 1\}$, given a scoring/ranking function $f:\mathcal{X} \to \mathbb{R}$, then</div></p>
+<p><div align="justify">It is possible to <a href="https://pibieta.github.io/imbalanced_learning/notebooks/Metrics%201%20-%20Intro%20%26%20ROC%20AUC.html#proof-of-probabilistic-interpretation-of-the-roc-auc">prove</a> that in a binary classification problem with explanatory variables $X \in \mathcal{X}$ and $Y \in \{0, 1\}$, given a scoring/ranking function $f:\mathcal{X} \to \mathbb{R}$, then</div></p>
 
 $$\text{ROCAUC}(f) = \mathbb{P}\left( f(X_i) > f(X_j) \mid Y_i = 1, Y_j = 0 \right).$$
 
@@ -141,7 +140,7 @@ ___
 
 ## Estimating the ROCAUC via the Wilcoxon-Mann-Whitney statistic
 
-<p><div align="justify">The previous definition refers to the true ROCAUC value, rather than the estimated value we calculate using [`sklearn.metrics.roc_auc_score`](https://scikit-learn.org/1.5/modules/generated/sklearn.metrics.roc_auc_score.html). In an observed random sample of $(X, Y)$, $\{(x_i, y_i)\}_{i=1}^n$, the probabilistic version can be estimated using the Wilcoxon-Mann-Whitney statistic as</div></p>
+<p><div align="justify">The previous definition refers to the true ROCAUC value, rather than the estimated value we calculate using <a href="https://scikit-learn.org/1.5/modules/generated/sklearn.metrics.roc_auc_score.html"><code>sklearn.metrics.roc_auc_score</code></a>. In an observed random sample of $(X, Y)$, $\{(x_i, y_i)\}_{i=1}^n$, the probabilistic version can be estimated using the Wilcoxon-Mann-Whitney statistic as</div></p>
 
 $$ \frac{1}{n_0 n_1} \sum_{i : y_i = 1} \sum_{j : y_j = 0} \mathbb{1}\left( f(x_i) > f(x_j) \right), $$
 
@@ -228,7 +227,7 @@ ___
 
 <p><div align="justify">$\oint$ <em>I usually divide the buckets into 10, but this number is a parameter you can adjust as desired, depending on the level of detail you want to observe. The issue is that the greater the detail, the noisier the result will be due to smaller sample sizes. However, by using a bootstrap method, you can plot a confidence interval for analysis.</em></div></p>
 
-<p><div align="justify">$\oint$ <em>This construction is not a [QQ-plot](https://vitaliset.github.io/covariate-shift-1-qqplot/), but understanding how a QQ-plot works may help you grasp the construction of this metric, even though this curve is much simpler.</em></div></p>
+<p><div align="justify">$\oint$ <em>This construction is not a <a href="https://vitaliset.github.io/covariate-shift-1-qqplot/">QQ-plot</a>, but understanding how a QQ-plot works may help you grasp the construction of this metric, even though this curve is much simpler.</em></div></p>
 
 ```python
 def ranking_curve(y_true, y_score, n_buckets=10, statistic='mean'):
@@ -401,7 +400,7 @@ for score_name, y_score in SCORES.items():
     Linear regression coefficient for y_score_2: 0.32808
     Linear regression coefficient for y_score_3: 0.00722
 
-<p><div align="justify">$\oint$ <em>Adding sample weights to this curve is considerably more tedious, as you need to split the percentiles based on the sum of the weights, [but it’s not impossible](https://github.com/dihanster/datalib/issues/17#issue-1688825236). :)</em></div></p>
+<p><div align="justify">$\oint$ <em>Adding sample weights to this curve is considerably more tedious, as you need to split the percentiles based on the sum of the weights, <a href="https://github.com/dihanster/datalib/issues/17#issue-1688825236">but it’s not impossible</a>. :)</em></div></p>
 
 <p><div align="justify">$\oint$ <em>This curve is also really good for evaluating ranking performance for classification problems.</em></div></p>
 
