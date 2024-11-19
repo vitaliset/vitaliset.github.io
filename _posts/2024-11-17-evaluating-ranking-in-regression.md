@@ -17,7 +17,7 @@ summary: MSE and MAE can be misleading if your regression goal is to rank.
 
 ___
 
-<p><div align="justify">To illustrate our metrics, let’s assume we built three different models that produced various scores for the same prediction problem, with the test set defined by `y_true`.</div></p>
+<p><div align="justify">To illustrate our metrics, let’s assume we built three different models that produced various scores for the same prediction problem, with the test set defined by <code>y_true</code>.</div></p>
 
 
 ```python
@@ -28,7 +28,7 @@ random_state_0, random_state_1, random_state_2, random_state_3 = np.random.Rando
 y_true = np.random.RandomState(random_state_0).normal(size=1_000)
 
 y_score_1 = np.exp(3 + y_true) + np.random.RandomState(random_state_1).normal(size=len(y_true))
-y_score_2 =  3 * y_true + np.random.RandomState(random_state_2).normal(size=len(y_true))
+y_score_2 = 3 * y_true + np.random.RandomState(random_state_2).normal(size=len(y_true))
 y_score_3 = np.random.RandomState(random_state_3).normal(size=1_000)
 
 SCORES = dict(zip(['y_score_1', 'y_score_2', 'y_score_3'], [y_score_1, y_score_2, y_score_3]))
@@ -36,7 +36,7 @@ SCORES = dict(zip(['y_score_1', 'y_score_2', 'y_score_3'], [y_score_1, y_score_2
 
 <p><div align="justify">Without delving into the specifics of how these scores were generated, the most natural and well-known way to evaluate these models would be using metrics such as $R^2$, $\textrm{MAE}$, or some variation of these. These metrics are very useful but do not necessarily provide much insight into ranking.</div></p>
 
-<p><div align="justify">In our example, by analyzing the $\textrm{RMSE}$, it seems that `y_score_3` is a good predictor.</div></p>
+<p><div align="justify">In our example, by analyzing the $\textrm{RMSE}$, it seems that <code>y_score_3</code> is a good predictor.</div></p>
 
 ```python
 from sklearn import metrics
@@ -84,7 +84,7 @@ for score_name, y_score in SCORES.items():
     Spearman for y_score_3: 0.01447
 
 
-<p><div align="justify">Using this new metric, we noticed that scores 1 and 2 stand out due to their ability of sorting `y_true`.</div></p>
+<p><div align="justify">Using this new metric, we noticed that <code>y_score_1</code> and <code>y_score_2</code> stand out due to their ability of sorting <code>y_true</code>.</div></p>
 
 ___
 
@@ -109,8 +109,6 @@ $$\tau = \frac{C - D}{\frac{1}{2} n(n-1)},$$
 
 
 ```python
-from scipy import stats
-
 for score_name, y_score in SCORES.items():
     kendall = stats.kendalltau(y_true, y_score).statistic
     print(f"kendall's tau for {score_name}: {kendall:7.5f}")
@@ -233,7 +231,7 @@ ___
 def ranking_curve(y_true, y_score, n_buckets=10, statistic='mean'):
     """Compute the ranking curve for a regression task.
 
-    Calculates statistics of `y_true` values across `n_buckets`  of `y_score`
+    Calculates statistics of <code>y_true</code> values across <code>n_buckets</code>  of <code>y_score</code>
     values, ordered by the predicted scores. It can be used to  assess the
     distribution or trends of true values as a function of predicted scores.
 
@@ -246,21 +244,21 @@ def ranking_curve(y_true, y_score, n_buckets=10, statistic='mean'):
         Predicted continuous target values.
 
     n_buckets : int, default=10
-        The number of buckets to divide the sorted `y_score` values into.
+        The number of buckets to divide the sorted <code>y_score</code> values into.
 
     statistic : {'mean', 'median'} or callable, default='mean'
-        The statistic to compute for `y_true` values in each bucket.
-        - If 'mean', computes the mean of `y_true` in each bucket.
-        - If 'median', computes the median of `y_true` in each bucket.
-        - If callable, applies the callable function to the `y_true` values in each bucket.
+        The statistic to compute for <code>y_true</code> values in each bucket.
+        - If 'mean', computes the mean of <code>y_true</code> in each bucket.
+        - If 'median', computes the median of <code>y_true</code> in each bucket.
+        - If callable, applies the callable function to the <code>y_true</code> values in each bucket.
 
     Returns
     -------
     bucket_positions : ndarray of shape (n_buckets,)
-        The positions of the buckets, indexed from 1 to `n_buckets`.
+        The positions of the buckets, indexed from 1 to <code>n_buckets</code>.
 
     bucket_values : ndarray of shape (n_buckets,)
-        The computed statistic for `y_true` values in each bucket.
+        The computed statistic for <code>y_true</code> values in each bucket.
     """
     sorted_indices = np.argsort(y_score)
     y_true_sorted = y_true[sorted_indices]
@@ -297,7 +295,7 @@ for score_name, y_score in SCORES.items():
     ordering_curve_dict[score_name] = ordering_curve
 ```
 
-<p><div align="justify">It’s useful to compare the curve with a random model that would uniformly distribute `y_true` across all bins, meaning that the mean for every bucket would be the same, as there would be no relationship between the order and `y_true`.</div></p>
+<p><div align="justify">It’s useful to compare the curve with a random model that would uniformly distribute <code>y_true</code> across all bins, meaning that the mean for every bucket would be the same, as there would be no relationship between the order and <code>y_true</code>.</div></p>
 
 ```python
 import matplotlib.pyplot as plt
@@ -311,7 +309,7 @@ for score_name, ordering_curve in ordering_curve_dict.items():
 ax.set_xticks(bins)
 ax.legend()
 ax.set_ylabel("Mean of y for each bucket")
-ax.set_ylabel("Mean of y for each bucket")
+ax.set_xlabel("buckets")
 plt.tight_layout()
 ```
 
@@ -340,19 +338,18 @@ def diff_bucket_ordering_curve(y_true, y_score, n_buckets=10, statistic='mean'):
     first_bucket, *_, last_bucket = ordering_curve
     return last_bucket - first_bucket
 
-from sklearn.linear_model import LinearRegression
+from sklearn import linear_model
 
 def linear_regression_coefficient_ordering_curve(y_true, y_score, n_buckets=10, statistic='mean'):
     _, ordering_curve = ranking_curve(y_true, y_score, n_buckets=n_buckets, statistic=statistic)
     x_values = np.arange(n_buckets).reshape(-1, 1)
     y_values = np.array(ordering_curve).reshape(-1, 1)
 
-    model = LinearRegression().fit(x_values, y_values)
+    model = linear_model.LinearRegression().fit(x_values, y_values)
     return model.coef_[0][0]
-
 ```
 
-<p><div align="justify">The higher the value of the last bin, the more concentrated the selected values of `y_true` are in the higher range.</div></p>
+<p><div align="justify">The higher the value of the last bin, the more concentrated the selected values of <code>y_true</code> are in the higher range.</div></p>
 
 ```python
 for score_name, y_score in SCORES.items():
@@ -364,7 +361,7 @@ for score_name, y_score in SCORES.items():
     Last bucket for y_score_2: 1.70048
     Last bucket for y_score_3: 0.12308
 
-<p><div align="justify">The lower the value of the first bin, the more concentrated the selected values of `y_true` are in the lower range.</div></p>
+<p><div align="justify">The lower the value of the first bin, the more concentrated the selected values of <code>y_true</code> are in the lower range.</div></p>
 
 ```python
 for score_name, y_score in SCORES.items():
