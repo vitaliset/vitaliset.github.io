@@ -95,8 +95,11 @@ ___
 <p><div align="justify">Two pairs $(w_i, z_i)$ and $(w_j, z_j)$ are considered:</div></p>
 
 - <p><div align="justify">concordant: if the ranking of $w_i$ relative to $w_j$ is the same as the ranking of $z_i$ relative to $z_j$. Formally, this occurs when</div></p>
+
 $$ (w_i - w_j)(z_i - z_j) > 0. $$
+
 - <p><div align="justify">discordant: if the ranking of $w_i$ relative to $w_j$ is the opposite of that of $z_i$ relative to $z_j$. In other words,</div></p>
+
 $$ (w_i - w_j)(z_i - z_j) < 0. $$
 
 <p><div align="justify">The formula for Kendall's Tau is</div></p>
