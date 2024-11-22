@@ -11,6 +11,8 @@ mathjax: true
 
 <p><div align="justify">Hello, I am Carlo, a data scientist/software engineer (clearly in an identity crisis) who tries to balance the desire to apply the Go Horse process with the desire to detail the most superfluous mathematical aspects of machine learning models. Probably failing at both extremes.</div></p>
 
+<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/desenhos/nilve.jpg"></center></div></p>
+
 <p><div align="justify">In this blog, you will find technical discussions that I use to refer to myself (those who have worked with me know that at least once a week there will be an "I wrote about this on my blog"). In addition to more introductory topics, there are also some original discussions on small creative attempts I have made.</div></p>
 
 <p><div align="justify">I currently work as a Software Engineer at Google. Previously, I worked at Itaú Unibanco and at Serasa Experian. To learn more about my professional and academic experiences, you can check my <a href="https://github.com/vitaliset/vitaliset.github.io/blob/master/carlo_bach_ufabc.pdf">undergraduation transcript</a>, my <a href="https://github.com/vitaliset/vitaliset.github.io/blob/master/carlo_cv.pdf">resume</a>, and my profile on <a href="https://www.linkedin.com/in/carlo-lemos">LinkedIn</a>.</div></p>

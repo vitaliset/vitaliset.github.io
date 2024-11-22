@@ -11,6 +11,8 @@ mathjax: true
 
 <p><div align="justify">Olá, eu sou Carlo, um cientista de dados/engenheiro de software (claramente em crise de identidade) que tenta balancear o desejo de aplicar o processo Go Horse com o desejo de detalhar os aspectos matemáticos mais supérfluos dos modelos de aprendizado de máquina. Provavelmente, falhando em ambos os extremos.</div></p>
 
+<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/desenhos/nilve.jpg"></center></div></p>
+
 <p><div align="justify">Neste blog, você encontrará discussões técnicas que utilizo para me auto-referenciar (quem já trabalhou comigo sabe que ao menos uma vez por semana surgirá o "escrevi sobre isso no meu blog"). Além de tópicos mais introdutórios, também há algumas discussões originais sobre pequenas tentativas criativas que realizei.</div></p>
 
 <p><div align="justify">Atualmente, trabalho como Software Engineer no Google. Anteriormente, trabalhei no Itaú Unibanco e na Serasa Experian. Para saber mais sobre minhas experiências profissionais e acadêmicas, você pode conferir meu <a href="https://github.com/vitaliset/vitaliset.github.io/blob/master/carlo_bach_ufabc.pdf">histórico da graduação</a>, meu <a href="https://github.com/vitaliset/vitaliset.github.io/blob/master/carlo_cv.pdf">currículo</a> e meu perfil no <a href="https://www.linkedin.com/in/carlo-lemos">Linkedin</a>.</div></p>
