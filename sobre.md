@@ -21,7 +21,7 @@ mathjax: true
 
   <div style="flex: 1; text-align: center;">
     <img src="{{ site.baseurl }}/assets/img/desenhos/nilve.jpg" alt="carlos lemo" style="max-width: 90%; height: auto; margin-bottom: 8px;">
-    <div><b>literalmente eu</b></div>
+    <div>literalmente eu</div>
   </div>
 </div>
 
