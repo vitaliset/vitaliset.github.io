@@ -20,9 +20,9 @@ mathjax: true
   </div>
 
   <div style="flex: 1; text-align: center;">
-    <img src="{{ site.baseurl }}/assets/img/desenhos/nilve.jpg" alt="Image description" style="max-width: 100%; height: auto;">
+    <img src="{{ site.baseurl }}/assets/img/desenhos/nilve.jpg" alt="carlos lemo" style="max-width: 90%; height: auto; margin-bottom: 8px;">
+    <div><b>literalmente eu</b></div>
   </div>
-
 </div>
 
 <p><div align="justify"><b>Visual do site</b>: As ilustrações mais antigas do blog são obras do talentoso <a href="https://www.instagram.com/lucasalamoart/">Lucas Álamo</a>. O layout é uma adaptação do tema <a href="https://janczizikow.github.io/sleek/">Sleek</a>.</div></p>
