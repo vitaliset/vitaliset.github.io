@@ -15,6 +15,8 @@ summary: MSE and MAE can be misleading if your regression goal is to rank.
 
 <p><div align="justify">From this perspective, it becomes clear that regression problems may require specific metrics to evaluate the quality of the ranking rather than relying solely on metrics that aim to minimize variations of $| \hat{y_i} - y_i |$.</div></p>
 
+<p><div align="justify">$\oint$ <em>It is worth emphasizing that ranking-oriented metrics are particularly relevant in domains such as recommendation systems, where the primary objective is to provide an optimal ranking of items rather than precise value predictions. I believe that adapting recommendation system metrics could also be highly effective in addressing challenges in other domains. However, these adaptations might not be as straightforward as those discussed in this post.</em></div></p>
+
 ___
 
 <p><div align="justify">To illustrate our metrics, let’s assume we built three different models that produced various scores for the same prediction problem, with the test set defined by <code>y_true</code>.</div></p>
@@ -34,9 +36,9 @@ y_score_3 = np.random.RandomState(random_state_3).normal(size=1_000)
 SCORES = dict(zip(['y_score_1', 'y_score_2', 'y_score_3'], [y_score_1, y_score_2, y_score_3]))
 ```
 
-<p><div align="justify">Without delving into the specifics of how these scores were generated, the most natural and well-known way to evaluate these models would be using metrics such as $R^2$, $\textrm{MAE}$, or some variation of these. These metrics are very useful but do not necessarily provide much insight into ranking.</div></p>
+<p><div align="justify">Without delving into the specifics of how these scores were generated, the most natural and well-known way to evaluate these models would be using metrics such as $R^2$, $\textrm{RMSE}$, or some variation of these. These metrics are very useful but do not necessarily provide much insight into ranking.</div></p>
 
-<p><div align="justify">In our example, by analyzing the $\textrm{RMSE}$, it seems that <code>y_score_3</code> is a good predictor.</div></p>
+<p><div align="justify">In our example, by analyzing the $\textrm{MAE}$, it seems that <code>y_score_3</code> is a good predictor.</div></p>
 
 ```python
 from sklearn import metrics
@@ -413,8 +415,6 @@ ___
 <p><div align="justify">The ranking metrics introduced here each provide are highly valuable, complementing one another depending on the specific context and problem at hand. Instead of striving for a single, universally applicable metric, it is often more effective to evaluate these metrics collectively. In practice, they tend to align and reinforce each other, offering a richer and more nuanced understanding of model performance.</div></p>
 
 <p><div align="justify">Moreover, I encourage you to tweak existing metrics or develop custom variations which can often uncover fresh perspectives on a problem. The ultimate goal is not merely to assign a score to a model but to ensure it aligns with the problem's objectives and delivers outcomes that are meaningful and actionable.</div></p>
-
-<p><div align="justify">$\oint$ <em>It is worth emphasizing that ranking-oriented metrics are especially relevant in domains like recommendation systems, where the primary objective is to provide an optimal ranking of items rather than precise predictions. By focusing on ranking quality, these metrics address the practical requirements of systems designed to prioritize user preferences and deliver highly relevant outcomes efficiently. I believe that adaptations of such metrics could also be highly effective for addressing the challenges in other domains.</em></div></p>
 
 ## <a name="bibliography">Bibliography</a>
 
