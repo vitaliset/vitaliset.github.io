@@ -1,9 +1,15 @@
 ---
 layout: page
-title: Uma sugestão de guia de estudos para mentoria em Ciência de Dados
+title: Roteiro para Mentores: Orientando iniciantes em carreiras de Ciência de Dados
 permalink: /tutoring-guideline/
 mathjax: true
 ---
+
+_This page is a resource for mentors, offering a structured curriculum to guide beginners through their data science journey. It provides mentors with a clear roadmap and curated materials to effectively support their mentees in building foundational skills and advancing in the field._
+
+_If you're curious, consider using your browser to translate this page from Portuguese to English and explore the content!_
+
+___
 
 Essa página sugere um roteiro de estudos em Ciência de Dados com foco em Aprendizado de Máquina. Ela abrange vários assuntos básicos e sugere continuações de estudo ou áreas de especialização que o mentorado pode escolher ao final.
 

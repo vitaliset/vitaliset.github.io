@@ -1,11 +1,17 @@
 ---
 layout: page
-title: Dicas de entrevista para o Google
+title: Dicas de entrevista para big techs
 permalink: /interview/
 mathjax: true
 ---
 
-Depois de receber algumas perguntas sobre entrevistas no Google, resolvi consolidar um material com dicas de alguém que recentemente passou por esse processo. Espero que seja útil! Essas dicas não são oficiais do Google ou de outras empresas, apenas um compilado de aprendizados que tive. :)
+This page provides tips and insights for tackling LeetCode interview questions, helping folks prepare effectively for coding interviews.
+
+___
+
+Depois de receber algumas perguntas sobre minha experiência nas entrevistas do Google, resolvi consolidar um material com dicas de alguém que passou por esse processo.
+
+Essas dicas não são oficiais do Google ou de outras empresas, apenas um compilado de aprendizados que tive. Espero que seja útil! :)
 
 ## Entrevista técnica (Leetcode-like)
 
@@ -43,10 +49,12 @@ Depois de receber algumas perguntas sobre entrevistas no Google, resolvi consoli
 - Esteja ciente de que há um elemento de sorte envolvido nas entrevistas das grandes empresas de tecnologia. As vezes a questão é muito complexa mesmo, as vezes o entrevistador não é o melhor. Isso é algo fora do seu controle, então não vale ficar ansioso por isso. A ideia é estar o mais preparado possível para quando a "sorte" aparecer.
 - [Se sinta ok em relação à possibilidade de não ser contratado](https://steve-yegge.blogspot.com/2008/03/get-that-job-at-google.html). Mesmo que não seja bem-sucedido, mantenha a calma e absorva os aprendizados. Se o seu currículo foi selecionado para a entrevista, é provável que seja chamado para uma nova oportunidade em questão de meses!
 
-## Entrevista comportamental (Googleyness and Leadership)
+## Entrevista comportamental
 
 - Durante a entrevista comportamental, demonstre maturidade ao lidar com conflitos e mostre que é orientado por dados na resolução de problemas.
 - Tenha exemplos da sua trajetória profissional para respaldar suas respostas.
-- O [Jeff H Sipe](https://www.youtube.com/watch?v=tuL-WmYKBgo) tem ótimas dicas para esse tipo de entrevista. O canal dele também é útil para entender sobre o [hiring committee](https://www.youtube.com/watch?v=SqnrXBVaCo8), [levels](https://www.youtube.com/watch?v=cC9V5IH4B6k), [team match](https://www.youtube.com/watch?v=fG3noON-IWo) e eventuais dúvidas sobre o Google.
+- O [Jeff H Sipe](https://www.youtube.com/watch?v=tuL-WmYKBgo) tem ótimas dicas para esse tipo de entrevista (com foco na entrevista de "Googleyness and Leadership" do Google). O canal dele também é útil para entender sobre o [hiring committee](https://www.youtube.com/watch?v=SqnrXBVaCo8), [levels](https://www.youtube.com/watch?v=cC9V5IH4B6k), [team match](https://www.youtube.com/watch?v=fG3noON-IWo) e eventuais dúvidas sobre o Google.
+
+Eu não tenho muitas dicas para entrevistas de system design porque não tive elas durante minhas etapas, mas ver alguns exemplos dos [conceitos principais](https://youtu.be/i53Gi_K3o7I?feature=shared) e [exemplos de entrevistas](https://youtu.be/jPKTo1iGQiE?feature=shared) do tipo podem ajudar a se preparar.
 
 Boa sorte! Vai dar tudo certo! :D
