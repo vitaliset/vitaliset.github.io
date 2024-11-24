@@ -5,41 +5,43 @@ permalink: /tutoring-guideline/
 mathjax: true
 ---
 
-Essa página sugere um roteiro de estudos em Ciência de Dados com foco em Aprendizado de Máquina. Ela abrange vários assuntos básicos e sugere continuações de estudo ou focos que o mentorado pode começar a se especializar no final.
+Essa página sugere um roteiro de estudos em Ciência de Dados com foco em Aprendizado de Máquina. Ela abrange vários assuntos básicos e sugere continuações de estudo ou áreas de especialização que o mentorado pode escolher ao final.
 
-Dependendo do nível técnico do mentorado no início da mentoria, várias etapas podem ser puladas. De forma geral, as atividades roterizadas nesse guia supõe um conhecimento, a nível de ciclo básico de graduação em curso de exatas, que detalho com mais cuidado a seguir, dando ainda alternativas de cursos para quando esse pré-requisito não se aplica.
+Dependendo do nível técnico do mentorado no início da mentoria, várias etapas podem ser puladas. De forma geral, as atividades roteirizadas neste guia supõem um conhecimento equivalente ao ciclo básico de graduação em cursos da área de exatas, o qual detalharei com mais cuidado a seguir, dando ainda alternativas de cursos para quando esse pré-requisito não se aplica.
+
+$\oint$ _Os materiais apresentados aqui foram selecionados com grande intersecção com os recursos que utilizei durante minha preparação para ingressar no mercado de ciência de dados. Posteriormente, muitos desses materiais foram empregados em mentorias que conduzi com profissionais em início de carreira._
 
 ## Pré-requisitos esperados do mentorado
 
-Numa conversa com o mentorado, é importante sentir se ele tem os pré requisitos para seguir essa sugestão de tópicos ou não. Caso não seja o caso, várias coisas precisam ser adaptadas, principalmente no início e já dou algumas sugestões nessa seção.
+Em uma conversa com o mentorado, é importante perceber se ele possui os pré-requisitos para seguir a sugestão de tópicos ou não. Caso contrário, diversas adaptações precisam ser feitas, principalmente no início, e já forneço algumas sugestões nesta seção.
 
-- **Lógica de programação**: Não é esperado que o mentorado já tenha utilizado Python, mas aguarda-se que já tenha experiência prévia com programação em outra linguagem e esteja confortável com laços de repetição, condições e operadores lógicos, além de algumas estruturas de dados básicas como listas, vetores e strings. Se esse não for o caso do mentorado, o curso de [introdução à programação do Kaggle](https://www.kaggle.com/learn/intro-to-programming) pode ser um bom começo. Se ainda assim, for necessário gastar mais tempo vendo esses tópicos, aulas selecionadas da [playlist de Python do Curso em Vídeo](https://youtube.com/playlist?list=PLvE-ZAFRgX8hnECDn1v9HNTI71veL3oW0) podem ser uma boa referência.
+- **Lógica de programação**: Não é esperado que o mentorado já tenha experiência com Python, mas é desejável que tenha familiaridade com outra linguagem de programação e esteja confortável com laços de repetição, condições e operadores lógicos, além de estruturas de dados básicas como listas, dicionários e tipos básicos como strings. Caso o mentorado não possua esse conhecimento, o curso de [introdução à programação do Kaggle](https://www.kaggle.com/learn/intro-to-programming) pode ser um bom ponto de partida. Se for necessário dedicar ainda mais tempo a esses tópicos, aulas selecionadas da [playlist de Python do Curso em Vídeo](https://youtube.com/playlist?list=PLvE-ZAFRgX8hnECDn1v9HNTI71veL3oW0) podem ser uma referência útil.
 
-- **Estatística descritiva**: Visualizações clássicas como gráficos de dispersão, gráficos de barra/coluna, histogramas, box plots, gráficos de pizza, além de medidas resumo de posição e dispersão, como média, mediana, percentis, desvio padrão etc, precisam ser assuntos que o mentorado já tenha alguma familiaridade. Dependendo do nível do mentorado, uma simples revisão superficial do assunto ([como essa aula de análise descritiva da Univesp](https://youtu.be/42ArF0YCWm8)) provavelmente já é suficiente. Em outros casos, será necessário um pouco mais de atenção e daí o foco das primeiras semanas pode mudar totalmente para ensinar Python a partir de exemplos de visualização de dados (por exemplo com o [Kaggle Learn de Data Visualization com seaborn](https://www.kaggle.com/learn/data-visualization)), ao invés de já começar com Aprendizado de Máquina.
+- **Estatística descritiva**: É esperado que o mentorado tenha familiaridade com visualizações clássicas, como gráficos de dispersão, gráficos de barras/colunas, histogramas, box plots, gráficos de pizza, além de medidas-resumo de posição e dispersão, como média, mediana, percentis, desvio padrão, entre outros. Dependendo do nível do mentorado, uma simples revisão superficial do assunto ([como nesta aula de análise descritiva da Univesp](https://youtu.be/42ArF0YCWm8)) pode ser suficiente. Em outros casos, pode ser necessário maior atenção, com o foco inicial das semanas dedicado ao ensino de Python por meio de exemplos de visualização de dados (por exemplo, utilizando o [Kaggle Learn de Data Visualization com seaborn](https://www.kaggle.com/learn/data-visualization)), em vez de começar diretamente com Aprendizado de Máquina.
 
-- **Probabilidade**: A linguagem de Aprendizado de Máquina é intrinsicamente probabilística. É recomendado que o mentorado esteja confortável com os conceitos básicos de probabilidade (no mínimo em um [nível introdutório do assunto](https://gradmat.ufabc.edu.br/disciplinas/ipe/)). Isso significa, conhecer a definição (ingênua) de espaço de probabilidade, entender sobre probabilidade condicional e independência, variáveis aleatórias discretas e contínuas, conhecer as principais distribuições de variáveis aleatórias e saber calcular esperanças, variâncias, correlações etc. Obviamente não precisa conhecer tudo nos mínimos detalhes, mas se o assunto é intimidador ainda, é sugerido uma revisão dos tópicos seguindo, por exemplo, o curso [Introdução à Probabilidade e Estatístíca (IPE) do professor Rafael Grisi da UFABC](https://www.youtube.com/channel/UCKGYUbUHWSDr8pFaDd7JWCg/videos).
+- **Probabilidade**: A linguagem do Aprendizado de Máquina é intrinsecamente probabilística. Recomenda-se que o mentorado esteja confortável com conceitos básicos de probabilidade (pelo menos em um [nível introdutório](https://gradmat.ufabc.edu.br/disciplinas/ipe/)). Isso inclui compreender a definição (ingênua) de espaço de probabilidade, probabilidade condicional e independência, variáveis aleatórias discretas e contínuas, as principais distribuições de variáveis aleatórias, bem como saber calcular esperanças, variâncias, correlações, entre outros. Não é necessário dominar todos os detalhes, mas, caso o tema seja intimidador, é recomendada uma revisão desses tópicos, como no curso [Introdução à Probabilidade e Estatística (IPE) do professor Rafael Grisi da UFABC](https://www.youtube.com/channel/UCKGYUbUHWSDr8pFaDd7JWCg/videos).
 
-- **Matemática de forma geral**: Além de estatística descritiva e probabilidade básica, outros tópicos de matemática, como noções de otimização, cálculo diferencial, operações matriciais e estatística inferencial são importantes para um entendimento menos superficial dos algoritmos de Aprendizado de Máquina. Se o mentorado tem uma base matemática fraca, em algum desses assuntos (ou em todos), a especialização [Mathematics for Machine Learning and Data Science Specialization](https://www.coursera.org/specializations/mathematics-for-machine-learning-and-data-science#courses) pode ser uma grande amiga para visitar aulas específicas ou se debruçar por algumas semanas com as bases principais da Ciência de Dados.
+- **Matemática de forma geral**: Além de estatística descritiva e probabilidade básica, outros tópicos matemáticos, como noções de otimização, cálculo diferencial, operações matriciais e estatística inferencial, são fundamentais para um entendimento mais aprofundado dos algoritmos de Aprendizado de Máquina. Se o mentorado possui uma base matemática frágil em algum desses tópicos (ou em todos), a especialização [Mathematics for Machine Learning and Data Science Specialization](https://www.coursera.org/specializations/mathematics-for-machine-learning-and-data-science#courses) pode ser uma excelente aliada, permitindo o estudo de aulas específicas ou uma imersão de algumas semanas nos fundamentos essenciais da Ciência de Dados.
 
 ## Ensinamentos do HDFS: redundância é importante
 
-Durante esse guia de materiais de mentoria, por selecionar partes específicas de cursos diferentes, vários assuntos podem ser vistos em repetição com uma abordagem ligeiramente diferente. Isso é intencional. Acredito que para formentar essa base da forma mais robusta possível, é importante que os assuntos realmente estejam absorvidos e vê-los algumas vezes reforça isso.
+Durante este guia de materiais de mentoria, ao selecionar partes específicas de cursos diferentes, vários assuntos podem ser abordados repetidamente, mas com uma abordagem ligeiramente diferente. Isso é intencional. Acredito que, para fortalecer essa base da forma mais robusta possível, é importante que os assuntos sejam realmente absorvidos, e revê-los algumas vezes ajuda a reforçar esse aprendizado. :)
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line2.png"></center></p>
 
 ## 0) Como usar esse guia de atividades de tutoria?
 
-Logo abaixo do título da atividade, temos uma breve motivação. Ela serve para o tutor saber porque aquela atividade faz sentido naquele momento (pode ser compartilhado com o mentorado se achar que é importante explicar a tarefa).
+Logo abaixo do título da atividade, há uma breve motivação. Ela serve para que o tutor entenda por que aquela atividade faz sentido naquele momento (e pode ser compartilhada com o mentorado, caso o tutor julgue importante explicar a tarefa).
 
 ### 0.1) Requisitos sugeridos
 
-Os pré-requisitos são para saber as dependências sugerida entre as atividades caso queira seguir outra ordem ou pular etapas.
+Os pré-requisitos servem para indicar as dependências sugeridas entre as atividades, caso se deseje seguir uma ordem diferente ou pular etapas.
 
 ### 0.2) Descrição
 
-A descrição é o texto sugerido para passar para o aluno na ferramenta utilizada para registrar as atividades. Eu sugiro usar, como ferramenta, o [Trello](https://trello.com/): ele tem uma estrutura estilo Kanban que você pode organizar os cards em colunas (algo como: "to do", "in progress" e "done"). Essa arquitetura é bem parecida com a forma que as ferramentas de organização de tarefas são utilizadas em várias equipes de dados que usam o Scrum (ou alguma variação dele).
+A descrição é o texto sugerido para ser passado ao aluno na ferramenta utilizada para registrar as atividades. Recomendo o uso do [Trello](https://trello.com/), uma ferramenta com estrutura no estilo Kanban, onde é possível organizar os cards em colunas (como "To Do", "In Progress" e "Done"). Essa estrutura é bastante semelhante à forma como ferramentas de organização de tarefas são utilizadas em muitas equipes de dados que empregam o Agile (ou alguma variação dele).
 
-Aqui é onde o link para o material de estudo deve ser disponibilizado. De forma geral, as recomendações disponibilizam o conteúdo de forma gratuíta e os materiais estão em inglês majoritariamente, com alguns poucos tópicos em português. Se eventualmente algum link esteja quebrado, por favor, entre em contato comigo para verificação e correção.
+É aqui que o link para o material de estudo deve ser disponibilizado. De forma geral, as recomendações oferecem o conteúdo de forma gratuita, e os materiais estão majoritariamente em inglês, com alguns tópicos em português. Caso algum link esteja quebrado, por favor, entre em contato comigo para que eu possa verificar e corrigir. :)
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line2.png"></center></p>
 
@@ -47,33 +49,33 @@ Aqui é onde o link para o material de estudo deve ser disponibilizado. De forma
 
 <p><center><img src="{{ site.baseurl }}/assets/img/ordem_atividades.png"></center></p>
 
-Terminada essa etapa de atividades, a sugestão é que seja feito algum desafio do Kaggle com cuidado no tempo restante da tutoria (pensando numa tutoria de aproximadamente 6 meses). Nesse momento, é importante entender o problema de forma detalhada e pode ser útil trabalhar em "releases", em que a cada x semanas se tenha uma versão do modelo um pouco mais estruturada e com testes novos.
+Concluída essa etapa de atividades, a sugestão é realizar algum desafio no Kaggle, levando em consideração o tempo restante da tutoria (considerando uma duração aproximada de 6 meses). Nesse momento, é importante compreender o problema de forma detalhada, e pode ser útil trabalhar em "releases", em que, a cada x semanas, uma versão mais estruturada do modelo seja desenvolvida, incluindo novos testes.
 
-Obviamente essas atividades não tão escritas em pedra e podem ser modificadas dependendo do viés do tutorado. Por exemplo, um tutorado mais próximo da área de saúde pode ter interesse em redes neurais e portanto faz sentido algumas atividades serem substituídas, principalmente das semanas finais.
+Obviamente, essas atividades não estão gravadas em pedra e podem ser ajustadas conforme o interesse do tutorado. Por exemplo, um tutorado mais próximo da área de saúde pode ter interesse em redes neurais para imagens, por exemplo, o que tornaria relevante a substituição de algumas atividades, especialmente nas semanas finais.
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line2.png"></center></p>
 
 # Atividades recorrentes
 
-As atividades recorrentes são aquelas que não são feitas pontualmente e em sequência são finalizadas. São atividades que, a partir do momento que você tem os requisitos para realizá-las, você deveria fazê-la de forma recorrente durante as semanas da tutoria. 
+As atividades recorrentes não são realizadas pontualmente nem finalizadas em sequência. São atividades que, uma vez atendidos os requisitos para sua execução, devem ser realizadas de forma contínua ao longo das semanas da tutoria.
 
-## A) HackerRank
+### A) HackerRank
 
-O HackerRank tem várias playlists interessantes que te ensinam com exercícios sobre particularidades do Python. Você conhece estrutura de dados não triviais enquanto revisita as que você acha que já domina aprendendo formas novas de trabalhar com elas. Variações dessa ferramentas podem ser utilizadas em processos seletivos (principalmente para posições mais próximas de Engenharia de Software, como é o caso de um Machine Learning Engineer).
+O HackerRank oferece diversas playlists interessantes que ensinam, por meio de exercícios, particularidades do Python. Você terá a oportunidade de conhecer estruturas de dados não triviais enquanto revisita as que já domina, aprendendo novas maneiras de trabalhar com elas. Ferramentas como essa são frequentemente utilizadas em processos seletivos, principalmente para posições mais ligadas à Engenharia de Software, como a de Machine Learning Engineer.
 
-### A.1) Requisitos sugeridos
+### A.1) Requisitos Sugeridos
 
 Atividade 2.
 
 ### A.2) Descrição
 
-Fazer pelo menos 1 hora de atividades propostas nas playlists de Python do [HackerRank](https://www.hackerrank.com/domains/python) toda semana. Rapidinho você já vai ter visto a maioria dos tipos relevantes e eles vão te ajudar a deixar seu código mais _pythonic_.
+Dedicar pelo menos 1 hora por semana às atividades propostas nas playlists de Python do [HackerRank](https://www.hackerrank.com/domains/python). Com pouco tempo de prática, você terá explorado a maioria dos tipos de estruturas relevantes, o que ajudará a tornar seu código mais _pythonic_.
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
 ## B) Stratascratch
 
-Pandas é a principal biblioteca de manipulação de dados do Python. Aliado com o SQL, vai ser a principal maneira de tratar dados no dia a dia de ciência de dados. Você só vai dominar a sintaxe do pandas se utilizá-lo de forma recorrente. A ideia aqui é ter alguns exercícios mais ou menos clássicos para estar se familiarizando com as manipulações principais.
+Pandas é a principal biblioteca de manipulação de dados do Python. Aliada ao SQL, será a principal ferramenta para tratar dados no dia a dia da ciência de dados. Você só dominará a sintaxe do Pandas se utilizá-lo de forma recorrente. A ideia aqui é apresentar alguns exercícios, mais ou menos clássicos, para se familiarizar com as manipulações principais.
 
 ### B.1) Requisitos sugeridos
 
@@ -81,7 +83,7 @@ Atividade 12.
 
 ### B.2) Descrição
 
-Fazer pelo menos 30 minutos de atividades propostas utilizando Pandas do [Stratascratch]([stratascratch.com](http://stratascratch.com/)) toda semana. Você consegue resolver em SQL também e pode ser útil para treinar essa ferramenta eventualmente.
+Realizar pelo menos 30 minutos de atividades propostas utilizando o Pandas do [Stratascratch](http://stratascratch.com) toda semana. Você também pode resolvê-las em SQL, o que pode ser útil para treinar essa ferramenta eventualmente.
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line2.png"></center></p>
 
@@ -91,7 +93,7 @@ Sequência idealizada de atividades para o ciclo de estudos da mentoria.
 
 ## 1) Instalar Python (pelo Anaconda)
 
-A ideia é deixar o ambiente pronto para utilizar Jupyter Notebooks. São ótimas ferramentas para exploração e, na prática, é o ambiente mais adotado no dia-a-dia do cientista de dados para prototipação de código. Durante os encontros é sempre útil mostrar os atalhos mais comuns e boas práticas (deixar o notebook preparado para um "restart and run all" obtendo resultados reproduzíveis com `random_state`s fixados), mas falar todos agora só vai confundir o mentorando. Eventualmente, no final, podemos mostrar mais coisas de IDE, como VSCode etc, mas não acho útil no início.
+A ideia é preparar o ambiente para utilizar Jupyter Notebooks. Essas são ferramentas excelentes para exploração e, na prática, representam o ambiente mais adotado no dia a dia do cientista de dados para prototipação de código. Durante os encontros, é sempre útil apresentar os atalhos mais comuns e boas práticas, como deixar o notebook preparado para um "restart and run all" com resultados reproduzíveis (utilizando random states fixados). No entanto, abordar tudo isso agora pode acabar confundindo o mentorando. Eventualmente, ao final, podemos introduzir outras ferramentas, como IDEs, incluindo o VSCode, mas acredito que isso não seja útil no início.
 
 ### 1.1) Requisitos sugeridos
 
@@ -99,13 +101,13 @@ Não há.
 
 ### 1.2) Descrição
 
-- [Instalando Python para Aprendizado de Máquina - LAMFO](https://lamfo-unb.github.io/2017/06/10/Instalando-Python/). Não precisa instalar o TensorFlow, nem o Git por enquanto.
+- [Instalando Python para Aprendizado de Máquina - LAMFO](https://lamfo-unb.github.io/2017/06/10/Instalando-Python/). Não é necessário instalar o TensorFlow nem o Git por enquanto.
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
 ## 2) Aula introdutória da especialização (básica) de ML do Andrew
 
-Aqui, o didático Andrew apresenta os tipos de aprendizado e dá exemplos legais. É um bom ponto pra pedir pro mentorado dar exemplos de problemas que dá pra aplicar e também motivar algumas aplicações não triviais.
+Aqui, o didático Andrew apresenta os tipos de aprendizado e oferece exemplos interessantes. É uma ótima oportunidade para pedir ao mentorando que sugira exemplos de problemas onde esses conceitos podem ser aplicados, além de motivar discussões sobre aplicações menos triviais.
 
 ### 2.1) Requisitos sugeridos
 
@@ -124,7 +126,7 @@ Não há.
 
 ## 3) Nivelamento Python (Kaggle Learn)
 
-Python é **A LINGUAGEM** para Ciência de Dados: existem muitas bibliotecas de qualidade prontas e a maioria das empresas adota como padrão na esteira de produtização. O curso do Kaggle Learn é ótimo porque foca nas partes que serão mais úteis pensando nas bibliotecas principais de Aprendizado de Máquina. É um curso focado em quem está migrando de linguagem, ou seja, já assume conhecimento básico de lógica de programação.
+Python é **A LINGUAGEM** para Ciência de Dados: ela conta com muitas bibliotecas de alta qualidade já disponíveis e é amplamente adotada como padrão na esteira de produtização pelas empresas. O curso do Kaggle Learn é excelente porque foca nas partes mais úteis, especialmente considerando as principais bibliotecas de Aprendizado de Máquina. É um curso direcionado para quem está migrando de outra linguagem, ou seja, já parte do pressuposto de que o aluno tem conhecimento básico de lógica de programação.
 
 ### 3.1) Requisitos sugeridos
 
@@ -138,9 +140,9 @@ Atividade 1. Já assume conhecimento de programação básico em alguma linguage
 
 ## 4) Aula de Regressão Linear da especialização (básica) de ML do Andrew
 
-Regressão Linear é um dos algoritmos mais simples de Aprendizado de Máquina. É o terreno perfeito para apresentar as principais ideias do processo de aprendizado supervisionado, enquanto introduz nomeclatura e intuição. É fundamental que essa atividade seja feita com muita atenção e cuidado.
+A Regressão Linear é um dos algoritmos mais simples de Aprendizado de Máquina, sendo o terreno ideal para introduzir as principais ideias do aprendizado supervisionado, além de apresentar nomenclaturas e desenvolver a intuição. É essencial que essa atividade seja realizada com muita atenção e cuidado.
 
-O curso do Andrew tem alguns notebooks auxiliares que podem ser legais de explorar dependendo do perfil do mentorado. Eu, particularmente, não acho essencial dado que as aulas já são bem visuais e já explicam os conceitos apresentados. De qualquer forma, você consegue baixar o zip nesse [repositório](https://github.com/greyhatguy007/Machine-Learning-Specialization-Coursera) (se eventualmente esse repositório ficar indisponível, não deve ser díficil achar outro repositório com esses arquivos [procurando no google](https://www.google.com/search?q=supervised+machine+learning%3A+regression+and+classification+notebooks+github&sxsrf=AJOqlzUQ11tr1y9XmW0QVpXNVUjS_8bIMg%3A1676862919336&ei=x-XyY6aQFOy81sQP1tGg4Ak&oq=Supervised+Machine+Learning%3A+Regression+and+Classification+notebooks&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAxgAMgcIIxCwAxAnMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADSgQIQRgAUABYAGDdC2gBcAF4AIABAIgBAJIBAJgBAMgBCcABAQ&sclient=gws-wiz-serp)).
+O curso do Andrew Ng inclui alguns notebooks auxiliares que podem ser interessantes de explorar, dependendo do perfil do mentorado. No entanto, eu, pessoalmente, não os considero indispensáveis, pois as aulas são bastante visuais e já explicam bem os conceitos apresentados.  Se for necessário, você pode baixar os notebooks em um repositório como este: [Machine-Learning-Specialization-Coursera](https://github.com/greyhatguy007/Machine-Learning-Specialization-Coursera). Caso esse repositório fique indisponível, será relativamente fácil encontrar outros semelhantes [pesquisando no Google](https://www.google.com/search?q=supervised+machine+learning%3A+regression+and+classification+notebooks+github&sxsrf=AJOqlzUQ11tr1y9XmW0QVpXNVUjS_8bIMg%3A1676862919336&ei=x-XyY6aQFOy81sQP1tGg4Ak&oq=Supervised+Machine+Learning%3A+Regression+and+Classification+notebooks&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAxgAMgcIIxCwAxAnMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADMgoIABBHENYEELADSgQIQRgAUABYAGDdC2gBcAF4AIABAIgBAJIBAJgBAMgBCcABAQ&sclient=gws-wiz-serp).
 
 ### 4.1) Requisitos sugeridos
 
@@ -164,9 +166,9 @@ Atividade 2.
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
-## 5) Introdução ao Numpy
+## 5) Introdução ao NumPy
 
-Numpy é a principal ferramenta para mexer em vetores e matrizes no Python. Todas as outras principais bibliotecas de Aprendizado de Máquina são construídas em cima dela. É primordial entender o básico, em um primeiro momento, e, eventualmente, masterizar.
+NumPy é a principal ferramenta para manipulação de vetores e matrizes no Python, servindo como base para praticamente todas as outras bibliotecas importantes de Aprendizado de Máquina. Inicialmente, é fundamental compreender o básico dessa biblioteca e, com o tempo, buscar uma compreensão mais aprofundada para dominá-la.
 
 ### 5.1) Requisitos sugeridos
 
@@ -182,7 +184,7 @@ Atividade 3.
 
 ## 6) Implementing from ground up: Regressão Linear Simples
 
-Essa atividade é uma forma de colocar em prática tudo que vimos até agora. 
+Essa atividade serve como uma oportunidade para praticar e consolidar tudo o que foi aprendido até agora.
 
 ### 6.1) Requisitos sugeridos
 
@@ -190,16 +192,18 @@ Atividades 4 e 5.
 
 ### 6.3) Descrição
 
-- Utilizando Python (principalmente o `numpy`), você deve construir uma função que recebe seu conjunto de dados `X_train`, `y_train` e retorna os pesos de uma regressão linear simples (ou seja, `X_train` é unidimensional), utilizando gradiente descendente para fazer esse cálculo, como visto no curso do Andrew Ng. Pode criar o seu conjunto `X_train`, `y_train` como quiser, mas seu código deve ser robusto o suficiente para poder trocar os valores e continuar rodando da forma correta.
-- Defina critérios de parada que você achar apropriado para o gradiente descendente.
-- Em seguida, com os pesos calculados, você deverá fazer uma função que prevê os `y` para um conjunto `X` qualquer.
-- Pode ser interessante utilizar algumas bibliotecas gráficas para visualizar o que você está fazendo. A mais famosa, e que eu mais gosto é o matplotlib. Nessa [playlist do Corey Schafer](https://youtube.com/playlist?list=PL-osiE80TeTvipOqomVEeZ1HRrcEvtZB_) temos demonstrações de vários gráficos úteis.
+- Utilizando Python (principalmente o NumPy), você deve construir uma função que receba seu conjunto de dados `X_train` e `y_train` (NumPy arrays) e retorne os pesos de uma regressão linear simples (ou seja, `X_train` é unidimensional), utilizando o gradiente descendente para realizar o cálculo, conforme abordado no curso do Andrew Ng. Você pode criar os conjuntos `X_train` e `y_train` como preferir, mas o código deve ser robusto o suficiente para permitir a troca dos valores sem comprometer o funcionamento.
+- Defina critérios de parada que considerar apropriados para o gradiente descendente.
+- Em seguida, com os pesos calculados, construa uma função que preveja os valores de `y` para um conjunto `X` qualquer.
+- Pode ser interessante utilizar bibliotecas gráficas para visualizar o que está sendo feito. A mais famosa é o matplotlib. Nesta [playlist do Corey Schafer](https://youtube.com/playlist?list=PL-osiE80TeTvipOqomVEeZ1HRrcEvtZB_) há demonstrações de vários tipos de gráficos úteis.
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
 ## 7) Curso de básico de ML do Kaggle Learn
 
-Tirando problemas específicos, o dia a dia do cientista de dados não é criando os modelos do zero. O scikit-learn é uma das mais robustas bibliotecas com dezenas de modelos já construídos seguindo os melhores padrões de desenvolvimento de software. Tem uma comunidade Open Source incrível que dá suporte e guia os desenvolvimentos dela. Esse curso do Kaggle é um primeiro contato com o scikit-learn. É importante para conhecer o padrão de fit/predict que é o estabelecido, de forma geral, em Aprendizado de Máquina.
+Exceto por problemas específicos, o dia a dia do cientista de dados não envolve criar modelos do zero. O scikit-learn é uma das bibliotecas mais robustas e amplamente utilizadas, com dezenas de modelos pré-construídos que seguem os melhores padrões de desenvolvimento de software. Além disso, conta com uma comunidade Open Source incrível que fornece suporte e orienta a evolução da biblioteca.
+
+Este curso do Kaggle serve como uma introdução ao scikit-learn, sendo uma excelente oportunidade para aprender o padrão fit/predict, amplamente estabelecido e utilizado no campo de Aprendizado de Máquina.
 
 ### 7.1) Requisitos sugeridos
 
@@ -209,13 +213,13 @@ Atividades 4 e 5.
 
 - [Kaggle Learn - Intro to Machine Learning](https://www.kaggle.com/learn/intro-to-machine-learning) (3h).
 
-- Extra: pode ser util dar uma lida por cima da página de [getting started do scikit-learn](https://scikit-learn.org/stable/getting_started.html).
+- Extra: pode ser útil dar uma lida rápida na página de ["getting started" do scikit-learn](https://scikit-learn.org/stable/getting_started.html).
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
 ## 8) Introdução à Programação Orientada a Objetos (POO)
 
-A orientação orientada à objetos é o paradigma de programação principal do Python. A forma de abstração  que ele nos oferece é muito poderosa e permite construir códigos complexos de uma forma estruturada e reaproveitável, com manutenção facilitada. A ideia dessa atividade não é ficar um mestre em POO, mas conhecer por cima a ideia para saber que existe e entender que o scikit-learn e outras bibliotecas do Python utilizam ela. No futuro (provavelmente não no tempo dessa mentoria), esse tópico pode ser revisto, entendendo agora a utilização de heranças e boas práticas (como os princípios SOLID e design patterns).  
+A orientação a objetos é o paradigma de programação principal do Python. A forma de abstração que ele nos oferece é muito poderosa, permitindo a construção de códigos complexos de maneira estruturada e reaproveitável, além de facilitar a manutenção. O objetivo desta atividade não é se tornar um mestre em POO, mas ter uma visão geral para saber que ela existe e compreender como o scikit-learn e outras bibliotecas do Python a utilizam. No futuro (provavelmente fora do escopo desta mentoria básica inicial), esse tópico pode ser revisitado, aprofundando-se no uso de heranças e boas práticas, como os princípios SOLID e os design patterns.
 
 ### 8.1) Requisitos sugeridos
 
@@ -224,7 +228,7 @@ Atividade 7.
 ### 8.2) Descrição
 
 - [Python OOP Tutorial 1: Classes and Instances](https://youtu.be/ZDa-Z5JzLYM) (15 min)
-- Tente criar algum cenário simples em Python em que você usa classes. Por exemplo, crie uma classe abstrata que representa a entidade "cachorro" e tem dois atributos: "nome" e "raça". O cachorro precisa ainda ter um método chamado "pedido_para_sentar" que recebe uma string e se essa string é o nome do cachorro então ele printa que o cachorro sentou.
+- Tente criar um cenário simples em Python no qual você utiliza classes. Por exemplo, crie uma classe abstrata que represente a entidade "Cachorro" e que tenha dois atributos: "nome" e "raça". O cachorro também deve ter um método chamado "pedido_para_sentar", que recebe uma string. Se essa string for igual ao nome do cachorro, o método deve imprimir que o cachorro sentou.
 
 - Extra: uma discussão sobre diferentes formas de se programar (paradigmas): [1.1 - Programação Funcional em Haskell: Paradigmas de Programação](https://youtu.be/CzGSaXbPFRA) (27 min) - O Python tem várias coisas bem úteis de programação funcional então é legal conhecer por cima as ideias também.
 
@@ -232,7 +236,7 @@ Atividade 7.
 
 ## 9) Aula de Regressão Linear Multivariada (e polinomial) da especialização (básica) de ML do Andrew
 
-Na vida real vamos utilizar dezenas, centenas, milhares de variáveis para fazer nossas previsões não apenas uma como na regressão linear simples. Mesmo ainda sendo um algoritmo pouco complexo, generalizar o caso da regressão linear simples dá algumas pitadas de onde queremos chegar eventualmente. Além disso, nessa aula o Andrew explica a ideia de vetorização de código (stop using `for` loops!).
+Na vida real, utilizamos dezenas, centenas ou até milhares de variáveis para realizar nossas previsões, e não apenas uma, como na regressão linear simples. Embora ainda seja um algoritmo relativamente simples, generalizar o caso da regressão linear simples já nos dá uma ideia de onde queremos chegar eventualmente. Além disso, nesta aula, o Andrew explica o conceito de vetorização de código (evite usar loops `for`!).
 
 ### 9.1) Requisitos sugeridos
 
@@ -262,7 +266,7 @@ Em particular, nessa atividade, pode ser necessário revisar operações matrici
     - Lecture 3.5 — Linear Algebra Review : Matrix Multiplication Properties - 9:03
     - Lecture 3.6 — Linear Algebra Review : Inverse And Transpose - 11:14
 
-Se quiser ver mais sobre o que o Andrew chama de "normal equation" - que nada mais é que a solução análitica dos pesos da regressão linear (em contrates com o metódo numérico iterativo aproximado dado pelo gradiente descendente):
+Se quiser saber mais sobre o que Andrew chama de "normal equation", que nada mais é do que a solução analítica dos pesos na regressão linear (em contraste com o método numérico iterativo aproximado fornecido pelo gradiente descendente):
 - [Machine Learning — Andrew Ng, Stanford University [FULL COURSE]](https://www.youtube.com/playlist?list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN)
     - Lecture 4.6 — Linear Regression With Multiple Variables : Normal Equation - 16:18
     - Lecture 4.7 — Linear Regression With Multiple Variables : Normal Equation Non Invertibility - 5:59
@@ -271,8 +275,9 @@ Se quiser ver mais sobre o que o Andrew chama de "normal equation" - que nada ma
 
 ## 10) Implementing from ground up: Regressão Polinomial + POO
 
-A estrutura orientada a objeto do scikit-learn precisa ser sua amiga. A ideia dessa atividade é tentar abrir um pouco a caixa preta dos estimadores do scikit-learn implementando do zero o caso particular de regressão multivariada (quando as dimensões extras são potências da primeira componente, como o Andrew explica em um dos vídeos da atividade 9).
-A ideia aqui é ficar um pouco mais familiar com a forma como o scikit-learn funciona, treinando POO.
+A estrutura orientada a objetos do scikit-learn precisa se tornar sua aliada. O objetivo desta atividade é explorar um pouco a "caixa preta" dos estimadores do scikit-learn, implementando do zero o caso particular de regressão multivariada (quando as dimensões extras correspondem a potências da primeira componente, como Andrew explica em um dos vídeos da atividade 9). 
+
+A ideia aqui é se familiarizar um pouco mais com a forma como o scikit-learn funciona, praticando POO.
 
 ### 10.1) Requisitos sugeridos
 
@@ -280,21 +285,21 @@ Atividades 4, 8 e 9.
 
 ### 10.2) Descrição
 
-A ideia dessa atividade é estruturar de forma mais elegante o que você fez na atividade 8, colocando dentro de uma classe no formato dos estimadores vistos no curso do Kaggle sobre scikit-learn. Idealmente, boa parte do código anterior, será reaproveitado nessa atividade.
+O objetivo desta atividade é estruturar, de forma mais elegante, o que você desenvolveu na atividade 8, encapsulando o código em uma classe no formato dos estimadores apresentados no curso do Kaggle sobre scikit-learn. Idealmente, boa parte do código anterior será reaproveitada nesta atividade.
 
-- Você deve construir uma classe chamada `PolynomialRegression` que recebe um parâmetro na sua inicialização chamado `degree`.
-- Essa classe precisa ter dois métodos, o `fit` e o `predict`. O método `fit` recebe duas entradas: o `X` e o `y`. `X` é tal que `X.shape = (n_samples, 1)` e `y` é tal que `y.shape = (n_samples,)`, `n_samples` sendo o número de amostras. Repare que `X = np.array([[1, 2, 3]]).T` e `y = np.array([1, 2, 3])` satisfazem essas restrições (apenas um exemplo, use outros valores quaisquer). O método `predict` recebe apenas uma entrada: o `X`, com as mesmas retrições de `.shape` descritas anteriormente.
-- A função fit calcula polinômios de `X` de grau até `degree` (sugestão: utilize um [list comprehension](https://www.w3schools.com/python/python_lists_comprehension.asp) com um [`np.hstack`](https://numpy.org/doc/stable/reference/generated/numpy.hstack.html)) e em seguida aplica um gradiente descendente para encontrar os coeficientes dessa regressão linear multivariada. Isso deve ser uma generalização da função anterior que você construiu para a regressão linear simples.
-- Os  coeficientes aprendidos durante o `fit` devem ser armazenados em atributos da sua classe com um underline ao final do nome. Essa é a estrutura adotada pelo scikit-learn para guardar informações que foram aprendidas durante o treinamento.
-- Por fim, a função `predict`, que recebe `X` deve fazer a mesma transformação polinomial nesse novo X e fazer as devidas multiplicações da regressão múltipla (algo como `X_poly*w + b`) para obter a previsão que é o que será retornado pela função.
+- Você deve criar uma classe chamada `PolynomialRegression`, que recebe um parâmetro em sua inicialização chamado `degree`.
+- Essa classe precisa conter dois métodos: `fit` e `predict`. O método `fit` deve receber duas entradas: `X` e `y`. O `X` deve atender à forma `X.shape = (n_samples, 1)` e o `y` deve atender à forma `y.shape = (n_samples,)`, onde `n_samples` é o número de amostras. Por exemplo, `X = np.array([[1, 2, 3]]).T` e `y = np.array([1, 2, 3])` satisfazem essas condições (apenas como exemplo; use outros valores quaisquer). O método `predict` deve receber apenas uma entrada, `X`, com as mesmas restrições de `.shape` descritas anteriormente.
+- O método `fit` deve calcular os polinômios de `X` até o grau definido em `degree` (sugestão: utilize um [list comprehension](https://www.w3schools.com/python/python_lists_comprehension.asp) junto com [`np.hstack`](https://numpy.org/doc/stable/reference/generated/numpy.hstack.html)) e, em seguida, aplicar o gradiente descendente para encontrar os coeficientes dessa regressão linear multivariada. Isso deve ser uma generalização da função que você desenvolveu anteriormente para a regressão linear simples.
+- Os coeficientes aprendidos durante o `fit` devem ser armazenados em atributos da classe com um **sufixo de underline** no nome. Essa é a convenção adotada pelo scikit-learn para guardar informações aprendidas durante o treinamento.
+- Finalmente, o método `predict`, que recebe o `X`, deve aplicar a mesma transformação polinomial nesse novo `X` e realizar as multiplicações da regressão múltipla (algo como `X_poly * w + b`) para obter as previsões, que devem ser retornadas pela função.
 
-- Extra: pode ser interessante dar uma olhada em como o [scikit-learn sugere a implementação de modelos](https://scikit-learn.org/dev/developers/develop.html). Não precisa se preocupar com o que ele chama de `BaseEstimator` e mixins.
+- **Extra**: Pode ser interessante consultar como o [scikit-learn sugere a implementação de modelos](https://scikit-learn.org/dev/developers/develop.html). Não se preocupe com o que eles chamam de `BaseEstimator` e mixins, que é um assunto mais avançado de orientação à objetos.
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
 ## 11) Validação de modelos de regressão
 
-Em relação à atividade prática, é de nosso interesse, por exemplo, saber qual o melhor valor de `degree` que devemos utilizar no nosso modelo. Para medir a noção de melhor ou pior, assim como no caso da regressão linear, precisamos definir uma métrica de avaliação. Aqui iremos ver algumas outras além da "mean squared error" além de aplicar essa ideia na atividade anterior.
+Em relação à atividade prática, é de nosso interesse determinar, por exemplo, qual o melhor valor de `degree` a ser utilizado em um modelo. Para avaliar o desempenho do modelo e definir o que significa ser "melhor" ou "pior", assim como no caso da regressão linear, precisamos estabelecer uma métrica de avaliação. Nesta atividade, exploraremos algumas métricas além da "mean squared error" e aplicaremos essa ideia na atividade anterior. 
 
 ### 11.1) Requisitos sugeridos
 
@@ -306,19 +311,21 @@ Métricas de Regressão
 - [Regression Metrics Review I - How to Win a Data Science Competition Learn from Top Kagglers](https://www.bilibili.com/video/BV117411y7Fa?p=30) (15min)
 - [Regression Metrics Review II - How to Win a Data Science Competition Learn from Top Kagglers](https://www.bilibili.com/video/BV117411y7Fa?p=31) (9min)
 
-Obs: Os vídeos dessa seção são de uma plataforma de compartilhamento de vídeos asiática pois os originais, que estavam no Coursera, estão indisponíveis em decorrência das sansões aplicadas a Rússia pela guerra na Ucrância. Em particular, no Coursera os cursos originados de universidades russas foram indiponibilizados.
+Obs: Os vídeos desta seção estão hospedados em uma plataforma de compartilhamento de vídeos asiática, pois os originais, que estavam no Coursera, tornaram-se indisponíveis devido às sanções aplicadas à Rússia pela guerra na Ucrânia. No Coursera, os cursos originados de universidades russas foram desativados.
 
-No curso introdutório de Aprendizado de Máquina do Kaggle Learn que você fez, ideias iniciais de validação de modelo com um conjunto hold out foram apresentadas. Um exercício interessante é aplicar essas mesma ideia na atividade anterior (10) separando seu conjunto em uma parte para treino e outra para teste.
-- [Training and testing - Machine Learning for Trading](https://youtu.be/P2NqrFp8usY) (3min)
-- Escolha algumas das [métricas discutidas que estejam disponíveis no scikit-learn](https://scikit-learn.org/stable/modules/classes.html#regression-metrics) e veja como ela se comporta (tanto no conjunto de treino quanto no conjunto de teste) variando o valor de `degree` da sua implementação.
-- [Fundamentos de Aprendizagem de Máquina: Viés e Variância - StatQuest](https://youtu.be/EuBBz3bI-aA) (7min)
-- Veremos depois com mais detalhe discussões sobre viés/variância e underfitting/overfitting, mas tente pensar o que acontece com o modelo polinomial quando mudamos o valor de `degree`. Para quais valores de `degree` temos underfitting e para quais valores temos `overfitting`?
+No curso introdutório de Aprendizado de Máquina do Kaggle Learn, que você realizou, foram apresentadas ideias iniciais sobre validação de modelo utilizando um conjunto de validação (hold-out). Um exercício interessante é aplicar essa mesma ideia à atividade anterior (10), separando o conjunto de dados em uma parte para treino e outra para teste.
+
+- [Training and testing - Machine Learning for Trading](https://youtu.be/P2NqrFp8usY) (3 min)  
+- Escolha algumas das [métricas discutidas disponíveis no scikit-learn](https://scikit-learn.org/stable/modules/classes.html#regression-metrics) e analise como elas se comportam (tanto no conjunto de treino quanto no de teste) ao variar o valor de `degree` na sua implementação.  
+- [Fundamentos de Aprendizagem de Máquina: Viés e Variância - StatQuest](https://youtu.be/EuBBz3bI-aA) (7 min)  
+
+Mais adiante, discutiremos com mais profundidade os conceitos de viés/variância e underfitting/overfitting. Por ora, tente refletir sobre o que acontece com o modelo polinomial ao alterar o valor de `degree`. Para quais valores de `degree` ocorre underfitting? E para quais valores ocorre overfitting?  
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
 ## 12) Introdução ao Pandas
 
-Pandas é a biblioteca de manipulações mais utilizada para estruturar seus dados em Python. Aliada ao Spark e ao SQL, você terá um stack muito robusto para as diferentes tarefas e cenários de manipulação de dados. O Pandas é, talvez, a mais importante na prática e masterizar ela ajudará a aprender as outras com mais facilidade.
+O Pandas é a biblioteca de manipulação de dados mais amplamente utilizada para estruturar seus dados em Python. Aliada ao Spark e ao SQL, ela compõe um stack extremamente robusto para diferentes tarefas e cenários de manipulação de dados. O Pandas é, talvez, a mais natural para aprender quando se está estudando Python, e dominá-la facilitará o aprendizado das outras ferramentas. 
 
 ### 12.1) Requisitos sugeridos
 
@@ -326,7 +333,7 @@ Atividade 5.
 
 ### 12.2) Descrição
 
-Algumas referências. Se estiver muito redundante, pode pular alguma(s) das sugestões.
+Algumas referências. Caso ache que estão muito redundantes, sinta-se à vontade para pular algumas delas.
 - [Kaggle Learn - Intro to Pandas](https://www.kaggle.com/learn/pandas) (4h).
 - [Pandas for Data Science in 20 Minutes : Python Crash Course](https://www.youtube.com/watch?v=tRKeLrwfUgU) (23 min) 
 - [Complete Python Pandas Data Science Tutorial! (Reading CSV/Excel files, Sorting, Filtering, Groupby)](https://youtu.be/vmEHCJofslg)  (~1 hora) 
@@ -336,7 +343,7 @@ Algumas referências. Se estiver muito redundante, pode pular alguma(s) das suge
 
 ## 13) Aula de Regressão Logística da especialização (básica) de ML do Andrew
 
-A regressão logística é uma generalização natural da regressão linear para o caso de classificação binária em que, por construção, é esperado que o output do seu modelo seja um valor entre 0 e 1 com interpretação de probabilidade de uma das classes. Nessa aula do Andrew, alguns assuntos a mais são abordados como underfitting/overfitting e regularização.
+A regressão logística é uma generalização natural da regressão linear para o caso de classificação binária, em que, por construção, espera-se que o output do modelo seja um valor entre 0 e 1, com interpretação como a probabilidade de uma das classes. Nesta aula do Andrew, são abordados alguns tópicos adicionais, como underfitting, overfitting e regularização.
 
 ### 13.1) Requisitos sugeridos
 
@@ -365,7 +372,7 @@ Vale dar uma olhada rápida na ideia de generalização para o caso multiclasse:
 
 ## 14) Métricas de classificação
 
-Assim como no caso de regressão, existem maneiras de avaliar a qualidade do nosso modelo no problema de classificação.
+Assim como no caso da regressão, existem diversas maneiras de avaliar a qualidade de um modelo em problemas de classificação.
 
 ### 14.1) Requisitos sugeridos
 
@@ -376,15 +383,15 @@ Atividade 13.
 - [The 5 Classification Evaluation metrics every Data Scientist must know](https://towardsdatascience.com/the-5-classification-evaluation-metrics-you-must-know-aa97784ff226)
 - [Classification Metrics Review - How to Win a Data Science Competition Learn from Top Kagglers](https://www.bilibili.com/video/BV117411y7Fa?p=32)
 
-Obs: Os vídeos dessa seção são de uma plataforma de compartilhamento de vídeos asiática pois os originais, que estavam no Coursera, estão indisponíveis em decorrência das sansões aplicadas a Rússia pela guerra na Ucrância. Em particular, no Coursera os cursos originados de universidades russas foram indiponibilizados.
+Obs: Os vídeos desta seção estão hospedados em uma plataforma de compartilhamento de vídeos asiática, pois os originais, que estavam no Coursera, tornaram-se indisponíveis devido às sanções aplicadas à Rússia pela guerra na Ucrânia. No Coursera, os cursos originados de universidades russas foram desativados.
 
-- Uma sugestão um pouco mais rigorosa é o [capítulo sobre métricas de classificação do livro do DataLab](https://pibieta.github.io/imbalanced_learning/notebooks/Metrics%201%20-%20Intro%20%26%20ROC%20AUC.html#)
+- Uma sugestão mais rigorosa é o [capítulo sobre métricas de classificação do livro do DataLab](https://pibieta.github.io/imbalanced_learning/notebooks/Metrics%201%20-%20Intro%20%26%20ROC%20AUC.html#)
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
 ## 15) Árvores de Decisão e Regressão
 
-Algoritmos baseados em árvores são os mais utilizados, de maneira geral, para dados tabulares. Entender bem o caso base ajudará a compreender as maneiras mais robustas de utilizá-las (quando fazemos cômites).
+Algoritmos baseados em árvores estão entre os mais utilizados, de maneira geral, para trabalhar com dados tabulares. Compreender bem o caso básico é essencial para entender as formas mais robustas de utilizá-los, especialmente quando empregamos comitês.
 
 ### 15.1) Requisitos sugeridos
 
@@ -404,7 +411,7 @@ Atividade 14.
 
 ## 16) Random Forest
 
-TODO
+As Random Forests são um poderoso exemplo de comitês baseados em árvores de decisão, projetados para aumentar a precisão e a robustez dos modelos. Compreender suas ideias centrais, como bootstrapping, o erro fora da amostra (OOB) e a importância das variáveis, é essencial para explorar seu potencial em dados tabulares.
 
 ### 16.1) Requisitos sugeridos
 
@@ -424,32 +431,32 @@ Atividade 15.
 
 ## 17) Análise Exploratória de Dados
 
-Na prática, antes da modelagem, é muito importante entender quais variáveis o cientista tem disponíveis para criação do modelo. Nem sempre o problema está bem empacotado e a definição do que você quer modelar (e quais métricas otimizar) pode vir de um bom entendimento dos dados disponíveis conjuntamente com alinhamentos com a área de negócios interessada.
+Na prática, antes da modelagem, é muito importante entender quais variáveis o cientista tem disponíveis para a criação do modelo. Nem sempre o problema está bem definido, e a delimitação do que se deseja modelar (e quais métricas otimizar) pode surgir de um bom entendimento dos dados disponíveis, em conjunto com alinhamentos com a área de negócios interessada.
 
-- Pensar em **hipóteses de negócio que você gostaria de validar**, são uma ótima maneira de fazer uma análise exploratória. Será que você já tem alguma intuição sobre o problema que pode, inclusive, te ajudar depois a modelar o problema de uma forma diferente?
-    - Num problema de inadimplência de crédito (previsão se uma pessoa vai pagar ou não uma dívida), podemos, por exemplo, ter a intuição de que, para pessoas de baixa renda, a presença ou não de uma dívida não quitada anterior pode ser crucial para a pessoa pagar o próximo empréstimo de interesse. Enquanto para pessoas de alta renda, isso é menos importante. Esse é um tipo de pergunta que você pode diretamente testar e essa hipótese pode se tornar uma regra de negócio que vira um benchmark que você gostaria de bater depois com seu modelo. Será que essa regra sozinha já tem uma performance boa o suficiente que nem justifica a criação de um modelo?
-    - Ou ainda, a sua hipótese pode te ajudar a entender onde está o maior foco de interesse da sua modelagem. Por exemplo, se você tem o valor da dívida, pode agrupar seus dados para identificar quais os grupos que "se mal identificados pelo modelo" podem trazer maior prejuízo. Imagine que, apesar de pessoas de alta renda serem minoria da sua base de desenvolvimento (10%, por exemplo), estão associadas com 90% do valor total em empréstimo. O seu modelo identificar bem os maus pagadores nesse grupo pode ser muito mais importante que identificar maus pagadores de forma geral na população. Isso poderia te guiar na etapa de modelagem e avalição a segmentar suas métricas, usar `sample_weights` para valorizar grupos de interesse e até quebrar seu modelo por renda, por exemplo.
+- Pensar em **hipóteses de negócio que você gostaria de validar** é uma ótima maneira de realizar uma análise exploratória. Será que você já tem alguma intuição sobre o problema que possa, inclusive, ajudá-lo a modelar o problema de uma forma diferente no futuro?
+    - Em um problema de inadimplência de crédito (previsão de se uma pessoa irá pagar ou não uma dívida), por exemplo, pode-se ter a intuição de que, para pessoas de baixa renda, a existência de uma dívida não quitada anterior pode ser crucial para prever se elas pagarão o próximo empréstimo. Enquanto isso, para pessoas de alta renda, esse fator pode ser menos relevante. Esse tipo de pergunta pode ser testado diretamente, e essa hipótese pode se tornar uma regra de negócio que funcione como um benchmark que você desejará superar com o modelo. Será que essa regra, sozinha, já apresenta uma performance boa o suficiente que sequer justifique a criação de um modelo?
+    - Além disso, a hipótese pode ajudá-lo a compreender onde está o maior foco de interesse na modelagem. Por exemplo, se você tem o valor da dívida, pode agrupar os dados para identificar quais grupos, caso sejam mal identificados pelo modelo, podem gerar maiores prejuízos. Imagine que, embora pessoas de alta renda sejam minoria na base de desenvolvimento (10%, por exemplo), elas estejam associadas a 90% do valor total em empréstimos. Identificar corretamente os maus pagadores nesse grupo pode ser muito mais importante do que identificá-los de forma geral na população. Isso pode orientar as etapas de modelagem e avaliação, levando a segmentar métricas, usar `sample_weights` para valorizar grupos de interesse e até mesmo dividir o modelo por faixa de renda.
 
-- Estudar, com alguns gráficos e estatísticas, sua amostra de desenvolvimento te dá insights sobre **quais são as variáveis que estão relacionadas com o problema e alguns possíveis feature engineering** que você pode criar, além de **identificar problemas que você precisará resolver** para ter uma modelagem adequada.
-    - É muito comum tentar filtrar algumas variáveis nessa etapa baseado em alguma medida de correlação. Apesar de eu achar que isso é feito melhor mais para frente no pipeline de desenvolvimento, pode ser necessário fazer isso durante a exploração se o problema tiver dezenas de colunas e o tempo for curto, nor obrigando a focar apenas nas de maior interesse. Rodar correlações simples ou algoritimos que metrificam a importância das variáveis (como um algoritmo baseado em árvores) podem ser super úteis aqui, mas devem ser usados com cuidado.
-    - Saber quais variáveis você tem, alinhado com entendimento de negócios pode te fazer pensar em variáveis (muitas vezes feitas apenas com operações matemáticas triviais como a soma) que simplificam a vida do modelo (principalmente árvores que só conseguem fazer cortes paralelos aos eixos). Por exemplo, uma variável super importante em crédito é o "comprometimento de renda", ou seja, qual a porcentagem do salário que precisaria ficar "reservado" para pagar a parcela de um financiamento ativo (`valor_parcela/valor_salario`). Criar ela nessa etapa e fazer alguns gráficos para avaliá-la pode ser considerada uma atividade exploratória útil.
-    - É muito comum ter bases com problemas de valores vazios ou, pior, mal preenchidos. Se você sabe que determinada variável só pode estar em um certo range e você encontra valores fora desse range, você precisa entender porque isso aconteceu. Analisar criticamente os valores presentes pode te ajudar a traçar uma estratégia para tratá-los ou possivelmente dropá-los (com o cuidado que dropar linhas no teste só deve ser feita se de fato aquilo não for visto na vida real, sem trapaças). (_Num problema de Kaggle/portifólio raramente você tem essa resposta, mas em uma empresa, esse pode ser o momento em que você conversa com a engenharia e entende se, na utilização do modelo, o dado vai estar de qual forma etc. Também pode ser o caso de alinhar com a área de negócio que sem informação xpto, a esteira de decisão é diferente e não será tomado pelo modelo, por exemplo._)
+- Estudar sua amostra de desenvolvimento, utilizando gráficos e estatísticas, pode fornecer insights sobre **quais variáveis estão relacionadas ao problema e possíveis técnicas de feature engineering** que podem ser aplicadas, além de **identificar problemas que precisam ser resolvidos** para uma modelagem adequada.
+    - É comum tentar filtrar algumas variáveis nesta etapa com base em medidas de correlação. Embora isso possa ser mais eficaz em etapas posteriores do pipeline de desenvolvimento, pode ser necessário fazê-lo durante a exploração se o problema tiver muitas colunas e o tempo for curto, exigindo o foco nas mais relevantes. Rodar análises de correlação simples ou utilizar algoritmos que medem a importância das variáveis (como algoritmos baseados em árvores) pode ser muito útil, mas deve ser feito com cautela.
+    - Conhecer as variáveis disponíveis, aliado a um entendimento do negócio, pode inspirá-lo a criar variáveis que simplifiquem o trabalho do modelo (especialmente árvores, que só conseguem fazer cortes paralelos aos eixos). Por exemplo, uma variável muito relevante em crédito é o "comprometimento de renda", ou seja, a porcentagem do salário que precisaria ser reservada para pagar a parcela de um financiamento ativo (`valor_parcela/valor_salario`). Criá-la nesta etapa e avaliá-la por meio de gráficos pode ser uma atividade exploratória muito útil.
+    - Bases de dados frequentemente apresentam problemas como valores vazios ou, pior, valores preenchidos de forma incorreta. Se uma variável só deveria conter valores dentro de um certo intervalo e você encontra valores fora desse intervalo, é necessário investigar o motivo. Analisar criticamente os valores pode ajudar a traçar estratégias para tratá-los ou até mesmo descartá-los (com cuidado, pois excluir linhas no conjunto de teste só deve ser feito se aquilo realmente não ocorrer na vida real). (_Em um problema de Kaggle ou portfólio, essa resposta raramente estará disponível, mas em uma empresa, esse pode ser o momento de conversar com a engenharia e entender como os dados serão fornecidos para o modelo. Também pode ser o caso de alinhar com a área de negócios para adaptar a esteira de decisão quando faltarem informações, por exemplo._)
 
-- Além disso, esse entendimento te guia a escolher modelos que são mais apropriados para o tipo de dados que você têm.
-    - Por exemplo, escolhendo modelos que nativamente lidem bem com variáveis categóricas (como o CatBoost).
-    - Pensando em valores faltantes de dados, dependendo do caso que você está ([MCAR, MAR ou MNAR](https://youtu.be/YpqUbirqFxQ)), você vai definir possíveis estratégias de imputação nesse momento (que podem ser testadas, depois, na sua otimização de hiperparâmetros) ou, mesmo, se quer utilizar um modelo que lida nativamente com esse tipo de dados faltante (como o lightGBM) (ou colocar valores fora do range utilizando modelos baseados em árvores).
+- Além disso, esse entendimento orienta a escolha de modelos mais apropriados para o tipo de dados disponíveis.
+    - Por exemplo, escolher modelos que lidem nativamente bem com variáveis categóricas (como o CatBoost).
+    - Para valores faltantes, dependendo do caso ([MCAR, MAR ou MNAR](https://youtu.be/YpqUbirqFxQ)), estratégias de imputação podem ser definidas nesta etapa (e testadas posteriormente na otimização de hiperparâmetros) ou pode-se optar por modelos que lidem nativamente com dados faltantes (como o LightGBM).
 
-- Por fim, você pode explorar tendências temporais nos dados. Aprendizado de Máquina trabalha com o pressuposto de que os dados são estáveis ao longo do tempo, o que não necessariamente é uma realidade. Em muitas aplicações é importante quebrar seus dados respeitando a lógica temporal e essa parte da análise exploratória pode te contar se isso é importante no problema em questão ou não. 
+- Por fim, explorar tendências temporais nos dados é essencial. Aprendizado de máquina pressupõe que os dados sejam estáveis ao longo do tempo, o que nem sempre é a realidade. Em muitas aplicações, é importante segmentar os dados respeitando a lógica temporal, e a análise exploratória pode indicar se isso é relevante para o problema em questão.
 
-Opinião pessoal:
+### Opinião pessoal (também conhecido como desabafo):
 
-- Pensando principalmente em aprendizado supervisionado, os pontos anteriores (validação de hipóteses de negócio, estudos sobre variáveis relevantes, criação de variáveis novas, identificação de problemas e questões relacionadas) são os principais resultados de um EDA e devem ser o foco da sua exploração. Fazer gráficos "por fazer", que não trazem informação relevante, devem ser evitados a todo custo uma vez que deixam sua análise prolixa e sem o foco de interesse, que é o modelo final.
+- Pensando principalmente em aprendizado supervisionado, os pontos acima (validação de hipóteses de negócio, estudo de variáveis relevantes, criação de variáveis novas, identificação de problemas, entre outros) são os principais objetivos de uma análise exploratória de dados e devem ser o foco da exploração. Criar gráficos "por criar", que não trazem informações relevantes, deve ser evitado, pois tornam a análise prolixa e desviam do objetivo principal: o modelo final.
 
-- Facilmente você pode se pegar saindo de algum desses objetivos anteriores, mas vale sempre se questionar: "porque estou fazendo esse gráfico ou calculando essa estatística?" Se o motivo está claro para você, então provavelmente fazer tal gráfico/cálculo faz sentido.
+- É fácil se desviar desses objetivos, mas vale sempre se perguntar: "Por que estou criando este gráfico ou calculando esta estatística?" Se o motivo estiver claro, então provavelmente faz sentido fazê-lo.
 
-- Posso estar sendo um pouco duro com as análises exploratórias de forma geral, mas é muito comum, principalmente em DSs no início de carreira (leia-se cases de entrevistas e projetos de portifólio), notebooks enormes com inúmeros gráficos e `.head()` de tabelas que deixam o código díficil de navegar e que nada acrescentam no processo de modelagem ou na história contada. Em 99% das vezes parecem completamente desconectados do problema de interesse e se, excluídos do notebook, nada mudariam no outcome.
+- Pode parecer uma visão dura sobre as análises exploratórias, mas é muito comum observar, especialmente em cientistas de dados iniciantes (em cases de entrevistas e projetos de portfólio), notebooks extensos com inúmeros gráficos e comandos `.head()` que dificultam a navegação do código sem agregar valor ao processo de modelagem ou à narrativa do problema. Em 99% dos casos, esses elementos parecem desconectados do problema de interesse e, se excluídos do notebook, não alterariam o resultado final.
 
-- Em outros casos, em que não há necessariamente um modelo envolvido, se extender na análise exploratória pode fazer sentido, mas raramente eu fugiria de alguma das motivações anteriores.
+- Em casos em que não há necessariamente um modelo envolvido, aprofundar-se na análise exploratória pode fazer sentido, mas ainda assim raramente fugiria das motivações anteriores.
 
 ### 17.1) Requisitos sugeridos
 
@@ -457,19 +464,19 @@ Atividades 12.
 
 ### 17.2) Descrição
 
-TODO: Achar kerneis legais.
-
-- [Exemplo de notebook que faz uma análise exploratória focada procurar erros nos dados](https://github.com/vitaliset/projetos-de-estudo/blob/main/New%20York%20City%20Taxi%20Fare%20Prediction/1_procurando_erros.ipynb).
+- [Exemplo de notebook que realiza uma análise exploratória focada em procurar erros nos dados](https://github.com/vitaliset/projetos-de-estudo/blob/main/New%20York%20City%20Taxi%20Fare%20Prediction/1_procurando_erros.ipynb).
+- [Exemplo de notebook que gera gráficos interessantes das variáveis analisando quais fazem sentido para o modelo](https://github.com/vitaliset/projetos-de-estudo/blob/main/Credit%20Default%20without%20a%20target/provenir_carlo.ipynb).
+- [Exemplo de notebook que cria hipóteses de negócio como modelos e depois compara performance dessas hipóteses contra modelos de ML](https://github.com/vitaliset/projetos-de-estudo/tree/main/Machine%20Failure%20Predictions).
 
 Extras:
-- Iremos discutir aspectos de validação out-of-time no futuro, mas esse notebook discuti uma análise exploratória para estudo de estabilidade temporal com uma [técnica interessante](https://vitaliset.github.io/covariate-shift-2-classificador-binario/):
-    - [Exemplo de notebook que faz uma análise exploratória focada em problemas de drift temporal dos dados](https://github.com/vitaliset/projetos-de-estudo/blob/main/New%20York%20City%20Taxi%20Fare%20Prediction/2_dinamica_temporal.ipynb).
+- Iremos discutir aspectos de validação out-of-time no futuro, mas este notebook apresenta uma análise exploratória para estudo de estabilidade temporal com uma [técnica interessante](https://vitaliset.github.io/covariate-shift-2-classificador-binario/):
+    - [Exemplo de notebook que realiza uma análise exploratória focada em problemas de drift temporal nos dados](https://github.com/vitaliset/projetos-de-estudo/blob/main/New%20York%20City%20Taxi%20Fare%20Prediction/2_dinamica_temporal.ipynb).
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
 ## 18) Kaggle Challenge
 
-TODO
+Neste ponto, o mentorado já adquiriu o conhecimento necessário para realizar um ciclo completo de machine learning: desde a escolha de um dataset até a aplicação de um modelo, passando pela limpeza dos dados e avaliação dos resultados. Este desafio no Kaggle oferece uma oportunidade prática para consolidar e aplicar os aprendizados em um cenário prático.
 
 ### 18.1) Requisitos sugeridos
 
@@ -486,7 +493,7 @@ Escolher um dataset do Kaggle e limpar os dados + aplicar um modelo de ML, avali
 
 ## 19) Aula sobre dicas práticas da especialização (básica) de ML do Andrew
 
-TODO: Discussão em alto nível sobre validação, um pouco do ciclo de vida do desenvolvimento de um modelo de Aprendizado de Máquina Supervisionado, MLOps e Ética.
+Esta atividade oferece uma visão prática e estratégica do ciclo de vida completo de um modelo de machine learning supervisionado, com foco em validação, análise de erros e iteração. Além disso, aborda tópicos fundamentais como MLOps e ética, ajudando o mentorado a conectar teoria e prática de forma holística.
 
 ### 19.1) Requisitos sugeridos
 
@@ -494,7 +501,7 @@ Atividade 18.
 
 ### 19.2) Descrição
 
-Infelizmente, a partir do segundo curso do Andrew, é necessário se inscrever pelo Coursera porque os vídeos não estão disponíveis no YouTube. Não se preocupe, o conteúdo continua gratuíto se você se inscrever como **ouvinte**.
+Infelizmente, a partir do segundo curso do Andrew, é necessário se inscrever pelo Coursera porque os vídeos não estão disponíveis no YouTube. Não se preocupe, o conteúdo continua gratuito se você se inscrever como **ouvinte**.
 
 - [Advanced Learning Algorithms by Andrew Ng](https://www.coursera.org/learn/advanced-learning-algorithms?specialization=machine-learning-introduction)
 - Semana 3: Advice for applying machine learning
@@ -524,7 +531,7 @@ Infelizmente, a partir do segundo curso do Andrew, é necessário se inscrever p
 
 ## 20) Aula de árvores de decisão da especialização (básica) de ML do Andrew
 
-TODO
+As árvores de decisão são modelos fundamentais para resolver problemas tanto de classificação quanto de regressão, servindo de base para técnicas mais avançadas como Random Forests e XGBoost. Esta aula do Andrew Ng aprofunda os conceitos de aprendizado, medição de pureza e seleção de divisões, consolidando uma compreensão sólida do funcionamento e aplicações desse tipo de modelo.
 
 ### 20.1) Requisitos sugeridos
 
@@ -554,7 +561,7 @@ Infelizmente, a partir do segundo curso do Andrew, é necessário se inscrever p
 
 ## 21) Curso de intermediário de ML do Kaggle Learn
 
-TODO
+O curso intermediário de Machine Learning do Kaggle é uma oportunidade de aprofundar conceitos essenciais, como imputação de valores ausentes, validação e ajuste de modelos. Além disso, a inclusão de referências sobre validação out-of-time e out-of-space ajuda a explorar técnicas avançadas para avaliar modelos em cenários mais desafiadores e próximos da realidade.
 
 ### 21.1) Requisitos sugeridos
 
@@ -570,7 +577,7 @@ Atividade 20.
 
 ## 22) Otimização de hiperparâmetros
 
-TODO
+A otimização de hiperparâmetros é uma etapa crucial para maximizar o desempenho dos modelos de machine learning. Esta atividade apresenta as principais abordagens, como Grid Search e alternativas mais eficientes, ajudando o mentorado a compreender quando e como ajustar hiperparâmetros de maneira estratégica para diferentes tipos de problemas.
 
 ### 22.1) Requisitos sugeridos
 
@@ -586,7 +593,7 @@ Atividade 21.
 
 ## 23) Curso de feature engineering do Kaggle Learn
 
-TODO
+O feature engineering é uma etapa essencial para aumentar a qualidade e o desempenho dos modelos de machine learning, permitindo extrair o máximo de informações úteis dos dados. Este curso do Kaggle Learn e as referências complementares ajudam o mentorado a dominar técnicas como encoding, manipulação de datas e criação de variáveis mais informativas, consolidando uma base sólida para modelagem avançada.
 
 ### 23.1) Requisitos sugeridos
 
@@ -597,11 +604,12 @@ Atividade 21.
 - [Kaggle Learn - Feature Engineering](https://www.kaggle.com/learn/feature-engineering) (5h).
 - [Aula avulsa do curso de Data Cleaning sobre dataframes com colunas do tipo data](https://www.kaggle.com/code/alexisbcook/parsing-dates) (1h).
 - [One-Hot, Label, Target e K-Fold Target Encoding, claramente explicados!!! - StatQuest](https://youtu.be/589nCGeWG1w)
+
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
 ## 24) Curso de explicabilidade do Kaggle Learn
 
-TODO
+Explicabilidade em machine learning é fundamental para entender como os modelos tomam decisões, aumentando a confiança e a transparência em suas previsões. Este curso do Kaggle Learn explora ferramentas como SHAP values, permitindo que o mentorado interprete modelos complexos e identifique os fatores mais relevantes na tomada de decisão, com aplicações práticas e acessíveis.
 
 ### 24.1) Requisitos sugeridos
 
@@ -616,7 +624,7 @@ Atividade 21.
 
 ## 25) Curso de ética do Kaggle Learn
 
-TODO
+A ética em IA é essencial para desenvolver soluções responsáveis, justas e alinhadas com os valores sociais.
 
 ### 25.1) Requisitos sugeridos
 
@@ -630,7 +638,7 @@ Atividade 21.
 
 ## 26) Aula aprendizado não supervisionado da especialização (básica) de ML do Andrew
 
-TODO
+O aprendizado não supervisionado é uma abordagem poderosa para descobrir padrões ocultos e identificar anomalias em dados sem rótulos. Esta aula do Andrew Ng apresenta fundamentos como clustering com K-means e detecção de anomalias, permitindo ao mentorado explorar aplicações práticas dessas técnicas.
 
 ### 26.1) Requisitos sugeridos
 
@@ -659,7 +667,7 @@ Infelizmente, a partir do segundo curso do Andrew, é necessário se inscrever p
 
 ## 27) Algoritmos baseados em distância
 
-TODO
+Algoritmos baseados em distância, como KNN e K-Means, utilizam medidas de similaridade geométrica para classificação, regressão e clustering. Compreender esses métodos é essencial para explorar técnicas simples e eficazes em aprendizado de máquina.
 
 ### 27.1) Requisitos sugeridos
 
@@ -674,9 +682,11 @@ Atividade 26.
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 
-## 28) Introdução ao GitHub
+## 28) Introdução a Version Control System (Git/GitHub)
 
-TODO
+O Git é uma ferramenta essencial para controle de versão, permitindo que você acompanhe e gerencie alterações em seu código de forma eficiente e segura. Ele é amplamente utilizado em projetos de software para colaborar em equipes, revisar mudanças e integrar diferentes partes de um projeto sem conflitos.
+
+O GitHub, por sua vez, é uma plataforma que aproveita o poder do Git, oferecendo recursos adicionais como hospedagem de repositórios, integração contínua, controle de acesso e colaboração em projetos. Dominar essas ferramentas não é apenas importante para gerenciar seus próprios projetos, mas também essencial para trabalhar em equipes modernas, onde o versionamento e a rastreabilidade são cruciais para a produtividade e qualidade do trabalho.
 
 ### 28.1) Requisitos sugeridos
 
@@ -695,6 +705,7 @@ Não há.
 Essa é uma lista (não exaustiva) de temas interessantes que podem ser usados para se aprofundar (para mentorados que já estão mais avançados) após o ciclo idealizado. Aqui a escolha deve ser do mentorado sobre os assuntos pensando também no tempo restante e na relevância dos assuntos.
 
 ## SQL
+Provavelmente o assunto mais importante que ficou faltando no currículo inicial da tutoria. Vale a pena ter um nível básico de SQL para aplicar para vagas.
 - [Kaggle Learn - Intro to SQL](https://www.kaggle.com/learn/intro-to-sql)
 - [Kaggle Learn - Advanced SQL](https://www.kaggle.com/learn/advanced-sql)
 
@@ -719,6 +730,13 @@ Essa é uma lista (não exaustiva) de temas interessantes que podem ser usados p
 - [You are underutilizing SHAP values: understanding populations and events - Estevão Uyrá](https://towardsdatascience.com/you-are-underutilizing-shap-values-understanding-populations-and-events-7f4a45202d5)
 - [xAI - Fabrício Olivetti - UFABC](https://www.youtube.com/@ufabchal/playlists?view=1&sort=dd&shelf_id=0)
 - [The Science Behind InterpretML: Explainable Boosting Machine](https://youtu.be/MREiHgHgl0k)
+
+## GenAI
+- [ChatGPT Prompt Engineering for Developers - deeplearning.ai](https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/)
+- [Building Systems with the ChatGPT API - deeplearning.ai](https://www.deeplearning.ai/short-courses/building-systems-with-chatgpt/)
+- [LangChain for LLM Application Development - deeplearning.ai](https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/)
+- [Functions, Tools and Agents with LangChain - deeplearning.ai](https://www.deeplearning.ai/short-courses/functions-tools-agents-langchain/)
+- [Building and Evaluating Advanced RAG Applications - deeplearning.ai](https://www.deeplearning.ai/short-courses/building-evaluating-advanced-rag/)
 
 ## Cursos de Aprendizado de Máquina com um pouco mais de rigor
 - [Introduction to Statistical Learning](https://youtube.com/playlist?list=PLOg0ngHtcqbPTlZzRHA2ocQZqB1D_qZ5V)
@@ -782,7 +800,7 @@ Essa é uma lista (não exaustiva) de temas interessantes que podem ser usados p
 
 ## Séries temporais com Aprendizado de Máquina
 - [Multiple Time Series Forecasting With Scikit-Learn - Mario Filho](https://youtu.be/RRd2wzMRpOc)
-- [sktime - A Unified Toolbox for ML with Time Series - Markus Löning | PyData Global 2021](https://youtu.be/ODspi8-uWgo)
+- [sktime - A Unified Toolbox for ML with Time Series - Markus Löning - PyData Global 2021](https://youtu.be/ODspi8-uWgo)
 
 ## Robustez de Modelo
 - [Como leakage de dados acaba com backtesting - Nubank ML Meetup - Tatyana Zabanova](https://youtu.be/qPYqeD2OUl4)
@@ -791,6 +809,7 @@ Essa é uma lista (não exaustiva) de temas interessantes que podem ser usados p
 
 ## Inferência Causal
 - [Causal Inference for The Brave and True - Matheus Facure](https://matheusfacure.github.io/python-causality-handbook/landing-page.html)
+- [Notas de aula de Inferência Causal - Rafael Stern](https://github.com/rbstern/causality_book/blob/master/book.pdf)
 
 ## Feature Selection
 - [Feature Selection - Machine Learning Interview Q&A for Data Scientists - Data Science Interviews - Emma Ding](https://youtu.be/7tW29jBceRw)
