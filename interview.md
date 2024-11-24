@@ -5,7 +5,7 @@ permalink: /interview/
 mathjax: true
 ---
 
-This page provides tips and insights for tackling LeetCode interview questions, helping folks prepare effectively for coding interviews.
+_This page provides tips and insights for tackling LeetCode interview questions, helping folks prepare effectively for coding interviews._
 
 ___
 
