@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Roteiro para Mentores: Orientando iniciantes em carreiras de Ciência de Dados
+title: Mentorando iniciantes em carreiras de Data Science
 permalink: /tutoring-guideline/
 mathjax: true
 ---
