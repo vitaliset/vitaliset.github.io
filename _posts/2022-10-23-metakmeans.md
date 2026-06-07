@@ -126,7 +126,7 @@ plt.tight_layout()
 dict_cluster = {0: 2, 1: 4, 2: 8, 3: 6, 4: 0, 5: 5, 6: 3, 7: 1, 8: 7}
 ```
 
-<p><div align="justify">Para ver os clusters finais e em que regiões do espaço estão os nosso pontos associados a clusters incertos, vamos aplicar um <a href="https://scikit-learn.org/stable/modules/generated/sklearn.manifold.MDS.html"><code>sklearn.manifold.MDS</code></a> e, em seguida, um <a href="https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html"><code>sklearn.manifold.TSNE</code></a> para reduzir a dimensionalidade dos nossos dados.</div></p>
+<p><div align="justify">Para ver os clusters finais e em que regiões do espaço estão os nossos pontos associados a clusters incertos, vamos aplicar um <a href="https://scikit-learn.org/stable/modules/generated/sklearn.manifold.MDS.html"><code>sklearn.manifold.MDS</code></a> e, em seguida, um <a href="https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html"><code>sklearn.manifold.TSNE</code></a> para reduzir a dimensionalidade dos nossos dados.</div></p>
 
 ```python
 from sklearn.manifold import MDS, TSNE
@@ -135,7 +135,7 @@ X_emb = \
 (TSNE(random_state=42).fit_transform(MDS(random_state=42).fit_transform(X)))
 ```
 
-<p><div align="justify">É legal ver que nossos clusters estão fazendo sentido com a marcação original de dígitos, mas o gráfico mais importante aqui é o último: vemos que de fato, existem exemplos que parecem ser mais confusos de atribuir a algum cluster de forma certa (como as imagens associadas ao número 8 que são facilmente confundidas com outros números e exemplos que parecem estar "na fronteira"; entre dois agrupamentos).</div></p>
+<p><div align="justify">É legal ver que nossos clusters estão fazendo sentido com a marcação original de dígitos, mas o gráfico mais importante aqui é o último: vemos que de fato, existem exemplos que parecem ser mais confusos de atribuir a algum cluster de forma certa (como as imagens associadas ao número 8 que são facilmente confundidas com outros números e exemplos que parecem estar "na fronteira", entre dois agrupamentos).</div></p>
 
 ```python
 fig, ax = plt.subplots(ncols=4, figsize=(12, 3))
@@ -191,7 +191,7 @@ plt.tight_layout()
 
 <p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/metakmeans/output_28_0.png"></center></div></p>
 
-<p><div align="justify">Essa visão nos permite ver os exemplos mais difíceis de agrupar, dando uma noção de <a href="https://deslib.readthedocs.io/en/latest/modules/util/instance_hardness.html">instance hardness</a> para o nosso problema de clusterização que, no nosso, exemplo parece estar associado a números parecidos com o 8.</div></p>
+<p><div align="justify">Essa visão nos permite ver os exemplos mais difíceis de agrupar, dando uma noção de <a href="https://deslib.readthedocs.io/en/latest/modules/util/instance_hardness.html">instance hardness</a> para o nosso problema de clusterização que, no nosso exemplo, parece estar associado a números parecidos com o 8.</div></p>
 
 ```python
 (pd.DataFrame(aggregated_predicts)[(aggregated_predicts<0.45).all(axis=1)]
@@ -311,7 +311,7 @@ ___
 
 <p><div align="justify">Essa ideia de clusterização de centróides não é nova e, inclusive, pode ser utilizada para definir a inicialização do K-Means. Esse algoritmo é chamado Refined K-Means [<a href="#bibliography">1</a>], entretanto não parece ter uma vantagem clara quando comparado ao <a href="https://en.wikipedia.org/wiki/K-means%2B%2B">K-Means++</a> com múltiplas inicializações (maneira como o <a href="https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html"><code>sklearn.cluster.KMeans</code></a> segue).</div></p>
 
-<p><div align="justify">Apesar de claramente ter aplicações em que vale a pena testar essa visão, nos experimentos feitos para construir essa discussão, os clusters encontrados individualmente raramente discordam muito (conseguimos ver isso pelo número significativo de exemplos com <code>aggregated_predicts.max(axis=1)</code> sendo igual a 1) e os hard clusters encontrados no final da nossa estratégia de soft clustering (pegando o <code>.argmax</code>) são muito parecidos com os clusters encontrados em um K-Means usual.  Portanto, não acho que seja uma técnica extremamente promissora, apesar de valer o teste sempre que você estiver interessado em um K-Means pelo baixo esforço adicional.</div></p>
+<p><div align="justify">Apesar de claramente ter aplicações em que vale a pena testar essa visão, nos experimentos feitos para construir essa discussão, os clusters encontrados individualmente raramente discordam muito (conseguimos ver isso pelo número significativo de exemplos com <code>aggregated_predicts.max(axis=1)</code> sendo igual a 1) e os hard clusters encontrados no final da nossa estratégia de soft clustering (pegando o <code>.argmax</code>) são muito parecidos com os clusters encontrados em um K-Means usual. Portanto, não acho que seja uma técnica extremamente promissora, apesar de valer o teste sempre que você estiver interessado em um K-Means pelo baixo esforço adicional.</div></p>
 
 ```python
 unique_km_labels = KMeans(random_state=42).fit(X).labels_
@@ -417,4 +417,4 @@ class_predict_probas = class_meta_kmeans.predict_proba(X)
 
 ___
 
-<p><div align="justify">Todos os arquivos e ambiente para reprodução dos experimentos podem ser encontrado no <a href="https://github.com/vitaliset/vitaliset.github.io/tree/master/code/metakmeans">repositório deste post</a>.</div></p>
+<p><div align="justify">Todos os arquivos e ambiente para reprodução dos experimentos podem ser encontrados no <a href="https://github.com/vitaliset/vitaliset.github.io/tree/master/code/metakmeans">repositório deste post</a>.</div></p>

@@ -335,6 +335,89 @@ def extract_image_names(md: str) -> List[str]:
     return re.findall(r"output_\d+_\d+\.(?:png|jpe?g|gif|svg)", md, flags=re.IGNORECASE)
 
 
+# --------------------------------------------------------------------------- #
+# Prose extraction — used by the prose-sync test to enforce that a post's prose
+# and its notebook's markdown stay in sync (two views of the same text).
+# --------------------------------------------------------------------------- #
+import html as _html
+
+# Boilerplate footer paragraph(s) that exist only in the published post.
+_PROSE_FOOTER = (
+    "repositório deste post",
+    "repository of this post",
+    "repositório de experimentos",
+    "originalmente publicado no Medium",
+)
+_FENCE_BLOCK = re.compile(r"```.*?```", re.DOTALL)
+_DISPLAY_MATH = re.compile(r"\$\$.*?\$\$", re.DOTALL)  # standalone in posts, inline-in-cell in notebooks
+_EMPHASIS_US = re.compile(r"(?<!\w)_|_(?!\w)")  # emphasis underscores, not intra-word (rand_score)
+
+
+def _canonical_prose(text: str) -> str:
+    """Reduce a prose fragment (HTML or markdown) to comparable plain text.
+
+    Normalization is about *consistency* between the two formats, not pretty
+    output: decode entities, turn links into their label, drop tags, and remove
+    inline-formatting markers (`*`, backtick, blockquote `>`, heading `#`, and
+    emphasis underscores) so the post's HTML and the notebook's markdown collapse
+    to the same string.
+    """
+    text = _html.unescape(text)
+    text = re.sub(r"<a [^>]*>(.*?)</a>", r"\1", text, flags=re.DOTALL | re.IGNORECASE)
+    text = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", text)  # markdown links (label has no ])
+    text = re.sub(r"</?[a-zA-Z][^>]*>", "", text)  # real HTML tags only (not math '<'/'>')
+    text = text.replace(r"\left", "").replace(r"\right", "")  # LaTeX sizing: \left( == (
+    text = text.replace("`", "").replace("*", "").replace("<", "").replace(">", "").replace("#", "")
+    text = _EMPHASIS_US.sub("", text)
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def post_prose_text(post_md: str) -> str:
+    """Canonical joined prose of a post (the justified-text paragraphs)."""
+    out = []
+    # Body prose is <p><div align="justify">…</div></p>; bibliography entries are
+    # often <p align="justify">…</p> (no inner div). Capture both in document order.
+    pattern = r'<p><div align="justify">(.*?)</div></p>|<p align="justify">(.*?)</p>'
+    for m in re.finditer(pattern, post_md, flags=re.DOTALL):
+        p = m.group(1) if m.group(1) is not None else m.group(2)
+        if "<img" in p:
+            continue
+        c = _canonical_prose(p)
+        if c and not any(f in c for f in _PROSE_FOOTER):
+            out.append(c)
+    return " ".join(out)
+
+
+def notebook_prose_text(nb_path) -> str:
+    """Canonical joined prose of a notebook's markdown cells.
+
+    Skips headings, tables, horizontal rules, image/caption lines, fenced code,
+    and the post-only footer, so the result is comparable to ``post_prose_text``.
+    """
+    import nbformat
+
+    nb = nbformat.read(str(nb_path), as_version=4)
+    out = []
+    for cell in nb.cells:
+        if cell.get("cell_type") != "markdown":
+            continue
+        src = _FENCE_BLOCK.sub("", cell.get("source", ""))
+        src = _DISPLAY_MATH.sub("", src)
+        for block in src.split("\n\n"):
+            s = block.strip()
+            if not s or s.startswith("#") or s.startswith("|"):
+                continue
+            if re.fullmatch(r"[-_*]{3,}", s):  # horizontal rule
+                continue
+            if "![" in s or "<img" in s or s.startswith("<center>"):
+                continue
+            block = re.sub(r"(?m)^\s*(?:\d+\.|[-*+])\s+", "", block)  # list markers
+            c = _canonical_prose(block)
+            if c and not any(f in c for f in _PROSE_FOOTER):
+                out.append(c)
+    return " ".join(out)
+
+
 def write_post(post_text: str, images: Dict[str, bytes], slug: str, date: str) -> Path:
     img_dir = REPO_ROOT / "assets" / "img" / slug
     img_dir.mkdir(parents=True, exist_ok=True)
