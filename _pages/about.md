@@ -25,6 +25,6 @@ mathjax: true
   </div>
 </div>
 
-<p><div align="justify"><b>About the website look</b>: The older illustrations on the blog are works by the talented <a href="https://www.instagram.com/lucasalamoart/">Lucas Álamo</a>. The layout is an adaptation of the <a href="https://janczizikow.github.io/sleek/">Sleek</a> theme.</div></p>
+<p><div align="justify"><b>About the website look</b>: The older illustrations on the blog are works by the talented <a href="https://www.instagram.com/lucasalamoart/">Lucas Álamo</a> — you can see the full collection in the <a href="{{ site.baseurl }}/gallery/">gallery</a>. The layout is an adaptation of the <a href="https://janczizikow.github.io/sleek/">Sleek</a> theme.</div></p>
 
 <p><div align="justify">$\oint$ <i><b>Why Vitali Set?</b>: I really appreciate <a href="https://en.wikipedia.org/wiki/Measure_(mathematics)">Measure Theory</a> (the basis of Probability). The <a href="https://en.wikipedia.org/wiki/Vitali_set">Vitali set</a> is the classic example used to motivate the formalization of these concepts: it is a set in $\mathbb{R}$ that does not allow for a measure to be defined when imposing some quite reasonable conditions.</i></div></p>

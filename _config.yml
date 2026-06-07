@@ -37,7 +37,7 @@ highlighter: rouge # rouge or pygments or null
 exclude:
   - README.md
   - DEVELOPMENT.md
-  - VISUAL_IDENTITY.md
+  - visual-identity   # AI cover-art guide + example prompts (internal, not served)
   - Gemfile
   - Gemfile.lock
   - vendor
