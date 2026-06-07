@@ -52,9 +52,12 @@ To generate a post from a notebook in `code/<slug>/`, use the pipeline documente
 
 ## Compiled styles and assets
 
-`assets/css/main.css` and `assets/js/bundle.js` are **versioned build artifacts** — they
-are what the site actually serves. `main.css` is compiled from `_sass/` and `bundle.js`
-from `_js/`. **Do not edit `main.css`/`bundle.js` by hand** — change the source and recompile.
+`assets/css/main.css` and `assets/js/bundle.js` are **versioned artifacts** — they are what
+the site actually serves. **Do not edit them by hand** — change the source and recompile.
+
+The original theme shipped a Gulp/npm toolchain to build these. It was already broken
+(gulp-3 syntax under gulp 4, never installed) and it carried a large pile of npm
+vulnerabilities, so it has been **removed**. What remains:
 
 **Styles (`_sass/` → `main.css`):** recompile with the Sass that ships with the Ruby toolchain:
 
@@ -62,14 +65,13 @@ from `_js/`. **Do not edit `main.css`/`bundle.js` by hand** — change the sourc
 sass --scss --style compressed --sourcemap=none _sass/jekyll-sleek.scss assets/css/main.css
 ```
 
-> `gulpfile.js`/`package.json` (Gulp) are leftovers from the theme and **no longer work**
-> as-is (gulp-3 syntax under gulp 4, and they depend on a `node_modules` that is never
-> installed). The `sass` command above covers what matters today. The only practical
-> difference is that it does not add vendor prefixes (autoprefixer) — irrelevant for
-> current browsers.
+> The only practical difference from the old Gulp build is that this does not add vendor
+> prefixes (autoprefixer) — irrelevant for current browsers.
 
-**JS (`_js/` → `bundle.js`):** still depends on Gulp/Browserify and is not recompiled in
-the current workflow; the versioned `bundle.js` is what counts.
+**JS (`bundle.js`):** now a **vendored artifact** (jQuery + velocity + lazysizes, bundled).
+Its source is [`_js/scripts.js`](_js/scripts.js), kept for reference, but there is no JS
+build wired up anymore. The JS rarely changes; if it ever needs to, set up a small modern
+bundler (e.g. [esbuild](https://esbuild.github.io/)) to rebuild `bundle.js` from `_js/`.
 
 ## Credits
 

@@ -44,14 +44,9 @@ highlighter: rouge # rouge or pygments or null
 # theme: jekyll-sleek # Uncomment if you're using the theme as a ruby gem
 exclude:
   - README.md
-  - node_modules
-  - package.json
-  - package-lock.json
   - Gemfile
   - Gemfile.lock
   - vendor
-  - npm-debug.log
-  - gulpfile.js
   - code        # consolidated notebook/code tree (.ipynb, pyproject.toml, poetry.lock, lightgbm/, caches)
   - scripts     # notebook -> post conversion pipeline
 
