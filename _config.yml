@@ -3,7 +3,7 @@ title: Vitali Set # your site title
 author: Carlo # You :P
 # description: > # Meta description of Homepage
 #  AAAAAAAAAAAAAAAA
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "" # empty for a root user/org site (vitaliset.github.io); use e.g. "/blog" only for a project subpath
 url: "https://vitaliset.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
 # SEO PLUGIN
