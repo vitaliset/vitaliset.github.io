@@ -1,1 +1,10 @@
-@import "node_modules/breakpoint-sass/stylesheets/breakpoint";
+// Minimal stand-in for breakpoint-sass.
+// The theme only ever calls `breakpoint(<single length>)`, which maps to a
+// plain min-width media query. The original imported the library from
+// node_modules; vendoring this keeps _sass/ self-contained and buildable
+// without an npm install.
+@mixin breakpoint($size) {
+  @media (min-width: $size) {
+    @content;
+  }
+}

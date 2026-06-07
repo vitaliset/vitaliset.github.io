@@ -50,13 +50,22 @@ documentado em [`scripts/README.md`](scripts/README.md).
 ## Estilos e assets compilados
 
 `assets/css/main.css` e `assets/js/bundle.js` são **artefatos versionados** — é o que
-o site realmente serve. Eles são compilados a partir de `_sass/` e `_js/` pela pipeline
-**Gulp** (`gulpfile.js` + `package.json`), que **não roda no fluxo do dia a dia**. Ou seja:
-editar `_sass/`/`_js/` sozinho **não** muda o site até recompilar.
+o site realmente serve. O `main.css` é compilado a partir de `_sass/` e o `bundle.js`
+a partir de `_js/`. **Não edite `main.css`/`bundle.js` na mão** — mexa na fonte e recompile.
 
-Para mexer no visual: instale as dependências de build (`npm install`) e rode o Gulp para
-regerar `main.css`/`bundle.js`. **Não edite `main.css` na mão** — ele seria sobrescrito na
-próxima compilação.
+**Estilos (`_sass/` → `main.css`):** recompile com o Sass que já vem no toolchain do Ruby:
+
+```powershell
+sass --scss --style compressed --sourcemap=none _sass/jekyll-sleek.scss assets/css/main.css
+```
+
+> O `gulpfile.js`/`package.json` (Gulp) são herança do tema e **não funcionam mais** como
+> estão (sintaxe de gulp 3 com gulp 4, e dependem de `node_modules` que não é instalado).
+> O comando `sass` acima cobre o que importa hoje. A única diferença prática é que ele não
+> adiciona os prefixos de fornecedor (autoprefixer) — irrelevante para navegadores atuais.
+
+**JS (`_js/` → `bundle.js`):** segue dependendo do Gulp/Browserify e não é recompilado no
+fluxo atual; o `bundle.js` versionado é o que vale.
 
 ## Créditos
 
