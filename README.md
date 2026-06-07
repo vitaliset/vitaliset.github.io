@@ -28,3 +28,7 @@ bundle exec jekyll serve --livereload
 Abra http://localhost:4000. O site recarrega sozinho ao salvar. Pare com `Ctrl+C`.
 
 > Mudanças no `_config.yml` não recarregam automaticamente — pare e rode o comando de novo.
+
+## Créditos
+
+- Logo / favicon: galinha do [OpenMoji](https://openmoji.org/), **modificada** (recorte do `viewBox` para enquadrar melhor o ícone), licenciada sob [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Como é uma obra derivada sob _ShareAlike_, o ícone (`_includes/logo.svg` e `assets/img/icons/favicon.svg`) permanece sob CC BY-SA 4.0.
