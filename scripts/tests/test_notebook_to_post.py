@@ -56,6 +56,12 @@ STRICT_FIXTURES = [
         "_posts/2023-07-17-cqr-cate.md",
         id="cqr_cate",
     ),
+    pytest.param(
+        "threshold_dependent_opt",
+        "code/threshold_dependent_opt/blog_threshold_dependent_opt.ipynb",
+        "_posts/2023-01-06-threshold-dependent-opt.md",
+        id="threshold_dependent_opt",
+    ),
 ]
 
 

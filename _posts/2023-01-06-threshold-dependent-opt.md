@@ -94,7 +94,118 @@ run_experiment(estimator=RandomForestClassifier(random_state=0),
                scoring="f1", X=X_train_model, y=y_train_model, params=params, cv=skfold)
 ```
 
-<p><center><img src="{{ site.baseurl }}/assets/img/threshold_dependent_opt/output_10_0.png"></center></p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>param_max_depth</th>
+      <th>param_n_estimators</th>
+      <th>mean_test_score</th>
+      <th>std_test_score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>10</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>50</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>100</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>10</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>50</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>4</td>
+      <td>100</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>10</td>
+      <td>10</td>
+      <td>0.059510</td>
+      <td>0.039552</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>10</td>
+      <td>50</td>
+      <td>0.040333</td>
+      <td>0.016119</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>10</td>
+      <td>100</td>
+      <td>0.034938</td>
+      <td>0.014265</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>None</td>
+      <td>10</td>
+      <td>0.097418</td>
+      <td>0.007834</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>None</td>
+      <td>50</td>
+      <td>0.105050</td>
+      <td>0.022298</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>None</td>
+      <td>100</td>
+      <td>0.096360</td>
+      <td>0.016211</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 <p><div align="justify">Some combinations of hyperparameters seem to have an <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html"><code>sklearn.metrics.f1_score</code></a> of 0. Weird.</div></p>
 
@@ -131,7 +242,7 @@ ax[1].legend(fontsize=7)
 plt.tight_layout()
 ```
 
-<p><center><img src="{{ site.baseurl }}/assets/img/threshold_dependent_opt/output_13_0.png"></center></p>
+<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/threshold_dependent_opt/output_13_0.png"></center></div></p>
 
 <p><div align="justify">Very few examples pass the <code>0.5</code> threshold, a significantly lower amount than the actual number of class 1 samples. This tells us that a softer threshold (less than <code>0.5</code>) makes more sense in this problem.</div></p>
 
@@ -186,7 +297,7 @@ plt.tight_layout()
 
     100%|██████████| 101/101 [02:00<00:00,  1.19s/it]
 
-<p><center><img src="{{ site.baseurl }}/assets/img/threshold_dependent_opt/output_18_1.png"></center></p>
+<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/threshold_dependent_opt/output_18_1.png"></center></div></p>
 
 ```python
 f1_score(y_test, (out_of_the_box_model.predict_proba(X_test)[:, 1] > best_threshold_ootb).astype(int))
@@ -221,7 +332,118 @@ run_experiment(estimator=RandomForestClassifier(random_state=0),
                scoring="roc_auc", X=X_train_model, y=y_train_model, params=params, cv=skfold)
 ```
 
-<p><center><img src="{{ site.baseurl }}/assets/img/threshold_dependent_opt/output_24_0.png"></center></p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>param_max_depth</th>
+      <th>param_n_estimators</th>
+      <th>mean_test_score</th>
+      <th>std_test_score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>10</td>
+      <td>0.719377</td>
+      <td>0.008165</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>50</td>
+      <td>0.746675</td>
+      <td>0.007476</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>100</td>
+      <td>0.742196</td>
+      <td>0.007105</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>10</td>
+      <td>0.733715</td>
+      <td>0.013691</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>50</td>
+      <td>0.744482</td>
+      <td>0.010491</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>4</td>
+      <td>100</td>
+      <td>0.747113</td>
+      <td>0.007466</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>10</td>
+      <td>10</td>
+      <td>0.695511</td>
+      <td>0.018646</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>10</td>
+      <td>50</td>
+      <td>0.703767</td>
+      <td>0.019845</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>10</td>
+      <td>100</td>
+      <td>0.708600</td>
+      <td>0.022674</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>None</td>
+      <td>10</td>
+      <td>0.652099</td>
+      <td>0.031056</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>None</td>
+      <td>50</td>
+      <td>0.682542</td>
+      <td>0.017131</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>None</td>
+      <td>100</td>
+      <td>0.685519</td>
+      <td>0.020818</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 ### 2. Leak the threshold search
 
@@ -251,7 +473,118 @@ df_best_f1 = run_experiment(estimator=RandomForestClassifier(random_state=0),
 df_best_f1
 ```
 
-<p><center><img src="{{ site.baseurl }}/assets/img/threshold_dependent_opt/output_28_0.png"></center></p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>param_max_depth</th>
+      <th>param_n_estimators</th>
+      <th>mean_test_score</th>
+      <th>std_test_score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>10</td>
+      <td>0.253281</td>
+      <td>0.009199</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>50</td>
+      <td>0.267678</td>
+      <td>0.005953</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>100</td>
+      <td>0.257495</td>
+      <td>0.002502</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>10</td>
+      <td>0.241877</td>
+      <td>0.017142</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>50</td>
+      <td>0.257753</td>
+      <td>0.014293</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>4</td>
+      <td>100</td>
+      <td>0.263571</td>
+      <td>0.011393</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>10</td>
+      <td>10</td>
+      <td>0.202218</td>
+      <td>0.016497</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>10</td>
+      <td>50</td>
+      <td>0.225597</td>
+      <td>0.032149</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>10</td>
+      <td>100</td>
+      <td>0.230246</td>
+      <td>0.025504</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>None</td>
+      <td>10</td>
+      <td>0.181869</td>
+      <td>0.015010</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>None</td>
+      <td>50</td>
+      <td>0.213798</td>
+      <td>0.037220</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>None</td>
+      <td>100</td>
+      <td>0.209927</td>
+      <td>0.034730</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 <p><div align="justify">On the other hand, we are leaking our model and consequently overestimating our metric since we are choosing the best threshold in the cross-validation validation set.</div></p>
 
@@ -261,15 +594,15 @@ df_best_f1
 
 <p><div align="justify">In each step of our cross-validation, we will have a training set and a validation set that we will use to evaluate the performance of the classifier trained in that training set. That is what we were doing in method 1, for instance.</div></p>
 
-<p><center><img src="{{ site.baseurl }}/assets/img/threshold_dependent_opt/output_30_0.png"></center></p>
+<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/threshold_dependent_opt/output_30_0.png"></center></div></p>
 
 <p><div align="justify">In solution 2, we optimize the threshold on the validation set by taking the best possible metric value for the different thresholds of our threshold grid. But, as we are leaking the threshold search, we will overestimate our metric, which can be harmful.</div></p>
 
-<p><center><img src="{{ site.baseurl }}/assets/img/threshold_dependent_opt/output_32_0.png"></center></p>
+<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/threshold_dependent_opt/output_32_0.png"></center></div></p>
 
 <p><div align="justify">In the solution we are discussing, during the training stage, we will do a hold-out to have a set that we will use to optimize the threshold, and the optimal threshold will be used in the validation evaluation.</div></p>
 
-<p><center><img src="{{ site.baseurl }}/assets/img/threshold_dependent_opt/output_34_0.png"></center></p>
+<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/threshold_dependent_opt/output_34_0.png"></center></div></p>
 
 <p><div align="justify">A rough implementation of a class that does this logic is as follows:</div></p>
 
@@ -347,7 +680,118 @@ df_best
     CPU times: total: 5min 25s
     Wall time: 5min 28s
 
-<p><center><img src="{{ site.baseurl }}/assets/img/threshold_dependent_opt/output_39_1.png"></center></p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>param_max_depth</th>
+      <th>param_n_estimators</th>
+      <th>mean_test_score</th>
+      <th>std_test_score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>10</td>
+      <td>0.238970</td>
+      <td>0.011282</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>50</td>
+      <td>0.238447</td>
+      <td>0.016450</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>100</td>
+      <td>0.243230</td>
+      <td>0.022790</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>10</td>
+      <td>0.203598</td>
+      <td>0.039442</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>50</td>
+      <td>0.226371</td>
+      <td>0.023246</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>4</td>
+      <td>100</td>
+      <td>0.249048</td>
+      <td>0.007759</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>10</td>
+      <td>10</td>
+      <td>0.200635</td>
+      <td>0.034000</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>10</td>
+      <td>50</td>
+      <td>0.199724</td>
+      <td>0.050758</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>10</td>
+      <td>100</td>
+      <td>0.176026</td>
+      <td>0.042777</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>None</td>
+      <td>10</td>
+      <td>0.175387</td>
+      <td>0.015105</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>None</td>
+      <td>50</td>
+      <td>0.158617</td>
+      <td>0.015450</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>None</td>
+      <td>100</td>
+      <td>0.179195</td>
+      <td>0.036804</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 ___
 
@@ -388,7 +832,7 @@ plt.tight_layout()
 
     100%|██████████| 101/101 [01:13<00:00,  1.37it/s]
 
-<p><center><img src="{{ site.baseurl }}/assets/img/threshold_dependent_opt/output_43_1.png"></center></p>
+<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/threshold_dependent_opt/output_43_1.png"></center></div></p>
 
 ```python
 f1_score(y_test, (best_model.predict_proba(X_test)[:, 1] > best_threshold_best).astype(int))

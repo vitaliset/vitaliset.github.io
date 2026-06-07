@@ -95,16 +95,15 @@ The snapshot tests run the pipeline on real notebooks and compare the generated
 code/output/image blocks to the committed posts byte-for-byte (prose ignored).
 
 **Strictly tested posts:** `r_squared`, `evaluating_ranking_in_regression`,
-`metakmeans`, `covariate_introduction`, and `cqr_cate`. These regenerate exactly
-from their notebooks — `evaluating_ranking` via `nb2post:merge`; the others via
-`skip`/`skip-input`/`skip-output` plus reconciling their DataFrame tables to HTML.
+`metakmeans`, `covariate_introduction`, `cqr_cate`, and `threshold_dependent_opt`.
+These regenerate exactly from their notebooks — `evaluating_ranking` via
+`nb2post:merge`; the others via `skip`/`skip-input`/`skip-output` plus reconciling
+their DataFrame tables to HTML (and normalizing older plain embeds to div-align).
 
 **Future work — strict for all posts.** The remaining notebook-backed posts
-(`threshold_dependent_opt`, `boruta`, `conditional_density_estimation`) are not
-byte-reproducible yet: their published versions show only a curated subset of
-outputs and sometimes hand-added figures (`conditional_density_estimation` has
-genuine non-table figures; the other two are mostly table-as-image + suppressed
-outputs, plus boruta has a `%%time` magic and a hand-edited output). Bringing each
-under strict tests means adding the per-post directives above and, where an older
-post used the plain `<p><center><img>` embed, normalizing it to the
-`<div align="justify">` form. The goal is for every post to be strict.
+(`boruta`, `conditional_density_estimation`) are not byte-reproducible yet:
+`conditional_density_estimation` has genuine non-table figures, and `boruta` is
+mostly table-as-image + suppressed outputs but also has a `%%time` magic and a
+hand-edited printed output. Bringing each under strict tests means adding the
+per-post directives above and normalizing any plain `<p><center><img>` embeds to
+the `<div align="justify">` form. The goal is for every post to be strict.
