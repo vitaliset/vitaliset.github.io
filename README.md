@@ -1,72 +1,80 @@
 # vitaliset.github.io
 
-Blog pessoal para discussões técnicas de ciência de dados! O layout é uma pequena adaptação do tema <a href="https://janczizikow.github.io/sleek/">Sleek</a>.
+Personal blog for technical discussions on data science! The layout is a small
+adaptation of the <a href="https://janczizikow.github.io/sleek/">Sleek</a> theme.
 
-## Rodando localmente
+## Running locally
 
-Para pré-visualizar o site antes de publicar (em vez de testar direto no ar):
+To preview the site before publishing (instead of testing live):
 
-**Setup (uma vez só):**
+**Setup (one time only):**
 
-1. Instale o Ruby com o DevKit e finalize o toolchain (aperte Enter no menu):
+1. Install Ruby with the DevKit and finish the toolchain (press Enter at the menu):
    ```powershell
    winget install RubyInstallerTeam.RubyWithDevKit.3.1
    ridk install
    ```
-   Abra um novo terminal e confirme: `ruby -v`.
-2. Instale o Bundler: `gem install bundler`.
-3. Na pasta do site, instale as dependências: `bundle install`.
+   Open a new terminal and confirm: `ruby -v`.
+2. Install Bundler: `gem install bundler`.
+3. In the site folder, install the dependencies: `bundle install`.
 
-> O `Gemfile` já inclui `webrick` (servidor necessário no Ruby 3.x) e `kramdown-parser-gfm` (parser GFM, separado do kramdown 2.x) — só rodar o `bundle install` acima.
+> The `Gemfile` already includes `webrick` (the server required on Ruby 3.x) and
+> `kramdown-parser-gfm` (the GFM parser, split out of kramdown 2.x) — just run the
+> `bundle install` above.
 
-**No dia a dia:**
+**Day to day:**
 
 ```powershell
 bundle exec jekyll serve --livereload
 ```
 
-Abra http://localhost:4000. O site recarrega sozinho ao salvar. Pare com `Ctrl+C`.
+Open http://localhost:4000. The site reloads on save. Stop it with `Ctrl+C`.
 
-> Mudanças no `_config.yml` não recarregam automaticamente — pare e rode o comando de novo.
+> Changes to `_config.yml` are not reloaded automatically — stop and rerun the command.
 
-## Estrutura do repositório
+## Repository structure
 
 ```
-_posts/      Posts do blog (markdown, nomeados YYYY-MM-DD-slug.md)
-_pages/      Páginas avulsas (about, sobre, links, interview, etc. — cada uma com seu permalink)
-_layouts/    Templates do Jekyll (default, page, post)
+_posts/      Blog posts (markdown, named YYYY-MM-DD-slug.md)
+_pages/      Standalone pages (about, sobre, links, interview, etc. — each with its permalink)
+_layouts/    Jekyll templates (default, page, post)
 _includes/   Partials (head, header, footer, mathjax, ...)
-_sass/       Fonte dos estilos (SCSS) — veja a nota abaixo
-_js/         Fonte do JavaScript — veja a nota abaixo
-assets/      Estáticos servidos: CSS/JS compilados, imagens, ícones
-files/       PDFs (currículo, históricos)
-code/        Notebooks e ambientes por post (fonte reproducível; excluído do build)
-scripts/     Pipeline notebook -> post (veja scripts/README.md)
+_sass/       Style source (SCSS) — see the note below
+_js/         JavaScript source — see the note below
+assets/      Served static files: compiled CSS/JS, images, icons
+files/       PDFs (resume, transcripts)
+code/        Per-post notebooks and environments (reproducible source; excluded from the build)
+scripts/     notebook -> post pipeline (see scripts/README.md)
 ```
 
-Para gerar um post a partir de um notebook em `code/<slug>/`, use o pipeline
-documentado em [`scripts/README.md`](scripts/README.md).
+To generate a post from a notebook in `code/<slug>/`, use the pipeline documented in
+[`scripts/README.md`](scripts/README.md).
 
-## Estilos e assets compilados
+## Compiled styles and assets
 
-`assets/css/main.css` e `assets/js/bundle.js` são **artefatos versionados** — é o que
-o site realmente serve. O `main.css` é compilado a partir de `_sass/` e o `bundle.js`
-a partir de `_js/`. **Não edite `main.css`/`bundle.js` na mão** — mexa na fonte e recompile.
+`assets/css/main.css` and `assets/js/bundle.js` are **versioned build artifacts** — they
+are what the site actually serves. `main.css` is compiled from `_sass/` and `bundle.js`
+from `_js/`. **Do not edit `main.css`/`bundle.js` by hand** — change the source and recompile.
 
-**Estilos (`_sass/` → `main.css`):** recompile com o Sass que já vem no toolchain do Ruby:
+**Styles (`_sass/` → `main.css`):** recompile with the Sass that ships with the Ruby toolchain:
 
 ```powershell
 sass --scss --style compressed --sourcemap=none _sass/jekyll-sleek.scss assets/css/main.css
 ```
 
-> O `gulpfile.js`/`package.json` (Gulp) são herança do tema e **não funcionam mais** como
-> estão (sintaxe de gulp 3 com gulp 4, e dependem de `node_modules` que não é instalado).
-> O comando `sass` acima cobre o que importa hoje. A única diferença prática é que ele não
-> adiciona os prefixos de fornecedor (autoprefixer) — irrelevante para navegadores atuais.
+> `gulpfile.js`/`package.json` (Gulp) are leftovers from the theme and **no longer work**
+> as-is (gulp-3 syntax under gulp 4, and they depend on a `node_modules` that is never
+> installed). The `sass` command above covers what matters today. The only practical
+> difference is that it does not add vendor prefixes (autoprefixer) — irrelevant for
+> current browsers.
 
-**JS (`_js/` → `bundle.js`):** segue dependendo do Gulp/Browserify e não é recompilado no
-fluxo atual; o `bundle.js` versionado é o que vale.
+**JS (`_js/` → `bundle.js`):** still depends on Gulp/Browserify and is not recompiled in
+the current workflow; the versioned `bundle.js` is what counts.
 
-## Créditos
+## Credits
 
-- Logo / favicon: galinha do [OpenMoji](https://openmoji.org/), **modificada** (recorte do `viewBox` para enquadrar melhor o ícone), licenciada sob [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Como é uma obra derivada sob _ShareAlike_, o ícone (`_includes/logo.svg` e `assets/img/icons/favicon.svg`) permanece sob CC BY-SA 4.0.
+- Logo / favicon: chicken from [OpenMoji](https://openmoji.org/), **modified** (cropped the
+  `viewBox` to frame the icon better), licensed under
+  [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). As a derivative work under
+  _ShareAlike_, the icon (`_includes/logo.svg` and `assets/img/icons/favicon.svg`) remains
+  under CC BY-SA 4.0.
