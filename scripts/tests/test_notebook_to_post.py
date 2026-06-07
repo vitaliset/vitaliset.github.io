@@ -50,6 +50,12 @@ STRICT_FIXTURES = [
         "_posts/2020-08-02-covariate-shift-0-introduction.md",
         id="covariate_introduction",
     ),
+    pytest.param(
+        "cqr_cate",
+        "code/cqr_cate/CQR_causal_inference.ipynb",
+        "_posts/2023-07-17-cqr-cate.md",
+        id="cqr_cate",
+    ),
 ]
 
 
