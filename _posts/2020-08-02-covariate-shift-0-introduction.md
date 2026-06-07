@@ -67,7 +67,7 @@ ax.legend()
 plt.tight_layout()
 ```
 
-<p><center><img src="{{ site.baseurl }}/assets/img/covariate_0_introduction/output_5_0.png"></center></p>
+<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/covariate_0_introduction/output_5_0.png"></center></div></p>
 
 <p><div align="justify">We will employ a simple model for regression, namely the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html"><code>sklearn.tree.DecisionTreeRegressor</code></a>. By using <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html"><code>sklearn.model_selection.GridSearchCV</code></a>, we can determine the optimal value for the minimum number of samples per leaf (a regularization parameter, intended to prevent overfitting). Based on cross-validation, we can estimate the potential value of <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html"><code>sklearn.metrics.r2_score</code></a> we might achieve if we applied the decision tree to unseen data.</div></p>
 
@@ -89,7 +89,51 @@ df_cv = (
 df_cv.head(3)
 ```
 
-<p><center><img src="{{ site.baseurl }}/assets/img/covariate_0_introduction/output_7_0.png"></center></p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>param_min_samples_leaf</th>
+      <th>mean_test_score</th>
+      <th>std_test_score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>0.554561</td>
+      <td>0.094576</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>0.502175</td>
+      <td>0.100091</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>0.490702</td>
+      <td>0.131177</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 <p><div align="justify">We attain a reasonable $R^2$ value, indicating that the model successfully captures the patterns in the data, despite its simplicity and the small size of the dataset.</div></p>
 
@@ -109,7 +153,7 @@ ax.legend()
 plt.tight_layout()
 ```
 
-<p><center><img src="{{ site.baseurl }}/assets/img/covariate_0_introduction/output_9_0.png"></center></p>
+<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/covariate_0_introduction/output_9_0.png"></center></div></p>
 
 <p><div align="justify">Visually, the model performs well around $x=0$, where there's a high density of $x$ values. As expected, the model's performance deteriorates at the fringes where fewer training examples are present.</div></p>
 
@@ -142,7 +186,7 @@ ax.legend()
 plt.tight_layout()
 ```
 
-<p><center><img src="{{ site.baseurl }}/assets/img/covariate_0_introduction/output_11_0.png"></center></p>
+<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/covariate_0_introduction/output_11_0.png"></center></div></p>
 
 <p><div align="justify">It is not reasonable to expect that our model will continue with the same performance we had before. The estimation of the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html"><code>sklearn.metrics.r2_score</code></a> was made based on the original distribution of $X$, which has now shifted.</div></p>
 
@@ -177,7 +221,7 @@ ax.legend(loc="lower left")
 plt.tight_layout()
 ```
 
-<p><center><img src="{{ site.baseurl }}/assets/img/covariate_0_introduction/output_13_0.png"></center></p>
+<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/covariate_0_introduction/output_13_0.png"></center></div></p>
 
 ```python
 r2_score(Y_new, grid_search.best_estimator_.predict(X_new))

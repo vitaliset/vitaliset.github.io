@@ -94,15 +94,17 @@ python -m pytest scripts/tests/
 The snapshot tests run the pipeline on real notebooks and compare the generated
 code/output/image blocks to the committed posts byte-for-byte (prose ignored).
 
-**Strictly tested posts:** `r_squared`, `evaluating_ranking_in_regression`, and
-`metakmeans`. These regenerate exactly from their notebooks — `evaluating_ranking`
-via `nb2post:merge`, and `metakmeans` via `skip-input`/`skip-output` plus
-reconciling its table to HTML.
+**Strictly tested posts:** `r_squared`, `evaluating_ranking_in_regression`,
+`metakmeans`, and `covariate_introduction`. These regenerate exactly from their
+notebooks — `evaluating_ranking` via `nb2post:merge`; `metakmeans` and
+`covariate_introduction` via `skip`/`skip-input`/`skip-output` plus reconciling
+their DataFrame tables to HTML.
 
 **Future work — strict for all posts.** The remaining notebook-backed posts
-(`boruta`, `threshold_dependent_opt`, `covariate_introduction`, `cqr_cate`,
-`conditional_density_estimation`) are not byte-reproducible yet: their published
-versions show only a curated subset of outputs and sometimes hand-added figures.
-Bringing each under strict tests means adding the per-post directives above and,
-where an older post used the plain `<p><center><img>` embed, normalizing it to the
-`<div align="justify">` form. The goal is for every post to be strict.
+(`cqr_cate`, `threshold_dependent_opt`, `boruta`, `conditional_density_estimation`)
+are not byte-reproducible yet: their published versions show only a curated subset
+of outputs and sometimes hand-added figures (`conditional_density_estimation` has
+genuine non-table figures; the others are mostly table-as-image + suppressed
+outputs). Bringing each under strict tests means adding the per-post directives
+above and, where an older post used the plain `<p><center><img>` embed, normalizing
+it to the `<div align="justify">` form. The goal is for every post to be strict.

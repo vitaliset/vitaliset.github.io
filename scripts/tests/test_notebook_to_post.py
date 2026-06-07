@@ -43,6 +43,13 @@ STRICT_FIXTURES = [
         "_posts/2022-10-23-metakmeans.md",
         id="metakmeans",
     ),
+    pytest.param(
+        # asset/embed slug keeps its number; the code/ folder dropped it.
+        "covariate_0_introduction",
+        "code/covariate_introduction/covariate_shift_introduction_EN.ipynb",
+        "_posts/2020-08-02-covariate-shift-0-introduction.md",
+        id="covariate_introduction",
+    ),
 ]
 
 
