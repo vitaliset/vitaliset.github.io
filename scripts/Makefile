@@ -3,6 +3,7 @@
 # Run from anywhere via -C:
 #   make -C scripts post NOTEBOOK=code/<slug>/file.ipynb SLUG=<slug> DATE=YYYY-MM-DD \
 #        [TITLE="..."] [CATEGORY="🇺🇸, basic"] [DESCRIPTION="..."]
+#   make -C scripts cover SOURCE=path/to/cover.jpg SLUG=<slug>
 #   make -C scripts test
 #
 # uv runs in *script mode* (--no-project): it uses the PEP 723 dependencies declared
@@ -18,10 +19,11 @@ TITLE       ?=
 CATEGORY    ?=
 DESCRIPTION ?=
 
-.PHONY: help post test
+.PHONY: help post cover test
 
 help:
 	@echo "make -C scripts post NOTEBOOK=code/<slug>/file.ipynb SLUG=<slug> DATE=YYYY-MM-DD [TITLE=..] [CATEGORY=..] [DESCRIPTION=..]"
+	@echo "make -C scripts cover SOURCE=path/to/cover.jpg SLUG=<slug>"
 	@echo "make -C scripts test"
 
 post:
@@ -33,6 +35,11 @@ post:
 		$(if $(TITLE),--title "$(TITLE)",) \
 		$(if $(CATEGORY),--category "$(CATEGORY)",) \
 		$(if $(DESCRIPTION),--description "$(DESCRIPTION)",)
+
+cover:
+	@test -n "$(SOURCE)" || { echo "SOURCE is required"; exit 1; }
+	@test -n "$(SLUG)"   || { echo "SLUG is required"; exit 1; }
+	@cd "$(ROOT)" && $(UV) scripts/make_cover_variants.py --source "$(SOURCE)" --slug "$(SLUG)"
 
 test:
 	@cd "$(ROOT)" && $(UV) --with pytest --with nbconvert --with nbformat pytest scripts/tests/

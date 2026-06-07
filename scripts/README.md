@@ -48,6 +48,23 @@ python scripts/notebook_to_post.py --notebook code/<slug>/<file>.ipynb --slug <s
 
 After running, hand-author the prose (wrap it in justified HTML) before publishing.
 
+## Post covers — `make_cover_variants.py`
+
+A post's `featured-img: <slug>` needs a base `assets/img/posts/<slug>.jpg` (post hero +
+social `og:image`) plus a few resized variants the homepage card uses
+(`_placehold`, `_thumb`, `_thumb@2x`, and the `_xs/_sm/_md/_lg` set). The old Gulp `img`
+task generated these; this script revives just that step using [Pillow](https://python-pillow.org/).
+
+From one cover image, write `<slug>.jpg` + all variants into `assets/img/posts/`:
+
+```sh
+make -C scripts cover SOURCE=path/to/cover.jpg SLUG=<slug>
+# or:  uv run scripts/make_cover_variants.py --source path/to/cover.jpg --slug <slug>
+```
+
+Widths and JPEG quality match the original pipeline; images are only scaled down, never
+enlarged. (See [`../visual-identity/`](../visual-identity/) for generating the cover art.)
+
 ### uv isolation (no conflict with `code/` projects)
 
 `uv run --no-project` runs the tool in *script mode*: it resolves the PEP 723
