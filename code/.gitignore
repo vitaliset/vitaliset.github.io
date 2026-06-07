@@ -1,0 +1,10 @@
+# Python / Jupyter artifacts generated when running the notebooks locally
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.pytest_cache/
+# OS cruft
+.DS_Store
+Thumbs.db
