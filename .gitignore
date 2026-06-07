@@ -1,7 +1,6 @@
 *.gem
 .bundle
 .sass-cache
-_site
 _img
 Gemfile.lock
 .idea/*
@@ -28,6 +27,10 @@ Thumbs.db
 ##########
 _site/
 .jekyll-metadata
+
+# Python test cache (scripts/ notebook->post pipeline) #
+#######################################################
+.pytest_cache/
 
 # Ruby #
 ########

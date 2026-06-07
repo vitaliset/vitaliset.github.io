@@ -24,7 +24,7 @@ navigation: # Navigation links
 #tagline: >
 #  My thoughts and experiments on machine learning and related stuff
 
-hero_img: teste1.jpg # Main background image: use the path from /assets/img/ => This will output /assets/img/posts/sleek_lg.jpg
+hero_img: teste1.jpg # Main background image: path relative to /assets/img/ => outputs /assets/img/teste1.jpg
 
 # email: pass # email for form submission
 
@@ -45,7 +45,6 @@ highlighter: rouge # rouge or pygments or null
 exclude:
   - README.md
   - node_modules
-  - script
   - package.json
   - package-lock.json
   - Gemfile
@@ -53,7 +52,6 @@ exclude:
   - vendor
   - npm-debug.log
   - gulpfile.js
-  - sleek.jpg
   - code        # consolidated notebook/code tree (.ipynb, pyproject.toml, poetry.lock, lightgbm/, caches)
   - scripts     # notebook -> post conversion pipeline
 

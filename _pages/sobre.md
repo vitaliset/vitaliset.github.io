@@ -16,7 +16,7 @@ mathjax: true
 
     <p>Neste blog, você encontrará discussões técnicas que utilizo para me auto-referenciar (quem já trabalhou comigo sabe que ao menos uma vez por semana surgirá o "escrevi sobre isso no meu blog"). Além de tópicos mais introdutórios, também há algumas discussões originais sobre pequenas tentativas criativas que realizei.</p>
 
-    <p>Atualmente, trabalho como Software Engineer no Google. Anteriormente, trabalhei no Itaú Unibanco e na Serasa Experian. Para saber mais sobre minhas experiências profissionais e acadêmicas, você pode conferir meu <a href="https://github.com/vitaliset/vitaliset.github.io/blob/master/carlo_bach_ufabc.pdf">histórico da graduação</a>, meu <a href="https://github.com/vitaliset/vitaliset.github.io/blob/master/carlo_cv.pdf">currículo</a> e meu perfil no <a href="https://www.linkedin.com/in/carlo-lemos">Linkedin</a>.</p>
+    <p>Atualmente, trabalho como Software Engineer no Google. Anteriormente, trabalhei no Itaú Unibanco e na Serasa Experian. Para saber mais sobre minhas experiências profissionais e acadêmicas, você pode conferir meu <a href="https://github.com/vitaliset/vitaliset.github.io/blob/master/files/carlo_bach_ufabc.pdf">histórico da graduação</a>, meu <a href="https://github.com/vitaliset/vitaliset.github.io/blob/master/files/carlo_cv.pdf">currículo</a> e meu perfil no <a href="https://www.linkedin.com/in/carlo-lemos">Linkedin</a>.</p>
   </div>
 
   <div style="flex: 1; text-align: center;">
