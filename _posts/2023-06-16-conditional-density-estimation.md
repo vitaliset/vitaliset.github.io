@@ -4,18 +4,18 @@ title: Conditional Density Estimation
 featured-img: cde
 category: [🇺🇸, uncertainty quantification]
 mathjax: true
-summary: CDE is the process of estimating the probability density function of a random variable given the values other variables.
+summary: CDE is the process of estimating the probability density function of a random variable given the values of other variables.
 ---
 
 <p><div align="justify">Typically, when we seek to model the relationship between a target variable $Y\in\mathbb{R}$ and one or more covariates $X$, our goal is to establish a conditional-expectation type association. Mathematically, if we define our loss as the mean squared error, our explicit aim is to identify the function $\mathbb{E} \left( Y \,|\, X=x\right)$. This function intuitively gives a prediction of the average value of $Y$ given that the covariates are $X=x$. Despite the straightforward and simplified summary provided by point estimates, they often fail to encapsulate the inherent intricacies and uncertainties prevalent in most real-world predictive scenarios. This prompts us to ask: Is the variance around this average value extensive, or can we confidently anticipate the value to be in close proximity to the predicted one?</div></p>
 
 <p><div align="justify">Diverging from the conventional approach of a single point estimation, Conditional Density Estimation (CDE) aims to understand the plausibility of an entire range of potential outcomes given specific input data. In mathematical terms, we are estimating the probability density function $f \left( y \,|\, X=x \right)$.</div></p>
 
-<p><div align="justify">The holistic nature of CDE affords a deeper understanding of data characteristics and proves beneficial in addressing two fundamental aspects: evaluating model trustworthiness outcomes and accommodating multi-modal.</div></p>
+<p><div align="justify">The holistic nature of CDE affords a deeper understanding of data characteristics and proves beneficial in addressing two fundamental aspects: evaluating model trustworthiness and accommodating multi-modal outcomes.</div></p>
 
-1. <p><div align="justify"><strong>Model trustworthiness:</strong> Unlike point estimation predictions, which offer no insight into their own reliability or uncertainty, CDE provides a full distribution of potential outcomes, thereby inherently conveying information about prediction confidence. The varaince of the predicted distribution can act as a measure of uncertainty or confidence, affording users a more comprehensive understanding of the predictions. Such an understanding proves critical when making decisions based on these predictions. For instance, in the healthcare sector, a prediction about patient outcomes accompanied by an understanding of its confidence or uncertainty could lead to more informed and suitable medical decisions.</div></p>
+1. <p><div align="justify"><strong>Model trustworthiness:</strong> Unlike point estimation predictions, which offer no insight into their own reliability or uncertainty, CDE provides a full distribution of potential outcomes, thereby inherently conveying information about prediction confidence. The variance of the predicted distribution can act as a measure of uncertainty or confidence, affording users a more comprehensive understanding of the predictions. Such an understanding proves critical when making decisions based on these predictions. For instance, in the healthcare sector, a prediction about patient outcomes accompanied by an understanding of its confidence or uncertainty could lead to more informed and suitable medical decisions.</div></p>
 
-2. <p><div align="justify"><strong>Multi-modal outcomes:</strong> Traditional regression or classification problems, generally focused on single point predictions, often fall short in capturing the full complexity of real-world phenomena. This shortfall becomes particularly apparent when a single input could feasibly yield multiple valid outputs, a situation termed as multi-modality. Consider a task of predicting salary based on certain features, but we're unsure if the individual resides in a state with a high or low average salary. In such a context, a more nuanced salary estimate shouldn't merely be an average drawn from both regions. Rather, it would be more fitting to present a bi-modal distribution with two distinct peaks. Each peak would denote a plausible salary range for the individual, depending on whether they live in one state or another.</div></p>
+2. <p><div align="justify"><strong>Multi-modal outcomes:</strong> Traditional regression or classification problems, generally focused on single point predictions, often fall short in capturing the full complexity of real-world phenomena. This shortfall becomes particularly apparent when a single input could feasibly yield multiple valid outputs, a situation termed multi-modality. Consider a task of predicting salary based on certain features, but we're unsure if the individual resides in a state with a high or low average salary. In such a context, a more nuanced salary estimate shouldn't merely be an average drawn from both regions. Rather, it would be more fitting to present a bi-modal distribution with two distinct peaks. Each peak would denote a plausible salary range for the individual, depending on whether they live in one state or another.</div></p>
 
 <p><div align="justify">$\oint$ <em>The field of conformal predictions aims to address this uncertainty by estimating prediction sets $\tau(X=x)$, such that $\mathbb{P}\left(\left(Y\,|\,X=x\right) \in \tau(X=x)\right) \geq 1 - \alpha$ with a certain desired coverage $\alpha$ [<a href="#bibliography">1</a>]. Interpreting the prediction sets, for instance by inspecting their size, begins to address some of the queries we raised earlier. However, in regression tasks, the prediction set is usually framed as an interval. Having only the interval extremes, which naturally attempt to estimate conditional quantiles, does not fully portray the uncertainty associated with the prediction. This limitation is particularly evident when dealing with multi-modal densities. Or, if you have a utility metric associated with your predictions and aim to examine the average utility for an individual, the logical approach would be to perform an integral on the individual's probability density.</em></div></p>
 
@@ -515,7 +515,7 @@ ___
 
 <p><div align="justify">A potential way to bypass the complications posed by neighbor searches in high dimensions, such as irrelevant variables, and varied scales and types is to formulate a more suitable distance metric robust to these challenges.</div></p>
 
-<p><div align="justify">The manner in which tree training is conducted naturally equips it to tackle these issues effectively because: tree models learn what the important features are through the process of choosing the best splits; and they are not concerned about the scale of variables, as they focus only on the ordering during training.</div></p>
+<p><div align="justify">The manner in which tree training is conducted naturally equips it to tackle these issues effectively because: tree models learn what the important features are through the process of choosing the best splits; and they are not concerned with the scale of variables, as they focus only on the ordering during training.</div></p>
 
 <p><div align="justify">When training a bagging of trees, we see variability in splits across the feature space, enabling us to use co-occurrence in the same leaves as a measure of similarity between examples [<a href="#bibliography">4</a>].</div></p>
 <p><div align="justify">Hence, if we train a bagging model of regression trees like <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html"><code>sklearn.ensemble.RandomForestRegressor</code></a> or <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.ExtraTreesRegressor.html"><code>sklearn.ensemble.ExtraTreesRegressor</code></a> to predict $Y$ from $X$, we are inherently constructing trees that create splits in relevant variables for predicting $Y$. At the same time, we disregard different scales by considering all instances that occur in the same leaf as similar, achieved by counting the co-occurrences of leaves across different models in the bagging [<a href="#bibliography">5</a>].</div></p>
@@ -530,9 +530,9 @@ class LeafNeighbors(NeighborsBase):
     """Neighbors search using leaf nodes coincidence in a tree ensemble as a
     similarity measure.
 
-    This class implements a supervised neighbor search using the leafs of an
+    This class implements a supervised neighbor search using the leaves of an
     ensemble tree estimator as a measure of distance. Examples that occur
-    simultaneously in several sheets are naturally close in variables relevant
+    simultaneously in several leaves are naturally close in variables relevant
     to the target.
 
     Parameters
@@ -594,7 +594,7 @@ squared_loss(y_test, crfkde_preds, np.linspace(-5, 5, 1000))
 
     -0.8328820889563571
 
-<p><div align="justify">In this scenario, the metric ended up similar to the one employed in the previous problem with neighbors, as the dimensionality is low. Consequently, the neighbors identified along the line closely align with the conventional approach of searching for nearby neighbors with euclidean distance.</div></p>
+<p><div align="justify">In this scenario, the metric ended up similar to the one employed in the previous problem with neighbors, as the dimensionality is low. Consequently, the neighbors identified along the line closely align with the conventional approach of searching for nearby neighbors with Euclidean distance.</div></p>
 
 ___
 
@@ -602,7 +602,7 @@ ___
 
 <p><div align="justify">FlexCode takes a fundamentally different approach to the CDE problem by employing arguments from linear algebra to estimate the conditional probability density function using a function basis.</div></p>
 
-<p><div align="justify">The space of <a href="https://mathworld.wolfram.com/L2-Space.html">square integrable functions</a> ($L^2(\mathbb{R})$) is a vector space equipped with an inner product defined as $\left\langle g, h\right\rangle = \int_{\mathbb{R}} g(t)\, h(t) \, dt$. Similar to finite-dimensional vector spaces, it possesses a (in this case, countable infinite) basis $\{ \phi_i \in L^2(\mathbb{R}) : i \in \mathbb{N}\}$, where any function $g \in L^2(\mathbb{R})$ can be expressed as a linear combination of the basis elements: $g(t) = \sum_{i=1}^\infty \beta_i \phi_i(t)$, for all $t \in \mathbb{R}$. Furthermore, it is possible to impose an orthonormal condition on the basis, such that $\left\langle \phi_i, \phi_j\right\rangle = \delta_{i,j}$, where $\delta_{i,j}$ equals $1$ if $i = j$ and $0$ otherwise [<a href="#bibliography">3</a>]. To help illustrate this concept, if you are unfamiliar with it, consider the analogy to the application of <a href="https://en.wikipedia.org/wiki/Fourier_series">Fourier series</a>.</div></p>
+<p><div align="justify">The space of <a href="https://mathworld.wolfram.com/L2-Space.html">square integrable functions</a> ($L^2(\mathbb{R})$) is a vector space equipped with an inner product defined as $\left\langle g, h\right\rangle = \int_{\mathbb{R}} g(t)\, h(t) \, dt$. Similar to finite-dimensional vector spaces, it possesses a (in this case, countably infinite) basis $\{ \phi_i \in L^2(\mathbb{R}) : i \in \mathbb{N}\}$, where any function $g \in L^2(\mathbb{R})$ can be expressed as a linear combination of the basis elements: $g(t) = \sum_{i=1}^\infty \beta_i \phi_i(t)$, for all $t \in \mathbb{R}$. Furthermore, it is possible to impose an orthonormal condition on the basis, such that $\left\langle \phi_i, \phi_j\right\rangle = \delta_{i,j}$, where $\delta_{i,j}$ equals $1$ if $i = j$ and $0$ otherwise [<a href="#bibliography">3</a>]. To help illustrate this concept, if you are unfamiliar with it, consider the analogy to the application of <a href="https://en.wikipedia.org/wiki/Fourier_series">Fourier series</a>.</div></p>
 
 <p><div align="justify">With any fixed orthonormal basis $\{ \phi_i \}$, it is possible to express the conditional probability density function as follows [<a href="#bibliography">3</a>]:</div></p>
 
@@ -621,11 +621,11 @@ $$
 \end{align*}
 $$
 
-<p><div align="justify">Hence, the estimation of $\hat{\beta}_j(x)$ can be achieved through regression, utilizing $X$ as predictors to estimate $\phi_j(Y)$. Note that it is possible to interchange the summation and integration due to <a href="https://en.wikipedia.org/wiki/Fubini%27s_theorem">Fubini's Theorem</a></div></p>
+<p><div align="justify">Hence, the estimation of $\hat{\beta}_j(x)$ can be achieved through regression, utilizing $X$ as predictors to estimate $\phi_j(Y)$. Note that it is possible to interchange the summation and integration due to <a href="https://en.wikipedia.org/wiki/Fubini%27s_theorem">Fubini's Theorem</a>.</div></p>
 
 <p><div align="justify">The <a href="https://pypi.org/project/flexcode/">FlexCode</a> algorithm [<a href="#bibliography">3</a>] adopts this approach. By employing a designated <code>basis_system</code> (a hyperparameter of the model), the algorithm estimates the coefficients using regressions of $\phi_j(Y)$. Since computing the infinite sum is not practical, it is truncated at a specified value, <code>max_basis</code> denoted as $I$ (which can be determined through cross-validation as a hyperparameter). Consequently, we obtain that</div></p>
 
-$$ \hat{f}(y \,|\, X=x) = \sum_{i=1}^I \hat{\beta}_i(x) \, \phi(y).$$
+$$ \hat{f}(y \,|\, X=x) = \sum_{i=1}^I \hat{\beta}_i(x) \, \phi_i(y).$$
 
 ___
 
@@ -783,7 +783,7 @@ ___
 
 <p><div align="justify">Currently, the libraries designed to address these intricate problems are being refined, with issues being resolved over time. Therefore, when utilizing these tools, it's essential to exercise caution and promptly report any anomalous behavior observed.</div></p>
 
-<p><div align="justify">$\oint$ <em>I cared to mention the tree-based neighbor method because it is possible to adapt the tree training in a specific way for the CDE problems. Typically, in regression problems, a decision tree would aim to optimize a particular metric such as <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html"><code>sklearn.metrics.mean_squared_error</code></a> when establishing its splits. However, for CDE problems, there's a possibility to optimize a CDE-specific metric directly within the splits. One such metric could be the CDE <code>squared_loss</code> we implemented earlier. This approach is what the <a href="https://github.com/lee-group-cmu/RFCDE">RFCDE (Random Forests for Conditional Density Estimation)</a> method suggests [<a href="#bibliography">6</a>].</em></div></p>
+<p><div align="justify">$\oint$ <em>I wanted to mention the tree-based neighbor method because it is possible to adapt the tree training in a specific way for the CDE problems. Typically, in regression problems, a decision tree would aim to optimize a particular metric such as <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html"><code>sklearn.metrics.mean_squared_error</code></a> when establishing its splits. However, for CDE problems, there's a possibility to optimize a CDE-specific metric directly within the splits. One such metric could be the CDE <code>squared_loss</code> we implemented earlier. This approach is what the <a href="https://github.com/lee-group-cmu/RFCDE">RFCDE (Random Forests for Conditional Density Estimation)</a> method suggests [<a href="#bibliography">6</a>].</em></div></p>
 
 ## <a name="bibliography">Bibliography</a>
 

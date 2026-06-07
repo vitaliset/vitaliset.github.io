@@ -11,7 +11,7 @@ summary: MSE and MAE can be misleading if your regression goal is to rank.
 
 <p><div align="justify">However, it is not always essential to predict the exact value of the target variable precisely, as in some applications, exactness is not critical to the final objective. In many cases, achieving a good ranking of the predictions is sufficient to meet the demands of the business problem. Of course, this depends on the context, but with proper ranking, we can approach the problem similarly to setting a <a href="https://vitaliset.github.io/threshold-dependent-opt/">threshold in binary classification</a> or, more generally, as a policy problem. In this case, the most appropriate cutoff point is identified through additional analysis to implement a desired treatment or action, such as targeting individuals with an expected credit card expense greater than $\delta$ for a new product marketing campaign. In most companies, the policy is structured around buckets of relevant percentiles, which are inherently based on ranking.</div></p>
 
-<p><div align="justify">In other scenarios, such as income estimation, the regression model is often used as an auxiliary variable in subsequent models. These models, frequently ensemble of decision trees, inherently disregard the exact value of variables, considering only their rankings. If the final model is, for instance, a logistic regression or even a neural network, simple transformations are typically applied, altering the distribution of the values but maintaining monotonicity. Again, the exact values matter much less than the ranking.</div></p>
+<p><div align="justify">In other scenarios, such as income estimation, the regression model is often used as an auxiliary variable in subsequent models. These models, frequently ensembles of decision trees, inherently disregard the exact value of variables, considering only their rankings. If the final model is, for instance, a logistic regression or even a neural network, simple transformations are typically applied, altering the distribution of the values but maintaining monotonicity. Again, the exact values matter much less than the ranking.</div></p>
 
 <p><div align="justify">From this perspective, it becomes clear that regression problems may require specific metrics to evaluate the quality of the ranking rather than relying solely on metrics that aim to minimize variations of $| \hat{y_i} - y_i |$.</div></p>
 
@@ -38,19 +38,19 @@ SCORES = dict(zip(['y_score_1', 'y_score_2', 'y_score_3'], [y_score_1, y_score_2
 
 <p><div align="justify">Without delving into the specifics of how these scores were generated, the most natural and well-known way to evaluate these models would be using metrics such as $R^2$, $\textrm{RMSE}$, or some variation of these. These metrics are very useful but do not necessarily provide much insight into ranking.</div></p>
 
-<p><div align="justify">In our example, by analyzing the $\textrm{MAE}$, it seems that <code>y_score_3</code> is a good predictor.</div></p>
+<p><div align="justify">In our example, by analyzing the $\textrm{RMSE}$, it seems that <code>y_score_3</code> is a good predictor.</div></p>
 
 ```python
 from sklearn import metrics
 
 for score_name, y_score in SCORES.items():
-    mae = np.sqrt(metrics.mean_squared_error(y_true=y_true, y_pred=y_score))
-    print(f"MAE for {score_name}: {mae:6.3f}")
+    rmse = np.sqrt(metrics.mean_squared_error(y_true=y_true, y_pred=y_score))
+    print(f"RMSE for {score_name}: {rmse:6.3f}")
 ```
 
-    MAE for y_score_1: 58.205
-    MAE for y_score_2:  2.242
-    MAE for y_score_3:  1.400
+    RMSE for y_score_1: 58.205
+    RMSE for y_score_2:  2.242
+    RMSE for y_score_3:  1.400
 
 ___
 
@@ -86,13 +86,13 @@ for score_name, y_score in SCORES.items():
     Spearman for y_score_3: 0.01447
 
 
-<p><div align="justify">Using this new metric, we noticed that <code>y_score_1</code> and <code>y_score_2</code> stand out due to their ability of sorting <code>y_true</code>.</div></p>
+<p><div align="justify">Using this new metric, we noticed that <code>y_score_1</code> and <code>y_score_2</code> stand out due to their ability to sort <code>y_true</code>.</div></p>
 
 ___
 
 ## Kendall's Tau Correlation
 
-<p><div align="justify">Another common metric for evaluating ranking is the Kendall's Tau ($\tau$) concordance index. This metric measures the strength of association between two rankings by comparing pairs of observations and determining whether they are concordant or discordant [<a href="#bibliography">2</a>].</div></p>
+<p><div align="justify">Another common metric for evaluating ranking is Kendall's Tau ($\tau$) concordance index. This metric measures the strength of association between two rankings by comparing pairs of observations and determining whether they are concordant or discordant [<a href="#bibliography">2</a>].</div></p>
 
 <p><div align="justify">Two pairs $(w_i, z_i)$ and $(w_j, z_j)$ are considered:</div></p>
 
@@ -155,7 +155,7 @@ $$\widehat{\text{ROCAUC}}(f) = \frac{1}{N} \sum_{(i,j) : y_i = 1, y_j = 0} \math
 
 ## ROCAUC for Regression
 
-<p><div align="justify">This probabilistic interpretation motivates us to make an clever variation and use something similar for the regression problem [<a href="#bibliography">4</a>]. If we replace the condition $y_i = 1, y_j = 0$ with $y_i > y_j$, we can construct a generic ranking probability metric for regression problems as</div></p>
+<p><div align="justify">This probabilistic interpretation motivates us to make a clever variation and use something similar for the regression problem [<a href="#bibliography">4</a>]. If we replace the condition $y_i = 1, y_j = 0$ with $y_i > y_j$, we can construct a generic ranking probability metric for regression problems as</div></p>
 
 $$\widehat{\text{ROCAUC}}(f) = \frac{1}{N} \sum_{(i,j): y_i > y_j}  \mathbb{1}\left( f(x_i) > f(x_j) \right).$$
 
@@ -412,7 +412,7 @@ ___
 
 <p><div align="justify">Although regression models often optimize metrics based on $| \hat{y_i} - y_i |$, I hope this discussion has inspired reflection on the limitations of such metrics. They may not always be the most appropriate choice and can sometimes obscure the true problem of interest.</div></p>
 
-<p><div align="justify">The ranking metrics introduced here each provide are highly valuable, complementing one another depending on the specific context and problem at hand. Instead of striving for a single, universally applicable metric, it is often more effective to evaluate these metrics collectively. In practice, they tend to align and reinforce each other, offering a richer and more nuanced understanding of model performance.</div></p>
+<p><div align="justify">The ranking metrics introduced here are each highly valuable, complementing one another depending on the specific context and problem at hand. Instead of striving for a single, universally applicable metric, it is often more effective to evaluate these metrics collectively. In practice, they tend to align and reinforce each other, offering a richer and more nuanced understanding of model performance.</div></p>
 
 <p><div align="justify">Moreover, I encourage you to tweak existing metrics or develop custom variations which can often uncover fresh perspectives on a problem. The ultimate goal is not merely to assign a score to a model but to ensure it aligns with the problem's objectives and delivers outcomes that are meaningful and actionable.</div></p>
 

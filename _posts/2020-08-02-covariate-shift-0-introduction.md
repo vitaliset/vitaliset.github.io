@@ -19,7 +19,7 @@ $$\left(Y \,|\, X_1=x_1, X_2=x_2,\cdots, X_n=x_n\right)\sim f(x_1, x_2,\cdots, x
 
 <p><div align="justify">$\oint$ <em>Note that our illustration uses regression as an example due to its straightforwardness. Nonetheless, the case of classification isn't significantly more complex. In binary classification, the aim is to estimate $f:\mathbb{R}^n\to [0,1]$ as follows:</em></div></p>
 
-$$\left(Y \,|\, X_1=x_1, X_2=x_2,\cdots, X_n=x_n\right)\sim \textrm{Bernoulli}(p)\textrm{, com }p=f(x_1, x_2,\cdots, x_n).$$
+$$\left(Y \,|\, X_1=x_1, X_2=x_2,\cdots, X_n=x_n\right)\sim \textrm{Bernoulli}(p)\textrm{, with }p=f(x_1, x_2,\cdots, x_n).$$
 
 <p><div align="justify">Generally, during cross-validation, we expect that the performance of our estimated function will remain consistent on the validation set when faced with new data. Machine learning in non-stationary environments, however, presents a challenge: What happens if there's a dataset shift, meaning the distribution of the random vector $V$ differs in new data? Can we realistically expect the model to uphold its validated performance?</div></p>
 
@@ -188,7 +188,7 @@ plt.tight_layout()
 
 <p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/covariate_0_introduction/output_11_0.png"></center></div></p>
 
-<p><div align="justify">It is not reasonable to expect that our model will continue with the same performance we had before. The estimation of the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html"><code>sklearn.metrics.r2_score</code></a> was made based on the original distribution of $X$, which has now shifted.</div></p>
+<p><div align="justify">It is not reasonable to expect that our model will maintain the same performance as before. The estimation of the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html"><code>sklearn.metrics.r2_score</code></a> was made based on the original distribution of $X$, which has now shifted.</div></p>
 
 <p><div align="justify">$\oint$ <em>We will delve into this in more depth in a future post in this series, but essentially, the previous model was trained to identify a function $h$ that minimizes the expected squared error in the distribution $(X_{\textrm{old}}, Y)$. Mathematically, this can be represented as:</em></div></p>
 
@@ -249,7 +249,7 @@ ___
 
 - <p><div align="justify">Kullback-Leibler divergence.</div></p>
 
-<p><div align="justify">This monitoring often occurs with the analysis of the model's output distribution. For instance, if our model previously suggested that 10% of the data belonged to one class, and now it indicates 20%, we have a solid hint that the input distribution has shifted.</div></p>
+<p><div align="justify">This monitoring is often accompanied by analysis of the model's output distribution. For instance, if our model previously suggested that 10% of the data belonged to one class, and now it indicates 20%, we have a solid hint that the input distribution has shifted.</div></p>
 
 <p><div align="justify">In this series of posts, I plan to introduce some slightly more unconventional methods for identifying covariate shift. Subsequently, we'll explore the problem through Vapnik's empirical risk minimization framework. From there, we'll derive an elegant method to address it, using a technique that will serve as a diagnostic tool for identifying dataset shift.</div></p>
 

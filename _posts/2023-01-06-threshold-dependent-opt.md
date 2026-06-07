@@ -19,7 +19,7 @@ def predict(self, X):
 
 <p><div align="justify">In the case where we only have two classes (0 or 1), the <code>.predict</code>, when picking the class with the highest &quot;probability&quot;, is equivalent to the rule &quot; if <code>.predict_proba &gt; 0.5</code>, then predict <code>1</code>; otherwise, predict <code>0</code>&quot;. That is, under the hood, we are using a threshold of <code>0.5</code> without having visibility.</div></p>
 
-<p><div align="justify">Up to now, nothing new. However, we will show in an example how this can be harmful to superficial analyzes that don&#39;t take this into account.</div></p>
+<p><div align="justify">Up to now, nothing new. However, we will show in an example how this can be harmful to superficial analyses that don&#39;t take this into account.</div></p>
 
 ___
 
@@ -52,7 +52,7 @@ train_test_split(X_train_model, y_train_model, random_state=0, stratify=y_train_
 
 <p><div align="justify">Suppose we want to optimize the hyperparameters of a <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html"><code>sklearn.ensemble.RandomForestClassifier</code></a> getting the best possible <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html"><code>sklearn.metrics.f1_score</code></a> (as we anticipated just now).</div></p>
 
-<p><div align="justify">I&#39;m going to create an auxiliary function to run this search for hyperparameters because we&#39;re going to do this sometimes (using a <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html"><code>sklearn.model_selection.GridSearchCV</code></a>, but it could be any other way to search for hyperparameters).</div></p>
+<p><div align="justify">I&#39;m going to create an auxiliary function to run this search for hyperparameters because we&#39;re going to do this several times (using a <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html"><code>sklearn.model_selection.GridSearchCV</code></a>, but it could be any other way to search for hyperparameters).</div></p>
 
 ```python
 from sklearn.model_selection import StratifiedKFold
@@ -211,7 +211,7 @@ run_experiment(estimator=RandomForestClassifier(random_state=0),
 
 <p><div align="justify">This happens because as <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html"><code>sklearn.metrics.f1_score</code></a> is a threshold-dependent metric (in the sense that it needs hard predictions instead of predicted probabilities), scikit-learn understands that it needs to use <code>.predict</code> instead of <code>.predict_proba</code> (and consequently &quot;uses the threshold of <code>0.5</code>&quot;, as we discussed the equivalence earlier).</div></p>
 
-<p><div align="justify">As our problem is imbalanced, a threshold of <code>0.5</code> usually is suboptimal. And that&#39;s the case. We will have a considerable accumulation of <code>.predict_proba</code> close to 0 in almost any model, and, probably, a threshold closer to <code>0</code> in our problem seems more reasonable.</div></p>
+<p><div align="justify">As our problem is imbalanced, a threshold of <code>0.5</code> is usually suboptimal. And that&#39;s the case. We will have a considerable accumulation of <code>.predict_proba</code> close to 0 in almost any model, and, probably, a threshold closer to <code>0</code> in our problem seems more reasonable.</div></p>
 
 ```python
 from collections import Counter
@@ -244,7 +244,7 @@ plt.tight_layout()
 
 <p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/threshold_dependent_opt/output_13_0.png"></center></div></p>
 
-<p><div align="justify">Very few examples pass the <code>0.5</code> threshold, a significantly lower amount than the actual number of class 1 samples. This tells us that a softer threshold (less than <code>0.5</code>) makes more sense in this problem.</div></p>
+<p><div align="justify">Very few examples pass the <code>0.5</code> threshold, significantly fewer than the actual number of class 1 samples. This tells us that a softer threshold (less than <code>0.5</code>) makes more sense in this problem.</div></p>
 
 <p><div align="justify">This is often the case in imbalanced learning scenarios. For instance, if you have 1% of people with some disease in your population and your model predicts that this person has a 10% chance of having that disease, then chances are that you should treat him as someone with a high likelihood of being ill.</div></p>
 
@@ -275,7 +275,7 @@ def optmize_threshold_metric(model, X, y, metric, threshold_grid, n_bootstrap=20
     return metric_means, metric_stds, best_threshold
 ```
 
-<p><div align="justify">For each threshold value, we estimate the mean of <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html"><code>sklearn.metrics.f1_score</code></a> that we expect to obtain with that choice if we run the experiment different times through the bootstrap and the standard deviation to get an idea of the variance of the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html"><code>sklearn.metrics.f1_score</code></a> we got. We chose the final threshold as the one with the best-estimated <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html"><code>sklearn.metrics.f1_score</code></a>.</div></p>
+<p><div align="justify">For each threshold value, we estimate the mean of <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html"><code>sklearn.metrics.f1_score</code></a> that we expect to obtain with that choice if we run the experiment multiple times through the bootstrap and the standard deviation to get an idea of the variance of the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html"><code>sklearn.metrics.f1_score</code></a> we got. We chose the final threshold as the one with the best-estimated <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html"><code>sklearn.metrics.f1_score</code></a>.</div></p>
 
 ```python
 threshold_grid = np.linspace(0, 1, 101)
@@ -313,7 +313,7 @@ f1_score(y_test, out_of_the_box_model.predict(X_test))
 
 <p><div align="justify">With the threshold chosen through optimization, we ended up with a much better <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html"><code>sklearn.metrics.f1_score</code></a> than the one we get with <code>.predict</code>, with the <code>0.5</code> threshold.</div></p>
 
-<p><div align="justify">$\oint$ <em>Here we are directly choosing the threshold that, on average, has the best metric value of interest, but there are other possibilities [<a href="#bibliography">1</a>]. We could, for example, play with the &quot;confidence interval&quot; (which, in this case, I&#39;m just plotting to give an order of magnitude of the variance), optimizing for the upper or lower limit, or even use the threshold that maximizes <a href="https://en.wikipedia.org/wiki/Youden%27s_J_statistic">Youden&#39;s J statistic</a> (which is equivalent to taking the threshold that gives the most significant separation of the KS curves between the <code>.predict_proba(X[y==0])</code> and <code>.predict_proba(X[y==1])</code>.</em></div></p>
+<p><div align="justify">$\oint$ <em>Here we are directly choosing the threshold that, on average, has the best metric value of interest, but there are other possibilities [<a href="#bibliography">1</a>]. We could, for example, play with the &quot;confidence interval&quot; (which, in this case, I&#39;m just plotting to give an order of magnitude of the variance), optimizing for the upper or lower limit, or even use the threshold that maximizes <a href="https://en.wikipedia.org/wiki/Youden%27s_J_statistic">Youden&#39;s J statistic</a> (which is equivalent to taking the threshold that gives the most significant separation of the KS curves between the <code>.predict_proba(X[y==0])</code> and <code>.predict_proba(X[y==1])</code>).</em></div></p>
 
 ___
 
@@ -323,7 +323,7 @@ ___
 
 ### 1. Optimizing a metric that works and is related to the desired metric
 
-<p><div align="justify">The most applied way in the market is, even if you are interested in the threshold-dependent metric, to use a threshold-independent metric to do this optimization and only, in the end, use something like <code>optmize_threshold_metric</code> to optimize the metric of genuine interest.</div></p>
+<p><div align="justify">The most common approach is, even if you are interested in the threshold-dependent metric, to use a threshold-independent metric to do this optimization and only, in the end, use something like <code>optmize_threshold_metric</code> to optimize the metric of genuine interest.</div></p>
 
 <p><div align="justify">$\oint$ <em>This sounds sub-optimal, but we do this all the time in Machine Learning. Even if you&#39;re interested in optimizing <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html"><code>sklearn.metrics.roc_auc_score</code></a> on a credit default classification problem, your <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html"><code>sklearn.ensemble.RandomForestClassifier</code></a> will be optimizing for <code>criterion=&quot;gini&quot;</code> or something related to <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html"><code>sklearn.metrics.roc_auc_score</code></a>, but that is different. Here the idea is the same. Optimizing for <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html"><code>sklearn.metrics.roc_auc_score</code></a> or <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.average_precision_score.html"><code>sklearn.metrics.average_precision_score</code></a> is not the same as optimizing for <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html"><code>sklearn.metrics.f1_score</code></a>, for example, but models that are good at the former will be good at the latter too.</em></div></p>
 
@@ -590,7 +590,7 @@ df_best_f1
 
 ### 3. Tuning the threshold during gridsearch on a chunk of the training set
 
-<p><div align="justify">A better way to do this (in terms of correctly evaluating the performance during cross-validation) is to modify our estimator&#39;s training function so that it also calculates the best threshold.  To clarify what we are doing without having to look at the class details we will implement, it is worth comparing the difference between methods 2 and 3.</div></p>
+<p><div align="justify">A better way to do this (in terms of correctly evaluating the performance during cross-validation) is to modify our estimator&#39;s training function so that it also calculates the best threshold. To clarify what we are doing without having to look at the class details we will implement, it is worth comparing the difference between methods 2 and 3.</div></p>
 
 <p><div align="justify">In each step of our cross-validation, we will have a training set and a validation set that we will use to evaluate the performance of the classifier trained in that training set. That is what we were doing in method 1, for instance.</div></p>
 
@@ -856,7 +856,7 @@ ___
 
 <p><div align="justify">Always prioritize the threshold-independent metrics, but if you need to use a threshold-dependent metric, you can try to make it threshold-independent by getting the optimal value for it (<code>max</code> or <code>min</code> depending on if <code>greater_is_better=True</code> or <code>False</code>) for a threshold grid of options. As this is the same as optimizing it for the validation set, it can slightly overestimate your results.</div></p>
 
-<p><div align="justify">A more honest way to do this is to explicitly optimize the threshold on a part of your training set for each cross-validation fold. This mimics reality better but is more time-consuming as this optimization takes time if you want it to be robust (for instance, using bootstrap to estimate better the performance value).</div></p>
+<p><div align="justify">A more honest way to do this is to explicitly optimize the threshold on a part of your training set for each cross-validation fold. This mimics reality better but is more time-consuming as this optimization takes time if you want it to be robust (for instance, using bootstrap to better estimate the performance value).</div></p>
 
 <p><div align="justify">$\oint$ <em>This is the current state of this topic, in version 1.2.0 of scikit-learn. In a future release, there will be a <code>sklearn.model_selection.CutoffClassifier</code> (from <a href="https://github.com/scikit-learn/scikit-learn/pull/16525">PR #16525</a>) that will behave very closely to my <code>ThresholdOptimizerRandomForestBinaryClassifier</code>. One significant change will be that it will receive the estimator during initialization instead of inheriting it.</em></div></p>
 
