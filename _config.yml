@@ -1,9 +1,9 @@
 # SITE CONFIGURATION
 title: Vitali Set
-author: Carlo
+author: Carlo Lemos
 description: Personal blog with technical discussions, experiments, and reproducible deep-dives in data science and machine learning, by Carlo Lemos.
 baseurl: "" # empty for a root user/org site (vitaliset.github.io); use e.g. "/blog" only for a project subpath
-url: "https://vitaliset.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://vitaliset.github.io" # base hostname & protocol, no trailing slash (avoids // in absolute URLs)
 
 # SEO PLUGIN
 social:
@@ -11,6 +11,10 @@ social:
   links:
     - https://www.linkedin.com/in/carlo-lemos
     - https://github.com/vitaliset/
+
+# Paste your Google Search Console verification token here to confirm ownership
+# (jekyll-seo-tag emits the <meta google-site-verification> tag when this is set):
+google_site_verification: Na6LMsynYEgJ2xbXjXckIuvbUkj6lyVBPNlGMqI4_Yc
 
 # THEME SETTINGS
 navigation: # Navigation links
@@ -48,3 +52,4 @@ compress_html:
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-feed

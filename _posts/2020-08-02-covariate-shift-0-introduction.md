@@ -4,7 +4,7 @@ title: Covariate Shift&#58; Introduction
 featured-img: covariate_0_formulando
 category: [🇺🇸, 🇧🇷, dataset shift]
 mathjax: true
-summary: Introducing the dataset shift scenario with an illustrative case.
+description: Introducing the dataset shift scenario with an illustrative case.
 ---
 
 <p><div align="justify">Este texto foi inicialmente redigido em português e posteriormente traduzido. A versão original em português pode ser encontrada no <a href="https://github.com/vitaliset/vitaliset.github.io/tree/master/code/covariate_introduction">repositório de experimentos</a>.</div></p>

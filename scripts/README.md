@@ -28,14 +28,14 @@ PEP 723 dependencies in the script header):
 ```sh
 uv run scripts/notebook_to_post.py \
     --notebook code/<slug>/<file>.ipynb --slug <slug> --date YYYY-MM-DD \
-    --title "Post title" --category "🇺🇸, basic" --summary "One-liner."
+    --title "Post title" --category "🇺🇸, basic" --description "One-liner."
 ```
 
 Via the Makefile (wraps the uv command, kept inside `scripts/`):
 
 ```sh
 make -C scripts post NOTEBOOK=code/<slug>/file.ipynb SLUG=<slug> DATE=YYYY-MM-DD \
-     TITLE="Post title" CATEGORY="🇺🇸, basic" SUMMARY="One-liner."
+     TITLE="Post title" CATEGORY="🇺🇸, basic" DESCRIPTION="One-liner."
 make -C scripts test
 ```
 

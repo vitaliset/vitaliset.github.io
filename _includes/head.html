@@ -2,27 +2,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">  
-  <meta name="author" content="Vitali Set" />
-  <meta property="og:site_name" content="{{ site.title }}" />
-  <meta property="og:locale" content="en_US" />
-
-  {% if page.image %}
-    <meta property="og:image" content="https://vitaliset.github.io/assets/img/posts/{{page.image}}.jpg" />
-    <meta name="twitter:image" content="https://vitaliset.github.io/assets/img/posts/{{page.image}}.jpg" />
+  {% comment %} Social image: a post's cover (from featured-img), else the site hero.
+     jekyll-seo-tag ({% seo %}) owns title, description, og:type, twitter:card,
+     canonical, author and JSON-LD. {% endcomment %}
+  {% if page.featured-img %}
+    {% assign seo_image = page.featured-img | prepend: '/assets/img/posts/' | append: '.jpg' | absolute_url %}
   {% else %}
-    <meta property="og:image" content="https://vitaliset.github.io/assets/img/posts/teste1.jpg" />
-    <meta name="twitter:image" content="https://vitaliset.github.io/assets/img/posts/teste1.jpg" />
-  {% else %}
-    <!-- OG data for homepage -->
-    <meta property="og:image" content="https://vitaliset.github.io/assets/img/posts/teste1.jpg" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="{{site.title}}" />
-    <meta name="twitter:image" content="https://vitaliset.github.io/assets/img/posts/teste1.jpg" />
-
+    {% assign seo_image = '/assets/img/posts/teste1.jpg' | absolute_url %}
   {% endif %}
+  <meta property="og:image" content="{{ seo_image }}" />
+  <meta name="twitter:image" content="{{ seo_image }}" />
 
   {% seo %}
+  {% feed_meta %}
 
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/icons/favicon.svg' | relative_url }}">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/icons/apple-touch-icon.png?v=ck2' | relative_url }}">

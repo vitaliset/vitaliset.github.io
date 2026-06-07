@@ -2,7 +2,7 @@
 #
 # Run from anywhere via -C:
 #   make -C scripts post NOTEBOOK=code/<slug>/file.ipynb SLUG=<slug> DATE=YYYY-MM-DD \
-#        [TITLE="..."] [CATEGORY="🇺🇸, basic"] [SUMMARY="..."]
+#        [TITLE="..."] [CATEGORY="🇺🇸, basic"] [DESCRIPTION="..."]
 #   make -C scripts test
 #
 # uv runs in *script mode* (--no-project): it uses the PEP 723 dependencies declared
@@ -14,14 +14,14 @@ ROOT := $(abspath $(dir $(lastword $(MAKEFILE_LIST)))/..)
 UV   := uv run --no-project
 
 # Optional front-matter overrides (passed through only when set).
-TITLE    ?=
-CATEGORY ?=
-SUMMARY  ?=
+TITLE       ?=
+CATEGORY    ?=
+DESCRIPTION ?=
 
 .PHONY: help post test
 
 help:
-	@echo "make -C scripts post NOTEBOOK=code/<slug>/file.ipynb SLUG=<slug> DATE=YYYY-MM-DD [TITLE=..] [CATEGORY=..] [SUMMARY=..]"
+	@echo "make -C scripts post NOTEBOOK=code/<slug>/file.ipynb SLUG=<slug> DATE=YYYY-MM-DD [TITLE=..] [CATEGORY=..] [DESCRIPTION=..]"
 	@echo "make -C scripts test"
 
 post:
@@ -32,7 +32,7 @@ post:
 		--notebook "$(NOTEBOOK)" --slug "$(SLUG)" --date "$(DATE)" \
 		$(if $(TITLE),--title "$(TITLE)",) \
 		$(if $(CATEGORY),--category "$(CATEGORY)",) \
-		$(if $(SUMMARY),--summary "$(SUMMARY)",)
+		$(if $(DESCRIPTION),--description "$(DESCRIPTION)",)
 
 test:
 	@cd "$(ROOT)" && $(UV) --with pytest --with nbconvert --with nbformat pytest scripts/tests/

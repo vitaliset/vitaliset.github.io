@@ -27,7 +27,7 @@ Usage (recommended, zero-setup via uv):
 
     uv run scripts/notebook_to_post.py \
         --notebook code/<slug>/<file>.ipynb --slug <slug> --date YYYY-MM-DD \
-        [--title "..."] [--category "🇺🇸, basic"] [--summary "..."]
+        [--title "..."] [--category "🇺🇸, basic"] [--description "..."]
 
 Or with a plain Python env (pip install -r scripts/requirements.txt):
 
@@ -209,7 +209,7 @@ def normalize_blank_lines(body: str) -> str:
     return re.sub(r"\n{3,}", "\n\n", text)
 
 
-def build_front_matter(slug: str, title: str, category: str, summary: str) -> str:
+def build_front_matter(slug: str, title: str, category: str, description: str) -> str:
     return (
         "---\n"
         "layout: post\n"
@@ -217,7 +217,7 @@ def build_front_matter(slug: str, title: str, category: str, summary: str) -> st
         f"featured-img: {slug}\n"
         f"category: [{category}]\n"
         "mathjax: true\n"
-        f"summary: {summary}\n"
+        f"description: {description}\n"
         "---\n"
     )
 
@@ -245,7 +245,7 @@ def build_post(
     *,
     title: str | None = None,
     category: str = "🇺🇸, basic",
-    summary: str = "TODO: one-line summary.",
+    description: str = "TODO: one-line description.",
     include_banner: bool = True,
     include_experiments_link: bool = True,
 ) -> Tuple[str, Dict[str, bytes]]:
@@ -254,7 +254,7 @@ def build_post(
     body = rewrite_images(body, slug)
     body = normalize_blank_lines(body).strip("\n")
 
-    parts = [build_front_matter(slug, title or slug, category, summary)]
+    parts = [build_front_matter(slug, title or slug, category, description)]
     if include_banner:
         parts.append("\n" + SCAFFOLD_BANNER)
     parts.append("\n" + body + "\n")
@@ -447,7 +447,7 @@ def main() -> None:
     parser.add_argument("--date", required=True, help="post date YYYY-MM-DD")
     parser.add_argument("--title", default=None, help="post title (defaults to the slug)")
     parser.add_argument("--category", default="🇺🇸, basic", help='front-matter category list, e.g. "🇺🇸, basic"')
-    parser.add_argument("--summary", default="TODO: one-line summary.", help="front-matter summary")
+    parser.add_argument("--description", default="TODO: one-line description.", help="front-matter description (one-liner; used as the meta description and homepage card blurb)")
     args = parser.parse_args()
 
     nb_path = args.notebook if args.notebook.is_absolute() else (Path.cwd() / args.notebook)
@@ -455,7 +455,7 @@ def main() -> None:
         raise SystemExit(f"notebook not found: {nb_path}")
 
     post_text, images = build_post(
-        nb_path, args.slug, title=args.title, category=args.category, summary=args.summary
+        nb_path, args.slug, title=args.title, category=args.category, description=args.description
     )
     post_path = write_post(post_text, images, args.slug, args.date)
     print(f"Wrote {post_path.relative_to(REPO_ROOT)} and {len(images)} image(s) to assets/img/{args.slug}/")

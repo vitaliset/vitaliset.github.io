@@ -4,7 +4,7 @@ title: Meta K-Means&#58; um ensemble de K-Means
 featured-img: metakmeans
 category: [🇧🇷, clustering]
 mathjax: true
-summary: Uma possível maneira de agregar resultado de diferentes K-Means para construir um comitê.
+description: Uma possível maneira de agregar resultado de diferentes K-Means para construir um comitê.
 ---
 
 <p><div align="justify">Após ouvir falar superficialmente sobre comitês de algoritmos de clusterização [<a href="#bibliography">1</a>], me perguntei: qual seria um jeito esperto de agregar as decisões individuais de cada um dos clusters em um valor final? A resposta não é imediata, principalmente porque o problema aqui é que a definição de cada cluster pode ser diferente mesmo quando eles concordam nas separações.</div></p>

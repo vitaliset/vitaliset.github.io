@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vitaliset.github.io/sitemap.xml

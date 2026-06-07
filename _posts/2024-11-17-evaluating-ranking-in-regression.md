@@ -4,7 +4,7 @@ title: Evaluating ranking in regression
 featured-img: ranking_regression
 category: [🇺🇸, basic]
 mathjax: true
-summary: MSE and MAE can be misleading if your regression goal is to rank.
+description: MSE and MAE can be misleading if your regression goal is to rank.
 ---
 
 <p><div align="justify">In supervised learning regression problems, the focus is generally on metrics that ensure the predicted value is close to the true value of the sample. Classic regression metrics are variations that involve the measure $| \hat{y_i} - y_i |$.</div></p>

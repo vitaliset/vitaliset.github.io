@@ -4,7 +4,7 @@ title: Covariate Shift&#58; Classificador Binário
 featured-img: coverclassificador_binario
 category: [🇧🇷, dataset shift]
 mathjax: true
-summary: Uma técnica para identificar mudanças de distribuição a partir de métricas de um classificador binário.
+description: Uma técnica para identificar mudanças de distribuição a partir de métricas de um classificador binário.
 ---
 
 <p><div align="justify">Este post faz parte de uma série de postagens que discutem o problema de <i>covariate shift</i>. Assumo que você já conhece a motivação do problema e no que estamos interessados em identificar e corrigir. Se você ainda não leu o <a href="https://vitaliset.github.io/covariate-shift-0-introduction/">primeiro post</a> dessa série, sugiro a leitura.</div></p>
