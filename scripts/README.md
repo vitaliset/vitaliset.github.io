@@ -70,12 +70,18 @@ notebook and is a harmless comment when the notebook runs):
 | Directive | Effect |
 | --- | --- |
 | `# nb2post: skip` | Drop this cell from the post (code + output). |
-| `# nb2post: merge` | Append this cell to the previous code block (one ` ```python ` fence). |
+| `# nb2post: skip-input` | Hide the code but keep its output (e.g. show only a figure or table, not the plotting boilerplate). |
 | `# nb2post: skip-output` | Keep the code, drop its output. |
+| `# nb2post: merge` | Append this cell to the previous code block (one ` ```python ` fence). |
 
-Consumed cells are replaced by an empty placeholder rather than deleted, so the
-absolute cell index — and therefore the `output_<cell>_<out>.png` figure
-numbering — stays stable.
+Consumed cells are replaced by an empty placeholder rather than deleted (and
+`skip-input` keeps its cell in place, just tagged for nbconvert), so the absolute
+cell index — and therefore the `output_<cell>_<out>.png` figure numbering — stays
+stable.
+
+DataFrame outputs are left as nbconvert's HTML table; if an older post rendered
+such a table as an image, update the post to the HTML and drop the image (the
+notebook is the source of truth).
 
 ## Tests
 
@@ -88,14 +94,15 @@ python -m pytest scripts/tests/
 The snapshot tests run the pipeline on real notebooks and compare the generated
 code/output/image blocks to the committed posts byte-for-byte (prose ignored).
 
-**Strictly tested posts:** `r_squared` and `evaluating_ranking_in_regression`.
-These two regenerate exactly from their notebooks (the latter via `nb2post:merge`).
+**Strictly tested posts:** `r_squared`, `evaluating_ranking_in_regression`, and
+`metakmeans`. These regenerate exactly from their notebooks — `evaluating_ranking`
+via `nb2post:merge`, and `metakmeans` via `skip-input`/`skip-output` plus
+reconciling its table to HTML.
 
-**Future work — strict for all posts.** The other notebook-backed posts
-(`boruta`, `metakmeans`, `threshold_dependent_opt`, `covariate_introduction`,
-`cqr_cate`, `conditional_density_estimation`) are *not* byte-reproducible yet:
-their published versions contain hand-added figures (e.g. `metakmeans` references
-`output_30_0.png`, which its notebook never produces) and show only a curated
-subset of outputs. Bringing them under strict tests will require per-post
-directives (`skip` / `skip-output` / `merge`) and deciding how to carry the
-hand-added figures. The goal is for every post to be strict.
+**Future work — strict for all posts.** The remaining notebook-backed posts
+(`boruta`, `threshold_dependent_opt`, `covariate_introduction`, `cqr_cate`,
+`conditional_density_estimation`) are not byte-reproducible yet: their published
+versions show only a curated subset of outputs and sometimes hand-added figures.
+Bringing each under strict tests means adding the per-post directives above and,
+where an older post used the plain `<p><center><img>` embed, normalizing it to the
+`<div align="justify">` form. The goal is for every post to be strict.

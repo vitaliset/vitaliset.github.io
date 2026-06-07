@@ -67,6 +67,10 @@ def _normalized_image_name(raw_name: str) -> str:
 # notebook, which remains the single source of truth).
 _DIRECTIVE = re.compile(r"^#\s*nb2post:\s*([a-z][a-z-]*)\s*$", re.IGNORECASE)
 
+# Tag applied to a `skip-input` cell so nbconvert's TagRemovePreprocessor drops
+# the input (code) while keeping the output (figure/table) and the cell's index.
+SKIP_INPUT_TAG = "nb2post-skip-input"
+
 
 def _cell_directive(source: str) -> Tuple[str | None, str]:
     """Return (directive, source_without_directive_line) for a code cell."""
@@ -82,16 +86,19 @@ def apply_directives(nb) -> None:
     """Rewrite notebook cells in place to honor nb2post directives.
 
     * ``skip``        -> drop the cell (code + outputs) from the rendered post.
+    * ``skip-input``  -> hide the code but keep its output (e.g. show only a
+                         figure or table, not the plotting boilerplate).
+    * ``skip-output`` -> keep the code, drop its outputs.
     * ``merge``       -> append this cell's code/outputs to the previous code cell
                          so they render as a single ```python block.
-    * ``skip-output`` -> keep the code, drop its outputs.
 
     A consumed cell (skip / the source of a merge) is replaced by an empty
     placeholder rather than deleted, so the *absolute cell index* of every
     remaining cell is preserved. nbconvert names extracted figures
     ``output_<cell_index>_<out>.png`` from that index, so preserving it keeps
     figure filenames stable (matching the already-published posts) no matter how
-    many cells a directive removes.
+    many cells a directive removes. ``skip-input`` keeps the cell in place (it
+    just tags it for TagRemovePreprocessor), so it is index-stable too.
     """
     import nbformat
 
@@ -106,6 +113,13 @@ def apply_directives(nb) -> None:
         directive, body = _cell_directive(cell.get("source", ""))
         if directive == "skip":
             new_cells.append(blank())
+            continue
+        if directive == "skip-input":
+            cell["source"] = body
+            cell.setdefault("metadata", {}).setdefault("tags", [])
+            if SKIP_INPUT_TAG not in cell["metadata"]["tags"]:
+                cell["metadata"]["tags"].append(SKIP_INPUT_TAG)
+            new_cells.append(cell)
             continue
         if directive == "skip-output":
             cell["source"] = body
@@ -131,11 +145,18 @@ def convert_notebook(nb_path: Path) -> Tuple[str, Dict[str, bytes]]:
     """Run nbconvert (after applying directives) and return (markdown_body, images)."""
     import nbformat  # imported lazily so --help works without deps
     from nbconvert import MarkdownExporter
+    from nbconvert.preprocessors import TagRemovePreprocessor
 
     nb = nbformat.read(str(nb_path), as_version=4)
     apply_directives(nb)
 
     exporter = MarkdownExporter()
+    # Honor the skip-input tag set by apply_directives: hide the code, keep output.
+    # This keeps the cell in place, so figure indices stay stable.
+    tag_remove = TagRemovePreprocessor(remove_input_tags={SKIP_INPUT_TAG})
+    tag_remove.enabled = True
+    exporter.register_preprocessor(tag_remove, enabled=True)
+
     body, resources = exporter.from_notebook_node(
         nb, resources={"unique_key": "output", "output_files_dir": "output_files"}
     )

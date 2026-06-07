@@ -37,6 +37,12 @@ STRICT_FIXTURES = [
         "_posts/2024-11-17-evaluating-ranking-in-regression.md",
         id="evaluating_ranking_in_regression",
     ),
+    pytest.param(
+        "metakmeans",
+        "code/metakmeans/blog_metakmeans.ipynb",
+        "_posts/2022-10-23-metakmeans.md",
+        id="metakmeans",
+    ),
 ]
 
 

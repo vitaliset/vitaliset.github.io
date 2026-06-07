@@ -11,7 +11,7 @@ summary: Uma possível maneira de agregar resultado de diferentes K-Means para c
 
 <p><div align="justify">Por exemplo, dado um conjunto de oito exemplos, as segmentações <code>[0, 0, 1, 0, 2, 2, 2, 1]</code> e <code>[1, 1, 0, 1, 3, 3, 3, 0]</code> são idênticas a menos de uma permutação de nomes, isto é, basta chamar o cluster 0 de 1 e o 1 de 0 em alguma das listas e o 3 de 2 na segunda lista (ou o 2 de 3 na primeira lista). É importante ter clareza de que esses clusters de fato concordam, uma vez que a nomenclatura  não tem significado algum já que não estamos num problema de classificação.</div></p>
 
-<p><center><img src="{{ site.baseurl }}/assets/img/metakmeans/output_3_0.png"></center></p>
+<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/metakmeans/output_3_0.png"></center></div></p>
 
 <p><div align="justify">Isso motiva a criação de métricas de &quot;avaliação de clusterização&quot; como a <a href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.rand_score.html"><code>sklearn.metrics.rand_score</code></a> que responde a pergunta: o quão similar são duas clusterizações? Em que, obter o valor próximo de 1 significa que os agrupamentos concordam bastante (a menos de possíveis trocas de nomes).</div></p>
 
@@ -118,7 +118,7 @@ for i, j in product(range(3), range(3)):
 plt.tight_layout()
 ```
 
-<p><center><img src="{{ site.baseurl }}/assets/img/metakmeans/output_20_0.png"></center></p>
+<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/metakmeans/output_20_0.png"></center></div></p>
 
 <p><div align="justify">A inspeção visual nos permite dar nomes para os clusters seguindo o formato dos números, construindo o seguinte dicionário:</div></p>
 
@@ -140,7 +140,7 @@ X_emb = \
 ```python
 fig, ax = plt.subplots(ncols=4, figsize=(12, 3))
 
-im0 = ax[0].scatter(X_emb[:, 0], X_emb[:, 1], s=3, c=digits.target , cmap="Set1")
+im0 = ax[0].scatter(X_emb[:, 0], X_emb[:, 1], s=3, c=digits.target, cmap="Set1")
 cbar0 = plt.colorbar(im0, ax=ax[0], ticks=np.linspace(0.5, 7.5, 9))
 cbar0.ax.set_yticklabels(np.arange(0, 9))
 ax[0].set_title("Real number class", fontsize=11)
@@ -175,7 +175,7 @@ for axs in ax:
 plt.tight_layout()
 ```
 
-<p><center><img src="{{ site.baseurl }}/assets/img/metakmeans/output_26_0.png"></center></p>
+<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/metakmeans/output_26_0.png"></center></div></p>
 
 <p><div align="justify">Observando o histograma do máximo do nosso &quot;<code>.predict_proba</code>&quot;, vemos que para um número razoável de exemplos, os clusters encontrados pelos agrupamentos individuais podem discordar ligeiramente gerando uma visão de incerteza e robustez associada à sua atribuição de agrupamento (ideia central dos algoritmos de <a href="https://en.wikipedia.org/wiki/Fuzzy_clustering">soft clustering</a>). Entretanto, para maioria dos exemplos os <a href="https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html"><code>sklearn.cluster.KMeans</code></a> individuais concordam totalmente.</div></p>
 
@@ -189,7 +189,7 @@ ax.set_title("Histogram of assigned cluster certainty")
 plt.tight_layout()
 ```
 
-<p><center><img src="{{ site.baseurl }}/assets/img/metakmeans/output_28_0.png"></center></p>
+<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/metakmeans/output_28_0.png"></center></div></p>
 
 <p><div align="justify">Essa visão nos permite ver os exemplos mais difíceis de agrupar, dando uma noção de <a href="https://deslib.readthedocs.io/en/latest/modules/util/instance_hardness.html">instance hardness</a> para o nosso problema de clusterização que, no nosso, exemplo parece estar associado a números parecidos com o 8.</div></p>
 
@@ -198,7 +198,99 @@ plt.tight_layout()
  .rename(columns=dict_cluster).T.sort_index().T)
 ```
 
-<p><center><img src="{{ site.baseurl }}/assets/img/metakmeans/output_30_0.png"></center></p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>630</th>
+      <td>0.0</td>
+      <td>0.084</td>
+      <td>0.06</td>
+      <td>0.408</td>
+      <td>0.0</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.448</td>
+    </tr>
+    <tr>
+      <th>1385</th>
+      <td>0.0</td>
+      <td>0.204</td>
+      <td>0.00</td>
+      <td>0.164</td>
+      <td>0.0</td>
+      <td>0.196</td>
+      <td>0.000</td>
+      <td>0.424</td>
+      <td>0.012</td>
+    </tr>
+    <tr>
+      <th>1386</th>
+      <td>0.0</td>
+      <td>0.088</td>
+      <td>0.00</td>
+      <td>0.060</td>
+      <td>0.0</td>
+      <td>0.228</td>
+      <td>0.000</td>
+      <td>0.312</td>
+      <td>0.312</td>
+    </tr>
+    <tr>
+      <th>1533</th>
+      <td>0.0</td>
+      <td>0.076</td>
+      <td>0.00</td>
+      <td>0.388</td>
+      <td>0.0</td>
+      <td>0.000</td>
+      <td>0.196</td>
+      <td>0.000</td>
+      <td>0.340</td>
+    </tr>
+    <tr>
+      <th>1616</th>
+      <td>0.0</td>
+      <td>0.032</td>
+      <td>0.00</td>
+      <td>0.420</td>
+      <td>0.0</td>
+      <td>0.000</td>
+      <td>0.308</td>
+      <td>0.000</td>
+      <td>0.240</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 ```python
 fig, ax = plt.subplots(ncols=5, figsize=(5, 2.5))
@@ -211,7 +303,7 @@ for axs, i in zip(ax, pd.DataFrame(aggregated_predicts)[(aggregated_predicts<0.4
     axs.set_title(f"{i} - Target: {digits.target[i]}", fontsize=7)
 plt.tight_layout()
 ```
-<p><center><img src="{{ site.baseurl }}/assets/img/metakmeans/output_31_0.png"></center></p>
+<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/metakmeans/output_31_0.png"></center></div></p>
 
 ___
 
