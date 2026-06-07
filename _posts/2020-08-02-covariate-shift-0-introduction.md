@@ -7,7 +7,7 @@ mathjax: true
 summary: Introducing the dataset shift scenario with an illustrative case.
 ---
 
-<p><div align="justify">Este texto foi inicialmente redigido em português e posteriormente traduzido. A versão original em português pode ser encontrada no <a href="https://github.com/vitaliset/blog-notebooks/tree/main/Blog_Covariate_Shift_Introduction_2020_08_02">repositório de experimentos</a>.</div></p>
+<p><div align="justify">Este texto foi inicialmente redigido em português e posteriormente traduzido. A versão original em português pode ser encontrada no <a href="https://github.com/vitaliset/vitaliset.github.io/tree/master/code/covariate_introduction">repositório de experimentos</a>.</div></p>
 
 ___
 
@@ -220,4 +220,4 @@ ___
 <p><div align="justify">[3] <a href="https://developer.nvidia.com/blog/a-guide-to-monitoring-machine-learning-models-in-production/">A Guide to Monitoring Machine Learning Models in Production. NVIDIA Developer Blog. Kurtis Pykes.</a></div></p>
 ___
 
-<p><div align="justify">You can find all files and environments for reproducing the experiments in the <a href="https://github.com/vitaliset/blog-notebooks/tree/main/Blog_Covariate_Shift_Introduction_2020_08_02">repository of this post</a>.</div></p>
+<p><div align="justify">You can find all files and environments for reproducing the experiments in the <a href="https://github.com/vitaliset/vitaliset.github.io/tree/master/code/covariate_introduction">repository of this post</a>.</div></p>

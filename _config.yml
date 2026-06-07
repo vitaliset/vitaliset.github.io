@@ -54,6 +54,8 @@ exclude:
   - npm-debug.log
   - gulpfile.js
   - sleek.jpg
+  - code        # consolidated notebook/code tree (.ipynb, pyproject.toml, poetry.lock, lightgbm/, caches)
+  - scripts     # notebook -> post conversion pipeline
 
 include: ['_pages']
 permalink: /:title/

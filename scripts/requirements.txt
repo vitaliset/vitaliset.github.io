@@ -1,0 +1,6 @@
+# Dependencies for the notebook -> post conversion pipeline (scripts/notebook_to_post.py)
+# and its tests. With uv you don't need this file: `uv run scripts/notebook_to_post.py`
+# reads the inline PEP 723 metadata in the script. This file is the pip fallback.
+nbconvert>=6,<8
+nbformat>=5
+pytest>=7

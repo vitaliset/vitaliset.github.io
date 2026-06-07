@@ -325,4 +325,4 @@ class_predict_probas = class_meta_kmeans.predict_proba(X)
 
 ___
 
-<p><div align="justify">Todos os arquivos e ambiente para reprodução dos experimentos podem ser encontrado no <a href="https://github.com/vitaliset/blog-notebooks/tree/main/Blog_MetaKMeans_2022_10_23">repositório deste post</a>.</div></p>
+<p><div align="justify">Todos os arquivos e ambiente para reprodução dos experimentos podem ser encontrado no <a href="https://github.com/vitaliset/vitaliset.github.io/tree/master/code/metakmeans">repositório deste post</a>.</div></p>

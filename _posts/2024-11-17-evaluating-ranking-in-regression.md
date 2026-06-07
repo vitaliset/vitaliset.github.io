@@ -236,7 +236,7 @@ ___
 def ranking_curve(y_true, y_score, n_buckets=10, statistic='mean'):
     """Compute the ranking curve for a regression task.
 
-    Calculates statistics of <code>y_true</code> values across <code>n_buckets</code>  of <code>y_score</code>
+    Calculates statistics of `y_true` values across `n_buckets`  of `y_score`
     values, ordered by the predicted scores. It can be used to  assess the
     distribution or trends of true values as a function of predicted scores.
 
@@ -249,21 +249,21 @@ def ranking_curve(y_true, y_score, n_buckets=10, statistic='mean'):
         Predicted continuous target values.
 
     n_buckets : int, default=10
-        The number of buckets to divide the sorted <code>y_score</code> values into.
+        The number of buckets to divide the sorted `y_score` values into.
 
     statistic : {'mean', 'median'} or callable, default='mean'
-        The statistic to compute for <code>y_true</code> values in each bucket.
-        - If 'mean', computes the mean of <code>y_true</code> in each bucket.
-        - If 'median', computes the median of <code>y_true</code> in each bucket.
-        - If callable, applies the callable function to the <code>y_true</code> values in each bucket.
+        The statistic to compute for `y_true` values in each bucket.
+        - If 'mean', computes the mean of `y_true` in each bucket.
+        - If 'median', computes the median of `y_true` in each bucket.
+        - If callable, applies the callable function to the `y_true` values in each bucket.
 
     Returns
     -------
     bucket_positions : ndarray of shape (n_buckets,)
-        The positions of the buckets, indexed from 1 to <code>n_buckets</code>.
+        The positions of the buckets, indexed from 1 to `n_buckets`.
 
     bucket_values : ndarray of shape (n_buckets,)
-        The computed statistic for <code>y_true</code> values in each bucket.
+        The computed statistic for `y_true` values in each bucket.
     """
     sorted_indices = np.argsort(y_score)
     y_true_sorted = y_true[sorted_indices]
@@ -428,4 +428,4 @@ ___
 <p align="justify">[4] <a href="https://towardsdatascience.com/how-to-calculate-roc-auc-score-for-regression-models-c0be4fdf76bb">You Can Compute ROC Curve Also for Regression Models. Samuele Mazzanti.</a></p>
 ___
 
-<p><div align="justify">You can find all files and environments for reproducing the experiments in the <a href="https://github.com/vitaliset/blog-notebooks/tree/main/2024_11_17_Blog_Evaluating_Ranking_in_Regression">repository of this post</a>.</div></p>
+<p><div align="justify">You can find all files and environments for reproducing the experiments in the <a href="https://github.com/vitaliset/vitaliset.github.io/tree/master/code/evaluating_ranking_in_regression">repository of this post</a>.</div></p>
