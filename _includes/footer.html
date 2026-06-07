@@ -23,15 +23,19 @@
 <!--<div>Icons made by <a href="https://www.flaticon.com/authors/plainicon" title="Plainicon">Plainicon</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>   &copy; {{ site.time | date: '%Y' }} {{ site.title | escape }}. All rights reserved.</div>-->
 </footer>
 <script async src="{{ "/assets/js/bundle.js" | relative_url }}"></script>
-{% if site.service_worker %}
-<script async>
+<script>
+  // The old sw-precache service worker is retired (its generator, Gulp, is gone,
+  // so its precache manifest froze and it served stale assets). Unregister any
+  // existing worker and drop its caches. Visitors still served stale HTML by the
+  // old worker are cleaned up by sw.js, which is now a self-destroying no-op.
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('{{ "/sw.js" | relative_url }}').then(function( registration ) {
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    })
-    .catch(function(error) {
-      console.log('ServiceWorker registration failed: ', error);
+    navigator.serviceWorker.getRegistrations().then(function (regs) {
+      regs.forEach(function (reg) { reg.unregister(); });
     });
+    if (window.caches && caches.keys) {
+      caches.keys().then(function (keys) {
+        keys.forEach(function (key) { caches.delete(key); });
+      });
+    }
   }
 </script>
-{% endif %}
