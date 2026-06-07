@@ -13,6 +13,7 @@
   <meta property="og:image" content="{{ seo_image }}" />
   <meta name="twitter:image" content="{{ seo_image }}" />
 
+  {% if page.sitemap == false %}<meta name="robots" content="noindex">{% endif %}
   {% seo %}
   {% feed_meta %}
 

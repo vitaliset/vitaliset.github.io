@@ -37,11 +37,17 @@ highlighter: rouge # rouge or pygments or null
 exclude:
   - README.md
   - DEVELOPMENT.md
+  - VISUAL_IDENTITY.md
   - Gemfile
   - Gemfile.lock
   - vendor
   - code        # consolidated notebook/code tree (.ipynb, pyproject.toml, poetry.lock, lightgbm/, caches)
   - scripts     # notebook -> post conversion pipeline
+  # CV/transcripts: kept in the repo for the GitHub-blob links (About page, shared docs)
+  # but not served on the site, so they aren't crawled, indexed, or listed in the sitemap.
+  - files
+  - carlo_bach_ufabc.pdf
+  - carlo_mest_usp.pdf
 
 include: ['_pages']
 permalink: /:title/
