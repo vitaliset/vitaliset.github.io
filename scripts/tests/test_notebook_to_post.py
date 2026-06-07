@@ -62,6 +62,12 @@ STRICT_FIXTURES = [
         "_posts/2023-01-06-threshold-dependent-opt.md",
         id="threshold_dependent_opt",
     ),
+    pytest.param(
+        "boruta",
+        "code/boruta/blog_datalab_boruta.ipynb",
+        "_posts/2022-09-05-boruta.md",
+        id="boruta",
+    ),
 ]
 
 
@@ -84,6 +90,13 @@ def test_output_blocks_match_published(slug, nb_relpath, post_relpath):
     generated, _ = _build(slug, nb_relpath)
     committed = (REPO_ROOT / post_relpath).read_text(encoding="utf-8")
     assert n.extract_output_blocks(generated) == n.extract_output_blocks(committed)
+
+
+@pytest.mark.parametrize("slug,nb_relpath,post_relpath", STRICT_FIXTURES)
+def test_html_tables_match_published(slug, nb_relpath, post_relpath):
+    generated, _ = _build(slug, nb_relpath)
+    committed = (REPO_ROOT / post_relpath).read_text(encoding="utf-8")
+    assert n.extract_html_tables(generated) == n.extract_html_tables(committed)
 
 
 @pytest.mark.parametrize("slug,nb_relpath,post_relpath", STRICT_FIXTURES)

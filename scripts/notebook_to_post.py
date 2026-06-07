@@ -273,33 +273,61 @@ def extract_code_blocks(md: str) -> List[str]:
 
 
 def extract_output_blocks(md: str) -> List[str]:
-    """Return 4-space-indented output blocks (outside code fences), dedented.
+    """Return the dedented text outputs of code cells, in order.
 
-    Trailing whitespace-only lines are dropped so an nbconvert artifact line of
-    ``"    "`` does not make an otherwise-identical block differ from a published
-    post that omits it.
+    Output is **fence-aware**: nbconvert renders a code cell's stdout/text result
+    as 4-space-indented lines *immediately after* the cell's closing ``` fence. We
+    only capture indented runs in that post-code zone, which ends at the next
+    non-indented line (prose, an HTML table ``<div>``, an image embed, or another
+    fence). This deliberately ignores 4-space-indented *markdown prose* such as
+    nested bullet lists, which are hand-authored and must not be compared.
+    Trailing whitespace-only lines are dropped (an nbconvert ``"    "`` artifact).
     """
     blocks: List[str] = []
     current: List[str] = []
     in_fence = False
+    after_code = False
+
+    def flush() -> None:
+        if current:
+            blocks.append("\n".join(current).rstrip("\n"))
+            current.clear()
+
     for line in md.split("\n"):
         if _FENCE.match(line):
             in_fence = not in_fence
-            if current:
-                blocks.append(current)
-                current = []
+            flush()
+            after_code = not in_fence  # True right after a fence closes
             continue
-        if in_fence:
+        if in_fence or not after_code:
             continue
-        if line.startswith("    ") and line.strip() != "":
+        if line.strip() == "":
+            flush()  # end this run, but stay in the cell's output zone
+        elif line.startswith("    "):
             current.append(line[4:])
         else:
-            if current:
-                blocks.append(current)
-                current = []
-    if current:
-        blocks.append(current)
-    return ["\n".join(b).rstrip("\n") for b in blocks]
+            flush()
+            after_code = False  # prose / table / image ends the output zone
+    flush()
+    return blocks
+
+
+def extract_html_tables(md: str) -> List[str]:
+    """Return the nbconvert-rendered pandas DataFrame tables (``<div>…</div>``)."""
+    lines = md.split("\n")
+    blocks: List[str] = []
+    i = 0
+    while i < len(lines):
+        if lines[i].strip() == "<div>":
+            end = next((k for k in range(i, len(lines)) if lines[k].strip() == "</div>"), None)
+            if end is not None:
+                block = lines[i:end + 1]
+                if any('class="dataframe"' in x for x in block):
+                    blocks.append("\n".join(block))
+                i = end + 1
+                continue
+        i += 1
+    return blocks
 
 
 def extract_image_names(md: str) -> List[str]:

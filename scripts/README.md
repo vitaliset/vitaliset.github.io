@@ -94,16 +94,18 @@ python -m pytest scripts/tests/
 The snapshot tests run the pipeline on real notebooks and compare the generated
 code/output/image blocks to the committed posts byte-for-byte (prose ignored).
 
-**Strictly tested posts:** `r_squared`, `evaluating_ranking_in_regression`,
-`metakmeans`, `covariate_introduction`, `cqr_cate`, and `threshold_dependent_opt`.
-These regenerate exactly from their notebooks — `evaluating_ranking` via
+The snapshot tests compare four things between the generated scaffold and the
+committed post: ` ```python ` code blocks, fence-aware text outputs, DataFrame
+HTML tables, and image embeds. Hand-authored prose (including 4-space-indented
+markdown such as nested bullet lists) is ignored.
+
+**Strictly tested posts (7 of 8):** `r_squared`, `evaluating_ranking_in_regression`,
+`metakmeans`, `covariate_introduction`, `cqr_cate`, `threshold_dependent_opt`, and
+`boruta`. These regenerate exactly from their notebooks — `evaluating_ranking` via
 `nb2post:merge`; the others via `skip`/`skip-input`/`skip-output` plus reconciling
 their DataFrame tables to HTML (and normalizing older plain embeds to div-align).
+`boruta` additionally drops a `%%time` magic (stripped from the notebook cell).
 
-**Future work — strict for all posts.** The remaining notebook-backed posts
-(`boruta`, `conditional_density_estimation`) are not byte-reproducible yet:
-`conditional_density_estimation` has genuine non-table figures, and `boruta` is
-mostly table-as-image + suppressed outputs but also has a `%%time` magic and a
-hand-edited printed output. Bringing each under strict tests means adding the
-per-post directives above and normalizing any plain `<p><center><img>` embeds to
-the `<div align="justify">` form. The goal is for every post to be strict.
+**Future work — the last post.** `conditional_density_estimation` is not
+byte-reproducible yet: it has genuine non-table figures the notebook doesn't
+currently produce. Bringing it under strict tests is the remaining goal.
