@@ -68,6 +68,12 @@ STRICT_FIXTURES = [
         "_posts/2022-09-05-boruta.md",
         id="boruta",
     ),
+    pytest.param(
+        "conditional_density_estimation",
+        "code/conditional_density_estimation/cde.ipynb",
+        "_posts/2023-06-16-conditional-density-estimation.md",
+        id="conditional_density_estimation",
+    ),
 ]
 
 

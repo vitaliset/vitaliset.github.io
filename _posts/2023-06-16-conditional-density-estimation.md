@@ -91,7 +91,7 @@ ax.legend()
 plt.tight_layout()
 ```
 
-<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/conditional_density_estimation/output_6_0.png"></center></div></p>
+<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/conditional_density_estimation/output_5_0.png"></center></div></p>
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 <p><div align="justify">The task of density estimation may initially seem daunting, but in reality, it becomes quite intuitive once we recognize that a histogram (normalized to have an integral of 1) is effectively a technique aimed at achieving this objective. By counting the number of examples in each bin, we discretize the distribution, enabling us to estimate the probability of the regions and thus obtain a "low-resolution" density estimation.</div></p>
 
-<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/conditional_density_estimation/output_8_0.png"></center></div></p>
+<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/conditional_density_estimation/output_7_0.png"></center></div></p>
 
 <p><div align="justify">However, employing all samples only yields a density estimate of $Y$ without imposing any condition on $X$.</div></p>
 
@@ -148,7 +148,7 @@ ax[1].legend()
 plt.tight_layout()
 ```
 
-<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/conditional_density_estimation/output_10_0.png"></center></div></p>
+<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/conditional_density_estimation/output_9_0.png"></center></div></p>
 
 ___
 
@@ -160,7 +160,7 @@ ___
 
 <p><div align="justify">$\oint$ <em>The nature of the bump (which is called a kernel) and the width (bandwidth) of these bumps are hyperparameters that can be tuned using cross-validation with a likelihood-style metric to assess the likelihood of a test sample having been drawn from your estimated density [<a href="#bibliography">2</a>].</em></div></p>
 
-<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/conditional_density_estimation/output_12_0.png"></center></div></p>
+<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/conditional_density_estimation/output_11_0.png"></center></div></p>
 
 <p><div align="justify">To condition our KDE, we can once again use a neighbor search. Utilizing <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestNeighbors.html"><code>sklearn.neighbors.NearestNeighbors</code></a> and <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KernelDensity.html"><code>sklearn.neighbors.KernelDensity</code></a> (without being overly concerned about this model's hyperparameters), we can identify the neighbors closest to a specific point, say $X=0.2$, and then estimate the density using these neighbors.</div></p>
 
@@ -208,7 +208,7 @@ ax.legend()
 plt.tight_layout()
 ```
 
-<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/conditional_density_estimation/output_15_0.png"></center></div></p>
+<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/conditional_density_estimation/output_14_0.png"></center></div></p>
 
 <p><div align="justify">Notice that this method provides a much smoother estimate compared to the histogram.</div></p>
 
@@ -447,7 +447,55 @@ gs = GridSearchCV(
 )
 ```
 
-<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/conditional_density_estimation/output_26_0.png"></center></div></p>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>param_nn_estimator</th>
+      <th>mean_score_time</th>
+      <th>mean_test_score</th>
+      <th>std_test_score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NearestNeighbors(n_neighbors=500)</td>
+      <td>3.838123</td>
+      <td>0.890078</td>
+      <td>0.021875</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NearestNeighbors(n_neighbors=100)</td>
+      <td>1.243606</td>
+      <td>0.859500</td>
+      <td>0.016847</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NearestNeighbors(n_neighbors=1000)</td>
+      <td>6.416354</td>
+      <td>0.711722</td>
+      <td>0.018199</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 ```python
 squared_loss(
@@ -628,7 +676,7 @@ ax.legend()
 plt.tight_layout()
 ```
 
-<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/conditional_density_estimation/output_41_0.png"></center></div></p>
+<p><div align="justify"><center><img src="{{ site.baseurl }}/assets/img/conditional_density_estimation/output_40_0.png"></center></div></p>
 
 <p><div align="justify">To evaluate the estimator, considering that we constructed our metric to work with an object similar to <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KernelDensity.html"><code>sklearn.neighbors.KernelDensity</code></a>, we need to ensure it has specific methods that we can implement, adapting the output of <a href="https://github.com/lee-group-cmu/FlexCode"><code>flexcode.FlexCodeModel</code></a> to match this format.</div></p>
 

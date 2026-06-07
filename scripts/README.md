@@ -99,13 +99,14 @@ committed post: ` ```python ` code blocks, fence-aware text outputs, DataFrame
 HTML tables, and image embeds. Hand-authored prose (including 4-space-indented
 markdown such as nested bullet lists) is ignored.
 
-**Strictly tested posts (7 of 8):** `r_squared`, `evaluating_ranking_in_regression`,
-`metakmeans`, `covariate_introduction`, `cqr_cate`, `threshold_dependent_opt`, and
-`boruta`. These regenerate exactly from their notebooks — `evaluating_ranking` via
-`nb2post:merge`; the others via `skip`/`skip-input`/`skip-output` plus reconciling
-their DataFrame tables to HTML (and normalizing older plain embeds to div-align).
-`boruta` additionally drops a `%%time` magic (stripped from the notebook cell).
-
-**Future work — the last post.** `conditional_density_estimation` is not
-byte-reproducible yet: it has genuine non-table figures the notebook doesn't
-currently produce. Bringing it under strict tests is the remaining goal.
+**Strictly tested posts — all 8 notebook-backed posts:** `r_squared`,
+`evaluating_ranking_in_regression`, `metakmeans`, `covariate_introduction`,
+`cqr_cate`, `threshold_dependent_opt`, `boruta`, and
+`conditional_density_estimation`. Each regenerates exactly from its notebook —
+`evaluating_ranking` via `nb2post:merge`; the others via
+`skip`/`skip-input`/`skip-output` plus reconciling DataFrame tables to HTML (and
+normalizing older plain embeds to div-align). `boruta` also drops a `%%time` magic;
+`conditional_density_estimation` had its figure assets renamed to match the
+notebook's current cell numbering. (`distancia`, `kfold`, and the two later
+covariate posts have no notebook and use hand-made figures, so they aren't
+pipeline-generated.)
