@@ -5,6 +5,7 @@ name: tests
 #   - snapshot:  generated code/output/figures match the committed posts
 #   - prose-sync: each post's prose (per language) matches its notebook
 #   - parity:     bilingual posts' EN and PT notebooks stay parallel
+#   - lang:      availability-note logic stays consistent with translated content
 # See scripts/README.md and DEVELOPMENT.md.
 
 on:
