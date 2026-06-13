@@ -12,6 +12,16 @@
   text-align: center;
 }
 
+// Description / standfirst under the post title.
+.post-subtitle {
+  margin: 0.75rem auto 0;
+  max-width: 40rem;
+  color: $grey;
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
 .post-date {
   margin: 0.5rem 0 0;
   color: $grey;
