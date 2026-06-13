@@ -1,11 +1,19 @@
 <header class="header" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
   <div class="container">
     <div class="header__inner">
-      <a class="header__logo" href="{{ '/' | relative_url }}">
-        <div class="header__logo--container">
-          {% include logo.svg %}
+      <div class="header__brand">
+        <a class="header__logo" href="{{ '/' | relative_url }}">
+          <div class="header__logo--container">
+            {% include logo.svg %}
+          </div>
+        </a>
+        {% if page.bilingual %}
+        <div class="lang-switch" role="group" aria-label="Language / Idioma">
+          <button class="lang-switch__btn" type="button" data-set-lang="en" title="English" aria-label="English">EN</button>
+          <button class="lang-switch__btn" type="button" data-set-lang="pt" title="Português" aria-label="Português">PT</button>
         </div>
-      </a>
+        {% endif %}
+      </div>
       <nav class="header__links">
         <div class="container header__links-wrapper">
           {% for item in site.navigation %}

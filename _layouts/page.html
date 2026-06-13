@@ -21,13 +21,13 @@ layout: compress
 
     <div class="hero lazyload" data-bg="{{ site.url }}{{ site.baseurl }}/assets/img/{{ site.hero_img }}">
       <div class="hero__wrap">
-        <h1 class="hero__title">{{ page.title }}</h1>
+        <h1 class="hero__title">{% if page.title_pt %}<span class="i18n" lang="en">{{ page.title_en | default: page.title }}</span><span class="i18n" lang="pt">{{ page.title_pt }}</span>{% else %}{{ page.title }}{% endif %}</h1>
       </div>
     </div>
 
     <!-- <div class="hero--small">
       <div class="hero__wrap">
-        <h1 class="hero__title">{{ page.title }}</h1>
+        <h1 class="hero__title">{% if page.title_pt %}<span class="i18n" lang="en">{{ page.title_en | default: page.title }}</span><span class="i18n" lang="pt">{{ page.title_pt }}</span>{% else %}{{ page.title }}{% endif %}</h1>
       </div>
     </div>
     <main class="site__content">-->

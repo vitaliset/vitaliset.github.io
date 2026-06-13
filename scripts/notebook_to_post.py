@@ -418,6 +418,47 @@ def notebook_prose_text(nb_path) -> str:
     return " ".join(out)
 
 
+_I18N_OPEN = re.compile(r'<div\b[^>]*\bclass="i18n"[^>]*\blang="([a-zA-Z][a-zA-Z-]*)"[^>]*>')
+
+
+def strip_i18n_other(md: str, keep_lang: str) -> str:
+    """Drop ``<div class="i18n" lang="OTHER">…</div>`` regions, keeping ``keep_lang``.
+
+    Bilingual posts pair each prose paragraph as an EN and a PT
+    ``<div class="i18n" lang="…">`` block; shared content (code, figures,
+    headings) stays unwrapped. To prose-sync one language against its notebook we
+    first remove the other language's blocks. Matching is depth-aware (the kept
+    inner ``<p><div align="justify">`` means a naive non-greedy regex would stop at
+    the wrong ``</div>``). A no-op when the post has no i18n blocks (monolingual).
+    """
+    keep = keep_lang.lower()
+    tag = re.compile(r"<div\b|</div>")
+    out: List[str] = []
+    i = 0
+    while i < len(md):
+        m = _I18N_OPEN.search(md, i)
+        if not m:
+            out.append(md[i:])
+            break
+        if m.group(1).lower().startswith(keep):
+            # Keep this block; copy up to and including its opening tag and go on
+            # (its inner content / close are handled by later iterations).
+            out.append(md[i:m.end()])
+            i = m.end()
+            continue
+        out.append(md[i:m.start()])  # text before the other-language block
+        depth, j = 1, m.end()
+        while depth and j < len(md):
+            t = tag.search(md, j)
+            if not t:
+                j = len(md)
+                break
+            depth += 1 if t.group() == "<div" else -1
+            j = t.end()
+        i = j  # resume just after the matching </div>
+    return "".join(out)
+
+
 def write_post(post_text: str, images: Dict[str, bytes], slug: str, date: str) -> Path:
     img_dir = REPO_ROOT / "assets" / "img" / slug
     img_dir.mkdir(parents=True, exist_ok=True)

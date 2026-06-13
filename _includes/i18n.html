@@ -1,0 +1,133 @@
+{% comment %}
+  Bilingual (EN/PT) engine. Loaded once, high in <head>.
+  - Sets html[data-lang] before paint (no flash of wrong language).
+  - CSS shows only the .i18n block matching the active language.
+  - A delegated click handler on .lang-switch__btn cross-fades and persists the choice.
+  Untranslated content is left unwrapped, so it always shows (English fallback).
+{% endcomment %}
+
+<script>
+  /* Resolve language before the body paints: stored choice > page default (<html lang>) > 'en'.
+     NOTE: keep this script free of // line comments — compress_html collapses it onto one
+     line, and a // comment would then swallow the rest of the code. Use block comments. */
+  (function () {
+    try {
+      var stored = localStorage.getItem('vs-lang');
+      var pageLang = (document.documentElement.getAttribute('lang') || 'en').toLowerCase();
+      var pageDefault = pageLang.indexOf('pt') === 0 ? 'pt' : 'en';
+      var lang = stored === 'en' || stored === 'pt' ? stored : pageDefault;
+      document.documentElement.setAttribute('data-lang', lang);
+    } catch (e) {
+      document.documentElement.setAttribute('data-lang', 'en');
+    }
+  })();
+</script>
+
+<style>
+  /* --- Bilingual content blocks ------------------------------------------- */
+  /* English is the default/fallback (shown with no JS); Portuguese is hidden
+     until the active language is PT. `revert` restores each element's natural
+     display (block for <div>, inline for <span>), so the same rules cover both. */
+  .i18n[lang="pt"] { display: none; }
+  html[data-lang="pt"] .i18n[lang="en"] { display: none; }
+  html[data-lang="pt"] .i18n[lang="pt"] { display: revert; }
+
+  /* Cross-fade wrapper: the group stays in the DOM so opacity animates cleanly. */
+  .i18n-group { transition: opacity .25s ease; }
+  .i18n-group.is-fading { opacity: 0; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .i18n-group { transition: none; }
+  }
+
+  /* --- The EN | PT pill --------------------------------------------------- */
+  /* Grouped with the logo on the left so the nav links on the right never shift
+     when the pill is present vs absent. Coloured with the heading colour (#313237),
+     not the link blue, to match the rest of the chrome. */
+  .header__brand {
+    display: flex;
+    align-items: center;
+  }
+
+  .lang-switch {
+    display: inline-flex;
+    align-items: stretch;
+    border: 1px solid #313237;
+    border-radius: 999px;
+    overflow: hidden;
+    background: #fff;
+    line-height: 1;
+    flex: 0 0 auto;
+  }
+
+  .lang-switch__btn {
+    appearance: none;
+    -webkit-appearance: none;
+    border: 0;
+    background: transparent;
+    color: #313237;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background-color .2s ease, color .2s ease;
+    outline: 0;
+  }
+
+  .lang-switch__btn + .lang-switch__btn {
+    border-left: 1px solid #313237;
+  }
+
+  .lang-switch__btn:hover {
+    background: rgba(49, 50, 55, .1);
+  }
+
+  .lang-switch__btn:focus-visible {
+    box-shadow: inset 0 0 0 2px rgba(49, 50, 55, .4);
+  }
+
+  /* Active segment driven purely by the root attribute -> correct before any JS click. */
+  html[data-lang="en"] .lang-switch__btn[data-set-lang="en"],
+  html[data-lang="pt"] .lang-switch__btn[data-set-lang="pt"] {
+    background: #313237;
+    color: #fff;
+    cursor: default;
+  }
+  html[data-lang="en"] .lang-switch__btn[data-set-lang="en"]:hover,
+  html[data-lang="pt"] .lang-switch__btn[data-set-lang="pt"]:hover {
+    background: #313237;
+  }
+
+  @media (min-width: 62em) {
+    .lang-switch__btn { padding: 7px 14px; }
+  }
+</style>
+
+<script>
+  /* Delegated so it works for the header pill on every page, regardless of load order.
+     (No // line comments here — see the note in the head script above.) */
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.lang-switch__btn');
+    if (!btn) return;
+    e.preventDefault();
+    var lang = btn.getAttribute('data-set-lang');
+    if (lang !== 'en' && lang !== 'pt') return;
+    var root = document.documentElement;
+    if (root.getAttribute('data-lang') === lang) return;
+
+    var groups = document.querySelectorAll('.i18n-group');
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function apply() {
+      root.setAttribute('data-lang', lang);
+      try { localStorage.setItem('vs-lang', lang); } catch (err) {}
+      for (var i = 0; i < groups.length; i++) groups[i].classList.remove('is-fading');
+    }
+
+    if (reduce || groups.length === 0) { apply(); return; }
+    for (var i = 0; i < groups.length; i++) groups[i].classList.add('is-fading');
+    setTimeout(apply, 250);
+  });
+</script>
