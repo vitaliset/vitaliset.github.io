@@ -1,10 +1,12 @@
 ---
 layout: post
 title: Hyperparameter search with threshold-dependent metrics
+title_pt: Busca de hiperparâmetros com métricas dependentes de threshold
 featured-img: threshold_dependent_opt
 category: [🇺🇸, imbalanced learning]
 mathjax: true
 description: It can be dangerous to do hyperparameter tunning with threshold-dependent metrics directly. Here we discuss why and how to work around it.
+description_pt: Pode ser perigoso fazer a busca de hiperparâmetros diretamente com métricas dependentes de threshold. Aqui discutimos por que e como contornar isso.
 ---
 
 <p><div align="justify">In a binary classification problem, you probably shouldn&#39;t ever use the <code>.predict</code> method from scikit-learn (and consequently from libraries that follow <a href="https://scikit-learn.org/stable/developers/develop.html">its design pattern</a>). In scikit-learn, the implementation of <code>.predict</code>, in general, follows the logic <a href="https://github.com/scikit-learn/scikit-learn/blob/98cf537f5c538fdbc9d27b851cf03ce7611b8a48/sklearn/ensemble/_forest.py#L800-L837">implemented</a> for <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html"><code>sklearn.ensemble.RandomForestClassifier</code></a>:</div></p>

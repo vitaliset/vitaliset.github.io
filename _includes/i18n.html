@@ -12,10 +12,15 @@
      line, and a // comment would then swallow the rest of the code. Use block comments. */
   (function () {
     try {
+      /* Precedence: ?lang= in the URL (deep link from a card) > stored choice >
+         the page's own default. A URL choice is persisted so it sticks. */
+      var u = new URLSearchParams(location.search).get('lang');
+      var fromUrl = u === 'en' || u === 'pt' ? u : null;
       var stored = localStorage.getItem('vs-lang');
       var pageLang = (document.documentElement.getAttribute('lang') || 'en').toLowerCase();
       var pageDefault = pageLang.indexOf('pt') === 0 ? 'pt' : 'en';
-      var lang = stored === 'en' || stored === 'pt' ? stored : pageDefault;
+      var lang = fromUrl || (stored === 'en' || stored === 'pt' ? stored : pageDefault);
+      if (fromUrl) { try { localStorage.setItem('vs-lang', fromUrl); } catch (e2) {} }
       var root = document.documentElement;
       root.setAttribute('data-lang', lang);
       /* Relabel the document language only on bilingual pages (the visible content
@@ -106,6 +111,41 @@
 
   @media (min-width: 62em) {
     .lang-switch__btn { padding: 7px 14px; }
+  }
+
+  /* --- Home-card language chips (sit over the thumbnail, like .label) ------ */
+  .post-card__lang {
+    display: inline-flex;
+    gap: 4px;
+    vertical-align: middle;
+    margin-left: 4px;
+  }
+  .post-card__lang a {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    line-height: 20px;
+    padding: 0 9px;
+    border-radius: 100px;
+    color: rgba(255, 255, 255, .9);
+    background: rgba(49, 50, 55, .55);
+    border: 1px solid rgba(255, 255, 255, .5);
+    text-decoration: none;
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .post-card__lang a:hover,
+  .post-card__lang a:focus {
+    color: #fff;
+    background: #313237;
+    border-color: #313237;
+  }
+
+  /* --- "only available in X" note on monolingual posts -------------------- */
+  .lang-note {
+    margin: 0 0 1.5rem;
+    font-style: italic;
+    color: #838c8d;
   }
 </style>
 

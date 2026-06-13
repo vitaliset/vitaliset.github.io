@@ -1,10 +1,12 @@
 ---
 layout: post
 title: Conditional Density Estimation
+title_pt: Estimação de Densidade Condicional
 featured-img: cde
 category: [🇺🇸, uncertainty quantification]
 mathjax: true
 description: CDE is the process of estimating the probability density function of a random variable given the values of other variables.
+description_pt: CDE é o processo de estimar a função de densidade de probabilidade de uma variável aleatória dados os valores de outras variáveis.
 ---
 
 <p><div align="justify">Typically, when we seek to model the relationship between a target variable $Y\in\mathbb{R}$ and one or more covariates $X$, our goal is to establish a conditional-expectation type association. Mathematically, if we define our loss as the mean squared error, our explicit aim is to identify the function $\mathbb{E} \left( Y \,|\, X=x\right)$. This function intuitively gives a prediction of the average value of $Y$ given that the covariates are $X=x$. Despite the straightforward and simplified summary provided by point estimates, they often fail to encapsulate the inherent intricacies and uncertainties prevalent in most real-world predictive scenarios. This prompts us to ask: Is the variance around this average value extensive, or can we confidently anticipate the value to be in close proximity to the predicted one?</div></p>

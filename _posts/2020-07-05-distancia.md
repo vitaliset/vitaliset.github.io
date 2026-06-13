@@ -1,10 +1,12 @@
 ---
 layout: post
-title: Generalizando distância
+title: Generalizing distance
+title_pt: Generalizando distância
 featured-img: coverdistancia
 category: [🇧🇷, math]
 mathjax: true
-description: Definição matemática de distância com aplicações no contexto de ciência de dados.
+description: A mathematical definition of distance with applications in the data science context.
+description_pt: Definição matemática de distância com aplicações no contexto de ciência de dados.
 ---
 
 <p><div align="justify">Vários algoritmos de aprendizado de máquina baseados em distância são genéricos o suficiente para mudarmos a forma como calculamos a distância entre dois pontos. Quando olhamos para dados em $\mathbb{R}^n$, para $n\in\mathbb{N}^*$, estamos acostumados com a <b>distância euclidiana</b>. Essa distância calcula o tamanho do comprimento de reta que liga os dois pontos, com uma espécie de generalização do teorema de Pitágoras.</div></p>

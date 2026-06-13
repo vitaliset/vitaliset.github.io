@@ -8,6 +8,7 @@ mathjax: true
 bilingual: true
 lang: en-US
 description: Introducing the dataset shift scenario with an illustrative case.
+description_pt: Apresentando o cenário de dataset shift com um caso ilustrativo.
 ---
 
 <div class="i18n" lang="en"><p><div align="justify">The primary goal of supervised learning is to identify patterns between independent variables (explanatory variables) and a dependent variable (target variable). In mathematical terms, within a regression context, we have a random vector $V = (X_1, X_2, \cdots, X_n, Y)$ and we suppose that there exists a relationship between the independent variables $X_i$ and the dependent variable $Y$, expressed as:</div></p></div>

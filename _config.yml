@@ -17,12 +17,12 @@ social:
 google_site_verification: Na6LMsynYEgJ2xbXjXckIuvbUkj6lyVBPNlGMqI4_Yc
 
 # THEME SETTINGS
-navigation: # Navigation links
-  - {name: 'Home', link: '/'}
-  - {name: 'Links', link: '/links'}
-  - {name: 'Interview tips', link: '/interview'}
-  - {name: 'Mentoring guideline', link: '/tutoring-guideline'}
-  - {name: 'About', link: '/about'}
+navigation: # Navigation links (name_pt: Portuguese label shown when the site language is PT)
+  - {name: 'Home', name_pt: 'Início', link: '/'}
+  - {name: 'Links', name_pt: 'Links', link: '/links'}
+  - {name: 'Interview tips', name_pt: 'Dicas de entrevista', link: '/interview'}
+  - {name: 'Mentoring guideline', name_pt: 'Guia de mentoria', link: '/tutoring-guideline'}
+  - {name: 'About', name_pt: 'Sobre', link: '/about'}
 
 hero_img: teste1.jpg # Main background image: path relative to /assets/img/ => outputs /assets/img/teste1.jpg
 

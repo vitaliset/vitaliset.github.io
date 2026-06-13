@@ -1,10 +1,12 @@
 ---
 layout: post
 title: Covariate Shift&#58; QQ-plot
+title_pt: Covariate Shift&#58; QQ-plot
 featured-img: coverqqplot
 category: [🇧🇷, dataset shift]
 mathjax: true
-description: Uma primeira abordagem para identificar mudanças de distribuição sugerindo uma variação numérica para a versão visual.
+description: A first approach to identifying distribution shifts, suggesting a numerical variation of the visual version.
+description_pt: Uma primeira abordagem para identificar mudanças de distribuição sugerindo uma variação numérica para a versão visual.
 ---
 
 <p><div align="justify">Este post faz parte de uma série de postagens que discutem o problema de <i>Covariate Shift</i>. Assumo que você já conhece a motivação do problema e no que estamos interessados em identificar e corrigir. Se você ainda não leu o <a href="https://vitaliset.github.io/covariate-shift-0-introduction/">primeiro post</a> dessa série, sugiro a leitura.</div></p>

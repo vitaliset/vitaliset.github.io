@@ -2,7 +2,7 @@
 layout: compress
 ---
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en-US" }}"{% if page.bilingual %} data-bilingual{% endif %}>
+<html lang="{% if page.lang %}{{ page.lang }}{% elsif page.categories contains "🇧🇷" %}pt-BR{% else %}{{ site.lang | default: "en-US" }}{% endif %}"{% if page.bilingual %} data-bilingual{% endif %}>
 
 {% include head.html %}
 
@@ -68,6 +68,8 @@ layout: compress
   <main class="site__content">
     <div class="container">
       <article class="post-content" itemprop="articleBody">
+
+        {% unless page.bilingual %}{% if page.categories contains "🇺🇸" %}<div class="i18n lang-note" lang="pt"><em>Este conteúdo está disponível apenas em inglês.</em></div>{% elsif page.categories contains "🇧🇷" %}<div class="i18n lang-note" lang="en"><em>This content is only available in Portuguese.</em></div>{% endif %}{% endunless %}
 
         {{ content }}
 
