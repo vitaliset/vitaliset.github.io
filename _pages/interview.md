@@ -1,14 +1,70 @@
 ---
 layout: page
-title: Dicas de entrevista para big techs
+title: Interview tips for big techs
+title_pt: Dicas de entrevista para big techs
 permalink: /interview/
-lang: pt-BR
+lang: en-US
+bilingual: true
+description: Tips and insights for cracking LeetCode-style coding interviews at big tech companies, from someone who went through Google's process.
+description_pt: Dicas e aprendizados para mandar bem em entrevistas de código estilo LeetCode em big techs, de quem passou pelo processo do Google.
 mathjax: true
 ---
 
-_This page provides tips and insights for tackling LeetCode interview questions, helping folks prepare effectively for coding interviews._
+<div class="i18n" lang="en" markdown="1">
 
-___
+After getting a few questions about my experience with Google's interviews, I decided to put together some tips from someone who has been through the process.
+
+These tips aren't official from Google or any other company — just a compilation of things I learned. I hope it's useful! :)
+
+## Technical interview (LeetCode-like)
+
+### The interview dance
+
+- Prioritize communication throughout the entire interview. **Think out loud!**
+- Treat the interview as a dance with your interviewer, with steps and a rhythm to follow.
+    - Prepare an introduction of at most 30 seconds about your education and work experience. You might not even need to introduce yourself.
+    - Paraphrase the problem the interviewer presents and ask questions about it. Make sure you understand what you need to solve.
+    - Use test cases to confirm your understanding of the problem. Clarify the edge cases too — for example, understanding what you should return if the input is empty.
+    - If it's not obvious how to proceed, remember that "code that solves the problem" matters more than "optimized code". Think about brute-force solutions before trying something more elegant.
+    - Be receptive to hints from your interviewer. They know that problem in detail and have already seen many people try to solve it with different approaches. They want to help you.
+    - Never start coding without asking first. It's the interviewer's chance to tell you whether they're already comfortable with the approach you're following. If they aren't yet, they can help you with hints at that point.
+    - Proactively do a dry run (manually trace through your code) at the end, using an example whose input/output you validated at the start, to make sure your solution's logic is correct.
+    - Be ready to answer questions about time and space complexity, your choice of data structures and algorithms, and possible improvements or variations.
+    - Show interest in the company and prepare a few relevant questions to ask the interviewer in the final minutes. Pay attention to the interviewer's introduction — if you can connect your questions to what they said, even better.
+- The [sample interview](https://youtu.be/XKu_SEDAykw?si=zp6YhHC8HhBiPU8x) that Google provides demonstrates this dance really well.
+- Be positive and show that you're enjoying it. The interview isn't meant to be torture — it should be enjoyable (even if highly stressful).
+
+### How to study
+
+- When studying a new data structure, start with easy exercises to consolidate the basics and build confidence. Once you're getting the hang of the easy ones, move on to medium-level problems. Doing hard exercises may be less valuable, since they often require very specific hints that the interviewer would likely provide anyway, turning the problem into something closer to a medium-level one.
+- Avoid doing exercises at random. It's important to use lists that cover the topics most frequently seen in interviews. I, for example, studied almost exclusively with [LeetCode75](https://leetcode.com/studyplan/leetcode-75/) (except the ones marked as hard) and solved a few specific exercises from [NeetCode150](https://neetcode.io/roadmap), [Blind75](https://leetcode.com/discuss/general-discussion/460599/blind-75-leetcode-questions) and [LeetCode150](https://leetcode.com/studyplan/top-interview-150/).
+- Even if you're able to solve the problems, it's important to review the solutions to make sure you're following best practices. If the exercise belongs to a classic list, you can find the solution on [NeetCode](https://www.youtube.com/c/neetcode) or [NeetCodeIO](https://www.youtube.com/@NeetCodeIO).
+- Make sure you can implement the data structures in your chosen language. In general, it's acceptable to use the language's native libraries, such as Python's `collections` and `heapq`.
+- Don't worry about going too deep into very specific topics, especially if you're short on time. Focus on the classic lists.
+- Practice writing code in a plain text editor, to make sure you can write code without relying on an IDE.
+- Simulate interviews by solving problems out loud, preferably in English to get familiar with the technical vocabulary. Especially in the days leading up to the interview. You don't need to do this while you're still learning the data structures.
+- If you get the chance, practice with someone playing the role of interviewer to simulate a real interview situation. This can be a valuable experience before your first interview.
+
+### Mindset tips
+
+- Being called for the interview is already a significant achievement — congratulations! Take the opportunity to learn from the process.
+- Keep a positive attitude and communicate with the interviewer. They are there to help you. If you're at a more advanced stage, remember that you don't need to do well in every single interview, since you'll be evaluated holistically by the hiring committee.
+- Be aware that there's an element of luck involved in big tech interviews. Sometimes the question really is very hard, sometimes the interviewer isn't the best. That's outside your control, so it's not worth getting anxious about it. The idea is to be as prepared as possible for when "luck" shows up.
+- [Be ok with the possibility of not getting hired](https://steve-yegge.blogspot.com/2008/03/get-that-job-at-google.html). Even if you don't succeed, stay calm and absorb the lessons. If your résumé was selected for the interview, you'll likely be called for a new opportunity within a few months!
+
+## Behavioral interview
+
+- During the behavioral interview, show maturity in handling conflict and show that you're data-driven when solving problems.
+- Have examples from your professional journey to back up your answers.
+- [Jeff H Sipe](https://www.youtube.com/watch?v=tuL-WmYKBgo) has great tips for this kind of interview (focused on Google's "Googleyness and Leadership" interview). His channel is also useful for understanding the [hiring committee](https://www.youtube.com/watch?v=SqnrXBVaCo8), [levels](https://www.youtube.com/watch?v=cC9V5IH4B6k), [team match](https://www.youtube.com/watch?v=fG3noON-IWo) and any other questions about Google.
+
+I don't have many tips for system design interviews because I didn't have them during my stages, but watching some examples of the [core concepts](https://youtu.be/i53Gi_K3o7I?feature=shared) and [sample interviews](https://youtu.be/jPKTo1iGQiE?feature=shared) of that type can help you prepare.
+
+Good luck! It's going to be fine! :D
+
+</div>
+
+<div class="i18n" lang="pt" markdown="1">
 
 Depois de receber algumas perguntas sobre minha experiência nas entrevistas do Google, resolvi consolidar um material com dicas de alguém que passou por esse processo.
 
@@ -29,7 +85,7 @@ Essas dicas não são oficiais do Google ou de outras empresas, apenas um compil
     - Faça proativamente um [teste de mesa](https://pt.stackoverflow.com/questions/220474/o-que-%C3%A9-um-teste-de-mesa-como-aplic%C3%A1-lo) no final, com algum exemplo que você validou o input/output no início para garantir a lógica da sua solução.
     - Esteja preparado para responder perguntas sobre complexidade de tempo e espaço, escolha de estruturas de dados e algoritmos, e possíveis melhorias ou variações.
     - Mostre interesse pela empresa e separe algumas perguntas relevantes ao entrevistador para fazer nos minutos finais de entrevista. Preste atenção na introdução do entrevistador, se você conseguir conectar perguntas ao que ele falou, melhor ainda.
-- A [entrevista de exemplo](https://youtu.be/XKu_SEDAykw?si=zp6YhHC8HhBiPU8x) que o Google disponibiliza demonstra muito be essa dança.
+- A [entrevista de exemplo](https://youtu.be/XKu_SEDAykw?si=zp6YhHC8HhBiPU8x) que o Google disponibiliza demonstra muito bem essa dança.
 - Seja positivo e demonstre que está gostando. A entrevista não é para ser algo torturante, deve ser prazerosa (apesar de altamente estressante).
 
 ### Como estudar
@@ -59,3 +115,5 @@ Essas dicas não são oficiais do Google ou de outras empresas, apenas um compil
 Eu não tenho muitas dicas para entrevistas de system design porque não tive elas durante minhas etapas, mas ver alguns exemplos dos [conceitos principais](https://youtu.be/i53Gi_K3o7I?feature=shared) e [exemplos de entrevistas](https://youtu.be/jPKTo1iGQiE?feature=shared) do tipo podem ajudar a se preparar.
 
 Boa sorte! Vai dar tudo certo! :D
+
+</div>
