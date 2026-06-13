@@ -2,6 +2,7 @@
 layout: page
 title: Links
 permalink: /links/
+lang: en-US
 ---
 
 ## Personal Blogs

@@ -2,6 +2,7 @@
 layout: page
 title: Mentorando iniciantes em carreiras de Data Science
 permalink: /tutoring-guideline/
+lang: pt-BR
 mathjax: true
 ---
 

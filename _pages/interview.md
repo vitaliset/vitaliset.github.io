@@ -2,6 +2,7 @@
 layout: page
 title: Dicas de entrevista para big techs
 permalink: /interview/
+lang: pt-BR
 mathjax: true
 ---
 

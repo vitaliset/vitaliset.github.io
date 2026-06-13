@@ -35,6 +35,8 @@ layout: compress
       <div class="container">
         <div class="page-content">
 
+          {% unless page.bilingual %}{% if page.lang %}{% if page.lang contains "pt" %}<div class="i18n lang-note" lang="en"><em>This page is only available in Portuguese.</em></div>{% else %}<div class="i18n lang-note" lang="pt"><em>Esta página está disponível apenas em inglês.</em></div>{% endif %}{% endif %}{% endunless %}
+
           {{ content }}
 
         </div>
