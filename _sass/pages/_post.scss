@@ -4,10 +4,10 @@
   padding-top: 0.5em; // small gap below the title/date/categories block
 }
 
-// Title + date + categories block on a post page. The title used to be
-// centered by an `h1 { align-self: center }` tweak that lived only in the
-// built main.css (not in the SCSS source); centering the wrapper here keeps
-// it in source and covers the date/categories too.
+// Title + date block on a post page. The title used to be centered by an
+// `h1 { align-self: center }` tweak that lived only in the built main.css
+// (not in the SCSS source); centering the wrapper here keeps it in source
+// and covers the date too.
 .post-header {
   text-align: center;
 }
@@ -19,23 +19,6 @@
 
   time {
     border-bottom: 0;
-  }
-}
-
-.post-categories {
-  margin: 0.75rem 0 0;
-
-  .label {
-    margin-bottom: 0;
-    color: $grey;
-    border-color: $outline;
-
-    &:focus,
-    &:hover {
-      color: $bg-color;
-      background-color: rgba(0, 0, 0, 0.8);
-      border-color: rgba(0, 0, 0, 0.8);
-    }
   }
 }
 
