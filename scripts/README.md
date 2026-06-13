@@ -127,3 +127,23 @@ normalizing older plain embeds to div-align). `boruta` also drops a `%%time` mag
 notebook's current cell numbering. (`distancia`, `kfold`, and the two later
 covariate posts have no notebook and use hand-made figures, so they aren't
 pipeline-generated.)
+
+`tests/test_prose_sync.py` additionally locks each post's *prose* to its
+notebook's markdown (the snapshot tests ignore prose). For bilingual posts it
+checks each language track separately via `notebook_to_post.strip_i18n_other`.
+
+### Bilingual posts
+
+Two posts are published in both English and Portuguese on a single URL with an
+in-place EN/PT toggle — `covariate_introduction` and `r_squared` — each backed by
+a pair of notebooks (`*_EN.ipynb` + `*_PT*.ipynb`). The code/figures are shared;
+only the prose differs. Two checks keep the pair honest:
+
+- `tests/test_notebook_parity.py` — the EN and PT notebooks stay parallel at the
+  paragraph level (identical code, same figures, 1:1 prose/heading pairing).
+- `tests/test_prose_sync.py` — the post's EN track matches the EN notebook and its
+  PT track the PT notebook.
+
+See the "Bilingual posts" section of [`../DEVELOPMENT.md`](../DEVELOPMENT.md) for
+how to author one (front matter, `<div class="i18n" lang="…">` wrapping, registering
+the fixtures).

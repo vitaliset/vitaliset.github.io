@@ -16,7 +16,11 @@
       var pageLang = (document.documentElement.getAttribute('lang') || 'en').toLowerCase();
       var pageDefault = pageLang.indexOf('pt') === 0 ? 'pt' : 'en';
       var lang = stored === 'en' || stored === 'pt' ? stored : pageDefault;
-      document.documentElement.setAttribute('data-lang', lang);
+      var root = document.documentElement;
+      root.setAttribute('data-lang', lang);
+      /* Relabel the document language only on bilingual pages (the visible content
+         actually changes there); monolingual pages stay English regardless. */
+      if (root.hasAttribute('data-bilingual')) root.setAttribute('lang', lang === 'pt' ? 'pt-BR' : 'en-US');
     } catch (e) {
       document.documentElement.setAttribute('data-lang', 'en');
     }
@@ -108,6 +112,16 @@
 <script>
   /* Delegated so it works for the header pill on every page, regardless of load order.
      (No // line comments here — see the note in the head script above.) */
+  function syncPillState() {
+    var lang = document.documentElement.getAttribute('data-lang');
+    var btns = document.querySelectorAll('.lang-switch__btn');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].setAttribute('aria-pressed', btns[i].getAttribute('data-set-lang') === lang ? 'true' : 'false');
+    }
+  }
+  if (document.readyState !== 'loading') syncPillState();
+  else document.addEventListener('DOMContentLoaded', syncPillState);
+
   document.addEventListener('click', function (e) {
     var btn = e.target.closest('.lang-switch__btn');
     if (!btn) return;
@@ -122,8 +136,10 @@
 
     function apply() {
       root.setAttribute('data-lang', lang);
+      if (root.hasAttribute('data-bilingual')) root.setAttribute('lang', lang === 'pt' ? 'pt-BR' : 'en-US');
       try { localStorage.setItem('vs-lang', lang); } catch (err) {}
       for (var i = 0; i < groups.length; i++) groups[i].classList.remove('is-fading');
+      syncPillState();
     }
 
     if (reduce || groups.length === 0) { apply(); return; }
