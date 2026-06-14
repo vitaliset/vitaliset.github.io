@@ -1,0 +1,32 @@
+[project]
+name = "distance-metrics"
+version = "0.1.0"
+description = "Reproducible environment for the 'Generalizing distance' blog post on vitaliset.github.io."
+authors = [{ name = "vitaliset" }]
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "ipykernel>=7.3.0",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.11.0",
+    "numpy>=2.4.6",
+    "scikit-learn>=1.7.2",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.17",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+# A small, sensible default: pyflakes (F), pycodestyle errors/warnings (E, W),
+# isort (I), and a few common bug-catchers (B). Nothing fancy.
+select = ["E", "F", "W", "I", "B"]
+# This is a teaching notebook, so we keep the code in the post faithful to the
+# prose: B006 (centro=[0, 0] default) and B905 (zip without strict=) are
+# deliberate for readability, and `ponderada` documents `A` as a free variable
+# the reader supplies, so F821 is expected.
+ignore = ["B006", "B905", "F821"]

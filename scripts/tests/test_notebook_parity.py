@@ -35,6 +35,11 @@ PARITY_PAIRS = [
         "code/r_squared/blog_r2_score_PT.ipynb",
         id="r_squared",
     ),
+    pytest.param(
+        "code/distance_metrics/blog_distance_metrics_EN.ipynb",
+        "code/distance_metrics/blog_distance_metrics_PT.ipynb",
+        id="distance_metrics",
+    ),
 ]
 
 

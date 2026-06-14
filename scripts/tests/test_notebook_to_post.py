@@ -74,6 +74,12 @@ STRICT_FIXTURES = [
         "_posts/2023-06-16-conditional-density-estimation.md",
         id="conditional_density_estimation",
     ),
+    pytest.param(
+        "distance_metrics",
+        "code/distance_metrics/blog_distance_metrics_EN.ipynb",
+        "_posts/2020-07-05-distancia.md",
+        id="distance_metrics",
+    ),
 ]
 
 

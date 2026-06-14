@@ -46,6 +46,10 @@ PROSE_FIXTURES = [
                  "_posts/2022-09-05-boruta.md", "en", id="boruta"),
     pytest.param("conditional_density_estimation", "code/conditional_density_estimation/cde.ipynb",
                  "_posts/2023-06-16-conditional-density-estimation.md", "en", id="conditional_density_estimation"),
+    pytest.param("distance_metrics", "code/distance_metrics/blog_distance_metrics_EN.ipynb",
+                 "_posts/2020-07-05-distancia.md", "en", id="distance_metrics_en"),
+    pytest.param("distance_metrics", "code/distance_metrics/blog_distance_metrics_PT.ipynb",
+                 "_posts/2020-07-05-distancia.md", "pt", id="distance_metrics_pt"),
 ]
 
 

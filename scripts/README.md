@@ -116,17 +116,20 @@ committed post: ` ```python ` code blocks, fence-aware text outputs, DataFrame
 HTML tables, and image embeds. Hand-authored prose (including 4-space-indented
 markdown such as nested bullet lists) is ignored.
 
-**Strictly tested posts — all 8 notebook-backed posts:** `r_squared`,
+**Strictly tested posts — all 9 notebook-backed posts:** `r_squared`,
 `evaluating_ranking_in_regression`, `metakmeans`, `covariate_introduction`,
-`cqr_cate`, `threshold_dependent_opt`, `boruta`, and
-`conditional_density_estimation`. Each regenerates exactly from its notebook —
-`evaluating_ranking` via `nb2post:merge`; the others via
+`cqr_cate`, `threshold_dependent_opt`, `boruta`,
+`conditional_density_estimation`, and `distance_metrics`. Each regenerates exactly
+from its notebook — `evaluating_ranking` via `nb2post:merge`; the others via
 `skip`/`skip-input`/`skip-output` plus reconciling DataFrame tables to HTML (and
 normalizing older plain embeds to div-align). `boruta` also drops a `%%time` magic;
 `conditional_density_estimation` had its figure assets renamed to match the
-notebook's current cell numbering. (`distancia`, `kfold`, and the two later
-covariate posts have no notebook and use hand-made figures, so they aren't
-pipeline-generated.)
+notebook's current cell numbering. `distance_metrics` (the `/distancia/` post) was
+retrofitted with a notebook after the fact, modernizing its old
+`sklearn.neighbors.DistanceMetric` code (now in English) and hiding the figure-only
+plotting cells with `skip-input`; the strict fixture builds from its `_EN`
+notebook. (`kfold` and the two later covariate posts have no notebook and
+use hand-made figures, so they aren't pipeline-generated.)
 
 `tests/test_prose_sync.py` additionally locks each post's *prose* to its
 notebook's markdown (the snapshot tests ignore prose). For bilingual posts it
@@ -134,10 +137,11 @@ checks each language track separately via `notebook_to_post.strip_i18n_other`.
 
 ### Bilingual posts
 
-Two posts are published in both English and Portuguese on a single URL with an
-in-place EN/PT toggle — `covariate_introduction` and `r_squared` — each backed by
-a pair of notebooks (`*_EN.ipynb` + `*_PT*.ipynb`). The code/figures are shared;
-only the prose differs. Two checks keep the pair honest:
+Three posts are published in both English and Portuguese on a single URL with an
+in-place EN/PT toggle — `covariate_introduction`, `r_squared`, and
+`distance_metrics` — each backed by a pair of notebooks (`*_EN.ipynb` +
+`*_PT*.ipynb`). The code/figures are shared; only the prose differs. Two checks
+keep the pair honest:
 
 - `tests/test_notebook_parity.py` — the EN and PT notebooks stay parallel at the
   paragraph level (identical code, same figures, 1:1 prose/heading pairing).
