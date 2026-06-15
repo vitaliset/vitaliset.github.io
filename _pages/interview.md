@@ -2,6 +2,7 @@
 layout: page
 title: Interview tips for big techs
 title_pt: Dicas de entrevista para big techs
+date: 2024-05-01
 permalink: /interview/
 lang: en-US
 bilingual: true

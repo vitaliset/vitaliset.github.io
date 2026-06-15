@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Links
+date: 2021-06-05
 permalink: /links/
 lang: en-US
 ---

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Mentorando iniciantes em carreiras de Data Science
+date: 2023-01-12
 permalink: /tutoring-guideline/
 lang: pt-BR
 mathjax: true
