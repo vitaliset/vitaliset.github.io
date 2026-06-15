@@ -41,7 +41,7 @@ sitemap: false
 <div class="gallery-grid">
 
   <figure>
-    <a href="{{ site.baseurl }}/distancia/">
+    <a href="{{ site.baseurl }}/distance_metrics/">
       <img loading="lazy" src="{{ site.baseurl }}/assets/img/posts/coverdistancia_md.jpg" alt="Generalizando distância">
     </a>
     <figcaption>Generalizando distância</figcaption>

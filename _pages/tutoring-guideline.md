@@ -685,7 +685,7 @@ Atividade 26.
 - [K-nearest neighbors, Clearly Explained - StatQuest](https://youtu.be/HVXime0nQeI) (5min)
 - [K-means clustering = StatQuest](https://youtu.be/4b5d3muPQmA) (9min)
 - [Chapter 3 - GEOMETRY AND NEAREST NEIGHBORS - A Course in Machine Learning by Hal Daumé III](http://ciml.info/)
-- [Generalizando distância - Carlo Lemos](https://vitaliset.github.io/distancia/)
+- [Generalizando distância - Carlo Lemos](https://vitaliset.github.io/distance_metrics/)
 
 <p><center><img src="{{ site.baseurl }}/assets/img/horizontal_line.png"></center></p>
 

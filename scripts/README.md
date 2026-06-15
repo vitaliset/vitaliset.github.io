@@ -124,7 +124,7 @@ from its notebook — `evaluating_ranking` via `nb2post:merge`; the others via
 `skip`/`skip-input`/`skip-output` plus reconciling DataFrame tables to HTML (and
 normalizing older plain embeds to div-align). `boruta` also drops a `%%time` magic;
 `conditional_density_estimation` had its figure assets renamed to match the
-notebook's current cell numbering. `distance_metrics` (the `/distancia/` post) was
+notebook's current cell numbering. `distance_metrics` (the `/distance_metrics/` post, formerly `/distancia/`) was
 retrofitted with a notebook after the fact, modernizing its old
 `sklearn.neighbors.DistanceMetric` code (now in English) and hiding the figure-only
 plotting cells with `skip-input`; the strict fixture builds from its `_EN`

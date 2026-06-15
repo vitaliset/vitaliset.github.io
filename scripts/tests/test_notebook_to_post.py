@@ -77,7 +77,7 @@ STRICT_FIXTURES = [
     pytest.param(
         "distance_metrics",
         "code/distance_metrics/blog_distance_metrics_EN.ipynb",
-        "_posts/2020-07-05-distancia.md",
+        "_posts/2020-07-05-distance_metrics.md",
         id="distance_metrics",
     ),
 ]

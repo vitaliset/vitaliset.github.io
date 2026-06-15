@@ -1,7 +1,7 @@
 # Generalizing distance
 
 Reproducible source for the *"Generalizing distance"* post on
-[vitaliset.github.io](https://vitaliset.github.io/distancia/).
+[vitaliset.github.io](https://vitaliset.github.io/distance_metrics/).
 
 The notebook builds intuition for the mathematical definition of a metric and
 plots the open balls of several classic distances (Minkowski / Chebyshev, the
