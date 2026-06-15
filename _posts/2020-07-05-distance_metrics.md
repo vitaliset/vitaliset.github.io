@@ -7,8 +7,8 @@ category: [🇺🇸, 🇧🇷, math]
 mathjax: true
 bilingual: true
 lang: en-US
-description: A mathematical definition of distance with applications in the data science context.
-description_pt: Definição matemática de distância com aplicações no contexto de ciência de dados.
+description: A mathematical definition of distance with applications in data science.
+description_pt: Definição matemática de distância com aplicações em ciência de dados.
 ---
 
 <div class="i18n" lang="en"><p><div align="justify">Many distance-based machine learning algorithms are general enough that we can change the way we compute the distance between two points. When we look at data in $\mathbb{R}^n$, for $n\in\mathbb{N}^*$, we are used to the <b>euclidean distance</b>. This distance measures the length of the straight line connecting the two points, as a kind of generalization of the Pythagorean theorem.</div></p></div>
