@@ -1,0 +1,137 @@
+{% comment %}
+  Section deep-links for bilingual posts.
+  - Resolves location.hash to its heading even when that language is hidden,
+    switches to the matching language (unless ?lang= pins one), and scrolls once
+    the page has settled (hero image + MathJax reflow shift content downward).
+  - Adds a hover "#" anchor on each post heading that copies a shareable link.
+  Keep the script free of // line comments: compress_html collapses it onto one
+  line and a // would swallow the rest. Block comments only.
+{% endcomment %}
+
+<style>
+  .post-content :is(h1, h2, h3, h4, h5, h6)[id] {
+    scroll-margin-top: 1.5rem;
+  }
+
+  .heading-anchor {
+    display: inline-block;
+    margin-left: .35em;
+    color: #313237;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity .15s ease;
+  }
+  .post-content :is(h1, h2, h3, h4, h5, h6):hover .heading-anchor,
+  .heading-anchor:focus-visible {
+    opacity: .45;
+  }
+  .heading-anchor:hover {
+    opacity: 1;
+    text-decoration: none;
+  }
+  .heading-anchor.is-copied::after {
+    content: " copied";
+    font-size: .6em;
+    font-weight: 400;
+    letter-spacing: .04em;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .heading-anchor { transition: none; }
+  }
+</style>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+
+    function currentLang() {
+      return root.getAttribute('data-lang') === 'pt' ? 'pt' : 'en';
+    }
+
+    function hashId() {
+      var raw = (location.hash || '').slice(1);
+      try { return decodeURIComponent(raw); } catch (e) { return raw; }
+    }
+
+    function hasExplicitLang() {
+      var u = new URLSearchParams(location.search).get('lang');
+      return u === 'en' || u === 'pt';
+    }
+
+    /* If the hash targets a heading in the hidden language, reveal that language
+       (an explicit ?lang= in the URL always wins, matching the i18n engine). */
+    function resolveLangForHash() {
+      var id = hashId();
+      if (!id) return;
+      var el = document.getElementById(id);
+      if (!el || hasExplicitLang() || !el.closest) return;
+      var block = el.closest('.i18n[lang]');
+      if (!block) return;
+      var lang = block.getAttribute('lang') === 'pt' ? 'pt' : 'en';
+      if (lang === currentLang()) return;
+      root.setAttribute('data-lang', lang);
+      if (root.hasAttribute('data-bilingual')) {
+        root.setAttribute('lang', lang === 'pt' ? 'pt-BR' : 'en-US');
+      }
+      try { localStorage.setItem('vs-lang', lang); } catch (e) {}
+    }
+
+    function scrollToCurrentHash() {
+      var id = hashId();
+      if (!id) return;
+      var el = document.getElementById(id);
+      /* offsetParent is null while the element's language block is hidden. */
+      if (el && el.offsetParent !== null) el.scrollIntoView();
+    }
+
+    function handleHash() {
+      if (!hashId()) return;
+      resolveLangForHash();
+      scrollToCurrentHash();
+    }
+
+    function addHeadingAnchors() {
+      var heads = document.querySelectorAll('article.post-content h1[id], article.post-content h2[id], article.post-content h3[id], article.post-content h4[id], article.post-content h5[id], article.post-content h6[id]');
+      for (var i = 0; i < heads.length; i++) {
+        var h = heads[i];
+        if (h.querySelector('.heading-anchor')) continue;
+        var a = document.createElement('a');
+        a.className = 'heading-anchor';
+        a.href = '#' + h.id;
+        a.setAttribute('aria-label', 'Link to this section');
+        a.textContent = '#';
+        a.addEventListener('click', (function (id, link) {
+          return function () {
+            var url = location.origin + location.pathname + '?lang=' + currentLang() + '#' + id;
+            try {
+              if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(url);
+                link.classList.add('is-copied');
+                setTimeout(function () { link.classList.remove('is-copied'); }, 1200);
+              }
+            } catch (e) {}
+          };
+        })(h.id, a));
+        h.appendChild(a);
+      }
+    }
+
+    function init() {
+      addHeadingAnchors();
+      handleHash();
+      if (window.MathJax && window.MathJax.Hub) {
+        try {
+          window.MathJax.Hub.Queue(scrollToCurrentHash);
+          window.MathJax.Hub.Register.StartupHook('End', scrollToCurrentHash);
+        } catch (e) {}
+      }
+    }
+
+    if (document.readyState !== 'loading') init();
+    else document.addEventListener('DOMContentLoaded', init);
+
+    window.addEventListener('load', scrollToCurrentHash);
+    window.addEventListener('hashchange', handleHash);
+  })();
+</script>
