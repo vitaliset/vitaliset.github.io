@@ -2,7 +2,7 @@
   Section deep-links for bilingual posts.
   - Resolves location.hash to its heading even when that language is hidden,
     switches to the matching language (unless ?lang= pins one), and scrolls once
-    the page has settled (hero image + MathJax reflow shift content downward).
+    the page has settled (hero image and math rendering shift content downward).
   - Adds a hover "#" anchor on each post heading that copies a shareable link.
   Keep the script free of // line comments: compress_html collapses it onto one
   line and a // would swallow the rest. Block comments only.
@@ -120,12 +120,6 @@
     function init() {
       addHeadingAnchors();
       handleHash();
-      if (window.MathJax && window.MathJax.Hub) {
-        try {
-          window.MathJax.Hub.Queue(scrollToCurrentHash);
-          window.MathJax.Hub.Register.StartupHook('End', scrollToCurrentHash);
-        } catch (e) {}
-      }
     }
 
     if (document.readyState !== 'loading') init();
@@ -133,5 +127,6 @@
 
     window.addEventListener('load', scrollToCurrentHash);
     window.addEventListener('hashchange', handleHash);
+    document.addEventListener('blog:math-ready', scrollToCurrentHash);
   })();
 </script>

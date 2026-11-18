@@ -1,0 +1,43 @@
+---
+---
+
+:is(article.post-content, .page-content) :is(p, li, blockquote, div[align="justify"]) {
+  font-family: system-ui, sans-serif;
+  font-size: clamp(1rem, calc(.96rem + .2vw), 1.12rem);
+  line-height: 1.72;
+  hyphens: auto;
+}
+
+.post-card__inner p {
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+:is(article.post-content, .page-content) {
+  .katex {
+    font-size: calc(1.04em * var(--math-fit, 1));
+    hyphens: none;
+  }
+
+  .katex-display {
+    margin-block: .9rem;
+    padding-block: .18rem;
+    line-height: 1.85;
+
+    > .katex {
+      font-size: calc(var(--display-math-size, 1.3em) * var(--math-fit, 1));
+      white-space: normal;
+    }
+  }
+
+  .katex-error { overflow-wrap: anywhere; }
+}
+
+@media (max-width: 36rem) {
+  .katex-display { --display-math-size: 1.2em; }
+}
+
+@media (max-width: 23rem) {
+  :is(article.post-content, .page-content) :is(p, li, blockquote, div[align="justify"]) { text-align: start; }
+  article.post-content :not(pre) > code { white-space: normal; overflow-wrap: anywhere; }
+}
